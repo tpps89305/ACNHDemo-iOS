@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="f3r-6B-jPL" customClass="VillagersTableViewCell" customModule="ACNHDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3r-6B-jPL" id="afX-LC-Ftw">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IK2-Ip-bZX">
+                        <rect key="frame" x="20" y="10.5" width="60" height="59"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ZNQ-64-olr"/>
+                            <constraint firstAttribute="height" constant="60" id="jrZ-M6-1au"/>
+                        </constraints>
+                        <imageReference key="image" image="person.circle" catalog="system" symbolScale="default"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrW-M0-Vq1">
+                        <rect key="frame" x="88" y="29.5" width="306" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WrW-M0-Vq1" firstAttribute="leading" secondItem="IK2-Ip-bZX" secondAttribute="trailing" constant="8" symbolic="YES" id="4zf-Zh-xyB"/>
+                    <constraint firstAttribute="trailing" secondItem="WrW-M0-Vq1" secondAttribute="trailing" constant="20" symbolic="YES" id="SDS-2J-6Xy"/>
+                    <constraint firstItem="IK2-Ip-bZX" firstAttribute="centerY" secondItem="afX-LC-Ftw" secondAttribute="centerY" id="SuQ-oU-LEr"/>
+                    <constraint firstAttribute="bottom" secondItem="IK2-Ip-bZX" secondAttribute="bottom" constant="10" id="dV4-4c-G2N"/>
+                    <constraint firstItem="IK2-Ip-bZX" firstAttribute="leading" secondItem="afX-LC-Ftw" secondAttribute="leading" constant="20" symbolic="YES" id="gQe-xU-1if"/>
+                    <constraint firstItem="WrW-M0-Vq1" firstAttribute="centerY" secondItem="IK2-Ip-bZX" secondAttribute="centerY" id="m9M-4f-75G"/>
+                    <constraint firstItem="IK2-Ip-bZX" firstAttribute="top" secondItem="afX-LC-Ftw" secondAttribute="top" constant="10" id="oTY-Wz-HfG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageVillager" destination="IK2-Ip-bZX" id="SlP-Yx-kMy"/>
+                <outlet property="labelVillager" destination="WrW-M0-Vq1" id="9zb-Rf-btk"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="21.09375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

@@ -20,6 +20,15 @@
 		F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF0F265A603F00BF5202 /* ACNHDemoTests.swift */; };
 		F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */; };
 		F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
+		F6AA45B9268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
+		F6AA45BA268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
+		F6AA45BB268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
+		F6AA45C0268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
+		F6AA45C1268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
+		F6AA45C2268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
+		F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
+		F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
+		F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +74,9 @@
 		F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHDemoUITests.swift; sourceTree = "<group>"; };
 		F650FF1C265A603F00BF5202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHAPI.swift; sourceTree = "<group>"; };
+		F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersTableViewCell.swift; sourceTree = "<group>"; };
+		F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersTableViewCell.xib; sourceTree = "<group>"; };
+		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +164,9 @@
 				F650FF06265A603E00BF5202 /* Info.plist */,
 				F650FEFE265A603700BF5202 /* ACNHDemo.xcdatamodeld */,
 				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
+				F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */,
+				F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */,
+				F6AA45C6268CC2B700528F73 /* Extensions.swift */,
 			);
 			path = ACNHDemo;
 			sourceTree = "<group>";
@@ -285,6 +300,7 @@
 				F650FF05265A603E00BF5202 /* LaunchScreen.storyboard in Resources */,
 				F650FF02265A603E00BF5202 /* Assets.xcassets in Resources */,
 				F650FEFD265A603700BF5202 /* Main.storyboard in Resources */,
+				F6AA45C0268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AA45C1268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AA45C2268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +435,8 @@
 				F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */,
 				F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */,
 				F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */,
+				F6AA45B9268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
+				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
+				F6AA45BA268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
+				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
+				F6AA45BB268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
