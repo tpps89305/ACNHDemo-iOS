@@ -155,17 +155,14 @@
 		F650FEF4265A603700BF5202 /* ACNHDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F6C9C9CF268D96A6001A1D9A /* APIs */,
+				F6C9C9CE268D963F001A1D9A /* UI */,
 				F650FEF5265A603700BF5202 /* AppDelegate.swift */,
 				F650FEF7265A603700BF5202 /* SceneDelegate.swift */,
-				F650FEF9265A603700BF5202 /* ViewController.swift */,
-				F650FEFB265A603700BF5202 /* Main.storyboard */,
 				F650FF01265A603E00BF5202 /* Assets.xcassets */,
 				F650FF03265A603E00BF5202 /* LaunchScreen.storyboard */,
 				F650FF06265A603E00BF5202 /* Info.plist */,
 				F650FEFE265A603700BF5202 /* ACNHDemo.xcdatamodeld */,
-				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
-				F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */,
-				F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */,
 				F6AA45C6268CC2B700528F73 /* Extensions.swift */,
 			);
 			path = ACNHDemo;
@@ -187,6 +184,25 @@
 				F650FF1C265A603F00BF5202 /* Info.plist */,
 			);
 			path = ACNHDemoUITests;
+			sourceTree = "<group>";
+		};
+		F6C9C9CE268D963F001A1D9A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F650FEF9265A603700BF5202 /* ViewController.swift */,
+				F650FEFB265A603700BF5202 /* Main.storyboard */,
+				F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */,
+				F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F6C9C9CF268D96A6001A1D9A /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
