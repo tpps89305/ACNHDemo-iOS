@@ -29,6 +29,9 @@
 		F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 		F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 		F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
+		F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
+		F6C9C9D5268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
+		F6C9C9D6268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,7 @@
 		F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersTableViewCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersTableViewCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F6C9C9D3268DA25E001A1D9A /* Villager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
+				F6C9C9D3268DA25E001A1D9A /* Villager.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */,
 				F6AA45B9268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
 				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
+				F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +469,7 @@
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6C9C9D5268DA25E001A1D9A /* Villager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +480,7 @@
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6C9C9D6268DA25E001A1D9A /* Villager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

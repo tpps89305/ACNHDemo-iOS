@@ -25,7 +25,6 @@ extension UIImageView {
                 imageCahce.setObject(image, forKey: url as NSString)
                 self.image = image
                 cell.setNeedsLayout()
-                print("Loaded image url = " + url)
             } else {
                 print("Data is nil. I don't know what to do :(")
             }
