@@ -9,7 +9,7 @@ import UIKit
 import Moya
 import Alamofire
 
-class ViewController: UITableViewController {
+class VillagersController: UITableViewController {
     
     var arrayVillagers = Array<Villager>()
     @IBOutlet var tableViewVillagers: UITableView!
@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
     }
     
     func initViews() {
-        self.tableViewVillagers.register(UINib(nibName: "VillagersTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        self.tableViewVillagers.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
     
     func getVillagers() {
@@ -48,13 +48,27 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VillagersTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VillagersCell
         let villager = arrayVillagers[indexPath.row]
         let nameTW = villager.name.nameTWzh
         let iconUri = villager.iconURI
         cell.labelVillager.text = nameTW
         cell.imageVillager.loadUrl(url: iconUri, cell: cell)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "gotoVillagerDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                destinationVC.villager = arrayVillagers[row]
+            }
+        }
     }
 
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class VillagersTableViewCell: UITableViewCell {
+class VillagersCell: UITableViewCell {
     
     @IBOutlet weak var imageVillager: UIImageView!
     @IBOutlet weak var labelVillager: UILabel!

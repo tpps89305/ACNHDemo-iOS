@@ -12,7 +12,7 @@
 		59F3EE95D97457D819E02D9B /* Pods_ACNHDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E455927DA8C3D4248761460 /* Pods_ACNHDemoTests.framework */; };
 		F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF5265A603700BF5202 /* AppDelegate.swift */; };
 		F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF7265A603700BF5202 /* SceneDelegate.swift */; };
-		F650FEFA265A603700BF5202 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF9265A603700BF5202 /* ViewController.swift */; };
+		F650FEFA265A603700BF5202 /* VillagersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF9265A603700BF5202 /* VillagersController.swift */; };
 		F650FEFD265A603700BF5202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F650FEFB265A603700BF5202 /* Main.storyboard */; };
 		F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F650FEFE265A603700BF5202 /* ACNHDemo.xcdatamodeld */; };
 		F650FF02265A603E00BF5202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F650FF01265A603E00BF5202 /* Assets.xcassets */; };
@@ -20,18 +20,33 @@
 		F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF0F265A603F00BF5202 /* ACNHDemoTests.swift */; };
 		F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */; };
 		F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
-		F6AA45B9268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
-		F6AA45BA268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
-		F6AA45BB268C681100528F73 /* VillagersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */; };
-		F6AA45C0268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
-		F6AA45C1268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
-		F6AA45C2268C695100528F73 /* VillagersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */; };
+		F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
+		F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
+		F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
+		F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
+		F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
+		F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
+		F6AA45C0268C695100528F73 /* VillagersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersCell.xib */; };
+		F6AA45C1268C695100528F73 /* VillagersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersCell.xib */; };
+		F6AA45C2268C695100528F73 /* VillagersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6AA45BF268C695100528F73 /* VillagersCell.xib */; };
 		F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 		F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 		F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45C6268CC2B700528F73 /* Extensions.swift */; };
 		F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
 		F6C9C9D5268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
 		F6C9C9D6268DA25E001A1D9A /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9C9D3268DA25E001A1D9A /* Villager.swift */; };
+		F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
+		F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
+		F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
+		F6EBFE8B2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
+		F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
+		F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
+		F6EBFE992695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
+		F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
+		F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
+		F6EBFE9C2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */; };
+		F6EBFE9D2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */; };
+		F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +79,7 @@
 		F650FEF2265A603700BF5202 /* ACNHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F650FEF5265A603700BF5202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F650FEF7265A603700BF5202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F650FEF9265A603700BF5202 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F650FEF9265A603700BF5202 /* VillagersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersController.swift; sourceTree = "<group>"; };
 		F650FEFC265A603700BF5202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F650FEFF265A603700BF5202 /* ACNHDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ACNHDemo.xcdatamodel; sourceTree = "<group>"; };
 		F650FF01265A603E00BF5202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,10 +92,15 @@
 		F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHDemoUITests.swift; sourceTree = "<group>"; };
 		F650FF1C265A603F00BF5202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHAPI.swift; sourceTree = "<group>"; };
-		F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersTableViewCell.swift; sourceTree = "<group>"; };
-		F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersTableViewCell.xib; sourceTree = "<group>"; };
+		F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewController.swift; sourceTree = "<group>"; };
+		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
+		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F6C9C9D3268DA25E001A1D9A /* Villager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
+		F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailContentCell.swift; sourceTree = "<group>"; };
+		F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagerDetailContentCell.xib; sourceTree = "<group>"; };
+		F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailAvatarCell.swift; sourceTree = "<group>"; };
+		F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagerDetailAvatarCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,10 +213,15 @@
 		F6C9C9CE268D963F001A1D9A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F650FEF9265A603700BF5202 /* ViewController.swift */,
+				F650FEF9265A603700BF5202 /* VillagersController.swift */,
 				F650FEFB265A603700BF5202 /* Main.storyboard */,
-				F6AA45B8268C681100528F73 /* VillagersTableViewCell.swift */,
-				F6AA45BF268C695100528F73 /* VillagersTableViewCell.xib */,
+				F6AA45B8268C681100528F73 /* VillagersCell.swift */,
+				F6AA45BF268C695100528F73 /* VillagersCell.xib */,
+				F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */,
+				F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */,
+				F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */,
+				F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */,
+				F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -319,9 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F650FF05265A603E00BF5202 /* LaunchScreen.storyboard in Resources */,
+				F6EBFE9C2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F650FF02265A603E00BF5202 /* Assets.xcassets in Resources */,
 				F650FEFD265A603700BF5202 /* Main.storyboard in Resources */,
-				F6AA45C0268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
+				F6EBFE8B2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6AA45C0268C695100528F73 /* VillagersCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6AA45C1268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
+				F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6EBFE9D2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
+				F6AA45C1268C695100528F73 /* VillagersCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +366,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6AA45C2268C695100528F73 /* VillagersTableViewCell.xib in Resources */,
+				F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
+				F6AA45C2268C695100528F73 /* VillagersCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,14 +482,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
-				F650FEFA265A603700BF5202 /* ViewController.swift in Sources */,
+				F650FEFA265A603700BF5202 /* VillagersController.swift in Sources */,
 				F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */,
 				F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */,
+				F6EBFE992695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */,
-				F6AA45B9268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
 				F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */,
+				F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +500,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
-				F6AA45BA268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
+				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6C9C9D5268DA25E001A1D9A /* Villager.swift in Sources */,
+				F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,10 +514,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
-				F6AA45BB268C681100528F73 /* VillagersTableViewCell.swift in Sources */,
+				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
+				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6C9C9D6268DA25E001A1D9A /* Villager.swift in Sources */,
+				F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
