@@ -14,7 +14,6 @@ enum VillagerDetailCellType: Int {
 class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var villager: Villager?
-    @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var tableDetail: UITableView!
     var arrayDetailTitle: [String] = []
     var arrayDetailContent: [String] = []
@@ -22,7 +21,8 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         let name = villager?.name.nameTWzh
-        labelName.text = name
+        title = name
+        navigationController?.navigationBar.prefersLargeTitles = true
         print("VillagerDetail: villager's name = " + name!)
         
         arrayDetailTitle.append("Personality")

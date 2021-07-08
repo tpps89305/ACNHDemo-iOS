@@ -9,10 +9,17 @@ import UIKit
 import Moya
 import Alamofire
 
-class VillagersController: UITableViewController {
+class VillagersController: UITableViewController, UISearchBarDelegate {
     
     var arrayVillagers = Array<Villager>()
-    @IBOutlet var tableViewVillagers: UITableView!
+    var searchController = UISearchController(searchResultsController: nil)
+    var searchReslut = [Villager]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +29,12 @@ class VillagersController: UITableViewController {
     }
     
     func initViews() {
-        self.tableViewVillagers.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        navigationItem.searchController?.searchBar.delegate = self
+        self.tableView.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        // Avoid issue of cannot select cell(s)
+        searchController.dimsBackgroundDuringPresentation = false
     }
     
     func getVillagers() {
@@ -33,6 +45,7 @@ class VillagersController: UITableViewController {
                 for eachKey in villagers.keys {
                     self.arrayVillagers.append(villagers[eachKey]!)
                 }
+                self.searchReslut = self.arrayVillagers
                 self.tableView.reloadData()
                 print("Done!")
             } catch {
@@ -44,12 +57,12 @@ class VillagersController: UITableViewController {
 // MARK: UITableView Delegate and DataSources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayVillagers.count
+        return searchReslut.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VillagersCell
-        let villager = arrayVillagers[indexPath.row]
+        let villager = searchReslut[indexPath.row]
         let nameTW = villager.name.nameTWzh
         let iconUri = villager.iconURI
         cell.labelVillager.text = nameTW
@@ -66,9 +79,19 @@ class VillagersController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.villager = arrayVillagers[row]
+                destinationVC.villager = searchReslut[row]
             }
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            searchReslut = arrayVillagers
+            return
+        }
+        searchReslut = arrayVillagers.filter({ (villager) -> Bool in
+            return villager.name.nameTWzh.contains(searchBar.text!)
+        })
     }
 
 }
