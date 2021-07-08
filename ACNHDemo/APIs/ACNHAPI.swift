@@ -13,6 +13,7 @@ let ACNHProvider = MoyaProvider<ACNH>()
 
 public enum ACNH {
     case villagers(villagerId: Int)
+    case songs(songId: Int)
 }
 
 extension ACNH : TargetType {
@@ -28,6 +29,11 @@ extension ACNH : TargetType {
                 return "villagers/"
             }
             return "villagers/\(villagerId)"
+        case .songs(let songId):
+            if songId == 0 {
+                return "songs/"
+            }
+            return "songs/\(songId)"
         }
     }
     
@@ -38,6 +44,8 @@ extension ACNH : TargetType {
     public var sampleData: Data {
         switch self {
         case .villagers( _):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .songs( _):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }

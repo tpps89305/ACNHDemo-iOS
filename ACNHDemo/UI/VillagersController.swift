@@ -54,7 +54,7 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         }
     }
 
-// MARK: UITableView Delegate and DataSources
+    // MARK: UITableView Delegate and DataSources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchReslut.count
@@ -74,15 +74,7 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: "gotoVillagerDetail", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.villager = searchReslut[row]
-            }
-        }
-    }
+    //MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == "" {
@@ -92,6 +84,18 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         searchReslut = arrayVillagers.filter({ (villager) -> Bool in
             return villager.name.nameTWzh.contains(searchBar.text!)
         })
+    }
+    
+    // MARK: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                destinationVC.villager = searchReslut[row]
+            }
+        }
     }
 
 }

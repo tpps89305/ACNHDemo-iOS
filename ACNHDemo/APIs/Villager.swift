@@ -19,7 +19,7 @@ import Alamofire
 struct Villager: Codable {
     let id: Int
     let fileName: String
-    let name: Name
+    let name: VillagerName
     let personality: Personality
     let birthdayString, birthday, species: String
     let gender: Gender
@@ -104,7 +104,7 @@ enum Hobby: String, Codable {
 //   }
 
 // MARK: - Name
-struct Name: Codable {
+struct VillagerName: Codable {
     let nameUSen, nameEUen, nameEUde, nameEUes: String
     let nameUSes, nameEUfr, nameUSfr, nameEUit: String
     let nameEUnl, nameCNzh, nameTWzh, nameJPja: String
