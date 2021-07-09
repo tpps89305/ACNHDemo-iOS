@@ -63,8 +63,13 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongsCell", for: indexPath) as! SongsCell
         cell.imageAvatar?.loadUrl(url: searchReslut[indexPath.row].imageURI, cell: cell)
         cell.labelName.text = searchReslut[indexPath.row].name.nameTWzh
-        cell.labelPriceInfo.text = String(searchReslut[indexPath.row].sellPrice)
+        let salsInfo = "Buy price: \(searchReslut[indexPath.row].buyPrice ?? 0), Sell price: \(searchReslut[indexPath.row].sellPrice)"
+        cell.labelPriceInfo.text = salsInfo
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "gotoSongDetail", sender: self)
     }
     
     //MARK: UISearchBar Delegate
@@ -79,14 +84,19 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         })
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "gotoSongDetail", let destinationVC = segue.destination as? SongDetailViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                destinationVC.song = searchReslut[row]
+            }
+        }
     }
-    */
+    
 
 }

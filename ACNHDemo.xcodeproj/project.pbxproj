@@ -20,6 +20,9 @@
 		F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF0F265A603F00BF5202 /* ACNHDemoTests.swift */; };
 		F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */; };
 		F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
+		F67687B92697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
+		F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
+		F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
 		F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
@@ -107,6 +110,7 @@
 		F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHDemoUITests.swift; sourceTree = "<group>"; };
 		F650FF1C265A603F00BF5202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHAPI.swift; sourceTree = "<group>"; };
+		F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
 		F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewController.swift; sourceTree = "<group>"; };
 		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				F6EC22F82696EA8600C931EC /* SongsViewController.swift */,
 				F6EC23062696F00A00C931EC /* SongsCell.swift */,
 				F6EC23072696F00A00C931EC /* SongsCell.xib */,
+				F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 			files = (
 				F6EC23002696EB3700C931EC /* Song.swift in Sources */,
 				F6EC22F22696DB3100C931EC /* CatalogViewController.swift in Sources */,
+				F67687B92697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
 				F650FEFA265A603700BF5202 /* VillagersController.swift in Sources */,
@@ -538,6 +544,7 @@
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F6EC23092696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EC23012696EB3700C931EC /* Song.swift in Sources */,
+				F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
@@ -556,6 +563,7 @@
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F6EC230A2696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EC23022696EB3700C931EC /* Song.swift in Sources */,
+				F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
