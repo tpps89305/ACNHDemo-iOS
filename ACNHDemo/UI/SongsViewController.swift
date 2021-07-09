@@ -39,7 +39,7 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         ACNHProvider.request(.songs(songId: 0)) { result in
             do {
                 let response = try result.get()
-                let songs = try newJSONDecoder().decode(Songs.self, from: response.data)
+                let songs = try ACNHJSONDecoder().decode(Songs.self, from: response.data)
                 for eachKey in songs.keys {
                     self.arraySongs.append(songs[eachKey]!)
                 }

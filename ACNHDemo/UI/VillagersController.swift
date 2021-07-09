@@ -41,7 +41,7 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         ACNHProvider.request(.villagers(villagerId: 0)) { result in
             do {
                 let response = try result.get()
-                let villagers = try newJSONDecoder().decode(Villagers.self, from: response.data)
+                let villagers = try ACNHJSONDecoder().decode(Villagers.self, from: response.data)
                 for eachKey in villagers.keys {
                     self.arrayVillagers.append(villagers[eachKey]!)
                 }
