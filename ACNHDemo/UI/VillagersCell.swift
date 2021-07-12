@@ -18,4 +18,12 @@ class VillagersCell: UITableViewCell {
         imageVillager.image = nil
     }
     
+    func setup(viewModel: VillagerCellViewModel) {
+        let villager = viewModel.villager
+        let nameTW = villager.name.nameTWzh
+        let iconUri = villager.iconURI
+        self.labelVillager.text = nameTW
+        self.imageVillager.loadUrl(url: iconUri, cell: self)
+    }
+    
 }

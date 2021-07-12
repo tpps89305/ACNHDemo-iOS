@@ -11,21 +11,15 @@ import Alamofire
 
 class VillagersController: UITableViewController, UISearchBarDelegate {
     
-    var arrayVillagers = Array<Villager>()
     var searchController = UISearchController(searchResultsController: nil)
-    var searchReslut = [Villager]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    let viewModel = VillagerVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initViews()
-        getVillagers()
+        bindViewModel()
+        viewModel.getVillagers()
     }
     
     func initViews() {
@@ -37,24 +31,10 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         searchController.dimsBackgroundDuringPresentation = false
     }
     
-    func getVillagers() {
-        ACNHProvider.request(.villagers(villagerId: 0)) { result in
-            do {
-                let response = try result.get()
-                let villagers = try ACNHJSONDecoder().decode(Villagers.self, from: response.data)
-                for eachKey in villagers.keys {
-                    self.arrayVillagers.append(villagers[eachKey]!)
-                }
-                
-                // Sort to get same order array every time(s).
-                self.arrayVillagers.sort { (villager0, villager1) -> Bool in
-                    return villager0.fileName < villager1.fileName
-                }
-                self.searchReslut = self.arrayVillagers
-                self.tableView.reloadData()
-                print("Done!")
-            } catch {
-                print("Error!")
+    func bindViewModel() {
+        viewModel.onRequestEnd = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
     }
@@ -62,16 +42,13 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
     // MARK: UITableView Delegate and DataSources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchReslut.count
+        return viewModel.villagerCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VillagersCell
-        let villager = searchReslut[indexPath.row]
-        let nameTW = villager.name.nameTWzh
-        let iconUri = villager.iconURI
-        cell.labelVillager.text = nameTW
-        cell.imageVillager.loadUrl(url: iconUri, cell: cell)
+        let listCellViewModel = viewModel.villagerCellViewModels[indexPath.row]
+        cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
@@ -82,13 +59,7 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
     //MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == "" {
-            searchReslut = arrayVillagers
-            return
-        }
-        searchReslut = arrayVillagers.filter({ (villager) -> Bool in
-            return villager.name.nameTWzh.contains(searchBar.text!)
-        })
+        viewModel.searchText = searchText
     }
     
     // MARK: Segue
@@ -98,7 +69,7 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.villager = searchReslut[row]
+                destinationVC.villager = viewModel.villagerCellViewModels[row].villager
             }
         }
     }
