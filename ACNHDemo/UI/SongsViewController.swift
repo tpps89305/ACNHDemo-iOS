@@ -43,6 +43,11 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
                 for eachKey in songs.keys {
                     self.arraySongs.append(songs[eachKey]!)
                 }
+                
+                // Sort to get same order array every time(s).
+                self.arraySongs.sort { (song0, song1) -> Bool in
+                    return song0.fileName < song1.fileName
+                }
                 self.searchReslut = self.arraySongs
                 self.tableView.reloadData()
                 print("Done!")

@@ -45,6 +45,11 @@ class VillagersController: UITableViewController, UISearchBarDelegate {
                 for eachKey in villagers.keys {
                     self.arrayVillagers.append(villagers[eachKey]!)
                 }
+                
+                // Sort to get same order array every time(s).
+                self.arrayVillagers.sort { (villager0, villager1) -> Bool in
+                    return villager0.fileName < villager1.fileName
+                }
                 self.searchReslut = self.arrayVillagers
                 self.tableView.reloadData()
                 print("Done!")

@@ -13,4 +13,9 @@ class VillagersCell: UITableViewCell {
     @IBOutlet weak var imageVillager: UIImageView!
     @IBOutlet weak var labelVillager: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageVillager.image = nil
+    }
+    
 }
