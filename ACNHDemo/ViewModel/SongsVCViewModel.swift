@@ -11,10 +11,10 @@ class SongsVCViewModel: NSObject {
     
     var arraySongs = Array<Song>()
     var songCellViewModels: [SongCellViewModel] = []
-    var searchReslut = [Song]() {
+    var searchResult = [Song]() {
         didSet {
             self.songCellViewModels.removeAll()
-            self.convertToViewModel(songs: self.searchReslut)
+            self.convertToViewModel(songs: self.searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -53,7 +53,7 @@ class SongsVCViewModel: NSObject {
     }
     
     func searchSongs(with name: String) {
-        searchReslut = arraySongs.filter({ (song) -> Bool in
+        searchResult = arraySongs.filter({ (song) -> Bool in
             return song.name.nameTWzh.contains(name)
         })
     }

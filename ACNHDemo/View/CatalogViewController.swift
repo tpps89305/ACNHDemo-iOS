@@ -34,7 +34,16 @@ class CatalogViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gotoSongs", sender: self)
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: "gotoSongs", sender: self)
+            break
+        case 1:
+            performSegue(withIdentifier: "gotoFishes", sender: self)
+            break
+        default:
+            break
+        }
     }
     
     /*

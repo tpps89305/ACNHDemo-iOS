@@ -14,6 +14,7 @@ let ACNHProvider = MoyaProvider<ACNH>()
 public enum ACNH {
     case villagers(villagerId: Int)
     case songs(songId: Int)
+    case fishes(fishId: Int)
 }
 
 extension ACNH : TargetType {
@@ -34,6 +35,11 @@ extension ACNH : TargetType {
                 return "songs/"
             }
             return "songs/\(songId)"
+        case.fishes(let fishId):
+            if fishId == 0 {
+                return "fish/"
+            }
+            return "fish/\(fishId)"
         }
     }
     
@@ -46,6 +52,8 @@ extension ACNH : TargetType {
         case .villagers( _):
             return "WTF".data(using: String.Encoding.utf8)!
         case .songs( _):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .fishes(_):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }
