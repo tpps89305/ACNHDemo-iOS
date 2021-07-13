@@ -9,7 +9,7 @@ import UIKit
 import Moya
 import Alamofire
 
-class VillagersController: UITableViewController, UISearchBarDelegate {
+class VillagersViewController: UITableViewController, UISearchBarDelegate {
     
     var searchController = UISearchController(searchResultsController: nil)
     let viewModel = VillagerVCViewModel()
