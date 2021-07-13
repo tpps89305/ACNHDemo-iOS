@@ -10,6 +10,12 @@
 		4EF3DD19C89CCD3A8C6655F3 /* Pods_ACNHDemo_ACNHDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E8721AC5E9A58A0465473 /* Pods_ACNHDemo_ACNHDemoUITests.framework */; };
 		522477D226860550B496F74B /* Pods_ACNHDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F277CF0B7BED2599FD732861 /* Pods_ACNHDemo.framework */; };
 		59F3EE95D97457D819E02D9B /* Pods_ACNHDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E455927DA8C3D4248761460 /* Pods_ACNHDemoTests.framework */; };
+		F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
+		F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
+		F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
+		F631DECB269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */; };
+		F631DECC269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */; };
+		F631DECD269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */; };
 		F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF5265A603700BF5202 /* AppDelegate.swift */; };
 		F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF7265A603700BF5202 /* SceneDelegate.swift */; };
 		F650FEFA265A603700BF5202 /* VillagersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FEF9265A603700BF5202 /* VillagersViewController.swift */; };
@@ -100,6 +106,8 @@
 		AC8F7FE0748FE4EC9003656E /* Pods-ACNHDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACNHDemoTests.release.xcconfig"; path = "Target Support Files/Pods-ACNHDemoTests/Pods-ACNHDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC3973B2D60D06B46EE14CEE /* Pods-ACNHDemo-ACNHDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACNHDemo-ACNHDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ACNHDemo-ACNHDemoUITests/Pods-ACNHDemo-ACNHDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F277CF0B7BED2599FD732861 /* Pods_ACNHDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACNHDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsVCViewModel.swift; sourceTree = "<group>"; };
+		F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellViewModel.swift; sourceTree = "<group>"; };
 		F650FEF2265A603700BF5202 /* ACNHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F650FEF5265A603700BF5202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F650FEF7265A603700BF5202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +276,8 @@
 			children = (
 				F67A7874269C3EDB00112F45 /* VillagerVCViewModel.swift */,
 				F67A787E269C3F6C00112F45 /* VillagerCellViewModel.swift */,
+				F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */,
+				F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -539,8 +549,10 @@
 				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
 				F650FEFA265A603700BF5202 /* VillagersViewController.swift in Sources */,
+				F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F67A787F269C3F6C00112F45 /* VillagerCellViewModel.swift in Sources */,
 				F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */,
+				F631DECB269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */,
 				F6EBFE992695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F650FEF8265A603700BF5202 /* SceneDelegate.swift in Sources */,
@@ -559,9 +571,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EC22F32696DB3100C931EC /* CatalogViewController.swift in Sources */,
+				F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F6EC22FA2696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
+				F631DECC269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F6EC23092696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EC23012696EB3700C931EC /* Song.swift in Sources */,
 				F67A7880269C3F6C00112F45 /* VillagerCellViewModel.swift in Sources */,
@@ -580,9 +594,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EC22F42696DB3100C931EC /* CatalogViewController.swift in Sources */,
+				F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F6EC22FB2696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
+				F631DECD269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F6EC230A2696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EC23022696EB3700C931EC /* Song.swift in Sources */,
 				F67A7881269C3F6C00112F45 /* VillagerCellViewModel.swift in Sources */,

@@ -11,7 +11,7 @@ import Alamofire
 
 class VillagersViewController: UITableViewController, UISearchBarDelegate {
     
-    var searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     let viewModel = VillagerVCViewModel()
     
     override func viewDidLoad() {

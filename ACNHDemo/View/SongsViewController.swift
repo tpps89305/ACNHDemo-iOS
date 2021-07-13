@@ -9,21 +9,15 @@ import UIKit
 
 class SongsViewController: UITableViewController, UISearchBarDelegate {
     
-    var arraySongs = Array<Song>()
-    var searchController = UISearchController(searchResultsController: nil)
-    var searchReslut = [Song]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    let searchController = UISearchController(searchResultsController: nil)
+    let viewModel = SongsVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initViews()
-        getSongs()
+        bindViewModel()
+        viewModel.getSongs()
     }
     
     func initViews() {
@@ -35,24 +29,10 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         searchController.dimsBackgroundDuringPresentation = false
     }
     
-    func getSongs() {
-        ACNHProvider.request(.songs(songId: 0)) { result in
-            do {
-                let response = try result.get()
-                let songs = try ACNHJSONDecoder().decode(Songs.self, from: response.data)
-                for eachKey in songs.keys {
-                    self.arraySongs.append(songs[eachKey]!)
-                }
-                
-                // Sort to get same order array every time(s).
-                self.arraySongs.sort { (song0, song1) -> Bool in
-                    return song0.fileName < song1.fileName
-                }
-                self.searchReslut = self.arraySongs
-                self.tableView.reloadData()
-                print("Done!")
-            } catch {
-                print("Error!")
+    func bindViewModel() {
+        viewModel.onRequestEnd = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
     }
@@ -61,15 +41,13 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return searchReslut.count
+        return viewModel.songCellViewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongsCell", for: indexPath) as! SongsCell
-        cell.imageAvatar?.loadUrl(url: searchReslut[indexPath.row].imageURI, cell: cell)
-        cell.labelName.text = searchReslut[indexPath.row].name.nameTWzh
-        let salsInfo = "Buy price: \(searchReslut[indexPath.row].buyPrice ?? 0), Sell price: \(searchReslut[indexPath.row].sellPrice)"
-        cell.labelPriceInfo.text = salsInfo
+        let listCellViewModel = viewModel.songCellViewModels[indexPath.row]
+        cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
@@ -80,15 +58,8 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
     //MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == "" {
-            searchReslut = arraySongs
-            return
-        }
-        searchReslut = arraySongs.filter({ (song) -> Bool in
-            return song.name.nameTWzh.contains(searchBar.text!)
-        })
+        viewModel.searchText = searchText
     }
-    
     
     // MARK: - Navigation
 
@@ -98,10 +69,9 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "gotoSongDetail", let destinationVC = segue.destination as? SongDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.song = searchReslut[row]
+                destinationVC.song = viewModel.songCellViewModels[row].song
             }
         }
     }
     
-
 }

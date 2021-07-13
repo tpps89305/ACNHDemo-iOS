@@ -13,10 +13,8 @@ class VillagerVCViewModel: NSObject {
     var villagerCellViewModels: [VillagerCellViewModel] = []
     var searchReslut = [Villager]() {
         didSet {
-            DispatchQueue.main.async {
-                self.villagerCellViewModels.removeAll()
-                self.convertToViewModel(villagers: self.searchReslut)
-            }
+            self.villagerCellViewModels.removeAll()
+            self.convertToViewModel(villagers: self.searchReslut)
         }
     }
     var onRequestEnd:(() -> Void)?

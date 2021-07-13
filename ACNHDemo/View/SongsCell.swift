@@ -30,4 +30,12 @@ class SongsCell: UITableViewCell {
         imageAvatar.image = nil
     }
     
+    func setup(viewModel: SongCellViewModel) {
+        let song = viewModel.song
+        self.imageAvatar.loadUrl(url: song.imageURI, cell: self)
+        self.labelName.text = song.name.nameTWzh
+        let salsInfo = "Buy price: \(song.buyPrice ?? 0), Sell price: \(song.sellPrice)"
+        self.labelPriceInfo.text = salsInfo
+    }
+    
 }
