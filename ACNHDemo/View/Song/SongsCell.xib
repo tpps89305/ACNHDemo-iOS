@@ -40,14 +40,21 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-NX-sWI">
+                        <rect key="frame" x="20" y="16" width="128" height="128"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="m6g-GW-Efh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DA7-N0-Dpw"/>
                     <constraint firstItem="m6g-GW-Efh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="LF7-b1-xNS"/>
+                    <constraint firstItem="mgZ-NX-sWI" firstAttribute="leading" secondItem="m6g-GW-Efh" secondAttribute="leading" id="LMC-8y-s66"/>
                     <constraint firstItem="Pvo-V6-aE1" firstAttribute="bottom" secondItem="m6g-GW-Efh" secondAttribute="bottom" id="MnL-LM-7Fz"/>
                     <constraint firstAttribute="bottom" secondItem="m6g-GW-Efh" secondAttribute="bottom" constant="16" id="NVW-8u-RCU"/>
                     <constraint firstAttribute="trailing" secondItem="Pvo-V6-aE1" secondAttribute="trailing" constant="16" id="RLm-tQ-hrB"/>
                     <constraint firstItem="Pvo-V6-aE1" firstAttribute="leading" secondItem="m6g-GW-Efh" secondAttribute="trailing" constant="16" id="RSW-U0-7rl"/>
+                    <constraint firstItem="mgZ-NX-sWI" firstAttribute="trailing" secondItem="m6g-GW-Efh" secondAttribute="trailing" id="aJV-af-fLU"/>
+                    <constraint firstItem="mgZ-NX-sWI" firstAttribute="bottom" secondItem="m6g-GW-Efh" secondAttribute="bottom" id="duP-9g-FFM"/>
+                    <constraint firstItem="mgZ-NX-sWI" firstAttribute="top" secondItem="m6g-GW-Efh" secondAttribute="top" id="ngf-59-CFz"/>
                     <constraint firstItem="Pvo-V6-aE1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ngp-lq-SPM"/>
                     <constraint firstItem="Pvo-V6-aE1" firstAttribute="top" secondItem="m6g-GW-Efh" secondAttribute="top" id="oiy-eR-xvI"/>
                     <constraint firstAttribute="bottom" secondItem="Pvo-V6-aE1" secondAttribute="bottom" constant="16" id="rN3-hC-6wU"/>
@@ -58,6 +65,7 @@
                 <outlet property="imageAvatar" destination="m6g-GW-Efh" id="58W-nx-xCQ"/>
                 <outlet property="labelName" destination="P9C-VH-eUZ" id="IM5-D0-4DJ"/>
                 <outlet property="labelPriceInfo" destination="gW1-kD-9Lw" id="YZT-On-6Ty"/>
+                <outlet property="viewLoading" destination="mgZ-NX-sWI" id="8H0-Hi-4kM"/>
             </connections>
             <point key="canvasLocation" x="155.07246376811597" y="94.419642857142847"/>
         </tableViewCell>

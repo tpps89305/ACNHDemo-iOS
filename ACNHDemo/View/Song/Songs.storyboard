@@ -79,6 +79,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zvc-m9-sb7">
+                                <rect key="frame" x="127" y="32" width="160" height="160"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="83X-lV-hFE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,6 +91,10 @@
                             <constraint firstItem="83X-lV-hFE" firstAttribute="trailing" secondItem="EZR-Zj-qiG" secondAttribute="trailing" constant="32" id="Fks-cu-fha"/>
                             <constraint firstItem="ns7-5y-h5r" firstAttribute="top" secondItem="Mqh-30-OBg" secondAttribute="bottom" constant="16" id="GUZ-4H-Oao"/>
                             <constraint firstItem="ns7-5y-h5r" firstAttribute="centerX" secondItem="avJ-nZ-ivM" secondAttribute="centerX" id="d2b-ag-s5X"/>
+                            <constraint firstItem="Zvc-m9-sb7" firstAttribute="top" secondItem="Mqh-30-OBg" secondAttribute="top" id="iwL-mj-zI7"/>
+                            <constraint firstItem="Zvc-m9-sb7" firstAttribute="bottom" secondItem="Mqh-30-OBg" secondAttribute="bottom" id="lFf-BG-UKI"/>
+                            <constraint firstItem="Zvc-m9-sb7" firstAttribute="trailing" secondItem="Mqh-30-OBg" secondAttribute="trailing" id="mcE-VS-uMK"/>
+                            <constraint firstItem="Zvc-m9-sb7" firstAttribute="leading" secondItem="Mqh-30-OBg" secondAttribute="leading" id="q6f-UW-6Lb"/>
                             <constraint firstItem="EZR-Zj-qiG" firstAttribute="leading" secondItem="83X-lV-hFE" secondAttribute="leading" constant="32" id="tx5-9E-nx9"/>
                             <constraint firstItem="EZR-Zj-qiG" firstAttribute="top" secondItem="ns7-5y-h5r" secondAttribute="bottom" constant="32" id="vDV-Ee-tfC"/>
                         </constraints>
@@ -97,6 +104,7 @@
                         <outlet property="btnPlay" destination="ns7-5y-h5r" id="eJU-19-Hpu"/>
                         <outlet property="imageAvatar" destination="Mqh-30-OBg" id="WF3-Qb-yT6"/>
                         <outlet property="labelSource" destination="EZR-Zj-qiG" id="U0G-4x-uz6"/>
+                        <outlet property="viewLoading" destination="Zvc-m9-sb7" id="ZtT-9a-aeh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txt-8g-TdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

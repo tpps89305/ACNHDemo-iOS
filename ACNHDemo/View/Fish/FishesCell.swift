@@ -12,6 +12,7 @@ class FishesCell: UITableViewCell {
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPriceInfo: UILabel!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,11 +28,15 @@ class FishesCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageAvatar.image = nil
+        viewLoading.startAnimating()
     }
     
     func setup(viewModel: FishCellViewModel) {
         let fish = viewModel.fish
-        self.imageAvatar.loadUrl(url: fish.iconURI, cell: self)
+        self.imageAvatar.loadUrl(url: fish.iconURI, onLoadingCompleted: {() in
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        } )
         self.labelName.text = fish.name.nameTWzh
         let salsInfo = "Sell price: \(fish.price), Sell price CJ: \(fish.priceCj)"
         self.labelPriceInfo.text = salsInfo

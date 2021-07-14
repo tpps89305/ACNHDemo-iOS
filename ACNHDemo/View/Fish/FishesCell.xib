@@ -40,15 +40,22 @@
                             <constraint firstAttribute="width" constant="64" id="g1K-0V-CoS"/>
                         </constraints>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="48i-SA-tsw">
+                        <rect key="frame" x="20" y="16" width="64" height="64"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="QvA-Sb-9g0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="0Gu-yf-ybq"/>
                     <constraint firstItem="QvA-Sb-9g0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="2Zm-Fk-SCh"/>
                     <constraint firstAttribute="bottom" secondItem="rjx-wM-az6" secondAttribute="bottom" constant="16" id="SeC-Jr-hHC"/>
+                    <constraint firstItem="48i-SA-tsw" firstAttribute="leading" secondItem="QvA-Sb-9g0" secondAttribute="leading" id="e9i-24-3i7"/>
                     <constraint firstItem="rjx-wM-az6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="hUh-4F-usg"/>
+                    <constraint firstItem="48i-SA-tsw" firstAttribute="trailing" secondItem="QvA-Sb-9g0" secondAttribute="trailing" id="lOU-2a-WJP"/>
+                    <constraint firstItem="48i-SA-tsw" firstAttribute="top" secondItem="QvA-Sb-9g0" secondAttribute="top" id="n8T-Tq-iOk"/>
                     <constraint firstItem="rjx-wM-az6" firstAttribute="leading" secondItem="QvA-Sb-9g0" secondAttribute="trailing" constant="16" id="tJl-4k-w2V"/>
                     <constraint firstAttribute="bottom" secondItem="QvA-Sb-9g0" secondAttribute="bottom" constant="16" id="uMv-5R-1s3"/>
                     <constraint firstAttribute="trailing" secondItem="rjx-wM-az6" secondAttribute="trailing" constant="16" id="vnF-Ka-ds8"/>
+                    <constraint firstItem="48i-SA-tsw" firstAttribute="bottom" secondItem="QvA-Sb-9g0" secondAttribute="bottom" id="wVg-s0-bPe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -56,6 +63,7 @@
                 <outlet property="imageAvatar" destination="QvA-Sb-9g0" id="1Kk-EJ-ewA"/>
                 <outlet property="labelName" destination="wu9-zX-ZbX" id="OwM-hI-b81"/>
                 <outlet property="labelPriceInfo" destination="UKB-Uc-0YL" id="iP8-dY-CUx"/>
+                <outlet property="viewLoading" destination="48i-SA-tsw" id="Yw6-AD-X5c"/>
             </connections>
             <point key="canvasLocation" x="284.78260869565219" y="171.42857142857142"/>
         </tableViewCell>

@@ -12,10 +12,12 @@ class VillagersCell: UITableViewCell {
     
     @IBOutlet weak var imageVillager: UIImageView!
     @IBOutlet weak var labelVillager: UILabel!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
         imageVillager.image = nil
+        viewLoading.startAnimating()
     }
     
     func setup(viewModel: VillagerCellViewModel) {
@@ -23,7 +25,10 @@ class VillagersCell: UITableViewCell {
         let nameTW = villager.name.nameTWzh
         let iconUri = villager.iconURI
         self.labelVillager.text = nameTW
-        self.imageVillager.loadUrl(url: iconUri, cell: self)
+        self.imageVillager.loadUrl(url: iconUri, onLoadingCompleted: {() in
+            self.viewLoading.stopAnimating()
+            self.setNeedsLayout()
+        })
     }
     
 }

@@ -28,11 +28,18 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PZi-mD-jLo">
+                        <rect key="frame" x="81" y="17" width="160" height="160"/>
+                    </activityIndicatorView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="vGi-TN-gjh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="30p-jo-err"/>
+                    <constraint firstItem="PZi-mD-jLo" firstAttribute="bottom" secondItem="vGi-TN-gjh" secondAttribute="bottom" id="IDl-6E-VFF"/>
+                    <constraint firstItem="PZi-mD-jLo" firstAttribute="trailing" secondItem="vGi-TN-gjh" secondAttribute="trailing" id="dly-a6-fWA"/>
+                    <constraint firstItem="PZi-mD-jLo" firstAttribute="leading" secondItem="vGi-TN-gjh" secondAttribute="leading" id="gjb-k7-4OK"/>
                     <constraint firstItem="vGi-TN-gjh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lBY-wj-KXn"/>
+                    <constraint firstItem="PZi-mD-jLo" firstAttribute="top" secondItem="vGi-TN-gjh" secondAttribute="top" id="o1D-Sk-SlD"/>
                     <constraint firstAttribute="bottom" secondItem="vGi-TN-gjh" secondAttribute="bottom" constant="17" id="p7q-JX-eHd"/>
                     <constraint firstItem="vGi-TN-gjh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="wqc-cZ-cbh"/>
                 </constraints>
@@ -41,6 +48,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageAvatar" destination="vGi-TN-gjh" id="dth-q8-IJL"/>
+                <outlet property="viewLoading" destination="PZi-mD-jLo" id="FUP-Ku-yse"/>
             </connections>
             <point key="canvasLocation" x="71.014492753623188" y="186.16071428571428"/>
         </tableViewCell>

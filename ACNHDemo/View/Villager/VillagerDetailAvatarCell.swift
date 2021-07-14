@@ -10,6 +10,7 @@ import UIKit
 class VillagerDetailAvatarCell: UITableViewCell {
 
     @IBOutlet weak var imageAvatar: UIImageView!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

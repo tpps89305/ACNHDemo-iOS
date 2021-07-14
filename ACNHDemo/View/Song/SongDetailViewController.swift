@@ -15,13 +15,17 @@ class SongDetailViewController: UIViewController {
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var labelSource: UILabel!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.viewLoading.startAnimating()
         title = song!.name.nameTWzh
-        imageAvatar.loadUrl(url: song!.imageURI)
+        imageAvatar.loadUrl(url: song!.imageURI, onLoadingCompleted: {() in
+            self.viewLoading.stopAnimating()
+        })
         player = AVPlayer.init(url: URL(string: song!.musicURI)!)
         
         var source = "Source: K.K. concert"

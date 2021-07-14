@@ -13,6 +13,7 @@ class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelPriceInfo: UILabel!
     @IBOutlet weak var collectionMonth: UICollectionView!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var arrayMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
     
@@ -20,10 +21,13 @@ class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewLoading.startAnimating()
 
         // Do any additional setup after loading the view.
         title = fish!.name.nameTWzh
-        imageFish.loadUrl(url: fish!.imageURI)
+        imageFish.loadUrl(url: fish!.imageURI, onLoadingCompleted: {() in
+            self.viewLoading.stopAnimating()
+        })
         labelLocation.text = fish!.availability.location.rawValue
         let priceInfo = "Sell price: \(fish!.price), Sell to CJ price: \(fish!.priceCj)"
         labelPriceInfo.text = priceInfo

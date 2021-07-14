@@ -64,7 +64,9 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         switch indexPath.section {
         case VillagerDetailCellType.Avatar.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell", for: indexPath) as! VillagerDetailAvatarCell
-            cell.imageAvatar.loadUrl(url: villager?.imageURI ?? "")
+            cell.imageAvatar.loadUrl(url: villager?.imageURI ?? "", onLoadingCompleted: {() in
+                cell.viewLoading.stopAnimating()
+            })
             return cell
             
         case VillagerDetailCellType.Content.rawValue:
