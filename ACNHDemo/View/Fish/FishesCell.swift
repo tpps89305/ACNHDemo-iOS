@@ -53,4 +53,15 @@ class FishesCell: UITableViewCell {
         self.labelPriceInfo.text = salsInfo
     }
     
+    func setup(viewModel: BugCellViewModel) {
+        let bug = viewModel.bug
+        self.imageAvatar.loadUrl(url: bug.iconURI, onLoadingCompleted: {() in
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        } )
+        self.labelName.text = bug.name.nameTWzh
+        let salsInfo = "Sell price: \(bug.price), sell Flick price: \(bug.priceFlick)"
+        self.labelPriceInfo.text = salsInfo
+    }
+    
 }

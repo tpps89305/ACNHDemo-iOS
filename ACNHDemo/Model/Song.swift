@@ -1,12 +1,3 @@
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseSongsValue { response in
-//     if let songsValue = response.result.value {
-//       ...
-//     }
-//   }
-
 import Foundation
 import Alamofire
 
@@ -31,14 +22,5 @@ struct Song: Codable {
         case imageURI = "image_uri"
     }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseName { response in
-//     if let name = response.result.value {
-//       ...
-//     }
-//   }
 
 typealias Songs = [String: Song]

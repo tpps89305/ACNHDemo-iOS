@@ -1,21 +1,20 @@
 //
-//  Fish.swift
+//  File.swift
 //  ACNHDemo
 //
-//  Created by 楊朝富 on 2021/7/13.
+//  Created by 楊朝富 on 2021/7/15.
 //
 
 import Foundation
 import Alamofire
 
-// MARK: - FishesValue
-struct Fish: Codable {
+// MARK: - Bug
+struct Bug: Codable {
     let id: Int
     let fileName: String
     let name: Name
-    let availability: FishAvailability
-    let shadow: String
-    let price, priceCj: Int
+    let availability: BugAvailability
+    let price, priceFlick: Int
     let catchPhrase, museumPhrase: String
     let imageURI, iconURI: String
     let altCatchPhrase: [String]?
@@ -23,8 +22,8 @@ struct Fish: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case fileName = "file-name"
-        case name, availability, shadow, price
-        case priceCj = "price-cj"
+        case name, availability, price
+        case priceFlick = "price-flick"
         case catchPhrase = "catch-phrase"
         case museumPhrase = "museum-phrase"
         case imageURI = "image_uri"
@@ -34,11 +33,10 @@ struct Fish: Codable {
 }
 
 // MARK: - Availability
-struct FishAvailability: Codable {
-    let monthNorthern, monthSouthern: String
-    let time: Time
+struct BugAvailability: Codable {
+    let monthNorthern, monthSouthern, time: String
     let isAllDay, isAllYear: Bool
-    let location: Location
+    let location: String
     let rarity: Rarity
     let monthArrayNorthern, monthArraySouthern, timeArray: [Int]
 
@@ -52,15 +50,4 @@ struct FishAvailability: Codable {
     }
 }
 
-enum Location: String, Codable {
-    case pier = "Pier"
-    case pond = "Pond"
-    case river = "River"
-    case riverClifftop = "River (Clifftop)"
-    case riverClifftopPond = "River (Clifftop) & Pond"
-    case riverMouth = "River (Mouth)"
-    case sea = "Sea"
-    case seaWhenRainingOrSnowing = "Sea (when raining or snowing)"
-}
-
-typealias Fishes = [String: Fish]
+typealias Bugs = [String: Bug]
