@@ -15,6 +15,7 @@ public enum ACNH {
     case villagers(villagerId: Int)
     case songs(songId: Int)
     case fishes(fishId: Int)
+    case seaCreatures(seaCreatureId: Int)
 }
 
 extension ACNH : TargetType {
@@ -35,11 +36,16 @@ extension ACNH : TargetType {
                 return "songs/"
             }
             return "songs/\(songId)"
-        case.fishes(let fishId):
+        case .fishes(let fishId):
             if fishId == 0 {
                 return "fish/"
             }
             return "fish/\(fishId)"
+        case .seaCreatures(let seaCreatureId):
+            if seaCreatureId == 0 {
+                return "sea/"
+            }
+            return "sea/\(seaCreatureId)"
         }
     }
     
@@ -54,6 +60,8 @@ extension ACNH : TargetType {
         case .songs( _):
             return "WTF".data(using: String.Encoding.utf8)!
         case .fishes(_):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .seaCreatures( _):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }

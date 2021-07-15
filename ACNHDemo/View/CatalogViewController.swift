@@ -9,7 +9,7 @@ import UIKit
 
 class CatalogViewController: UITableViewController {
     
-    let arrayCatalog = ["Songs", "Fishes"]
+    let arrayCatalog = ["Songs", "Fishes", "Sea Creatures"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,20 +41,12 @@ class CatalogViewController: UITableViewController {
         case 1:
             performSegue(withIdentifier: "gotoFishes", sender: self)
             break
+        case 2:
+            performSegue(withIdentifier: "gotoSeaCreature", sender: self)
         default:
             break
         }
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.

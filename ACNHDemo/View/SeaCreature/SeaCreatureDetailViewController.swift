@@ -1,36 +1,33 @@
 //
-//  FishDetailViewController.swift
+//  SeaCreatureDetailViewController.swift
 //  ACNHDemo
 //
-//  Created by 楊朝富 on 2021/7/14.
+//  Created by 楊朝富 on 2021/7/15.
 //
 
 import UIKit
 
-class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SeaCreatureDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var imageFish: UIImageView!
-    @IBOutlet weak var labelLocation: UILabel!
-    @IBOutlet weak var labelPriceInfo: UILabel!
+    @IBOutlet weak var imageSeaCreature: UIImageView!
+    @IBOutlet weak var labelSpeed: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var collectionMonth: UICollectionView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var arrayMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    
-    var fish: Fish?
+    var seaCreature: SeaCreature?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewLoading.startAnimating()
 
-        // Do any additional setup after loading the view.
-        title = fish!.name.nameTWzh
-        imageFish.loadUrl(url: fish!.imageURI, onLoadingCompleted: {() in
+        self.viewLoading.startAnimating()
+        title = seaCreature!.name.nameTWzh
+        imageSeaCreature.loadUrl(url: seaCreature!.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
         })
-        labelLocation.text = fish!.availability.location.rawValue
-        let priceInfo = "Sell price: \(fish!.price), Sell to CJ price: \(fish!.priceCj)"
-        labelPriceInfo.text = priceInfo
+        labelSpeed.text = seaCreature?.speed.rawValue
+        labelPrice.text = String(seaCreature!.price)
         
         self.collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
     }
@@ -43,7 +40,7 @@ class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         //255 243 173
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthCell", for: indexPath) as! AvailableMonthCell
         cell.labelMonth.text = arrayMonth[indexPath.row]
-        if (fish?.availability.monthArrayNorthern.contains(indexPath.row + 1))! {
+        if (seaCreature?.availability.monthArrayNorthern.contains(indexPath.row + 1))! {
             cell.viewMonth.backgroundColor = UIColor.init(red: 0.941, green: 0.839, blue: 0.258, alpha: 1) // 240 214 66
         }
         return cell

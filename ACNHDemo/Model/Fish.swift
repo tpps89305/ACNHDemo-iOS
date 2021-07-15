@@ -13,7 +13,7 @@ struct Fish: Codable {
     let id: Int
     let fileName: String
     let name: Name
-    let availability: Availability
+    let availability: FishAvailability
     let shadow: String
     let price, priceCj: Int
     let catchPhrase, museumPhrase: String
@@ -43,7 +43,7 @@ struct Fish: Codable {
 //   }
 
 // MARK: - Availability
-struct Availability: Codable {
+struct FishAvailability: Codable {
     let monthNorthern, monthSouthern: String
     let time: Time
     let isAllDay, isAllYear: Bool
@@ -77,15 +77,6 @@ enum Rarity: String, Codable {
     case rare = "Rare"
     case ultraRare = "Ultra-rare"
     case uncommon = "Uncommon"
-}
-
-enum Time: String, Codable {
-    case empty = ""
-    case the4Am9Pm = "4am - 9pm"
-    case the4Pm9Am = "4pm - 9am"
-    case the9Am4Pm = "9am - 4pm"
-    case the9Am4Pm9Pm4Am = "9am - 4pm & 9pm - 4am"
-    case the9Pm4Am = "9pm - 4am"
 }
 
 //

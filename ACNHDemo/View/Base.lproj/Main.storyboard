@@ -146,6 +146,7 @@
                     <connections>
                         <segue destination="9Pp-eO-2Jh" kind="show" identifier="gotoFishes" id="jPI-5Y-6UM"/>
                         <segue destination="Tlo-33-YVg" kind="show" identifier="gotoSongs" id="XnL-fh-e0U"/>
+                        <segue destination="wR6-cW-Gxo" kind="show" identifier="gotoSeaCreature" id="yjI-0B-nVd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBN-SF-buz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,7 +161,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdB-6n-W5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="1359"/>
+            <point key="canvasLocation" x="758" y="1344"/>
         </scene>
         <!--Fishes-->
         <scene sceneID="91I-YP-P7c">
@@ -170,7 +171,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVd-vh-E9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="1682"/>
+            <point key="canvasLocation" x="759" y="1535"/>
+        </scene>
+        <!--SeaCreatures-->
+        <scene sceneID="wvc-OC-bY4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SeaCreatures" id="wR6-cW-Gxo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="75y-SF-UuG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCv-gc-CXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="1721"/>
         </scene>
         <!--Catalog-->
         <scene sceneID="SPn-ow-KY0">
