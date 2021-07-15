@@ -62,6 +62,10 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
         viewModel.searchText = searchText
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = ""
+    }
+    
     // MARK: Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

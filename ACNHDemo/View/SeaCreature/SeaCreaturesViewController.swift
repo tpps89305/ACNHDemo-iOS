@@ -62,6 +62,10 @@ class SeaCreaturesViewController: UITableViewController, UISearchBarDelegate {
         viewModel.searchText = searchText
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = ""
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
