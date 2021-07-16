@@ -19,6 +19,7 @@ public enum ACNH {
     case bugs(bugId: Int)
     case fossils(fossilId: Int)
     case art(ardId: Int)
+    case backgroundmusic(bgmId: Int)
 }
 
 extension ACNH : TargetType {
@@ -64,6 +65,11 @@ extension ACNH : TargetType {
                 return "art/"
             }
             return "art/\(artId)"
+        case .backgroundmusic(let bgmId):
+            if bgmId == 0 {
+                return "backgroundmusic/"
+            }
+            return "backgroundmusic/\(bgmId)"
         }
     }
     
@@ -86,6 +92,8 @@ extension ACNH : TargetType {
         case .fossils( _):
             return "WTF".data(using: String.Encoding.utf8)!
         case .art( _):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .backgroundmusic( _):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }
