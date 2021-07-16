@@ -149,6 +149,7 @@
                         <segue destination="wR6-cW-Gxo" kind="show" identifier="gotoSeaCreature" id="yjI-0B-nVd"/>
                         <segue destination="d6a-C8-gh0" kind="show" identifier="gotoBugs" id="dlf-zW-DP8"/>
                         <segue destination="RWT-7t-BJd" kind="show" identifier="gotoFossils" id="AKL-EO-fDp"/>
+                        <segue destination="OC0-AD-MhA" kind="show" identifier="gotoArt" id="9Ie-G4-vhG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBN-SF-buz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,6 +214,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQq-PQ-Lwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="751" y="1764"/>
+        </scene>
+        <!--Art-->
+        <scene sceneID="9kN-ee-sKJ">
+            <objects>
+                <tableViewController id="OC0-AD-MhA" customClass="ArtViewController" customModule="ACNHDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FIh-4X-lkb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mtS-JX-d9O">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mtS-JX-d9O" id="YdT-R3-xCR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OC0-AD-MhA" id="2VG-UA-EPi"/>
+                            <outlet property="delegate" destination="OC0-AD-MhA" id="7Bd-UZ-vhI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Art" id="gsE-uI-afX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NjH-3l-Bha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="2265"/>
         </scene>
         <!--SeaCreatures-->
         <scene sceneID="wvc-OC-bY4">

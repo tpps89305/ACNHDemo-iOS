@@ -18,6 +18,7 @@ public enum ACNH {
     case seaCreatures(seaCreatureId: Int)
     case bugs(bugId: Int)
     case fossils(fossilId: Int)
+    case art(ardId: Int)
 }
 
 extension ACNH : TargetType {
@@ -58,6 +59,11 @@ extension ACNH : TargetType {
                 return "fossils/"
             }
             return "fossils/\(fossilId)"
+        case .art(let artId):
+            if artId == 0 {
+                return "art/"
+            }
+            return "art/\(artId)"
         }
     }
     
@@ -78,6 +84,8 @@ extension ACNH : TargetType {
         case .bugs( _):
             return "WTF".data(using: String.Encoding.utf8)!
         case .fossils( _):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .art( _):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }
