@@ -95,6 +95,18 @@
 		F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF0F265A603F00BF5202 /* ACNHDemoTests.swift */; };
 		F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */; };
 		F650FF37265A9B5B00BF5202 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
+		F654F81626A11D2A00188318 /* Fossil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81526A11D2A00188318 /* Fossil.swift */; };
+		F654F81726A11D2A00188318 /* Fossil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81526A11D2A00188318 /* Fossil.swift */; };
+		F654F81826A11D2A00188318 /* Fossil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81526A11D2A00188318 /* Fossil.swift */; };
+		F654F81E26A11E9700188318 /* FossilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81D26A11E9700188318 /* FossilsViewController.swift */; };
+		F654F81F26A11E9700188318 /* FossilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81D26A11E9700188318 /* FossilsViewController.swift */; };
+		F654F82026A11E9700188318 /* FossilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F81D26A11E9700188318 /* FossilsViewController.swift */; };
+		F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82726A11F3800188318 /* FossilsVCViewModel.swift */; };
+		F654F82926A11F3800188318 /* FossilsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82726A11F3800188318 /* FossilsVCViewModel.swift */; };
+		F654F82A26A11F3800188318 /* FossilsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82726A11F3800188318 /* FossilsVCViewModel.swift */; };
+		F654F82F26A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
+		F654F83026A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
+		F654F83126A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
 		F67687B92697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
 		F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
 		F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
@@ -228,6 +240,10 @@
 		F650FF1A265A603F00BF5202 /* ACNHDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHDemoUITests.swift; sourceTree = "<group>"; };
 		F650FF1C265A603F00BF5202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHAPI.swift; sourceTree = "<group>"; };
+		F654F81526A11D2A00188318 /* Fossil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fossil.swift; sourceTree = "<group>"; };
+		F654F81D26A11E9700188318 /* FossilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilsViewController.swift; sourceTree = "<group>"; };
+		F654F82726A11F3800188318 /* FossilsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilsVCViewModel.swift; sourceTree = "<group>"; };
+		F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilCellViewModel.swift; sourceTree = "<group>"; };
 		F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
 		F67A7874269C3EDB00112F45 /* VillagerVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerVCViewModel.swift; sourceTree = "<group>"; };
 		F67A787E269C3F6C00112F45 /* VillagerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerCellViewModel.swift; sourceTree = "<group>"; };
@@ -325,6 +341,7 @@
 		F631DEBC269D2B9C00E2CDC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F654F81C26A11D7400188318 /* Fossil */,
 				F6116D8026A02CCF007BFEDE /* Bug */,
 				F6116D2D269FDE08007BFEDE /* SeaCreature */,
 				F6EFA3DB269E8905000A4F42 /* Dashboard */,
@@ -393,6 +410,14 @@
 			path = ACNHDemoUITests;
 			sourceTree = "<group>";
 		};
+		F654F81C26A11D7400188318 /* Fossil */ = {
+			isa = PBXGroup;
+			children = (
+				F654F81D26A11E9700188318 /* FossilsViewController.swift */,
+			);
+			path = Fossil;
+			sourceTree = "<group>";
+		};
 		F67A7873269C3EAD00112F45 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +431,8 @@
 				F6116D5B269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift */,
 				F6116D9226A02E90007BFEDE /* BugsVCViewModel.swift */,
 				F6116D9926A02EA7007BFEDE /* BugCellViewModel.swift */,
+				F654F82726A11F3800188318 /* FossilsVCViewModel.swift */,
+				F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -423,6 +450,7 @@
 				F6116D26269FDCCF007BFEDE /* Time.swift */,
 				F6116D6F26A02B09007BFEDE /* Bug.swift */,
 				F6116D7926A02C35007BFEDE /* Rarity.swift */,
+				F654F81526A11D2A00188318 /* Fossil.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6116D27269FDCCF007BFEDE /* Time.swift in Sources */,
+				F654F81626A11D2A00188318 /* Fossil.swift in Sources */,
 				F6EC23002696EB3700C931EC /* Song.swift in Sources */,
 				F6EFA3DD269E892B000A4F42 /* DashboardViewController.swift in Sources */,
 				F6116D9A26A02EA7007BFEDE /* BugCellViewModel.swift in Sources */,
@@ -758,6 +787,7 @@
 				F6116D6626A00E36007BFEDE /* SeaCreatureDetailViewController.swift in Sources */,
 				F631DEE1269D717500E2CDC4 /* FishesViewController.swift in Sources */,
 				F650FEFA265A603700BF5202 /* VillagersViewController.swift in Sources */,
+				F654F81E26A11E9700188318 /* FossilsViewController.swift in Sources */,
 				F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F631DED3269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F6EFA413269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
@@ -780,11 +810,13 @@
 				F6EFA3E7269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
 				F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */,
 				F631DEF7269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
+				F654F82F26A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F67A7875269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F631DEDA269D6E0A00E2CDC4 /* Name.swift in Sources */,
 				F6EC22F92696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6116D8C26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
+				F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F654F81F26A11E9700188318 /* FossilsViewController.swift in Sources */,
 				F6EC22F32696DB3100C931EC /* CatalogViewController.swift in Sources */,
 				F6116D30269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
 				F6116D56269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
@@ -808,6 +841,7 @@
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F631DECC269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDB269D6E0A00E2CDC4 /* Name.swift in Sources */,
+				F654F83026A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F6EC23092696F00A00C931EC /* SongsCell.swift in Sources */,
 				F631DEE2269D717500E2CDC4 /* FishesViewController.swift in Sources */,
 				F6EC23012696EB3700C931EC /* Song.swift in Sources */,
@@ -817,6 +851,7 @@
 				F6116D28269FDCCF007BFEDE /* Time.swift in Sources */,
 				F631DEF8269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
 				F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
+				F654F81726A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8D26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F67A7876269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED4269D6DA200E2CDC4 /* Fish.swift in Sources */,
@@ -825,6 +860,7 @@
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6EFA3E8269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
+				F654F82926A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				F6C9C9D5268DA25E001A1D9A /* Villager.swift in Sources */,
 				F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F6116D5D269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift in Sources */,
@@ -836,6 +872,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F654F82026A11E9700188318 /* FossilsViewController.swift in Sources */,
 				F6EC22F42696DB3100C931EC /* CatalogViewController.swift in Sources */,
 				F6116D31269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
 				F6116D57269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
@@ -852,6 +889,7 @@
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F631DECD269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDC269D6E0A00E2CDC4 /* Name.swift in Sources */,
+				F654F83126A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F6EC230A2696F00A00C931EC /* SongsCell.swift in Sources */,
 				F631DEE3269D717500E2CDC4 /* FishesViewController.swift in Sources */,
 				F6EC23022696EB3700C931EC /* Song.swift in Sources */,
@@ -861,6 +899,7 @@
 				F6116D29269FDCCF007BFEDE /* Time.swift in Sources */,
 				F631DEF9269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
 				F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
+				F654F81826A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8E26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F67A7877269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED5269D6DA200E2CDC4 /* Fish.swift in Sources */,
@@ -869,6 +908,7 @@
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6EFA3E9269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
+				F654F82A26A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				F6C9C9D6268DA25E001A1D9A /* Villager.swift in Sources */,
 				F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F6116D5E269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift in Sources */,

@@ -148,6 +148,7 @@
                         <segue destination="Tlo-33-YVg" kind="show" identifier="gotoSongs" id="XnL-fh-e0U"/>
                         <segue destination="wR6-cW-Gxo" kind="show" identifier="gotoSeaCreature" id="yjI-0B-nVd"/>
                         <segue destination="d6a-C8-gh0" kind="show" identifier="gotoBugs" id="dlf-zW-DP8"/>
+                        <segue destination="RWT-7t-BJd" kind="show" identifier="gotoFossils" id="AKL-EO-fDp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBN-SF-buz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -173,6 +174,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVd-vh-E9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="745" y="1495"/>
+        </scene>
+        <!--Fossils-->
+        <scene sceneID="s1d-Yu-Qnk">
+            <objects>
+                <tableViewController id="RWT-7t-BJd" customClass="FossilsViewController" customModule="ACNHDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Exh-og-kQz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TbB-d2-gmz">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TbB-d2-gmz" id="ALL-au-d3G">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RWT-7t-BJd" id="nah-93-vhX"/>
+                            <outlet property="delegate" destination="RWT-7t-BJd" id="fLh-vO-dnS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fossils" id="XQJ-j6-ajV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="beX-p1-5ka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="1535"/>
         </scene>
         <!--Bugs-->
         <scene sceneID="O3b-s1-VFY">

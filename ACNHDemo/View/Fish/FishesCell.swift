@@ -64,4 +64,15 @@ class FishesCell: UITableViewCell {
         self.labelPriceInfo.text = salsInfo
     }
     
+    func setup(viewModel: FossilCellViewModel) {
+        let fossil = viewModel.fossil
+        self.imageAvatar.loadUrl(url: fossil.imageURI, onLoadingCompleted: {() in
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        } )
+        self.labelName.text = fossil.name.nameTWzh
+        let salsInfo = "Sell price: \(fossil.price)"
+        self.labelPriceInfo.text = salsInfo
+    }
+    
 }

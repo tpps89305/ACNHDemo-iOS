@@ -9,7 +9,7 @@ import UIKit
 
 class CatalogViewController: UITableViewController {
     
-    let arrayCatalog = ["Songs", "Fishes", "Sea Creatures", "Bugs"]
+    let arrayCatalog = ["Songs", "Fishes", "Sea Creatures", "Bugs", "Fossils"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,9 @@ class CatalogViewController: UITableViewController {
             break
         case 3:
             performSegue(withIdentifier: "gotoBugs", sender: self)
+            break
+        case 4:
+            performSegue(withIdentifier: "gotoFossils", sender: self)
             break
         default:
             break
