@@ -51,6 +51,10 @@ class HousewaresViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "gotoHousewareDetail", sender: self)
+    }
+    
     //MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -67,6 +71,11 @@ class HousewaresViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "gotoHousewareDetail", let destinationVC = segue.destination as? HousewareDetailViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                destinationVC.houseware = viewModel.housewareCellViewModels[row].houseware
+            }
+        }
     }
 
 }

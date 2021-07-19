@@ -82,7 +82,11 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         }
         self.labelName.text = houseware.name.nameTWzh
-        let salsInfo = "Bug price: \(houseware.buyPrice ?? 0), sell Price: \(houseware.sellPrice)"
+        var salsInfo = ""
+        if houseware.buyPrice != nil {
+            salsInfo += "Bug price: \(houseware.buyPrice ?? 0), "
+        }
+        salsInfo += "Sell Price: \(houseware.sellPrice)"
         self.labelPriceInfo.text = salsInfo
     }
     

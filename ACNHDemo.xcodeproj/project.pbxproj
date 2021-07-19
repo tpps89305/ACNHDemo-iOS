@@ -67,6 +67,9 @@
 		F61A4DC926A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
 		F61A4DCA26A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
 		F61A4DCB26A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
+		F61A4DD726A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
+		F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
+		F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
 		F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
 		F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
 		F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
@@ -260,6 +263,7 @@
 		F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewaresViewController.swift; sourceTree = "<group>"; };
 		F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewaresVCViewModel.swift; sourceTree = "<group>"; };
 		F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewareCellViewModel.swift; sourceTree = "<group>"; };
+		F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewareDetailViewController.swift; sourceTree = "<group>"; };
 		F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsVCViewModel.swift; sourceTree = "<group>"; };
 		F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellViewModel.swift; sourceTree = "<group>"; };
 		F631DED2269D6DA200E2CDC4 /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 			children = (
 				F61A4DAC26A556B200C9699C /* Housewares.storyboard */,
 				F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */,
+				F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */,
 			);
 			path = Houseware;
 			sourceTree = "<group>";
@@ -957,6 +962,7 @@
 				F6116D55269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
 				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F654F84C26A1381F00188318 /* Art.swift in Sources */,
+				F61A4DD726A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
 				F6116D7A26A02C35007BFEDE /* Rarity.swift in Sources */,
 				F6116D6626A00E36007BFEDE /* SeaCreatureDetailViewController.swift in Sources */,
@@ -1049,6 +1055,7 @@
 				F61A4DC026A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F6116D9426A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
+				F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
 				F654F87926A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
@@ -1109,6 +1116,7 @@
 				F61A4DC126A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F6116D9526A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
+				F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
 				F654F87A26A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
