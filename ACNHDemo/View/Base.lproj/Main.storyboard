@@ -152,6 +152,7 @@
                         <segue destination="RWT-7t-BJd" kind="show" identifier="gotoFossils" id="AKL-EO-fDp"/>
                         <segue destination="OC0-AD-MhA" kind="show" identifier="gotoArt" id="9Ie-G4-vhG"/>
                         <segue destination="vXg-Kp-fYo" kind="show" identifier="gotoBGM" id="mYp-1U-djl"/>
+                        <segue destination="oNH-Oc-Zc2" kind="show" identifier="gotoHousewares" id="h3Y-Bu-P1A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBN-SF-buz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,6 +217,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQq-PQ-Lwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="751" y="1764"/>
+        </scene>
+        <!--Housewares-->
+        <scene sceneID="DNr-q6-OvU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Housewares" id="oNH-Oc-Zc2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JNy-EO-cp6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rm2-Nl-r5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="1818"/>
         </scene>
         <!--BGM-->
         <scene sceneID="5cr-c5-JVk">

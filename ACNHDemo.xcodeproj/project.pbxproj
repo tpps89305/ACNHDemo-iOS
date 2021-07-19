@@ -52,6 +52,21 @@
 		F6116DA126A0340D007BFEDE /* BugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116DA026A0340D007BFEDE /* BugDetailViewController.swift */; };
 		F6116DA226A0340D007BFEDE /* BugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116DA026A0340D007BFEDE /* BugDetailViewController.swift */; };
 		F6116DA326A0340D007BFEDE /* BugDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116DA026A0340D007BFEDE /* BugDetailViewController.swift */; };
+		F61A4DA526A5546C00C9699C /* Houseware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DA426A5546C00C9699C /* Houseware.swift */; };
+		F61A4DA626A5546C00C9699C /* Houseware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DA426A5546C00C9699C /* Houseware.swift */; };
+		F61A4DA726A5546C00C9699C /* Houseware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DA426A5546C00C9699C /* Houseware.swift */; };
+		F61A4DAD26A556B200C9699C /* Housewares.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61A4DAC26A556B200C9699C /* Housewares.storyboard */; };
+		F61A4DAE26A556B200C9699C /* Housewares.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61A4DAC26A556B200C9699C /* Housewares.storyboard */; };
+		F61A4DAF26A556B200C9699C /* Housewares.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61A4DAC26A556B200C9699C /* Housewares.storyboard */; };
+		F61A4DB726A5583A00C9699C /* HousewaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */; };
+		F61A4DB826A5583A00C9699C /* HousewaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */; };
+		F61A4DB926A5583A00C9699C /* HousewaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */; };
+		F61A4DBF26A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */; };
+		F61A4DC026A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */; };
+		F61A4DC126A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */; };
+		F61A4DC926A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
+		F61A4DCA26A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
+		F61A4DCB26A558C000C9699C /* HousewareCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */; };
 		F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
 		F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
 		F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */; };
@@ -240,6 +255,11 @@
 		F6116D9226A02E90007BFEDE /* BugsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsVCViewModel.swift; sourceTree = "<group>"; };
 		F6116D9926A02EA7007BFEDE /* BugCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugCellViewModel.swift; sourceTree = "<group>"; };
 		F6116DA026A0340D007BFEDE /* BugDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailViewController.swift; sourceTree = "<group>"; };
+		F61A4DA426A5546C00C9699C /* Houseware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Houseware.swift; sourceTree = "<group>"; };
+		F61A4DAC26A556B200C9699C /* Housewares.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Housewares.storyboard; sourceTree = "<group>"; };
+		F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewaresViewController.swift; sourceTree = "<group>"; };
+		F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewaresVCViewModel.swift; sourceTree = "<group>"; };
+		F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewareCellViewModel.swift; sourceTree = "<group>"; };
 		F631DEC3269D389300E2CDC4 /* SongsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsVCViewModel.swift; sourceTree = "<group>"; };
 		F631DECA269D38BA00E2CDC4 /* SongCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellViewModel.swift; sourceTree = "<group>"; };
 		F631DED2269D6DA200E2CDC4 /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
@@ -374,6 +394,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F61A4DAB26A5568D00C9699C /* Houseware */ = {
+			isa = PBXGroup;
+			children = (
+				F61A4DAC26A556B200C9699C /* Housewares.storyboard */,
+				F61A4DB626A5583A00C9699C /* HousewaresViewController.swift */,
+			);
+			path = Houseware;
+			sourceTree = "<group>";
+		};
+		F61A4DBD26A5586F00C9699C /* Houseware */ = {
+			isa = PBXGroup;
+			children = (
+				F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */,
+				F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */,
+			);
+			path = Houseware;
+			sourceTree = "<group>";
+		};
 		F631DEBC269D2B9C00E2CDC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +422,7 @@
 				F6116D8026A02CCF007BFEDE /* Bug */,
 				F654F81C26A11D7400188318 /* Fossil */,
 				F654F83526A12ED200188318 /* Art */,
+				F61A4DAB26A5568D00C9699C /* Houseware */,
 				F6EFA3DB269E8905000A4F42 /* Dashboard */,
 				F6EFA3D5269E857C000A4F42 /* Villager */,
 				F650FEFB265A603700BF5202 /* Main.storyboard */,
@@ -555,6 +594,7 @@
 				F654F87026A1767700188318 /* Bug */,
 				F654F87126A1767F00188318 /* Fossil */,
 				F654F87226A1768E00188318 /* Art */,
+				F61A4DBD26A5586F00C9699C /* Houseware */,
 				F654F86C26A1764500188318 /* Villager */,
 			);
 			path = ViewModel;
@@ -576,6 +616,7 @@
 				F654F81526A11D2A00188318 /* Fossil.swift */,
 				F654F84B26A1381F00188318 /* Art.swift */,
 				F654F88126A1800E00188318 /* BGM.swift */,
+				F61A4DA426A5546C00C9699C /* Houseware.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,6 +786,7 @@
 				F6EFA416269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
 				F6EBFE9C2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F654F83B26A12F0400188318 /* ArtCell.xib in Resources */,
+				F61A4DAD26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F650FF02265A603E00BF5202 /* Assets.xcassets in Resources */,
 				F6116D4E269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
 				F650FEFD265A603700BF5202 /* Main.storyboard in Resources */,
@@ -760,6 +802,7 @@
 			files = (
 				F631DF09269D854C00E2CDC4 /* Songs.storyboard in Resources */,
 				F6116D4F269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
+				F61A4DAE26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F631DF02269D84CB00E2CDC4 /* Fishes.storyboard in Resources */,
 				F654F83C26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8326A02CF1007BFEDE /* Bugs.storyboard in Resources */,
@@ -778,6 +821,7 @@
 			files = (
 				F631DF0A269D854C00E2CDC4 /* Songs.storyboard in Resources */,
 				F6116D50269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
+				F61A4DAF26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F631DF03269D84CB00E2CDC4 /* Fishes.storyboard in Resources */,
 				F654F83D26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8426A02CF1007BFEDE /* Bugs.storyboard in Resources */,
@@ -925,6 +969,8 @@
 				F6EFA413269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
 				F6116DA126A0340D007BFEDE /* BugDetailViewController.swift in Sources */,
 				F6116D2F269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
+				F61A4DB726A5583A00C9699C /* HousewaresViewController.swift in Sources */,
+				F61A4DBF26A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F67A787F269C3F6C00112F45 /* VillagerCellViewModel.swift in Sources */,
 				F650FEF6265A603700BF5202 /* AppDelegate.swift in Sources */,
 				F631DECB269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
@@ -938,6 +984,7 @@
 				F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6116D7026A02B09007BFEDE /* Bug.swift in Sources */,
 				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
+				F61A4DC926A558C000C9699C /* HousewareCellViewModel.swift in Sources */,
 				F654F83826A12F0400188318 /* ArtCell.swift in Sources */,
 				F631DEE8269D71D200E2CDC4 /* FishesVCViewModel.swift in Sources */,
 				F6EC23082696F00A00C931EC /* SongsCell.swift in Sources */,
@@ -949,6 +996,7 @@
 				F654F85C26A1657600188318 /* ArtVCViewModel.swift in Sources */,
 				F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F631DEDA269D6E0A00E2CDC4 /* Name.swift in Sources */,
+				F61A4DA526A5546C00C9699C /* Houseware.swift in Sources */,
 				F6EC22F92696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6116D8C26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F654F88226A1800E00188318 /* BGM.swift in Sources */,
@@ -975,7 +1023,9 @@
 				F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FA2696EA8600C931EC /* SongsViewController.swift in Sources */,
+				F61A4DA626A5546C00C9699C /* Houseware.swift in Sources */,
 				F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
+				F61A4DB826A5583A00C9699C /* HousewaresViewController.swift in Sources */,
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F631DECC269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDB269D6E0A00E2CDC4 /* Name.swift in Sources */,
@@ -996,6 +1046,7 @@
 				F654F83926A12F0400188318 /* ArtCell.swift in Sources */,
 				F67A7876269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED4269D6DA200E2CDC4 /* Fish.swift in Sources */,
+				F61A4DC026A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F6116D9426A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F654F87926A17DDA00188318 /* BGMViewController.swift in Sources */,
@@ -1008,6 +1059,7 @@
 				F654F85D26A1657600188318 /* ArtVCViewModel.swift in Sources */,
 				F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F6116D5D269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift in Sources */,
+				F61A4DCA26A558C000C9699C /* HousewareCellViewModel.swift in Sources */,
 				F6EFA414269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,7 +1083,9 @@
 				F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FB2696EA8600C931EC /* SongsViewController.swift in Sources */,
+				F61A4DA726A5546C00C9699C /* Houseware.swift in Sources */,
 				F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
+				F61A4DB926A5583A00C9699C /* HousewaresViewController.swift in Sources */,
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F631DECD269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDC269D6E0A00E2CDC4 /* Name.swift in Sources */,
@@ -1052,6 +1106,7 @@
 				F654F83A26A12F0400188318 /* ArtCell.swift in Sources */,
 				F67A7877269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED5269D6DA200E2CDC4 /* Fish.swift in Sources */,
+				F61A4DC126A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F6116D9526A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F654F87A26A17DDA00188318 /* BGMViewController.swift in Sources */,
@@ -1064,6 +1119,7 @@
 				F654F85E26A1657600188318 /* ArtVCViewModel.swift in Sources */,
 				F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */,
 				F6116D5E269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift in Sources */,
+				F61A4DCB26A558C000C9699C /* HousewareCellViewModel.swift in Sources */,
 				F6EFA415269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

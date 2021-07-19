@@ -75,4 +75,15 @@ class FishesCell: UITableViewCell {
         self.labelPriceInfo.text = salsInfo
     }
     
+    func setup(viewModel: HousewareCellViewModel) {
+        let houseware = viewModel.houseware
+        self.imageAvatar.loadUrl(url: houseware.imageURI) {
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        }
+        self.labelName.text = houseware.name.nameTWzh
+        let salsInfo = "Bug price: \(houseware.buyPrice ?? 0), sell Price: \(houseware.sellPrice)"
+        self.labelPriceInfo.text = salsInfo
+    }
+    
 }

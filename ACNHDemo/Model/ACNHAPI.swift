@@ -20,6 +20,7 @@ public enum ACNH {
     case fossils(fossilId: Int)
     case art(ardId: Int)
     case backgroundmusic(bgmId: Int)
+    case houseware(housewareId: Int)
 }
 
 extension ACNH : TargetType {
@@ -70,6 +71,11 @@ extension ACNH : TargetType {
                 return "backgroundmusic/"
             }
             return "backgroundmusic/\(bgmId)"
+        case .houseware(let housewareId):
+            if housewareId == 0 {
+                return "houseware/"
+            }
+            return "houseware/\(housewareId)"
         }
     }
     
@@ -94,6 +100,8 @@ extension ACNH : TargetType {
         case .art( _):
             return "WTF".data(using: String.Encoding.utf8)!
         case .backgroundmusic( _):
+            return "WTF".data(using: String.Encoding.utf8)!
+        case .houseware( _):
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }
