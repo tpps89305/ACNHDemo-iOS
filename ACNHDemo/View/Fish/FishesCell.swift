@@ -11,8 +11,8 @@ class FishesCell: UITableViewCell {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelPriceInfo: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
+    @IBOutlet weak var tagsListView: TagsListView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,8 +38,7 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fish.name.nameTWzh
-        let salesInfo = "Sell price: \(fish.price), Sell price CJ: \(fish.priceCj)"
-        labelPriceInfo.text = salesInfo
+        tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
     }
     
     func setup(viewModel: SeaCreatureCellViewModel) {
@@ -49,8 +48,7 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = seaCreature.name.nameTWzh
-        let salesInfo = "Sell price: \(seaCreature.price)"
-        labelPriceInfo.text = salesInfo
+        tagsListView.tags = ["Sell: \(seaCreature.price)", ""]
     }
     
     func setup(viewModel: BugCellViewModel) {
@@ -60,8 +58,7 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = bug.name.nameTWzh
-        let salesInfo = "Sell price: \(bug.price), sell Flick price: \(bug.priceFlick)"
-        labelPriceInfo.text = salesInfo
+        tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
     }
     
     func setup(viewModel: FossilCellViewModel) {
@@ -71,8 +68,7 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fossil.name.nameTWzh
-        let salesInfo = "Sell price: \(fossil.price)"
-        labelPriceInfo.text = salesInfo
+        tagsListView.tags = ["Sell: \(fossil.price)", ""]
     }
     
     func setup(viewModel: HousewareCellViewModel) {
@@ -82,12 +78,15 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         }
         labelName.text = houseware.name.nameTWzh
-        var salesInfo = ""
+        var salesInfo: [String] = []
         if houseware.buyPrice != nil {
-            salesInfo += "Bug price: \(houseware.buyPrice ?? 0), "
+            salesInfo.append("Buy: \(houseware.buyPrice ?? 0)")
         }
-        salesInfo += "Sell Price: \(houseware.sellPrice)"
-        labelPriceInfo.text = salesInfo
+        salesInfo.append("Sell: \(houseware.sellPrice)")
+        if salesInfo.count == 1 {
+            salesInfo.append("")
+        }
+        tagsListView.tags = salesInfo
     }
     
 }
