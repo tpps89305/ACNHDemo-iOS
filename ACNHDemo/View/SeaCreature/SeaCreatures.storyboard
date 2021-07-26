@@ -106,47 +106,36 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="igO-KE-YpX">
                                 <rect key="frame" x="127" y="32" width="160" height="160"/>
                             </activityIndicatorView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-cu-xE2">
-                                <rect key="frame" x="32" y="374.5" width="350" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wE-K2-u4m" customClass="AvailableMonthView" customModule="ACNHDemo" customModuleProvider="target">
+                                <rect key="frame" x="32" y="382.5" width="350" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="lQ8-Oi-yYu"/>
+                                    <constraint firstAttribute="height" constant="150" id="Kj8-5A-xkC"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O9v-Xv-lt0">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BT5-6F-LZs" id="6m6-UY-SVs"/>
-                                    <outlet property="delegate" destination="BT5-6F-LZs" id="K6b-wm-42e"/>
-                                </connections>
-                            </collectionView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2i2-FN-dIo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zg7-cu-xE2" firstAttribute="leading" secondItem="2i2-FN-dIo" secondAttribute="leading" constant="32" id="56I-Hl-dWW"/>
                             <constraint firstItem="igO-KE-YpX" firstAttribute="top" secondItem="2us-R7-TyR" secondAttribute="top" id="BSr-MK-TVf"/>
                             <constraint firstItem="1rt-Wm-vSv" firstAttribute="leading" secondItem="2i2-FN-dIo" secondAttribute="leading" constant="32" id="FaO-8z-gxw"/>
+                            <constraint firstItem="0wE-K2-u4m" firstAttribute="leading" secondItem="2i2-FN-dIo" secondAttribute="leading" constant="32" id="GSt-2R-vKB"/>
                             <constraint firstItem="igO-KE-YpX" firstAttribute="leading" secondItem="2us-R7-TyR" secondAttribute="leading" id="XQo-MM-E7j"/>
                             <constraint firstItem="igO-KE-YpX" firstAttribute="trailing" secondItem="2us-R7-TyR" secondAttribute="trailing" id="YY4-pS-cd8"/>
                             <constraint firstItem="yLh-yg-kSW" firstAttribute="top" secondItem="2us-R7-TyR" secondAttribute="bottom" constant="32" id="YsK-nG-pPM"/>
-                            <constraint firstItem="zg7-cu-xE2" firstAttribute="top" secondItem="1rt-Wm-vSv" secondAttribute="bottom" constant="8" symbolic="YES" id="ZFo-t5-nJP"/>
                             <constraint firstItem="yLh-yg-kSW" firstAttribute="leading" secondItem="2i2-FN-dIo" secondAttribute="leading" constant="32" id="Za0-cA-CRC"/>
                             <constraint firstItem="1rt-Wm-vSv" firstAttribute="top" secondItem="yLh-yg-kSW" secondAttribute="bottom" constant="16" id="aW0-aC-OC8"/>
-                            <constraint firstItem="2i2-FN-dIo" firstAttribute="trailing" secondItem="zg7-cu-xE2" secondAttribute="trailing" constant="32" id="bQd-NB-3Kb"/>
                             <constraint firstItem="igO-KE-YpX" firstAttribute="bottom" secondItem="2us-R7-TyR" secondAttribute="bottom" id="ckN-pI-VJM"/>
                             <constraint firstItem="2us-R7-TyR" firstAttribute="top" secondItem="2i2-FN-dIo" secondAttribute="top" constant="32" id="djt-ib-Psq"/>
                             <constraint firstItem="2i2-FN-dIo" firstAttribute="trailing" secondItem="yLh-yg-kSW" secondAttribute="trailing" constant="32" id="iOp-X0-iff"/>
+                            <constraint firstItem="0wE-K2-u4m" firstAttribute="top" secondItem="1rt-Wm-vSv" secondAttribute="bottom" constant="16" id="rh5-0d-CxU"/>
                             <constraint firstItem="2us-R7-TyR" firstAttribute="centerX" secondItem="rwo-L1-s4S" secondAttribute="centerX" id="w5Q-he-fdF"/>
+                            <constraint firstItem="2i2-FN-dIo" firstAttribute="trailing" secondItem="0wE-K2-u4m" secondAttribute="trailing" constant="32" id="yLE-Af-qLa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AER-Li-pLh"/>
                     <connections>
-                        <outlet property="collectionMonth" destination="zg7-cu-xE2" id="Yk8-Iw-kHa"/>
+                        <outlet property="availableMonthView" destination="0wE-K2-u4m" id="rFQ-0U-h31"/>
                         <outlet property="imageSeaCreature" destination="2us-R7-TyR" id="50y-ps-1v1"/>
                         <outlet property="labelPrice" destination="c4v-8V-71b" id="zmN-dL-JjC"/>
                         <outlet property="labelSpeed" destination="jXU-3n-gdq" id="oUJ-Im-zad"/>

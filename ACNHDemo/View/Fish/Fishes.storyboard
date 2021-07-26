@@ -92,32 +92,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-39-kiv">
-                                <rect key="frame" x="32" y="389.5" width="350" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="xbJ-Vq-8f7"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="09t-YQ-qtV">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="mxb-Er-Pax" id="R3V-q9-jH7"/>
-                                    <outlet property="delegate" destination="mxb-Er-Pax" id="bap-jn-tcM"/>
-                                </connections>
-                            </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="d9U-Bj-sxC">
                                 <rect key="frame" x="32" y="32" width="350" height="175"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-H1-jGh" customClass="AvailableMonthView" customModule="ACNHDemo" customModuleProvider="target">
+                                <rect key="frame" x="32" y="397.5" width="350" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eCG-RH-xr4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zok-7V-Xgs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zXn-39-kiv" firstAttribute="leading" secondItem="zok-7V-Xgs" secondAttribute="leading" constant="32" id="3OA-db-fuf"/>
                             <constraint firstItem="qDd-7K-ltf" firstAttribute="top" secondItem="QL4-o5-Li1" secondAttribute="bottom" constant="16" id="BDw-Sb-Nm0"/>
                             <constraint firstItem="QL4-o5-Li1" firstAttribute="top" secondItem="hR9-xz-xSV" secondAttribute="bottom" constant="32" id="EKF-IW-XRc"/>
                             <constraint firstItem="zok-7V-Xgs" firstAttribute="trailing" secondItem="QL4-o5-Li1" secondAttribute="trailing" constant="32" id="EMd-iY-mUR"/>
@@ -127,16 +115,17 @@
                             <constraint firstItem="qDd-7K-ltf" firstAttribute="leading" secondItem="zok-7V-Xgs" secondAttribute="leading" constant="32" id="Nuh-GS-hK0"/>
                             <constraint firstItem="d9U-Bj-sxC" firstAttribute="bottom" secondItem="hR9-xz-xSV" secondAttribute="bottom" id="dGg-Tv-Tep"/>
                             <constraint firstItem="zok-7V-Xgs" firstAttribute="trailing" secondItem="hR9-xz-xSV" secondAttribute="trailing" constant="32" id="esI-GY-XR4"/>
-                            <constraint firstItem="zok-7V-Xgs" firstAttribute="trailing" secondItem="zXn-39-kiv" secondAttribute="trailing" constant="32" id="fZh-Hs-i9i"/>
                             <constraint firstItem="d9U-Bj-sxC" firstAttribute="trailing" secondItem="hR9-xz-xSV" secondAttribute="trailing" id="g52-z0-pgl"/>
-                            <constraint firstItem="zXn-39-kiv" firstAttribute="top" secondItem="qDd-7K-ltf" secondAttribute="bottom" constant="8" symbolic="YES" id="jsU-Ut-TBT"/>
+                            <constraint firstItem="4iA-H1-jGh" firstAttribute="leading" secondItem="zok-7V-Xgs" secondAttribute="leading" constant="32" id="j2i-6e-oxt"/>
+                            <constraint firstItem="zok-7V-Xgs" firstAttribute="trailing" secondItem="4iA-H1-jGh" secondAttribute="trailing" constant="32" id="jwk-Yd-gxd"/>
                             <constraint firstItem="hR9-xz-xSV" firstAttribute="leading" secondItem="zok-7V-Xgs" secondAttribute="leading" constant="32" id="mPl-Jn-cw6"/>
                             <constraint firstItem="hR9-xz-xSV" firstAttribute="top" secondItem="zok-7V-Xgs" secondAttribute="top" constant="32" id="oI8-u9-qsE"/>
+                            <constraint firstItem="4iA-H1-jGh" firstAttribute="top" secondItem="qDd-7K-ltf" secondAttribute="bottom" constant="16" id="udP-OF-nCT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LhJ-0D-pSQ"/>
                     <connections>
-                        <outlet property="collectionMonth" destination="zXn-39-kiv" id="m8K-j8-vwq"/>
+                        <outlet property="availableMonthView" destination="4iA-H1-jGh" id="8b8-3Y-eNe"/>
                         <outlet property="imageFish" destination="hR9-xz-xSV" id="OjV-dT-FBh"/>
                         <outlet property="labelLocation" destination="dMM-PO-P6A" id="u6M-cq-395"/>
                         <outlet property="labelPriceInfo" destination="ZCv-PZ-H7R" id="iZN-1N-801"/>

@@ -7,15 +7,14 @@
 
 import UIKit
 
-class BugDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BugDetailViewController: UIViewController {
 
     @IBOutlet weak var imageBug: UIImageView!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelPriceInfo: UILabel!
-    @IBOutlet weak var collectionMonth: UICollectionView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
-    
-    var arrayMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    @IBOutlet weak var availableMonthView: AvailableMonthView!
+
     var bug: Bug?
     
     override func viewDidLoad() {
@@ -29,22 +28,7 @@ class BugDetailViewController: UIViewController, UICollectionViewDelegate, UICol
         labelLocation.text = bug?.availability.location
         let salesInfo = "Sell price: \(bug!.price), sell Flick price: \(bug!.priceFlick)"
         labelPriceInfo.text = salesInfo
-        
-        collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrayMonth.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //255 243 173
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthCell", for: indexPath) as! AvailableMonthCell
-        cell.labelMonth.text = arrayMonth[indexPath.row]
-        if bug!.availability.monthArrayNorthern.contains(indexPath.row + 1) {
-            cell.viewMonth.backgroundColor = UIColor.init(red: 0.941, green: 0.839, blue: 0.258, alpha: 1) // 240 214 66
-        }
-        return cell
+        availableMonthView.availableMonth = bug!.availability.monthArrayNorthern
     }
 
 }
