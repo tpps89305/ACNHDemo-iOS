@@ -24,8 +24,8 @@ class VillagersCell: UITableViewCell {
         let villager = viewModel.villager
         let nameTW = villager.name.nameTWzh
         let iconUri = villager.iconURI
-        self.labelVillager.text = nameTW
-        self.imageVillager.loadUrl(url: iconUri, onLoadingCompleted: {() in
+        labelVillager.text = nameTW
+        imageVillager.loadUrl(url: iconUri, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
             self.setNeedsLayout()
         })

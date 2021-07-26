@@ -26,7 +26,7 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        self.tableView.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
         // Avoid issue of cannot select cell(s)
         searchController.dimsBackgroundDuringPresentation = false
     }
@@ -42,7 +42,7 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
     // MARK: UITableView Delegate and DataSources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.villagerCellViewModels.count
+        viewModel.villagerCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -23,7 +23,7 @@ class BGMVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayBGMs.sort { (bgm0, bgm1) -> Bool in
-                    return bgm0.id < bgm1.id
+                    bgm0.id < bgm1.id
                 }
                 self.onRequestEnd!()
                 print("Done!")
@@ -37,7 +37,7 @@ class BGMVCViewModel: NSObject {
         let intHour = Int(hour) ?? 0
         let fileHour = String(format: "%02d", arguments: [intHour])
         let result = arrayBGMs.filter { (bgm) -> Bool in
-            return bgm.fileName.contains(fileHour) && bgm.fileName.contains(weather)
+            bgm.fileName.contains(fileHour) && bgm.fileName.contains(weather)
         }
         if result.isEmpty {
             return ""

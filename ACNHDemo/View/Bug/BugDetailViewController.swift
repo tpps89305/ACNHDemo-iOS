@@ -21,20 +21,20 @@ class BugDetailViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.viewLoading.startAnimating()
+        viewLoading.startAnimating()
         title = bug!.name.nameTWzh
         imageBug.loadUrl(url: bug!.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
         })
         labelLocation.text = bug?.availability.location
-        let salsInfo = "Sell price: \(bug!.price), sell Flick price: \(bug!.priceFlick)"
-        labelPriceInfo.text = salsInfo
+        let salesInfo = "Sell price: \(bug!.price), sell Flick price: \(bug!.priceFlick)"
+        labelPriceInfo.text = salesInfo
         
-        self.collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
+        collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayMonth.count
+        arrayMonth.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

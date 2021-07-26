@@ -42,7 +42,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayDetails.count
+        arrayDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

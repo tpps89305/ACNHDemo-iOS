@@ -24,7 +24,7 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        self.tableView.register(UINib(nibName: "FishesCell", bundle: nil), forCellReuseIdentifier: "FishesCell")
+        tableView.register(UINib(nibName: "FishesCell", bundle: nil), forCellReuseIdentifier: "FishesCell")
         // Avoid issue of cannot select cell(s)
         searchController.dimsBackgroundDuringPresentation = false
     }
@@ -41,7 +41,7 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel.bugCellViewModels.count
+        viewModel.bugCellViewModels.count
     }
 
     

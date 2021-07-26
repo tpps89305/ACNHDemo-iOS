@@ -13,8 +13,8 @@ class ArtVCViewModel: NSObject {
     var artCellViewModels: [ArtCellViewModel] = []
     var searchResult = [ArtValue]() {
         didSet {
-            self.artCellViewModels.removeAll()
-            self.convertToViewModel(artValues: self.searchResult)
+            artCellViewModels.removeAll()
+            convertToViewModel(artValues: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class ArtVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.artCellViewModels.removeAll()
-                self.convertToViewModel(artValues: self.arrayArtValues)
+                artCellViewModels.removeAll()
+                convertToViewModel(artValues: arrayArtValues)
             } else {
                 // Enter search mode
                 searchArt(with: searchText)
@@ -41,7 +41,7 @@ class ArtVCViewModel: NSObject {
                 }
                 
                 self.arrayArtValues.sort { (artValue0, artValue1) -> Bool in
-                    return artValue0.id < artValue1.id
+                    artValue0.id < artValue1.id
                 }
                 self.convertToViewModel(artValues: self.arrayArtValues)
                 print("Done!")
@@ -53,7 +53,7 @@ class ArtVCViewModel: NSObject {
     
     func searchArt(with name: String) {
         searchResult = arrayArtValues.filter({ (bug) -> Bool in
-            return bug.name.nameTWzh.contains(name)
+            bug.name.nameTWzh.contains(name)
         })
     }
     

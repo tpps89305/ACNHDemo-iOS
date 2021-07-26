@@ -11,10 +11,10 @@ class VillagerVCViewModel: NSObject {
     
     var arrayVillagers = Array<Villager>()
     var villagerCellViewModels: [VillagerCellViewModel] = []
-    var searchReslut = [Villager]() {
+    var searchResult = [Villager]() {
         didSet {
-            self.villagerCellViewModels.removeAll()
-            self.convertToViewModel(villagers: self.searchReslut)
+            villagerCellViewModels.removeAll()
+            convertToViewModel(villagers: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class VillagerVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.villagerCellViewModels.removeAll()
-                self.convertToViewModel(villagers: self.arrayVillagers)
+                villagerCellViewModels.removeAll()
+                convertToViewModel(villagers: arrayVillagers)
             } else {
                 // Enter search mode
                 searchVillagers(with: searchText)
@@ -42,7 +42,7 @@ class VillagerVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayVillagers.sort { (villager0, villager1) -> Bool in
-                    return villager0.fileName < villager1.fileName
+                    villager0.fileName < villager1.fileName
                 }
                 self.convertToViewModel(villagers: self.arrayVillagers)
                 print("Done!")
@@ -53,8 +53,8 @@ class VillagerVCViewModel: NSObject {
     }
     
     func searchVillagers(with name: String) {
-        searchReslut = arrayVillagers.filter({ (villager) -> Bool in
-            return villager.name.nameTWzh.contains(name)
+        searchResult = arrayVillagers.filter({ (villager) -> Bool in
+            villager.name.nameTWzh.contains(name)
         })
     }
     

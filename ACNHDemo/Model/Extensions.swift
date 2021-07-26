@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import Alamofire
 
-var imageCahce = NSCache<AnyObject, AnyObject>()
+var imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
     
     func loadUrl(url: String, onLoadingCompleted loadingCompleted: @escaping () -> Void) {
-        if let image = imageCahce.object(forKey: url as NSString) as? UIImage {
+        if let image = imageCache.object(forKey: url as NSString) as? UIImage {
             self.image = image
             loadingCompleted()
             return
@@ -23,7 +23,7 @@ extension UIImageView {
         AF.request(url).response { response in
             if let data = response.data {
                 let image = UIImage(data: data)!
-                imageCahce.setObject(image, forKey: url as NSString)
+                imageCache.setObject(image, forKey: url as NSString)
                 self.image = image
                 loadingCompleted()
             } else {

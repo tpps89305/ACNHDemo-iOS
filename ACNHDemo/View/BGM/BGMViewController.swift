@@ -45,7 +45,7 @@ class BGMViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

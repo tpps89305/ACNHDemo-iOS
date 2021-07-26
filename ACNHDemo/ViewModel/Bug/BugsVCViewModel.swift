@@ -13,8 +13,8 @@ class BugsVCViewModel: NSObject {
     var bugCellViewModels: [BugCellViewModel] = []
     var searchResult = [Bug]() {
         didSet {
-            self.bugCellViewModels.removeAll()
-            self.convertToViewModel(bugs: self.searchResult)
+            bugCellViewModels.removeAll()
+            convertToViewModel(bugs: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class BugsVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.bugCellViewModels.removeAll()
-                self.convertToViewModel(bugs: self.arrayBugs)
+                bugCellViewModels.removeAll()
+                convertToViewModel(bugs: arrayBugs)
             } else {
                 // Enter search mode
                 searchBugs(with: searchText)
@@ -42,7 +42,7 @@ class BugsVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayBugs.sort { (bug0, bug1) -> Bool in
-                    return bug0.id < bug1.id
+                    bug0.id < bug1.id
                 }
                 self.convertToViewModel(bugs: self.arrayBugs)
                 print("Done!")
@@ -54,7 +54,7 @@ class BugsVCViewModel: NSObject {
     
     func searchBugs(with name: String) {
         searchResult = arrayBugs.filter({ (bug) -> Bool in
-            return bug.name.nameTWzh.contains(name)
+            bug.name.nameTWzh.contains(name)
         })
     }
     

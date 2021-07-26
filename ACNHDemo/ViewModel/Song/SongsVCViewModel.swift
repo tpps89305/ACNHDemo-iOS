@@ -13,8 +13,8 @@ class SongsVCViewModel: NSObject {
     var songCellViewModels: [SongCellViewModel] = []
     var searchResult = [Song]() {
         didSet {
-            self.songCellViewModels.removeAll()
-            self.convertToViewModel(songs: self.searchResult)
+            songCellViewModels.removeAll()
+            convertToViewModel(songs: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class SongsVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.songCellViewModels.removeAll()
-                self.convertToViewModel(songs: self.arraySongs)
+                songCellViewModels.removeAll()
+                convertToViewModel(songs: arraySongs)
             } else {
                 // Enter search mode
                 searchSongs(with: searchText)
@@ -42,7 +42,7 @@ class SongsVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arraySongs.sort { (song0, song1) -> Bool in
-                    return song0.fileName < song1.fileName
+                    song0.fileName < song1.fileName
                 }
                 self.convertToViewModel(songs: self.arraySongs)
                 print("Done!")
@@ -54,7 +54,7 @@ class SongsVCViewModel: NSObject {
     
     func searchSongs(with name: String) {
         searchResult = arraySongs.filter({ (song) -> Bool in
-            return song.name.nameTWzh.contains(name)
+            song.name.nameTWzh.contains(name)
         })
     }
     

@@ -33,61 +33,61 @@ class FishesCell: UITableViewCell {
     
     func setup(viewModel: FishCellViewModel) {
         let fish = viewModel.fish
-        self.imageAvatar.loadUrl(url: fish.iconURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: fish.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         } )
-        self.labelName.text = fish.name.nameTWzh
-        let salsInfo = "Sell price: \(fish.price), Sell price CJ: \(fish.priceCj)"
-        self.labelPriceInfo.text = salsInfo
+        labelName.text = fish.name.nameTWzh
+        let salesInfo = "Sell price: \(fish.price), Sell price CJ: \(fish.priceCj)"
+        labelPriceInfo.text = salesInfo
     }
     
     func setup(viewModel: SeaCreatureCellViewModel) {
         let seaCreature = viewModel.seaCreature
-        self.imageAvatar.loadUrl(url: seaCreature.iconURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: seaCreature.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         } )
-        self.labelName.text = seaCreature.name.nameTWzh
-        let salsInfo = "Sell price: \(seaCreature.price)"
-        self.labelPriceInfo.text = salsInfo
+        labelName.text = seaCreature.name.nameTWzh
+        let salesInfo = "Sell price: \(seaCreature.price)"
+        labelPriceInfo.text = salesInfo
     }
     
     func setup(viewModel: BugCellViewModel) {
         let bug = viewModel.bug
-        self.imageAvatar.loadUrl(url: bug.iconURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: bug.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         } )
-        self.labelName.text = bug.name.nameTWzh
-        let salsInfo = "Sell price: \(bug.price), sell Flick price: \(bug.priceFlick)"
-        self.labelPriceInfo.text = salsInfo
+        labelName.text = bug.name.nameTWzh
+        let salesInfo = "Sell price: \(bug.price), sell Flick price: \(bug.priceFlick)"
+        labelPriceInfo.text = salesInfo
     }
     
     func setup(viewModel: FossilCellViewModel) {
         let fossil = viewModel.fossil
-        self.imageAvatar.loadUrl(url: fossil.imageURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: fossil.imageURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         } )
-        self.labelName.text = fossil.name.nameTWzh
-        let salsInfo = "Sell price: \(fossil.price)"
-        self.labelPriceInfo.text = salsInfo
+        labelName.text = fossil.name.nameTWzh
+        let salesInfo = "Sell price: \(fossil.price)"
+        labelPriceInfo.text = salesInfo
     }
     
     func setup(viewModel: HousewareCellViewModel) {
         let houseware = viewModel.houseware
-        self.imageAvatar.loadUrl(url: houseware.imageURI) {
+        imageAvatar.loadUrl(url: houseware.imageURI) {
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         }
-        self.labelName.text = houseware.name.nameTWzh
-        var salsInfo = ""
+        labelName.text = houseware.name.nameTWzh
+        var salesInfo = ""
         if houseware.buyPrice != nil {
-            salsInfo += "Bug price: \(houseware.buyPrice ?? 0), "
+            salesInfo += "Bug price: \(houseware.buyPrice ?? 0), "
         }
-        salsInfo += "Sell Price: \(houseware.sellPrice)"
-        self.labelPriceInfo.text = salsInfo
+        salesInfo += "Sell Price: \(houseware.sellPrice)"
+        labelPriceInfo.text = salesInfo
     }
     
 }

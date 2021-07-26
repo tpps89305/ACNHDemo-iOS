@@ -13,8 +13,8 @@ class FishesVCViewModel: NSObject {
     var fishCellViewModels: [FishCellViewModel] = []
     var searchResult = [Fish]() {
         didSet {
-            self.fishCellViewModels.removeAll()
-            self.convertToViewModel(fishes: self.searchResult)
+            fishCellViewModels.removeAll()
+            convertToViewModel(fishes: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class FishesVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.fishCellViewModels.removeAll()
-                self.convertToViewModel(fishes: self.arrayFishes)
+                fishCellViewModels.removeAll()
+                convertToViewModel(fishes: arrayFishes)
             } else {
                 // Enter search mode
                 searchFishes(with: searchText)
@@ -42,7 +42,7 @@ class FishesVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayFishes.sort { (fish0, fish1) -> Bool in
-                    return fish0.fileName < fish1.fileName
+                    fish0.fileName < fish1.fileName
                 }
                 self.convertToViewModel(fishes: self.arrayFishes)
                 print("Done!")
@@ -54,7 +54,7 @@ class FishesVCViewModel: NSObject {
     
     func searchFishes(with name: String) {
         searchResult = arrayFishes.filter({ (fish) -> Bool in
-            return fish.name.nameTWzh.contains(name)
+            fish.name.nameTWzh.contains(name)
         })
     }
     

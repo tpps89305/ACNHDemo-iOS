@@ -13,8 +13,8 @@ class SeaCreaturesVCViewModel: NSObject {
     var seaCreatureCellViewModels: [SeaCreatureCellViewModel] = []
     var searchResult = [SeaCreature]() {
         didSet {
-            self.seaCreatureCellViewModels.removeAll()
-            self.convertToViewModel(seaCreatures: self.searchResult)
+            seaCreatureCellViewModels.removeAll()
+            convertToViewModel(seaCreatures: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class SeaCreaturesVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.seaCreatureCellViewModels.removeAll()
-                self.convertToViewModel(seaCreatures: self.arraySeaCreatures)
+                seaCreatureCellViewModels.removeAll()
+                convertToViewModel(seaCreatures: arraySeaCreatures)
             } else {
                 // Enter search mode
                 searchSeaCreatures(with: searchText)
@@ -42,7 +42,7 @@ class SeaCreaturesVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arraySeaCreatures.sort { (seaCreature0, seaCreature1) -> Bool in
-                    return seaCreature0.id < seaCreature1.id
+                    seaCreature0.id < seaCreature1.id
                 }
                 self.convertToViewModel(seaCreatures: self.arraySeaCreatures)
                 print("Done!")
@@ -54,7 +54,7 @@ class SeaCreaturesVCViewModel: NSObject {
     
     func searchSeaCreatures(with name: String) {
         searchResult = arraySeaCreatures.filter({ (seaCreature) -> Bool in
-            return seaCreature.name.nameTWzh.contains(name)
+            seaCreature.name.nameTWzh.contains(name)
         })
     }
     

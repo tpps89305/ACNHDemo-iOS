@@ -24,7 +24,7 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        self.tableView.register(UINib(nibName: "ArtCell", bundle: nil), forCellReuseIdentifier: "ArtCell")
+        tableView.register(UINib(nibName: "ArtCell", bundle: nil), forCellReuseIdentifier: "ArtCell")
         // Avoid issue of cannot select cell(s)
         searchController.dimsBackgroundDuringPresentation = false
     }
@@ -41,7 +41,7 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel.artCellViewModels.count
+        viewModel.artCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

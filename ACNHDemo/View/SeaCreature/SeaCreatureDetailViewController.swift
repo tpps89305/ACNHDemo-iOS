@@ -21,7 +21,7 @@ class SeaCreatureDetailViewController: UIViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.viewLoading.startAnimating()
+        viewLoading.startAnimating()
         title = seaCreature!.name.nameTWzh
         imageSeaCreature.loadUrl(url: seaCreature!.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
@@ -29,11 +29,11 @@ class SeaCreatureDetailViewController: UIViewController, UICollectionViewDelegat
         labelSpeed.text = seaCreature?.speed.rawValue
         labelPrice.text = String(seaCreature!.price)
         
-        self.collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
+        collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayMonth.count
+        arrayMonth.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

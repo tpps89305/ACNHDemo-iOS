@@ -34,14 +34,14 @@ class ArtCell: UITableViewCell {
     
     func setup(viewModel: ArtCellViewModel) {
         let artValue = viewModel.artValue
-        self.imageAvatar.loadUrl(url: artValue.imageURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: artValue.imageURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
         } )
-        self.labelName.text = artValue.name.nameTWzh
-        let salsInfo = "Buy price: \(artValue.buyPrice), Sell Price: \(artValue.sellPrice)"
-        self.labelPriceInfo.text = salsInfo
-        self.labelFakeInfo.isHidden = !artValue.hasFake
+        labelName.text = artValue.name.nameTWzh
+        let salesInfo = "Buy price: \(artValue.buyPrice), Sell Price: \(artValue.sellPrice)"
+        labelPriceInfo.text = salesInfo
+        labelFakeInfo.isHidden = !artValue.hasFake
     }
     
 }

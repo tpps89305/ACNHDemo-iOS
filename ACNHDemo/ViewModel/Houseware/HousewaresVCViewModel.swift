@@ -13,8 +13,8 @@ class HousewaresVCViewModel: NSObject {
     var housewareCellViewModels: [HousewareCellViewModel] = []
     var searchResult = [Houseware]() {
         didSet {
-            self.housewareCellViewModels.removeAll()
-            self.convertToViewModel(housewares: self.searchResult)
+            housewareCellViewModels.removeAll()
+            convertToViewModel(housewares: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class HousewaresVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.housewareCellViewModels.removeAll()
-                self.convertToViewModel(housewares: self.arrayHousewares)
+                housewareCellViewModels.removeAll()
+                convertToViewModel(housewares: arrayHousewares)
             } else {
                 // Enter search mode
                 searchHousewares(with: searchText)
@@ -40,7 +40,7 @@ class HousewaresVCViewModel: NSObject {
                     self.arrayHousewares.append(housewares[eachKey]![0])
                 }
                 self.arrayHousewares.sort { (houseware0, houseware1) -> Bool in
-                    return houseware0.internalID < houseware1.internalID
+                    houseware0.internalID < houseware1.internalID
                 }
                 self.convertToViewModel(housewares: self.arrayHousewares)
             } catch {
@@ -51,7 +51,7 @@ class HousewaresVCViewModel: NSObject {
     
     func searchHousewares(with name: String) {
         searchResult = arrayHousewares.filter({ (houseware) -> Bool in
-            return houseware.name.nameTWzh.contains(name)
+            houseware.name.nameTWzh.contains(name)
         })
     }
     

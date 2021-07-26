@@ -21,7 +21,7 @@ class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewLoading.startAnimating()
+        viewLoading.startAnimating()
 
         // Do any additional setup after loading the view.
         title = fish!.name.nameTWzh
@@ -32,11 +32,11 @@ class FishDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         let priceInfo = "Sell price: \(fish!.price), Sell to CJ price: \(fish!.priceCj)"
         labelPriceInfo.text = priceInfo
         
-        self.collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
+        collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayMonth.count
+        arrayMonth.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

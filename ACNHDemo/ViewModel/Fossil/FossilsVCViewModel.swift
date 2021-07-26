@@ -13,8 +13,8 @@ class FossilsVCViewModel: NSObject {
     var fossilCellViewModels: [FossilCellViewModel] = []
     var searchResult = [Fossil]() {
         didSet {
-            self.fossilCellViewModels.removeAll()
-            self.convertToViewModel(fossils: self.searchResult)
+            fossilCellViewModels.removeAll()
+            convertToViewModel(fossils: searchResult)
         }
     }
     var onRequestEnd:(() -> Void)?
@@ -22,8 +22,8 @@ class FossilsVCViewModel: NSObject {
         didSet {
             if searchText == "" {
                 // Exit search mode
-                self.fossilCellViewModels.removeAll()
-                self.convertToViewModel(fossils: self.arrayFossils)
+                fossilCellViewModels.removeAll()
+                convertToViewModel(fossils: arrayFossils)
             } else {
                 // Enter search mode
                 searchFossils(with: searchText)
@@ -41,7 +41,7 @@ class FossilsVCViewModel: NSObject {
                 }
                 
                 self.arrayFossils.sort { (fossil0, fossil1) -> Bool in
-                    return fossil0.fileName < fossil1.fileName
+                    fossil0.fileName < fossil1.fileName
                 }
                 self.convertToViewModel(fossils: self.arrayFossils)
                 print("Done!")
@@ -53,7 +53,7 @@ class FossilsVCViewModel: NSObject {
     
     func searchFossils(with name: String) {
         searchResult = arrayFossils.filter({ (bug) -> Bool in
-            return bug.name.nameTWzh.contains(name)
+            bug.name.nameTWzh.contains(name)
         })
     }
     

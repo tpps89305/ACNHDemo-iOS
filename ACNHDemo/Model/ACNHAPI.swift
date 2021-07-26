@@ -26,7 +26,7 @@ public enum ACNH {
 extension ACNH : TargetType {
     
     public var baseURL: URL {
-        return URL(string: "https://acnhapi.com/v1/")!
+        URL(string: "https://acnhapi.com/v1/")!
     }
     
     public var path: String {
@@ -80,7 +80,7 @@ extension ACNH : TargetType {
     }
     
     public var method: Moya.Method {
-        return .get
+        .get
     }
     
     public var sampleData: Data {
@@ -107,18 +107,18 @@ extension ACNH : TargetType {
     }
     
     public var task: Task {
-        return .requestPlain
+        .requestPlain
     }
     
     public var headers: [String : String]? {
-        return nil
+        nil
     }
     
 }
 
 extension Moya.Response {
     func mapNSArray() throws -> NSArray {
-        let any = try self.mapJSON()
+        let any = try mapJSON()
         guard let array = any as? NSArray else {
             throw MoyaError.jsonMapping(self)
         }
@@ -126,7 +126,7 @@ extension Moya.Response {
     }
     
     func mapNSDict() throws -> NSDictionary {
-        let any = try self.mapJSON()
+        let any = try mapJSON()
         guard let array = any as? NSDictionary else {
             throw MoyaError.jsonMapping(self)
         }

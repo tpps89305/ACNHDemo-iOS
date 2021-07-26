@@ -17,7 +17,7 @@ class SongsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.viewLoading.startAnimating()
+        viewLoading.startAnimating()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,18 +29,18 @@ class SongsCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageAvatar.image = nil
-        self.viewLoading.startAnimating()
+        viewLoading.startAnimating()
     }
     
     func setup(viewModel: SongCellViewModel) {
         let song = viewModel.song
-        self.imageAvatar.loadUrl(url: song.imageURI, onLoadingCompleted: {() in
+        imageAvatar.loadUrl(url: song.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
             self.setNeedsLayout()
         })
-        self.labelName.text = song.name.nameTWzh
-        let salsInfo = "Buy price: \(song.buyPrice ?? 0), Sell price: \(song.sellPrice)"
-        self.labelPriceInfo.text = salsInfo
+        labelName.text = song.name.nameTWzh
+        let salesInfo = "Buy price: \(song.buyPrice ?? 0), Sell price: \(song.sellPrice)"
+        labelPriceInfo.text = salesInfo
     }
     
 }
