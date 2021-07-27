@@ -38,7 +38,9 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fish.name.nameTWzh
-        tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
+        }
     }
     
     func setup(viewModel: SeaCreatureCellViewModel) {
@@ -48,7 +50,9 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = seaCreature.name.nameTWzh
-        tagsListView.tags = ["Sell: \(seaCreature.price)", ""]
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = ["Sell: \(seaCreature.price)"]
+        }
     }
     
     func setup(viewModel: BugCellViewModel) {
@@ -58,7 +62,9 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = bug.name.nameTWzh
-        tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
+        }
     }
     
     func setup(viewModel: FossilCellViewModel) {
@@ -68,7 +74,9 @@ class FishesCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fossil.name.nameTWzh
-        tagsListView.tags = ["Sell: \(fossil.price)", ""]
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = ["Sell: \(fossil.price)"]
+        }
     }
     
     func setup(viewModel: HousewareCellViewModel) {
@@ -83,10 +91,9 @@ class FishesCell: UITableViewCell {
             salesInfo.append("Buy: \(houseware.buyPrice ?? 0)")
         }
         salesInfo.append("Sell: \(houseware.sellPrice)")
-        if salesInfo.count == 1 {
-            salesInfo.append("")
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = salesInfo            
         }
-        tagsListView.tags = salesInfo
     }
     
 }

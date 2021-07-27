@@ -3,43 +3,62 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagsListView" customModule="ACNHDemo" customModuleProvider="target">
             <connections>
-                <outlet property="collectionTags" destination="ey8-Cr-DcB" id="s5l-Sx-J3a"/>
+                <outlet property="emptyView" destination="hK4-Ek-1JR" id="dFi-su-21n"/>
+                <outlet property="stackTags" destination="Qlo-10-WuF" id="NtC-Gh-bfU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="725" height="145"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ey8-Cr-DcB">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aE4-ye-MYb">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="3QN-S7-mbX"/>
-                        <outlet property="delegate" destination="-1" id="CXi-fV-Gyk"/>
-                    </connections>
-                </collectionView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFL-K4-a7g">
+                    <rect key="frame" x="0.0" y="0.0" width="725" height="145"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qlo-10-WuF">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="145"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK4-Ek-1JR" userLabel="Empty View">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="145"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="isu-Vu-Szj"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Qlo-10-WuF" firstAttribute="leading" secondItem="KKc-bX-z9r" secondAttribute="leading" id="MdG-SY-3F2"/>
+                        <constraint firstItem="Qlo-10-WuF" firstAttribute="bottom" secondItem="KKc-bX-z9r" secondAttribute="bottom" id="Rut-PH-FsR"/>
+                        <constraint firstItem="Qlo-10-WuF" firstAttribute="trailing" secondItem="KKc-bX-z9r" secondAttribute="trailing" id="dbN-yp-XnW"/>
+                        <constraint firstItem="Qlo-10-WuF" firstAttribute="top" secondItem="KKc-bX-z9r" secondAttribute="top" id="hHg-0J-Jn0"/>
+                        <constraint firstItem="Qlo-10-WuF" firstAttribute="height" secondItem="X02-CQ-6RO" secondAttribute="height" id="yym-CO-qOR"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="KKc-bX-z9r"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="X02-CQ-6RO"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ey8-Cr-DcB" secondAttribute="trailing" id="Iza-bP-qcV"/>
-                <constraint firstItem="ey8-Cr-DcB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZNk-FL-wFd"/>
-                <constraint firstItem="ey8-Cr-DcB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pgg-Hh-ccH"/>
-                <constraint firstAttribute="bottom" secondItem="ey8-Cr-DcB" secondAttribute="bottom" id="zTB-B9-G2v"/>
+                <constraint firstAttribute="trailing" secondItem="MFL-K4-a7g" secondAttribute="trailing" id="IIm-df-RQn"/>
+                <constraint firstItem="MFL-K4-a7g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RS4-xo-dHU"/>
+                <constraint firstItem="MFL-K4-a7g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bDH-Ch-Che"/>
+                <constraint firstAttribute="bottom" secondItem="MFL-K4-a7g" secondAttribute="bottom" id="teJ-Gc-HNO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="132" y="113"/>
+            <point key="canvasLocation" x="294.92753623188406" y="-138.95089285714286"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

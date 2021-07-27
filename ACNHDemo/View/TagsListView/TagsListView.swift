@@ -7,14 +7,14 @@
 
 import UIKit
 
-class TagsListView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, NibOwnerLoadable {
+class TagsListView: UIView, NibOwnerLoadable {
 
-    @IBOutlet weak var collectionTags: UICollectionView!
-
-    // FIXME: Fix issue of cannot show only one cell
+    @IBOutlet weak var stackTags: UIStackView!
+    @IBOutlet weak var emptyView: UIView!
+    
     var tags: [String] = [] {
         didSet {
-            collectionTags.reloadData()
+            update()
         }
     }
 
@@ -33,24 +33,21 @@ class TagsListView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
 
     override func awakeFromNib() {
-        collectionTags.register(UINib(nibName: "TagsListViewCell", bundle: nil), forCellWithReuseIdentifier: "TagsListViewCell")
+        super.awakeFromNib()
     }
 
     private func customInit() {
         loadNibContent()
     }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        tags.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagsListViewCell", for: indexPath) as! TagsListViewCell
-        cell.labelTag.text = tags[indexPath.row]
-        if tags[indexPath.row] == "" {
-            cell.viewTag.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0)
+    
+    func update() {
+        stackTags.removeArrangedSubview(emptyView)
+        for tag in tags {
+            if let tagView = Bundle(for: TagsListTag.self).loadNibNamed("\(TagsListTag.self)", owner: nil, options: nil)?.first as? TagsListTag {
+                tagView.labelTag.text = tag
+                stackTags.addArrangedSubview(tagView)
+            }
         }
-        return cell
     }
 
 }

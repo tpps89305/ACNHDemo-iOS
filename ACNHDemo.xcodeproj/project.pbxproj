@@ -155,6 +155,12 @@
 		F654F88A26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
 		F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
 		F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
+		F66D15BD26AFF4850035B565 /* TagsListTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D15BC26AFF4850035B565 /* TagsListTag.swift */; };
+		F66D15BE26AFF4850035B565 /* TagsListTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D15BC26AFF4850035B565 /* TagsListTag.swift */; };
+		F66D15BF26AFF4850035B565 /* TagsListTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D15BC26AFF4850035B565 /* TagsListTag.swift */; };
+		F66D15C426AFF4B10035B565 /* TagsListTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66D15C326AFF4B10035B565 /* TagsListTag.xib */; };
+		F66D15C526AFF4B10035B565 /* TagsListTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66D15C326AFF4B10035B565 /* TagsListTag.xib */; };
+		F66D15C626AFF4B10035B565 /* TagsListTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66D15C326AFF4B10035B565 /* TagsListTag.xib */; };
 		F67687B92697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
 		F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
 		F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */; };
@@ -326,6 +332,8 @@
 		F654F87726A17DDA00188318 /* BGMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMViewController.swift; sourceTree = "<group>"; };
 		F654F88126A1800E00188318 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
 		F654F88926A182DE00188318 /* BGMVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMVCViewModel.swift; sourceTree = "<group>"; };
+		F66D15BC26AFF4850035B565 /* TagsListTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListTag.swift; sourceTree = "<group>"; };
+		F66D15C326AFF4B10035B565 /* TagsListTag.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListTag.xib; sourceTree = "<group>"; };
 		F67687B82697FD8C00CEE8BD /* SongDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
 		F67A7874269C3EDB00112F45 /* VillagerVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerVCViewModel.swift; sourceTree = "<group>"; };
 		F67A787E269C3F6C00112F45 /* VillagerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerCellViewModel.swift; sourceTree = "<group>"; };
@@ -654,6 +662,8 @@
 				F69BF47926AEA44700D777D2 /* TagsListView.xib */,
 				F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */,
 				F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */,
+				F66D15BC26AFF4850035B565 /* TagsListTag.swift */,
+				F66D15C326AFF4B10035B565 /* TagsListTag.xib */,
 			);
 			path = TagsListView;
 			sourceTree = "<group>";
@@ -836,6 +846,7 @@
 			files = (
 				F631DF01269D84CB00E2CDC4 /* Fishes.storyboard in Resources */,
 				F6EC230B2696F00A00C931EC /* SongsCell.xib in Resources */,
+				F66D15C426AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F69BF47A26AEA44700D777D2 /* TagsListView.xib in Resources */,
 				F631DEFA269D72EF00E2CDC4 /* FishesCell.xib in Resources */,
 				F631DF08269D854C00E2CDC4 /* Songs.storyboard in Resources */,
@@ -866,6 +877,7 @@
 				F654F83C26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8326A02CF1007BFEDE /* Bugs.storyboard in Resources */,
 				F69BF45F26AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
+				F66D15C526AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F69BF48626AEA5A100D777D2 /* TagsListViewCell.xib in Resources */,
 				F6EC230C2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
@@ -888,6 +900,7 @@
 				F654F83D26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8426A02CF1007BFEDE /* Bugs.storyboard in Resources */,
 				F69BF46026AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
+				F66D15C626AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F69BF48726AEA5A100D777D2 /* TagsListViewCell.xib in Resources */,
 				F6EC230D2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
@@ -1050,6 +1063,7 @@
 				F6116D9326A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6116D5C269FE3BB007BFEDE /* SeaCreatureCellViewModel.swift in Sources */,
 				F6116D20269FDC62007BFEDE /* SeaCreatures.swift in Sources */,
+				F66D15BD26AFF4850035B565 /* TagsListTag.swift in Sources */,
 				F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */,
 				F6116D7026A02B09007BFEDE /* Bug.swift in Sources */,
 				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
@@ -1120,6 +1134,7 @@
 				F631DED4269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F69BF45826AE89A700D777D2 /* AvailableMonthView.swift in Sources */,
 				F61A4DC026A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
+				F66D15BE26AFF4850035B565 /* TagsListTag.swift in Sources */,
 				F6116D9426A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
@@ -1185,6 +1200,7 @@
 				F631DED5269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F69BF45926AE89A700D777D2 /* AvailableMonthView.swift in Sources */,
 				F61A4DC126A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
+				F66D15BF26AFF4850035B565 /* TagsListTag.swift in Sources */,
 				F6116D9526A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
