@@ -17,32 +17,32 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var tableDetail: UITableView!
     var arrayDetailTitle: [String] = []
     var arrayDetailContent: [String] = []
+    let viewModel = VillagerDetailVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let name = villager?.name.nameTWzh
-        title = name
-        navigationController?.navigationBar.prefersLargeTitles = true
-        print("VillagerDetail: villager's name = " + name!)
-        
-        arrayDetailTitle.append("Personality")
-        arrayDetailTitle.append("Birthday")
-        arrayDetailTitle.append("Like")
-        arrayDetailTitle.append("Species")
-        arrayDetailTitle.append("Gender")
-        arrayDetailTitle.append("Catch phrase")
-        
-        arrayDetailContent.append(villager?.personality.rawValue ?? "")
-        arrayDetailContent.append(villager?.birthday ?? "")
-        arrayDetailContent.append(villager?.birthday ?? "")
-        arrayDetailContent.append(villager?.species ?? "")
-        arrayDetailContent.append(villager?.gender.rawValue ?? "")
-        arrayDetailContent.append(villager?.catchPhrase ?? "")
+
+        initViews()
+        bindViewModel()
+        viewModel.parseVillagerDetail(villager: villager!)
         
         tableDetail.register(UINib(nibName: "VillagerDetailAvatarCell", bundle: nil), forCellReuseIdentifier: "AvatarCell")
         tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
         
         tableDetail.backgroundColor = hexStringToUIColor(hex: villager?.bubbleColor ?? "")
+    }
+
+    func initViews() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let name = villager?.name.nameTWzh
+        title = name
+        print("VillagerDetail: villager's name = " + name!)
+    }
+
+    func bindViewModel() {
+        viewModel.onRequestEnd = { [self] in
+            tableDetail.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +54,7 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         case VillagerDetailCellType.Avatar.rawValue:
             return 1
         case VillagerDetailCellType.Content.rawValue:
-            return 6
+            return viewModel.villagerDetailCellViewModels.count
         default:
             return 0
         }
@@ -64,17 +64,14 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         switch indexPath.section {
         case VillagerDetailCellType.Avatar.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell", for: indexPath) as! VillagerDetailAvatarCell
-            cell.imageAvatar.loadUrl(url: villager?.imageURI ?? "", onLoadingCompleted: {() in
-                cell.viewLoading.stopAnimating()
-            })
+            cell.setup(viewModel: viewModel.villagerAvatarCellViewModel)
             return cell
             
         case VillagerDetailCellType.Content.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! VillagerDetailContentCell
-            cell.labelDetailTitle.text = arrayDetailTitle[indexPath.row]
-            cell.labelDetailContent.text = arrayDetailContent[indexPath.row]
-            cell.labelDetailTitle.textColor = hexStringToUIColor(hex: villager?.textColor ?? "")
+            cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
             return cell
+
         default:
             return UITableViewCell()
         }

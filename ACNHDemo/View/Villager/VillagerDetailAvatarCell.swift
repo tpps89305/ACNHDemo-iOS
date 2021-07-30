@@ -11,16 +11,11 @@ class VillagerDetailAvatarCell: UITableViewCell {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setup(viewModel: VillagerAvatarCellViewModel) {
+        imageAvatar.loadUrl(url: viewModel.imageUri, onLoadingCompleted: {() in
+            self.viewLoading.stopAnimating()
+        })
     }
     
 }

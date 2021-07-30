@@ -12,15 +12,10 @@ class VillagerDetailContentCell: UITableViewCell {
     @IBOutlet weak var labelDetailTitle: UILabel!
     @IBOutlet weak var labelDetailContent: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setup(viewModel: VillagerDetailCellViewModel) {
+        labelDetailTitle.text = viewModel.titleContentPair.title
+        labelDetailContent.text = viewModel.titleContentPair.content
+        labelDetailTitle.textColor = hexStringToUIColor(hex: viewModel.textColor)
     }
     
 }
