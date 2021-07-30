@@ -9,6 +9,7 @@ import UIKit
 
 class TagsListView: UIView, NibOwnerLoadable {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackTags: UIStackView!
     @IBOutlet weak var emptyView: UIView!
     
@@ -38,6 +39,10 @@ class TagsListView: UIView, NibOwnerLoadable {
 
     private func customInit() {
         loadNibContent()
+    }
+    
+    func resetScrollOffset() {
+        scrollView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func update() {

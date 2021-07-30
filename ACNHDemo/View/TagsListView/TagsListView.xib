@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagsListView" customModule="ACNHDemo" customModuleProvider="target">
             <connections>
                 <outlet property="emptyView" destination="hK4-Ek-1JR" id="dFi-su-21n"/>
+                <outlet property="scrollView" destination="MFL-K4-a7g" id="vgH-v3-uEO"/>
                 <outlet property="stackTags" destination="Qlo-10-WuF" id="NtC-Gh-bfU"/>
             </connections>
         </placeholder>

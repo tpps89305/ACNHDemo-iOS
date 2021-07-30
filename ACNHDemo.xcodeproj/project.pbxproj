@@ -106,12 +106,12 @@
 		F631DEEF269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEEE269D71EC00E2CDC4 /* FishCellViewModel.swift */; };
 		F631DEF0269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEEE269D71EC00E2CDC4 /* FishCellViewModel.swift */; };
 		F631DEF1269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEEE269D71EC00E2CDC4 /* FishCellViewModel.swift */; };
-		F631DEF7269D72EF00E2CDC4 /* FishesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* FishesCell.swift */; };
-		F631DEF8269D72EF00E2CDC4 /* FishesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* FishesCell.swift */; };
-		F631DEF9269D72EF00E2CDC4 /* FishesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* FishesCell.swift */; };
-		F631DEFA269D72EF00E2CDC4 /* FishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* FishesCell.xib */; };
-		F631DEFB269D72EF00E2CDC4 /* FishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* FishesCell.xib */; };
-		F631DEFC269D72EF00E2CDC4 /* FishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* FishesCell.xib */; };
+		F631DEF7269D72EF00E2CDC4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* CommonCell.swift */; };
+		F631DEF8269D72EF00E2CDC4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* CommonCell.swift */; };
+		F631DEF9269D72EF00E2CDC4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631DEF5269D72EF00E2CDC4 /* CommonCell.swift */; };
+		F631DEFA269D72EF00E2CDC4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* CommonCell.xib */; };
+		F631DEFB269D72EF00E2CDC4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* CommonCell.xib */; };
+		F631DEFC269D72EF00E2CDC4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F631DEF6269D72EF00E2CDC4 /* CommonCell.xib */; };
 		F631DF01269D84CB00E2CDC4 /* Fishes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F631DF00269D84CB00E2CDC4 /* Fishes.storyboard */; };
 		F631DF02269D84CB00E2CDC4 /* Fishes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F631DF00269D84CB00E2CDC4 /* Fishes.storyboard */; };
 		F631DF03269D84CB00E2CDC4 /* Fishes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F631DF00269D84CB00E2CDC4 /* Fishes.storyboard */; };
@@ -315,8 +315,8 @@
 		F631DEE0269D717500E2CDC4 /* FishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishesViewController.swift; sourceTree = "<group>"; };
 		F631DEE7269D71D200E2CDC4 /* FishesVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishesVCViewModel.swift; sourceTree = "<group>"; };
 		F631DEEE269D71EC00E2CDC4 /* FishCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishCellViewModel.swift; sourceTree = "<group>"; };
-		F631DEF5269D72EF00E2CDC4 /* FishesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishesCell.swift; sourceTree = "<group>"; };
-		F631DEF6269D72EF00E2CDC4 /* FishesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FishesCell.xib; sourceTree = "<group>"; };
+		F631DEF5269D72EF00E2CDC4 /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
+		F631DEF6269D72EF00E2CDC4 /* CommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonCell.xib; sourceTree = "<group>"; };
 		F631DF00269D84CB00E2CDC4 /* Fishes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fishes.storyboard; sourceTree = "<group>"; };
 		F631DF07269D854C00E2CDC4 /* Songs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Songs.storyboard; sourceTree = "<group>"; };
 		F650FEF2265A603700BF5202 /* ACNHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,6 +472,7 @@
 		F631DEBC269D2B9C00E2CDC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6BBF42926B3DD2900F90CFB /* Common */,
 				F69BF46E26AEA41700D777D2 /* TagsListView */,
 				F69BF46726AE96D100D777D2 /* AvailableMonthView */,
 				F654F87626A17DC500188318 /* BGM */,
@@ -687,6 +688,15 @@
 			path = TagsListView;
 			sourceTree = "<group>";
 		};
+		F6BBF42926B3DD2900F90CFB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F631DEF5269D72EF00E2CDC4 /* CommonCell.swift */,
+				F631DEF6269D72EF00E2CDC4 /* CommonCell.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		F6C9C9CF268D96A6001A1D9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,8 +750,6 @@
 			isa = PBXGroup;
 			children = (
 				F631DEE0269D717500E2CDC4 /* FishesViewController.swift */,
-				F631DEF5269D72EF00E2CDC4 /* FishesCell.swift */,
-				F631DEF6269D72EF00E2CDC4 /* FishesCell.xib */,
 				F631DF00269D84CB00E2CDC4 /* Fishes.storyboard */,
 				F6EFA3E6269E8B8C000A4F42 /* FishDetailViewController.swift */,
 			);
@@ -868,7 +876,7 @@
 				F6EC230B2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F66D15C426AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F69BF47A26AEA44700D777D2 /* TagsListView.xib in Resources */,
-				F631DEFA269D72EF00E2CDC4 /* FishesCell.xib in Resources */,
+				F631DEFA269D72EF00E2CDC4 /* CommonCell.xib in Resources */,
 				F631DF08269D854C00E2CDC4 /* Songs.storyboard in Resources */,
 				F650FF05265A603E00BF5202 /* LaunchScreen.storyboard in Resources */,
 				F6EFA416269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
@@ -904,7 +912,7 @@
 				F6EBFE9D2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F6AA45C1268C695100528F73 /* VillagersCell.xib in Resources */,
 				F6EFA417269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
-				F631DEFB269D72EF00E2CDC4 /* FishesCell.xib in Resources */,
+				F631DEFB269D72EF00E2CDC4 /* CommonCell.xib in Resources */,
 				F69BF47B26AEA44700D777D2 /* TagsListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -927,7 +935,7 @@
 				F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F6AA45C2268C695100528F73 /* VillagersCell.xib in Resources */,
 				F6EFA418269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
-				F631DEFC269D72EF00E2CDC4 /* FishesCell.xib in Resources */,
+				F631DEFC269D72EF00E2CDC4 /* CommonCell.xib in Resources */,
 				F69BF47C26AEA44700D777D2 /* TagsListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,7 +1101,7 @@
 				F6EC23082696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EFA3E7269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
 				F6C9C9D4268DA25E001A1D9A /* Villager.swift in Sources */,
-				F631DEF7269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
+				F631DEF7269D72EF00E2CDC4 /* CommonCell.swift in Sources */,
 				F654F82F26A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F67A7875269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F654F85C26A1657600188318 /* ArtVCViewModel.swift in Sources */,
@@ -1149,7 +1157,7 @@
 				F654F84626A1315500188318 /* ArtViewController.swift in Sources */,
 				F654F88326A1800E00188318 /* BGM.swift in Sources */,
 				F6116D28269FDCCF007BFEDE /* Time.swift in Sources */,
-				F631DEF8269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
+				F631DEF8269D72EF00E2CDC4 /* CommonCell.swift in Sources */,
 				F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F654F81726A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8D26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
@@ -1219,7 +1227,7 @@
 				F654F84726A1315500188318 /* ArtViewController.swift in Sources */,
 				F654F88426A1800E00188318 /* BGM.swift in Sources */,
 				F6116D29269FDCCF007BFEDE /* Time.swift in Sources */,
-				F631DEF9269D72EF00E2CDC4 /* FishesCell.swift in Sources */,
+				F631DEF9269D72EF00E2CDC4 /* CommonCell.swift in Sources */,
 				F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F654F81826A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8E26A02DB4007BFEDE /* BugsViewController.swift in Sources */,

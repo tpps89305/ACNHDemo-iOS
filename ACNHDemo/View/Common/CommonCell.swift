@@ -1,5 +1,5 @@
 //
-//  FishesCell.swift
+//  CommonCell.swift
 //  ACNHDemo
 //
 //  Created by 楊朝富 on 2021/7/13.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FishesCell: UITableViewCell {
+class CommonCell: UITableViewCell {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var labelName: UILabel!
@@ -28,6 +28,7 @@ class FishesCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageAvatar.image = nil
+        tagsListView.resetScrollOffset()
         viewLoading.startAnimating()
     }
     
@@ -41,6 +42,7 @@ class FishesCell: UITableViewCell {
         if tagsListView.tags.isEmpty {
             tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
         }
+        accessoryType = .disclosureIndicator
     }
     
     func setup(viewModel: SeaCreatureCellViewModel) {
@@ -53,6 +55,7 @@ class FishesCell: UITableViewCell {
         if tagsListView.tags.isEmpty {
             tagsListView.tags = ["Sell: \(seaCreature.price)"]
         }
+        accessoryType = .disclosureIndicator
     }
     
     func setup(viewModel: BugCellViewModel) {
@@ -65,6 +68,7 @@ class FishesCell: UITableViewCell {
         if tagsListView.tags.isEmpty {
             tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
         }
+        accessoryType = .disclosureIndicator
     }
     
     func setup(viewModel: FossilCellViewModel) {
@@ -94,6 +98,7 @@ class FishesCell: UITableViewCell {
         if tagsListView.tags.isEmpty {
             tagsListView.tags = salesInfo            
         }
+        accessoryType = .disclosureIndicator
     }
     
 }
