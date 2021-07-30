@@ -11,7 +11,7 @@ class SongsCell: UITableViewCell {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelPriceInfo: UILabel!
+    @IBOutlet weak var tagsListView: TagsListView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     override func awakeFromNib() {
@@ -39,8 +39,14 @@ class SongsCell: UITableViewCell {
             self.setNeedsLayout()
         })
         labelName.text = song.name.nameTWzh
-        let salesInfo = "Buy price: \(song.buyPrice ?? 0), Sell price: \(song.sellPrice)"
-        labelPriceInfo.text = salesInfo
+        var salesInfo: [String] = []
+        if song.buyPrice != nil {
+            salesInfo.append("Buy: \(song.buyPrice ?? 0)")
+        }
+        salesInfo.append("Sell: \(song.sellPrice)")
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = salesInfo
+        }
     }
     
 }

@@ -10,11 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TagsListTag" customModule="ACNHDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="134" height="103"/>
+            <rect key="frame" x="0.0" y="0.0" width="134" height="53"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell: 9487" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-ec-X1z">
-                    <rect key="frame" x="20" y="4" width="94" height="95"/>
+                    <rect key="frame" x="8" y="4" width="118" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -23,9 +23,9 @@
             <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="cxG-ec-X1z" secondAttribute="bottom" constant="4" id="IpU-Q3-w4i"/>
-                <constraint firstItem="cxG-ec-X1z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="bEz-EV-0SV"/>
+                <constraint firstItem="cxG-ec-X1z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bEz-EV-0SV"/>
                 <constraint firstItem="cxG-ec-X1z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="dlO-9F-0eK"/>
-                <constraint firstAttribute="trailing" secondItem="cxG-ec-X1z" secondAttribute="trailing" constant="20" symbolic="YES" id="pIY-WQ-5RP"/>
+                <constraint firstAttribute="trailing" secondItem="cxG-ec-X1z" secondAttribute="trailing" constant="8" id="pIY-WQ-5RP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
@@ -36,7 +36,7 @@
             <connections>
                 <outlet property="labelTag" destination="cxG-ec-X1z" id="MUx-xX-nP5"/>
             </connections>
-            <point key="canvasLocation" x="-213.04347826086959" y="-193.86160714285714"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="-210.60267857142856"/>
         </view>
     </objects>
     <resources>

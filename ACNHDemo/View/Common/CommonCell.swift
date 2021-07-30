@@ -101,4 +101,22 @@ class CommonCell: UITableViewCell {
         accessoryType = .disclosureIndicator
     }
     
+    func setup(viewModel: ArtCellViewModel) {
+        let artValue = viewModel.artValue
+        imageAvatar.loadUrl(url: artValue.imageURI, onLoadingCompleted: {() in
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        } )
+        labelName.text = artValue.name.nameTWzh
+        var salesInfo: [String] = []
+        if artValue.hasFake {
+            salesInfo.append("Might be fake")
+        }
+        salesInfo.append("Buy: \(artValue.buyPrice)")
+        salesInfo.append("Sell: \(artValue.sellPrice)")
+        if tagsListView.tags.isEmpty {
+            tagsListView.tags = salesInfo
+        }
+    }
+    
 }

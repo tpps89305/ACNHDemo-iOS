@@ -140,12 +140,6 @@
 		F654F82F26A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
 		F654F83026A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
 		F654F83126A11F4E00188318 /* FossilCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */; };
-		F654F83826A12F0400188318 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F83626A12F0400188318 /* ArtCell.swift */; };
-		F654F83926A12F0400188318 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F83626A12F0400188318 /* ArtCell.swift */; };
-		F654F83A26A12F0400188318 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F83626A12F0400188318 /* ArtCell.swift */; };
-		F654F83B26A12F0400188318 /* ArtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F654F83726A12F0400188318 /* ArtCell.xib */; };
-		F654F83C26A12F0400188318 /* ArtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F654F83726A12F0400188318 /* ArtCell.xib */; };
-		F654F83D26A12F0400188318 /* ArtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F654F83726A12F0400188318 /* ArtCell.xib */; };
 		F654F84526A1315500188318 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F84426A1315500188318 /* ArtViewController.swift */; };
 		F654F84626A1315500188318 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F84426A1315500188318 /* ArtViewController.swift */; };
 		F654F84726A1315500188318 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F84426A1315500188318 /* ArtViewController.swift */; };
@@ -197,12 +191,6 @@
 		F69BF47A26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
 		F69BF47B26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
 		F69BF47C26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
-		F69BF48226AEA5A100D777D2 /* TagsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */; };
-		F69BF48326AEA5A100D777D2 /* TagsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */; };
-		F69BF48426AEA5A100D777D2 /* TagsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */; };
-		F69BF48526AEA5A100D777D2 /* TagsListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */; };
-		F69BF48626AEA5A100D777D2 /* TagsListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */; };
-		F69BF48726AEA5A100D777D2 /* TagsListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */; };
 		F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
@@ -339,8 +327,6 @@
 		F654F81D26A11E9700188318 /* FossilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilsViewController.swift; sourceTree = "<group>"; };
 		F654F82726A11F3800188318 /* FossilsVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilsVCViewModel.swift; sourceTree = "<group>"; };
 		F654F82E26A11F4E00188318 /* FossilCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilCellViewModel.swift; sourceTree = "<group>"; };
-		F654F83626A12F0400188318 /* ArtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCell.swift; sourceTree = "<group>"; };
-		F654F83726A12F0400188318 /* ArtCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtCell.xib; sourceTree = "<group>"; };
 		F654F84426A1315500188318 /* ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewController.swift; sourceTree = "<group>"; };
 		F654F84B26A1381F00188318 /* Art.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		F654F85B26A1657600188318 /* ArtVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtVCViewModel.swift; sourceTree = "<group>"; };
@@ -358,8 +344,6 @@
 		F69BF45D26AE89C800D777D2 /* AvailableMonthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableMonthView.xib; sourceTree = "<group>"; };
 		F69BF46F26AEA43800D777D2 /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
 		F69BF47926AEA44700D777D2 /* TagsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListView.xib; sourceTree = "<group>"; };
-		F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListViewCell.swift; sourceTree = "<group>"; };
-		F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListViewCell.xib; sourceTree = "<group>"; };
 		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -559,8 +543,6 @@
 		F654F83526A12ED200188318 /* Art */ = {
 			isa = PBXGroup;
 			children = (
-				F654F83626A12F0400188318 /* ArtCell.swift */,
-				F654F83726A12F0400188318 /* ArtCell.xib */,
 				F654F84426A1315500188318 /* ArtViewController.swift */,
 			);
 			path = Art;
@@ -680,8 +662,6 @@
 			children = (
 				F69BF46F26AEA43800D777D2 /* TagsListView.swift */,
 				F69BF47926AEA44700D777D2 /* TagsListView.xib */,
-				F69BF48026AEA5A100D777D2 /* TagsListViewCell.swift */,
-				F69BF48126AEA5A100D777D2 /* TagsListViewCell.xib */,
 				F66D15BC26AFF4850035B565 /* TagsListTag.swift */,
 				F66D15C326AFF4B10035B565 /* TagsListTag.xib */,
 			);
@@ -880,9 +860,7 @@
 				F631DF08269D854C00E2CDC4 /* Songs.storyboard in Resources */,
 				F650FF05265A603E00BF5202 /* LaunchScreen.storyboard in Resources */,
 				F6EFA416269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
-				F69BF48526AEA5A100D777D2 /* TagsListViewCell.xib in Resources */,
 				F6EBFE9C2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
-				F654F83B26A12F0400188318 /* ArtCell.xib in Resources */,
 				F61A4DAD26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F69BF45E26AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
 				F650FF02265A603E00BF5202 /* Assets.xcassets in Resources */,
@@ -902,11 +880,9 @@
 				F6116D4F269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
 				F61A4DAE26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F631DF02269D84CB00E2CDC4 /* Fishes.storyboard in Resources */,
-				F654F83C26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8326A02CF1007BFEDE /* Bugs.storyboard in Resources */,
 				F69BF45F26AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
 				F66D15C526AFF4B10035B565 /* TagsListTag.xib in Resources */,
-				F69BF48626AEA5A100D777D2 /* TagsListViewCell.xib in Resources */,
 				F6EC230C2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
 				F6EBFE9D2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
@@ -925,11 +901,9 @@
 				F6116D50269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
 				F61A4DAF26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F631DF03269D84CB00E2CDC4 /* Fishes.storyboard in Resources */,
-				F654F83D26A12F0400188318 /* ArtCell.xib in Resources */,
 				F6116D8426A02CF1007BFEDE /* Bugs.storyboard in Resources */,
 				F69BF46026AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
 				F66D15C626AFF4B10035B565 /* TagsListTag.xib in Resources */,
-				F69BF48726AEA5A100D777D2 /* TagsListViewCell.xib in Resources */,
 				F6EC230D2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
 				F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
@@ -1073,7 +1047,6 @@
 				F654F81E26A11E9700188318 /* FossilsViewController.swift in Sources */,
 				F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F631DED3269D6DA200E2CDC4 /* Fish.swift in Sources */,
-				F69BF48226AEA5A100D777D2 /* TagsListViewCell.swift in Sources */,
 				F654F86626A1658D00188318 /* ArtCellViewModel.swift in Sources */,
 				F6EFA413269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
 				F6116DA126A0340D007BFEDE /* BugDetailViewController.swift in Sources */,
@@ -1096,7 +1069,6 @@
 				F6116D7026A02B09007BFEDE /* Bug.swift in Sources */,
 				F6AA45C7268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DC926A558C000C9699C /* HousewareCellViewModel.swift in Sources */,
-				F654F83826A12F0400188318 /* ArtCell.swift in Sources */,
 				F631DEE8269D71D200E2CDC4 /* FishesVCViewModel.swift in Sources */,
 				F6EC23082696F00A00C931EC /* SongsCell.swift in Sources */,
 				F6EFA3E7269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
@@ -1139,7 +1111,6 @@
 				F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FA2696EA8600C931EC /* SongsViewController.swift in Sources */,
-				F69BF48326AEA5A100D777D2 /* TagsListViewCell.swift in Sources */,
 				F61A4DA626A5546C00C9699C /* Houseware.swift in Sources */,
 				F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F61A4DB826A5583A00C9699C /* HousewaresViewController.swift in Sources */,
@@ -1161,7 +1132,6 @@
 				F67687BA2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F654F81726A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8D26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
-				F654F83926A12F0400188318 /* ArtCell.swift in Sources */,
 				F67A7876269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED4269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F69BF45826AE89A700D777D2 /* AvailableMonthView.swift in Sources */,
@@ -1209,7 +1179,6 @@
 				F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FB2696EA8600C931EC /* SongsViewController.swift in Sources */,
-				F69BF48426AEA5A100D777D2 /* TagsListViewCell.swift in Sources */,
 				F61A4DA726A5546C00C9699C /* Houseware.swift in Sources */,
 				F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
 				F61A4DB926A5583A00C9699C /* HousewaresViewController.swift in Sources */,
@@ -1231,7 +1200,6 @@
 				F67687BB2697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F654F81826A11D2A00188318 /* Fossil.swift in Sources */,
 				F6116D8E26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
-				F654F83A26A12F0400188318 /* ArtCell.swift in Sources */,
 				F67A7877269C3EDB00112F45 /* VillagerVCViewModel.swift in Sources */,
 				F631DED5269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F69BF45926AE89A700D777D2 /* AvailableMonthView.swift in Sources */,
