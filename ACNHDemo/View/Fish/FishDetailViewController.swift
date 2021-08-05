@@ -14,6 +14,7 @@ class FishDetailViewController: UIViewController {
     @IBOutlet weak var labelPriceInfo: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     @IBOutlet weak var availableMonthView: AvailableMonthView!
+    @IBOutlet weak var timeScaleView: TimeScaleView!
     
     var fish: Fish?
     
@@ -30,6 +31,7 @@ class FishDetailViewController: UIViewController {
         let priceInfo = "Sell price: \(fish!.price), Sell to CJ price: \(fish!.priceCj)"
         labelPriceInfo.text = priceInfo
         availableMonthView.availableMonth = fish!.availability.monthArrayNorthern
+        timeScaleView.drawTimeScale(time: fish!.availability.time)
     }
 
 }
