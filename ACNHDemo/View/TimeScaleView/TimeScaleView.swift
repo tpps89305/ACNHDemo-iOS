@@ -10,49 +10,33 @@ import UIKit
 
 @IBDesignable
 class TimeScaleView: UIView {
-    
-    var mTime: Time?
+
+    var startEndTimeArray: [[Int]]?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     override func layoutIfNeeded() {
         print("layoutIfNeeded")
     }
-    
+
     override func layoutSubviews() {
         print("layoutSubviews: \(frame)")
-        
+
         let padding: CGFloat = 10
         let drawOriginX = padding
         let drawOriginY = frame.height - 10
         let drawTargetLength = frame.width - padding * 2
-        
-        switch mTime {
-        case .empty:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 0, endHour: 24))
-            break
-        case .the4Am9Pm:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 4, endHour: 21))
-            break
-        case .the4Pm9Am:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 16, endHour: 24))
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 0, endHour: 9))
-            break
-        case .the9Am4Pm:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 9, endHour: 16))
-            break
-        case .the9Am4Pm9Pm4Am:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 9, endHour: 16))
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 21, endHour: 24))
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 0, endHour: 4))
-        case .the9Pm4Am:
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 21, endHour: 24))
-            layer.addSublayer(drawValueLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength, startHour: 0, endHour: 4))
-            break
-        case .none:
-            break
+
+        for eachStartEndTime in startEndTimeArray! {
+            layer.addSublayer(
+                    drawValueLine(originX: drawOriginX,
+                            originY: drawOriginY,
+                            targetLength: drawTargetLength,
+                            startHour: eachStartEndTime.first!,
+                            endHour: eachStartEndTime.last!
+                    ))
         }
 
         layer.addSublayer(drawBottomLine(originX: drawOriginX - 1, originY: drawOriginY, targetLength: drawTargetLength + 2))
@@ -61,10 +45,66 @@ class TimeScaleView: UIView {
         layer.addSublayer(drawScaleLine3(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
         drawText(parent: self, originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength)
     }
-    
-    func drawTimeScale(time: Time) {
-        mTime = time
+
+    func drawTimeScale(time: Time?) {
+        startEndTimeArray = []
+
+        switch time {
+        case .empty:
+            startEndTimeArray!.append([0, 24])
+            break
+        case .the4Am9Pm:
+            startEndTimeArray!.append([4, 21])
+            break
+        case .the4Pm9Am:
+            startEndTimeArray!.append([16, 24])
+            startEndTimeArray!.append([0, 9])
+            break
+        case .the9Am4Pm:
+            startEndTimeArray!.append([9, 16])
+            break
+        case .the9Am4Pm9Pm4Am:
+            startEndTimeArray!.append([9, 16])
+            startEndTimeArray!.append([21, 24])
+            startEndTimeArray!.append([0, 4])
+            break
+        case .the9Pm4Am:
+            startEndTimeArray!.append([21, 24])
+            startEndTimeArray!.append([0, 4])
+            break
+        case .none:
+            break
+        }
+
         print("drawTimeScale: \(frame)")
+        print("startEndTimeArray: \(startEndTimeArray ?? [])")
+    }
+
+    func drawTimeScale(arrayTime: [Int]) {
+        startEndTimeArray = []
+
+        var start = -1
+        var end = -1
+
+        for index in 0...arrayTime.count - 1 {
+            if start == -1 {
+                start = arrayTime[index]
+                continue
+            }
+            if arrayTime[index] - arrayTime[index - 1] != 1 {
+                end = arrayTime[index - 1] + 1
+                startEndTimeArray!.append([start, end])
+                start = arrayTime[index]
+                continue
+            }
+            if index == arrayTime.count - 1 {
+                end = arrayTime[index] + 1
+                startEndTimeArray!.append([start, end])
+            }
+        }
+
+        print("drawTimeScale: \(frame)")
+        print("startEndTimeArray: \(startEndTimeArray ?? [])")
     }
 
     private func drawBottomLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat) -> CAShapeLayer {
@@ -75,7 +115,7 @@ class TimeScaleView: UIView {
 
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.black.cgColor
-        shapeLayer.lineWidth = 4
+        shapeLayer.lineWidth = 2
         shapeLayer.path = bottomLine.cgPath
         return shapeLayer
     }
@@ -94,7 +134,7 @@ class TimeScaleView: UIView {
 
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.black.cgColor
-        shapeLayer.lineWidth = 2
+        shapeLayer.lineWidth = 1
         shapeLayer.path = scalePath.cgPath
         return shapeLayer
     }
@@ -159,7 +199,6 @@ class TimeScaleView: UIView {
             parent.layer.addSublayer(textLayer)
             newX = newX + scaleDistance
         }
-
     }
 
     private func drawValueLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat, startHour: Int, endHour: Int) -> CAShapeLayer {

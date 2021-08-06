@@ -14,7 +14,8 @@ class BugDetailViewController: UIViewController {
     @IBOutlet weak var labelPriceInfo: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     @IBOutlet weak var availableMonthView: AvailableMonthView!
-
+    @IBOutlet weak var timeScaleView: TimeScaleView!
+    
     var bug: Bug?
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class BugDetailViewController: UIViewController {
         let salesInfo = "Sell price: \(bug!.price), sell Flick price: \(bug!.priceFlick)"
         labelPriceInfo.text = salesInfo
         availableMonthView.availableMonth = bug!.availability.monthArrayNorthern
+        timeScaleView.drawTimeScale(arrayTime: bug!.availability.timeArray)
     }
 
 }

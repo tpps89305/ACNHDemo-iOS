@@ -14,7 +14,8 @@ class SeaCreatureDetailViewController: UIViewController {
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     @IBOutlet weak var availableMonthView: AvailableMonthView!
-
+    @IBOutlet weak var timeScaleView: TimeScaleView!
+    
     var seaCreature: SeaCreature?
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class SeaCreatureDetailViewController: UIViewController {
         labelSpeed.text = seaCreature?.speed.rawValue
         labelPrice.text = String(seaCreature!.price)
         availableMonthView.availableMonth = seaCreature!.availability.monthArrayNorthern
+        timeScaleView.drawTimeScale(time: seaCreature?.availability.time)
     }
 
 }
