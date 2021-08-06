@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, NibOwnerLoadable {
     
     @IBOutlet weak var collectionMonth: UICollectionView!
