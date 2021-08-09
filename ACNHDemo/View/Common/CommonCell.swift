@@ -39,9 +39,7 @@ class CommonCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fish.name.nameTWzh
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
-        }
+        tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
         accessoryType = .disclosureIndicator
     }
     
@@ -52,9 +50,7 @@ class CommonCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = seaCreature.name.nameTWzh
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = ["Sell: \(seaCreature.price)"]
-        }
+        tagsListView.tags = ["Sell: \(seaCreature.price)"]
         accessoryType = .disclosureIndicator
     }
     
@@ -65,9 +61,7 @@ class CommonCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = bug.name.nameTWzh
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
-        }
+        tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
         accessoryType = .disclosureIndicator
     }
     
@@ -78,9 +72,7 @@ class CommonCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fossil.name.nameTWzh
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = ["Sell: \(fossil.price)"]
-        }
+        tagsListView.tags = ["Sell: \(fossil.price)"]
     }
     
     func setup(viewModel: HousewareCellViewModel) {
@@ -95,9 +87,7 @@ class CommonCell: UITableViewCell {
             salesInfo.append("Buy: \(houseware.buyPrice ?? 0)")
         }
         salesInfo.append("Sell: \(houseware.sellPrice)")
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = salesInfo            
-        }
+        tagsListView.tags = salesInfo
         accessoryType = .disclosureIndicator
     }
     
@@ -114,9 +104,7 @@ class CommonCell: UITableViewCell {
         }
         salesInfo.append("Buy: \(artValue.buyPrice)")
         salesInfo.append("Sell: \(artValue.sellPrice)")
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = salesInfo
-        }
+        tagsListView.tags = salesInfo
     }
     
 }

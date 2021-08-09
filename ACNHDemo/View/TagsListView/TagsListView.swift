@@ -43,10 +43,14 @@ class TagsListView: UIView, NibOwnerLoadable {
     
     func resetScrollOffset() {
         scrollView.setContentOffset(CGPoint.zero, animated: false)
+        tags.removeAll()
     }
     
     func update() {
-        stackTags.removeArrangedSubview(emptyView)
+        for eachView in stackTags.arrangedSubviews {
+            stackTags.removeArrangedSubview(eachView)
+            eachView.removeFromSuperview()
+        }
         for tag in tags {
             if let tagView = Bundle(for: TagsListTag.self).loadNibNamed("\(TagsListTag.self)", owner: nil, options: nil)?.first as? TagsListTag {
                 tagView.labelTag.text = tag
