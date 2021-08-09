@@ -21,17 +21,16 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
         initViews()
         bindViewModel()
 
-        tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
         imageAvatar.loadUrl(url: houseware!.imageURI) {
-
+            // Do nothing
         }
-
         viewModel.parseHousewaresDetail(houseware: houseware!)
     }
 
     func initViews() {
         title = houseware!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
     }
 
     private func bindViewModel() {

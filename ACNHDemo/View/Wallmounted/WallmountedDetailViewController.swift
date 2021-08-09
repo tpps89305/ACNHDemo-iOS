@@ -13,42 +13,40 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var tableDetail: UITableView!
     
     var wallmounted: Wallmounted?
-    var arrayDetails: [Dictionary<String, String>] = []
+    let viewModel = WallmountedDetailVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initViews()
+        bindViewModel()
+
         // Do any additional setup after loading the view.
+        imageAvatar.loadUrl(url: wallmounted!.imageURI) {
+            // Do nothing
+        }
+        viewModel.parseWallmountedDetail(wallmounted: wallmounted!)
+    }
+
+    private func initViews() {
         title = wallmounted!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
         tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
-        initValues()
-        imageAvatar.loadUrl(url: wallmounted!.imageURI) {
-
-        }
     }
 
-    func initValues() {
-        var dict = ["title": "Size", "content": wallmounted!.size.rawValue]
-        arrayDetails.append(dict)
-        dict = ["title": "Tag", "content": wallmounted!.tag]
-        arrayDetails.append(dict)
-        if wallmounted!.buyPrice != nil {
-            dict = ["title": "Buy price", "content": String(wallmounted!.buyPrice!)]
-            arrayDetails.append(dict)
+    private func bindViewModel() {
+        viewModel.onRequestEnd = { [self] in
+            tableDetail.reloadData()
         }
-        dict = ["title": "Sell price", "content": String(wallmounted!.sellPrice)]
-        arrayDetails.append(dict)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayDetails.count
+        viewModel.villagerDetailCellViewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! VillagerDetailContentCell
-        cell.labelDetailTitle.text = arrayDetails[indexPath.row]["title"]
-        cell.labelDetailContent.text = arrayDetails[indexPath.row]["content"]
+        cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell
     }
 
