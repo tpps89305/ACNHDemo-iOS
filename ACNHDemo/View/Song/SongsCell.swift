@@ -44,9 +44,7 @@ class SongsCell: UITableViewCell {
             salesInfo.append("Buy: \(song.buyPrice ?? 0)")
         }
         salesInfo.append("Sell: \(song.sellPrice)")
-        if tagsListView.tags.isEmpty {
-            tagsListView.tags = salesInfo
-        }
+        tagsListView.tags = salesInfo
     }
     
 }

@@ -160,6 +160,10 @@ enum Size: String, Codable {
     case the3X1 = "3x1"
     case the3X2 = "3x2"
     case the3X3 = "3x3"
+    case the05X1 = "0.5x1"
+    case the1X15 = "1x1.5"
+    case the1X2 = "1x2"
+    case the2X15 = "2x1.5"
 }
 
 enum Source: String, Codable {
@@ -182,6 +186,14 @@ enum Source: String, Codable {
     case nookShoppingSeasonal = "Nook Shopping Seasonal"
     case pavé = "Pavé"
     case startingItems = "Starting items"
+    
+    case allVillagers = "All villagers"
+    case blathers = "Blathers"
+    case craftingAllVillagers = "Crafting; All villagers"
+    case hha = "HHA"
+    case jack = "Jack"
+    case mom = "Mom"
+    case nintendoNookShoppingDailySelection = "Nintendo; Nook Shopping Daily Selection"
 }
 
 enum SpeakerType: String, Codable {

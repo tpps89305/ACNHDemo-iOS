@@ -39,7 +39,7 @@ class CommonCell: UITableViewCell {
             self.viewLoading.stopAnimating()
         } )
         labelName.text = fish.name.nameTWzh
-        tagsListView.tags = ["Sell: \(fish.price)", "Sell price CJ: \(fish.priceCj)"]
+        tagsListView.tags = ["Sell: \(fish.price)", "Sell CJ: \(fish.priceCj)"]
         accessoryType = .disclosureIndicator
     }
     
@@ -105,6 +105,22 @@ class CommonCell: UITableViewCell {
         salesInfo.append("Buy: \(artValue.buyPrice)")
         salesInfo.append("Sell: \(artValue.sellPrice)")
         tagsListView.tags = salesInfo
+    }
+
+    func setup(viewModel: WallmountedCellViewModel) {
+        let wallmounted = viewModel.wallmounted
+        imageAvatar.loadUrl(url: wallmounted.imageURI, onLoadingCompleted: {() in
+            self.setNeedsLayout()
+            self.viewLoading.stopAnimating()
+        } )
+        labelName.text = wallmounted.name.nameTWzh
+        var salesInfo: [String] = []
+        if wallmounted.buyPrice != nil {
+            salesInfo.append("Buy: \(wallmounted.buyPrice ?? 0)")
+        }
+        salesInfo.append("Sell: \(wallmounted.sellPrice)")
+        tagsListView.tags = salesInfo
+        accessoryType = .disclosureIndicator
     }
     
 }
