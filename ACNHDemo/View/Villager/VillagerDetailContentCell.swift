@@ -15,7 +15,9 @@ class VillagerDetailContentCell: UITableViewCell {
     func setup(viewModel: VillagerDetailCellViewModel) {
         labelDetailTitle.text = viewModel.titleContentPair.title
         labelDetailContent.text = viewModel.titleContentPair.content
-        labelDetailTitle.textColor = hexStringToUIColor(hex: viewModel.textColor)
+        if viewModel.textColor != nil {
+            labelDetailTitle.textColor = hexStringToUIColor(hex: viewModel.textColor ?? "")
+        }
     }
     
 }

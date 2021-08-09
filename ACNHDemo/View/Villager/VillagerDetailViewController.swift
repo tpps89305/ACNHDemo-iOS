@@ -12,11 +12,10 @@ enum VillagerDetailCellType: Int {
 }
 
 class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var villager: Villager?
+
     @IBOutlet weak var tableDetail: UITableView!
-    var arrayDetailTitle: [String] = []
-    var arrayDetailContent: [String] = []
+
+    var villager: Villager?
     let viewModel = VillagerDetailVCViewModel()
     
     override func viewDidLoad() {
