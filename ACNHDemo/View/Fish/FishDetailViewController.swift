@@ -12,6 +12,8 @@ class FishDetailViewController: UIViewController {
     @IBOutlet weak var imageFish: UIImageView!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelPriceInfo: UILabel!
+    @IBOutlet weak var labelPriceCJ: UILabel!
+    @IBOutlet weak var labelRarity: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     @IBOutlet weak var availableMonthView: AvailableMonthView!
     @IBOutlet weak var timeScaleView: TimeScaleView!
@@ -27,9 +29,10 @@ class FishDetailViewController: UIViewController {
         imageFish.loadUrl(url: fish!.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
         })
+        labelPriceInfo.text = String(fish!.price)
+        labelPriceCJ.text = String(fish!.priceCj)
         labelLocation.text = fish!.availability.location.rawValue
-        let priceInfo = "Sell price: \(fish!.price), Sell to CJ price: \(fish!.priceCj)"
-        labelPriceInfo.text = priceInfo
+        labelRarity.text = fish!.availability.rarity.rawValue
         availableMonthView.availableMonth = fish!.availability.monthArrayNorthern
         timeScaleView.drawTimeScale(time: fish!.availability.time)
     }

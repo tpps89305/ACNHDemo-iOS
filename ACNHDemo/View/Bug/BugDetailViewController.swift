@@ -12,6 +12,8 @@ class BugDetailViewController: UIViewController {
     @IBOutlet weak var imageBug: UIImageView!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelPriceInfo: UILabel!
+    @IBOutlet weak var labelPriceFlick: UILabel!
+    @IBOutlet weak var labelRarity: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     @IBOutlet weak var availableMonthView: AvailableMonthView!
     @IBOutlet weak var timeScaleView: TimeScaleView!
@@ -26,9 +28,10 @@ class BugDetailViewController: UIViewController {
         imageBug.loadUrl(url: bug!.imageURI, onLoadingCompleted: {() in
             self.viewLoading.stopAnimating()
         })
-        labelLocation.text = bug?.availability.location
-        let salesInfo = "Sell price: \(bug!.price), sell Flick price: \(bug!.priceFlick)"
-        labelPriceInfo.text = salesInfo
+        labelPriceInfo.text = String(bug!.price)
+        labelPriceFlick.text = String(bug!.priceFlick)
+        labelLocation.text = bug!.availability.location
+        labelRarity.text = bug!.availability.rarity.rawValue
         availableMonthView.availableMonth = bug!.availability.monthArrayNorthern
         timeScaleView.drawTimeScale(arrayTime: bug!.availability.timeArray)
     }
