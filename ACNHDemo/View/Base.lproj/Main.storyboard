@@ -247,50 +247,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-Ll-Q5e">
-                                <rect key="frame" x="8" y="146.5" width="398" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXg-Kp-fYo" id="KZD-oh-1y5"/>
-                                    <outlet property="delegate" destination="vXg-Kp-fYo" id="LuY-Ry-lpG"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-oo-QZJ">
-                                <rect key="frame" x="132" y="378.5" width="150" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTz-fP-FQY">
+                                <rect key="frame" x="16" y="104" width="382" height="346.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select hour and weather" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-3L-NUJ">
+                                        <rect key="frame" x="16" y="16" width="350" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-Ll-Q5e">
+                                        <rect key="frame" x="16" y="58.5" width="350" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vXg-Kp-fYo" id="KZD-oh-1y5"/>
+                                            <outlet property="delegate" destination="vXg-Kp-fYo" id="LuY-Ry-lpG"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-oo-QZJ">
+                                        <rect key="frame" x="116" y="290.5" width="150" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7zg-KQ-ar5"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="150" id="Fgy-m4-d7V"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Play" image="play" catalog="system">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnPlayPress:" destination="vXg-Kp-fYo" eventType="touchUpInside" id="OGD-zd-vAF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.96293822149999997" blue="0.71266165920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7zg-KQ-ar5"/>
-                                    <constraint firstAttribute="width" constant="150" id="Fgy-m4-d7V"/>
+                                    <constraint firstItem="hdv-oo-QZJ" firstAttribute="top" secondItem="Ikz-Ll-Q5e" secondAttribute="bottom" constant="16" id="3YT-bt-38w"/>
+                                    <constraint firstItem="IZ2-3L-NUJ" firstAttribute="top" secondItem="oTz-fP-FQY" secondAttribute="top" constant="16" id="4yT-S5-9TH"/>
+                                    <constraint firstAttribute="bottom" secondItem="hdv-oo-QZJ" secondAttribute="bottom" constant="16" id="Eqa-3a-MBh"/>
+                                    <constraint firstAttribute="trailing" secondItem="IZ2-3L-NUJ" secondAttribute="trailing" constant="16" id="Fd2-hS-K4Q"/>
+                                    <constraint firstItem="Ikz-Ll-Q5e" firstAttribute="top" secondItem="IZ2-3L-NUJ" secondAttribute="bottom" constant="16" id="OAA-Qc-w6v"/>
+                                    <constraint firstItem="IZ2-3L-NUJ" firstAttribute="leading" secondItem="oTz-fP-FQY" secondAttribute="leading" constant="16" id="Oft-2w-KSE"/>
+                                    <constraint firstItem="hdv-oo-QZJ" firstAttribute="centerX" secondItem="oTz-fP-FQY" secondAttribute="centerX" id="mRZ-GW-o3C"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ikz-Ll-Q5e" secondAttribute="trailing" constant="16" id="nFp-gc-Ekn"/>
+                                    <constraint firstItem="Ikz-Ll-Q5e" firstAttribute="leading" secondItem="oTz-fP-FQY" secondAttribute="leading" constant="16" id="uWs-d7-jhz"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                <state key="normal" title="Play" image="play" catalog="system">
-                                    <color key="titleColor" name="AccentColor"/>
-                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnPlayPress:" destination="vXg-Kp-fYo" eventType="touchUpInside" id="OGD-zd-vAF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select hour and weather:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-3L-NUJ">
-                                <rect key="frame" x="16" y="104" width="301.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EjV-ZD-i9j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ikz-Ll-Q5e" firstAttribute="top" secondItem="IZ2-3L-NUJ" secondAttribute="bottom" constant="16" id="DfQ-da-tdQ"/>
-                            <constraint firstItem="EjV-ZD-i9j" firstAttribute="trailing" secondItem="Ikz-Ll-Q5e" secondAttribute="trailing" constant="8" id="S0O-Bb-HdX"/>
-                            <constraint firstItem="IZ2-3L-NUJ" firstAttribute="top" secondItem="EjV-ZD-i9j" secondAttribute="top" constant="16" id="X2X-OV-qBY"/>
-                            <constraint firstItem="IZ2-3L-NUJ" firstAttribute="leading" secondItem="EjV-ZD-i9j" secondAttribute="leading" constant="16" id="sIo-gp-8og"/>
-                            <constraint firstItem="Ikz-Ll-Q5e" firstAttribute="leading" secondItem="EjV-ZD-i9j" secondAttribute="leading" constant="8" id="wbT-3z-VW9"/>
-                            <constraint firstItem="hdv-oo-QZJ" firstAttribute="centerX" secondItem="pbN-8L-s6O" secondAttribute="centerX" id="wiU-hr-vJE"/>
-                            <constraint firstItem="hdv-oo-QZJ" firstAttribute="top" secondItem="Ikz-Ll-Q5e" secondAttribute="bottom" constant="16" id="za4-vK-8X0"/>
+                            <constraint firstItem="oTz-fP-FQY" firstAttribute="leading" secondItem="EjV-ZD-i9j" secondAttribute="leading" constant="16" id="2m8-ba-fL9"/>
+                            <constraint firstItem="EjV-ZD-i9j" firstAttribute="trailing" secondItem="oTz-fP-FQY" secondAttribute="trailing" constant="16" id="8P1-yl-bzG"/>
+                            <constraint firstItem="oTz-fP-FQY" firstAttribute="top" secondItem="EjV-ZD-i9j" secondAttribute="top" constant="16" id="l56-vJ-2Sd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BGM" id="47a-Yz-dvF"/>
@@ -301,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GA-Qa-wAY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="2291.5178571428569"/>
+            <point key="canvasLocation" x="47.826086956521742" y="2290.8482142857142"/>
         </scene>
         <!--Art-->
         <scene sceneID="9kN-ee-sKJ">
