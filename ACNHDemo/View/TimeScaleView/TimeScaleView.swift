@@ -12,13 +12,17 @@ import UIKit
 class TimeScaleView: UIView {
 
     var startEndTimeArray: [[Int]]?
+    var currentHour = -1
+    var currentMinute = -1
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
 
-    override func layoutIfNeeded() {
-        print("layoutIfNeeded")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let currentTime = formatter.string(from: Date())
+        currentHour = Int(currentTime.split(separator: ":")[0]) ?? -1
+        currentMinute = Int(currentTime.split(separator: ":")[1]) ?? -1
     }
 
     override func layoutSubviews() {
@@ -43,6 +47,13 @@ class TimeScaleView: UIView {
         layer.addSublayer(drawScaleLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
         layer.addSublayer(drawScaleLine2(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
         layer.addSublayer(drawScaleLine3(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
+        layer.addSublayer(
+                drawCurrentTimeLine(originX: drawOriginX,
+                        originY: drawOriginY,
+                        targetLength: drawTargetLength,
+                        currentHour: currentHour,
+                        currentMinute: currentMinute)
+        )
         drawText(parent: self, originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength)
     }
 
@@ -160,7 +171,6 @@ class TimeScaleView: UIView {
     }
 
     private func drawScaleLine3(originX: CGFloat, originY: CGFloat, targetLength: CGFloat) -> CAShapeLayer {
-
         let scaleDistance = CGFloat(targetLength) / 24.0
         var newX = originX
 
@@ -184,7 +194,6 @@ class TimeScaleView: UIView {
     }
 
     private func drawText(parent: UIView, originX: CGFloat, originY: CGFloat, targetLength: CGFloat) {
-
         let scaleDistance = CGFloat(targetLength) / 4.0
         var newX = originX
 
@@ -193,7 +202,7 @@ class TimeScaleView: UIView {
             textLayer.string = String(index * 6)
             textLayer.fontSize = 14
             textLayer.foregroundColor = UIColor.black.cgColor
-            textLayer.frame = CGRect(x: newX - 10, y: originY - 40, width: 20, height: 15)
+            textLayer.frame = CGRect(x: newX - 10, y: originY - 45, width: 20, height: 15)
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.alignmentMode = .center
             parent.layer.addSublayer(textLayer)
@@ -201,9 +210,9 @@ class TimeScaleView: UIView {
         }
     }
 
-    private func drawValueLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat, startHour: Int, endHour: Int) -> CAShapeLayer {
+    private func drawValueLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat,
+                               startHour: Int, endHour: Int) -> CAShapeLayer {
         let scaleDistance = CGFloat(targetLength) / 24.0
-
         let startHourX = scaleDistance * CGFloat(startHour)
         let endHourX = scaleDistance * CGFloat(endHour)
 
@@ -215,6 +224,28 @@ class TimeScaleView: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.systemGreen.cgColor
         shapeLayer.lineWidth = 8
+        shapeLayer.path = scalePath.cgPath
+
+        return shapeLayer
+    }
+
+    private func drawCurrentTimeLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat,
+                                     currentHour: Int, currentMinute: Int) -> CAShapeLayer {
+        if currentHour == -1 || currentMinute == -1 {
+            print("Cannot load current time, return empty CAShapeLayer.")
+            return CAShapeLayer()
+        }
+        let scaleDistance = CGFloat(targetLength) / 1440.0
+        let currentTimeX = scaleDistance * (CGFloat(currentHour) * 60 + CGFloat(currentMinute))
+
+        let scalePath = UIBezierPath()
+        scalePath.move(to: CGPoint(x: originX + currentTimeX, y: originY + 5))
+        scalePath.addLine(to: CGPoint(x: originX + currentTimeX, y: originY - 25))
+        scalePath.close()
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor.systemPink.cgColor
+        shapeLayer.lineWidth = 2
         shapeLayer.path = scalePath.cgPath
 
         return shapeLayer
