@@ -9,6 +9,7 @@ import UIKit
 
 class AvailableMonthCell: UICollectionViewCell {
 
+    @IBOutlet weak var viewMonthBorder: UIView!
     @IBOutlet weak var labelMonth: UILabel!
     @IBOutlet weak var viewMonth: UIView!
     
