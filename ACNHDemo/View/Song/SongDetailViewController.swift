@@ -14,8 +14,8 @@ class SongDetailViewController: UIViewController {
     var player: AVPlayer?
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var btnPlay: UIButton!
-    @IBOutlet weak var labelSource: UILabel!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
+    @IBOutlet weak var viewSourceNook: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,7 @@ class SongDetailViewController: UIViewController {
             self.viewLoading.stopAnimating()
         })
         player = AVPlayer.init(url: URL(string: song!.musicURI)!)
-        
-        var source = "Source: K.K. concert"
-        if song!.isOrderable {
-            source += ", Nook Shopping Daily Selection"
-        }
-        labelSource.text = source
+        viewSourceNook.isHidden = !song!.isOrderable
     }
     
     @IBAction func btnPlayPress(_ sender: UIButton) {
