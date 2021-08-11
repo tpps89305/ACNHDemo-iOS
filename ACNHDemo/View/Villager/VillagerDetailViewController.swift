@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 enum VillagerDetailCellType: Int {
     case Avatar = 0, Content
@@ -27,8 +28,8 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         tableDetail.register(UINib(nibName: "VillagerDetailAvatarCell", bundle: nil), forCellReuseIdentifier: "AvatarCell")
         tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
-        
-        tableDetail.backgroundColor = hexStringToUIColor(hex: villager?.bubbleColor ?? "")
+
+        tableDetail.backgroundColor = UIColor(hexString: villager?.bubbleColor ?? "")
     }
 
     func initViews() {

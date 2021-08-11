@@ -7,6 +7,7 @@ target 'ACNHDemo' do
 
   # Pods for ACNHDemo
   pod 'Moya', '~> 14.0'
+  pod 'DynamicColor', '~> 5.0.0'
 
   target 'ACNHDemoTests' do
     inherit! :search_paths

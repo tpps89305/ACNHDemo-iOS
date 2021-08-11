@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class VillagerDetailContentCell: UITableViewCell {
     
@@ -15,9 +16,8 @@ class VillagerDetailContentCell: UITableViewCell {
     func setup(viewModel: VillagerDetailCellViewModel) {
         labelDetailTitle.text = viewModel.titleContentPair.title
         labelDetailContent.text = viewModel.titleContentPair.content
-        if viewModel.textColor != nil {
-            labelDetailTitle.textColor = hexStringToUIColor(hex: viewModel.textColor ?? "")
-        }
+        labelDetailTitle.textColor = UIColor(hexString: viewModel.textColor ?? "")
+        labelDetailContent.textColor = UIColor(hexString: viewModel.bubbleColor ?? "").inverted()
     }
     
 }

@@ -18,13 +18,13 @@ class VillagerDetailVCViewModel {
         arrayDetailItem.append(TitleContentPair(title: "Species", content: villager.species))
         arrayDetailItem.append(TitleContentPair(title: "Gender", content: villager.gender.rawValue))
         arrayDetailItem.append(TitleContentPair(title: "Catch phrase", content: villager.catchPhrase))
-        convertToViewModel(arrayDetailItem: arrayDetailItem, textColor: villager.textColor)
+        convertToViewModel(arrayDetailItem: arrayDetailItem, textColor: villager.textColor, bubbleColor: villager.bubbleColor)
         convertToViewModel(imageUrl: villager.imageURI)
     }
 
-    private func convertToViewModel(arrayDetailItem: [TitleContentPair], textColor: String) {
+    private func convertToViewModel(arrayDetailItem: [TitleContentPair], textColor: String, bubbleColor: String) {
         for eachPair in arrayDetailItem {
-            let villagerDetailCellViewModel = VillagerDetailCellViewModel(titleContentPair: eachPair, textColor: textColor)
+            let villagerDetailCellViewModel = VillagerDetailCellViewModel(titleContentPair: eachPair, textColor: textColor, bubbleColor:bubbleColor)
             villagerDetailCellViewModels.append(villagerDetailCellViewModel)
         }
         onRequestEnd!()
