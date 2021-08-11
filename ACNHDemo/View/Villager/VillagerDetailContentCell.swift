@@ -16,8 +16,16 @@ class VillagerDetailContentCell: UITableViewCell {
     func setup(viewModel: VillagerDetailCellViewModel) {
         labelDetailTitle.text = viewModel.titleContentPair.title
         labelDetailContent.text = viewModel.titleContentPair.content
-        labelDetailTitle.textColor = UIColor(hexString: viewModel.textColor ?? "")
-        labelDetailContent.textColor = UIColor(hexString: viewModel.bubbleColor ?? "").inverted()
+        
+        // Skip set text color if not setting the value
+        if viewModel.textColor != nil {
+            labelDetailTitle.textColor = UIColor(hexString: viewModel.textColor!)
+        }
+        
+        // Skip set text color if not setting the value
+        if viewModel.textColor != nil {
+            labelDetailContent.textColor = UIColor(hexString: viewModel.bubbleColor!).inverted()
+        }
     }
     
 }
