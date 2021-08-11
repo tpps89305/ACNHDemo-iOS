@@ -9,16 +9,22 @@ import UIKit
 
 class CatalogViewController: UITableViewController {
     
-    let arrayCatalog = ["Songs", "Fishes", "Sea Creatures", "Bugs", "Fossils", "Art", "BGM", "Houseware", "Wallmounted"]
+    let arrayCatalog = [
+        TitleIconPair(title: "Songs", iconName: "Music"),
+        TitleIconPair(title: "Fishes", iconName: "Fish0"),
+        TitleIconPair(title: "Sea Creatures", iconName: "Akoyagai"),
+        TitleIconPair(title: "Bugs", iconName: "Bug0"),
+        TitleIconPair(title: "Fossils", iconName: "Fossil_NH_Inv_Icon"),
+        TitleIconPair(title: "Art", iconName: "Art"),
+        TitleIconPair(title: "BGM", iconName: "Music"),
+        TitleIconPair(title: "Houseware", iconName: "Housewares"),
+        TitleIconPair(title: "Wallmounted", iconName: "Wallmounted")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
@@ -28,8 +34,9 @@ class CatalogViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CatalogCell", for: indexPath)
-        cell.textLabel?.text = arrayCatalog[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CatalogCell", for: indexPath) as! CatalogCell
+        cell.labelName?.text = arrayCatalog[indexPath.row].title
+        cell.imageIcon?.image = arrayCatalog[indexPath.row].icon
         return cell
     }
     

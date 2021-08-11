@@ -40,6 +40,7 @@
                         <rect key="frame" x="20" y="16" width="100" height="100"/>
                     </activityIndicatorView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="wbb-pi-r9U" firstAttribute="leading" secondItem="m6g-GW-Efh" secondAttribute="trailing" constant="16" id="9rO-nN-MVV"/>
                     <constraint firstItem="m6g-GW-Efh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DA7-N0-Dpw"/>
@@ -57,6 +58,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageAvatar" destination="m6g-GW-Efh" id="58W-nx-xCQ"/>
                 <outlet property="labelName" destination="P9C-VH-eUZ" id="IM5-D0-4DJ"/>

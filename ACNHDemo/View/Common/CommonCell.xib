@@ -45,6 +45,7 @@
                         <rect key="frame" x="20" y="16" width="64" height="64"/>
                     </activityIndicatorView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="48i-SA-tsw" firstAttribute="top" secondItem="QvA-Sb-9g0" secondAttribute="top" id="86t-BV-Mw8"/>
                     <constraint firstItem="48i-SA-tsw" firstAttribute="trailing" secondItem="QvA-Sb-9g0" secondAttribute="trailing" id="B1S-k3-pR8"/>
@@ -59,6 +60,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageAvatar" destination="QvA-Sb-9g0" id="1Kk-EJ-ewA"/>
                 <outlet property="labelName" destination="wu9-zX-ZbX" id="OwM-hI-b81"/>

@@ -9,6 +9,8 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
+    let viewModel = DashboardVCViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,7 @@ class DashboardViewController: UIViewController {
     
     func initViews() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = viewModel.getTodayInfo()
     }
 
     /*

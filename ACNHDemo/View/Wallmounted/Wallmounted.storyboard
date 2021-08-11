@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oel-Um-01f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <connections>
                             <outlet property="dataSource" destination="qAj-5i-1xm" id="k3Z-zV-5QK"/>
                             <outlet property="delegate" destination="qAj-5i-1xm" id="mdJ-Do-ndA"/>
@@ -47,7 +46,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="No2-vc-PA1">
                                 <rect key="frame" x="32" y="224" width="350" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="qfE-Z8-dYf"/>
                                 </constraints>
@@ -58,7 +57,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fMh-uq-bMF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fMh-uq-bMF" firstAttribute="trailing" secondItem="No2-vc-PA1" secondAttribute="trailing" constant="32" id="3pt-6I-jFn"/>
                             <constraint firstItem="rLM-Bz-wBY" firstAttribute="top" secondItem="fMh-uq-bMF" secondAttribute="top" constant="32" id="fIP-F8-6tm"/>
@@ -78,9 +77,4 @@
             <point key="canvasLocation" x="513" y="149"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

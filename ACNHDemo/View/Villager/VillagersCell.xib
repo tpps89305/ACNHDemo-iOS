@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="f3r-6B-jPL" customClass="VillagersCell" customModule="ACNHDemo" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="f3r-6B-jPL" customClass="VillagersCell" customModule="ACNHDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3r-6B-jPL" id="afX-LC-Ftw">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                <rect key="frame" x="0.0" y="0.0" width="383" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IK2-Ip-bZX">
@@ -24,7 +24,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrW-M0-Vq1">
-                        <rect key="frame" x="88" y="29.5" width="306" height="21"/>
+                        <rect key="frame" x="88" y="29.5" width="275" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +33,7 @@
                         <rect key="frame" x="20" y="10" width="60" height="60"/>
                     </activityIndicatorView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="hTo-dn-9MP" firstAttribute="top" secondItem="IK2-Ip-bZX" secondAttribute="top" id="1ZA-H6-cqV"/>
                     <constraint firstItem="WrW-M0-Vq1" firstAttribute="leading" secondItem="IK2-Ip-bZX" secondAttribute="trailing" constant="8" symbolic="YES" id="4zf-Zh-xyB"/>
@@ -47,6 +48,7 @@
                     <constraint firstItem="IK2-Ip-bZX" firstAttribute="top" secondItem="afX-LC-Ftw" secondAttribute="top" constant="10" id="oTY-Wz-HfG"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageVillager" destination="IK2-Ip-bZX" id="SlP-Yx-kMy"/>
                 <outlet property="labelVillager" destination="WrW-M0-Vq1" id="9zb-Rf-btk"/>
