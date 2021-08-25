@@ -53,12 +53,11 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //255 243 173
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as! AvailableMonthCell
         cell.labelMonth.text = arrayMonth[indexPath.row]
         if availableMonth.contains(indexPath.row + 1) {
-            cell.viewMonth.backgroundColor = UIColor.init(red: 0.941, green: 0.839, blue: 0.258, alpha: 1) // 240 214 66
-            cell.labelMonth.textColor = UIColor.init(red: 0.294, green: 0.294, blue: 0.294, alpha: 1) // 75 75 75
+            cell.viewMonth.backgroundColor = ACNHColor.tagBackground
+            cell.labelMonth.textColor = ACNHColor.tagTextColor
         }
         if indexPath.row == monthOfToday - 1 {
             cell.viewMonthBorder.backgroundColor = UIColor.systemPink

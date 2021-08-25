@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="upT-6V-x3n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +16,14 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qxC-xM-Wsu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="upT-6V-x3n" id="pZG-kI-IA9"/>
                             <outlet property="delegate" destination="upT-6V-x3n" id="mhl-9k-aJU"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bugs" id="0De-9h-VLz"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="o9N-OM-m5O" kind="show" identifier="gotoBugDetail" id="yBQ-qm-yAn"/>
                     </connections>
@@ -34,11 +37,11 @@
             <objects>
                 <viewController id="o9N-OM-m5O" customClass="BugDetailViewController" customModule="ACNHDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X6V-5X-9Dt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNR-Ea-qtz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hsr-zI-LdA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="750.5"/>
@@ -203,7 +206,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kga-A5-UPQ"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GNR-Ea-qtz" firstAttribute="trailing" secondItem="kga-A5-UPQ" secondAttribute="trailing" id="URA-5S-i4W"/>
                             <constraint firstItem="GNR-Ea-qtz" firstAttribute="top" secondItem="kga-A5-UPQ" secondAttribute="top" id="Xsl-nt-6wa"/>
@@ -228,4 +231,9 @@
             <point key="canvasLocation" x="373.91304347826087" y="28.794642857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qAj-5i-1xm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +16,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oel-Um-01f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="qAj-5i-1xm" id="k3Z-zV-5QK"/>
                             <outlet property="delegate" destination="qAj-5i-1xm" id="mdJ-Do-ndA"/>
@@ -85,7 +87,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fMh-uq-bMF"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jDd-od-c1f" firstAttribute="bottom" secondItem="fMh-uq-bMF" secondAttribute="bottom" id="25Q-nh-vgj"/>
                             <constraint firstItem="jDd-od-c1f" firstAttribute="top" secondItem="fMh-uq-bMF" secondAttribute="top" id="V7g-Dd-Sof"/>
@@ -104,4 +106,9 @@
             <point key="canvasLocation" x="511.59420289855075" y="148.66071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

@@ -17,7 +17,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UR4-iw-1u3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="8pf-CF-JTW" id="eT1-3o-RJQ"/>
                             <outlet property="delegate" destination="8pf-CF-JTW" id="fe3-jz-hiu"/>
@@ -85,7 +85,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GdI-DR-kMm"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="beZ-ef-GvO" firstAttribute="trailing" secondItem="GdI-DR-kMm" secondAttribute="trailing" id="7PM-QD-4Az"/>
                             <constraint firstItem="GdI-DR-kMm" firstAttribute="bottom" secondItem="beZ-ef-GvO" secondAttribute="bottom" id="WPu-ZQ-Ag6"/>
@@ -127,7 +127,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Amw-j3-jBM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CatalogCell" rowHeight="66" id="vmW-Qk-16h" customClass="CatalogCell" customModule="ACNHDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="66"/>
@@ -216,7 +216,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Exh-og-kQz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="RWT-7t-BJd" id="nah-93-vhX"/>
                             <outlet property="delegate" destination="RWT-7t-BJd" id="fLh-vO-dnS"/>
@@ -303,7 +303,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.96293822149999997" blue="0.71266165920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="SquareColor"/>
                                 <constraints>
                                     <constraint firstItem="hdv-oo-QZJ" firstAttribute="top" secondItem="Ikz-Ll-Q5e" secondAttribute="bottom" constant="16" id="3YT-bt-38w"/>
                                     <constraint firstItem="IZ2-3L-NUJ" firstAttribute="top" secondItem="oTz-fP-FQY" secondAttribute="top" constant="16" id="4yT-S5-9TH"/>
@@ -323,7 +323,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EjV-ZD-i9j"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oTz-fP-FQY" firstAttribute="leading" secondItem="EjV-ZD-i9j" secondAttribute="leading" constant="16" id="2m8-ba-fL9"/>
                             <constraint firstItem="EjV-ZD-i9j" firstAttribute="trailing" secondItem="oTz-fP-FQY" secondAttribute="trailing" constant="16" id="8P1-yl-bzG"/>
@@ -347,7 +347,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FIh-4X-lkb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="OC0-AD-MhA" id="2VG-UA-EPi"/>
                             <outlet property="delegate" destination="OC0-AD-MhA" id="7Bd-UZ-vhI"/>
@@ -540,7 +540,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99818918199999995" green="1" blue="0.91618540780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="SquareColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="CUk-OR-f0K" secondAttribute="trailing" id="ApM-Do-slI"/>
                                                             <constraint firstAttribute="bottom" secondItem="CUk-OR-f0K" secondAttribute="bottom" id="SUf-Sy-ZWD"/>
@@ -615,7 +615,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B6Y-xG-hEn"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dGN-MX-lDc" firstAttribute="top" secondItem="B6Y-xG-hEn" secondAttribute="top" id="Kfa-Tx-Cnk"/>
                             <constraint firstItem="dGN-MX-lDc" firstAttribute="trailing" secondItem="B6Y-xG-hEn" secondAttribute="trailing" id="LqW-wt-5Ix"/>
@@ -677,6 +677,12 @@
         <image name="play" catalog="system" width="120" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SquareColor">
+            <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

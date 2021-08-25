@@ -232,6 +232,9 @@
 		F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
 		F6A7B7E826D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
 		F6A7B7E926D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
+		F6A7B7F426D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
+		F6A7B7F526D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
+		F6A7B7F626D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
 		F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
@@ -398,6 +401,7 @@
 		F69BF46F26AEA43800D777D2 /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
 		F69BF47926AEA44700D777D2 /* TagsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListView.xib; sourceTree = "<group>"; };
 		F6A7B7E626D5EE5900D1FE80 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHColor.swift; sourceTree = "<group>"; };
 		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -794,6 +798,7 @@
 				3EDEB71D1875AFACF168E0F5 /* TitleContentPair.swift */,
 				F661B5F926C289980030B15D /* TitleIconPair.swift */,
 				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
+				F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1189,6 +1194,7 @@
 				F6EC22F92696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6116D8C26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F654F88226A1800E00188318 /* BGM.swift in Sources */,
+				F6A7B7F426D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				3EDEBAF96F8EEA0B401F66A8 /* NibOwnerLoadable.swift in Sources */,
@@ -1258,6 +1264,7 @@
 				F6116D9426A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
+				F6A7B7F526D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F654F87926A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
@@ -1339,6 +1346,7 @@
 				F6116D9526A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
+				F6A7B7F626D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F654F87A26A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,

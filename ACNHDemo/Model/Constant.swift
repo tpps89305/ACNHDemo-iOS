@@ -46,4 +46,9 @@ class Constant {
         static let HOUSEWARE = "Housewares"
         static let WALLMOUNTED = "Wallmounted"
     }
+    
+    class ColorName {
+        static let TAG_BACKGROUND = "TagBackground"
+        static let TAG_TEXT_COLOR = "TagTextColor"
+    }
 }

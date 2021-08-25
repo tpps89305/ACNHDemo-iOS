@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h82-zd-Ps6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +16,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yJQ-eR-eL8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="h82-zd-Ps6" id="MFy-Qb-wy4"/>
                             <outlet property="delegate" destination="h82-zd-Ps6" id="Bfg-JL-jyY"/>
@@ -205,7 +207,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zok-7V-Xgs"/>
-                        <color key="backgroundColor" red="0.96813529730000003" green="0.95795351269999995" blue="0.87842059139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AKJ-zt-56H" firstAttribute="top" secondItem="zok-7V-Xgs" secondAttribute="top" id="K47-QZ-zkI"/>
                             <constraint firstItem="zok-7V-Xgs" firstAttribute="trailing" secondItem="AKJ-zt-56H" secondAttribute="trailing" id="TOF-zq-dAf"/>
@@ -227,7 +229,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6UK-UK-BjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1715.9420289855075" y="1857.5892857142856"/>
+            <point key="canvasLocation" x="1680" y="1858"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
