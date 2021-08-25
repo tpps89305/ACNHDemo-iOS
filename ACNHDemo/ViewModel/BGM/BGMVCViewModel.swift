@@ -26,9 +26,9 @@ class BGMVCViewModel: NSObject {
                     bgm0.id < bgm1.id
                 }
                 self.onRequestEnd!()
-                print("Done!")
+                print("Success to get BGMs!")
             } catch {
-                print("Error!")
+                print("Error when get BGMs...")
             }
         }
     }

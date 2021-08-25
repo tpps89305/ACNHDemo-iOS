@@ -44,9 +44,9 @@ class FossilsVCViewModel: NSObject {
                     fossil0.fileName < fossil1.fileName
                 }
                 self.convertToViewModel(fossils: self.arrayFossils)
-                print("Done!")
+                print("Success to get fossils!")
             } catch {
-                print("Error!")
+                print("Error when get fossils...")
             }
         }
     }

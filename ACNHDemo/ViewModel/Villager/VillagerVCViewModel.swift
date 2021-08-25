@@ -45,9 +45,9 @@ class VillagerVCViewModel: NSObject {
                     villager0.fileName < villager1.fileName
                 }
                 self.convertToViewModel(villagers: self.arrayVillagers)
-                print("Done!")
+                print("Success to get villagers!")
             } catch {
-                print("Error!")
+                print("Error when get villagers...")
             }
         }
     }

@@ -43,8 +43,9 @@ class HousewaresVCViewModel: NSObject {
                     houseware0.internalID < houseware1.internalID
                 }
                 self.convertToViewModel(housewares: self.arrayHousewares)
+                print("Success to get housewares!")
             } catch {
-                print("Error!")
+                print("Error when get housewares...")
             }
         }
     }

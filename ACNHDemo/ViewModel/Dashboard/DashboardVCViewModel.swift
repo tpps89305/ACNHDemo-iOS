@@ -38,9 +38,9 @@ class DashboardVCViewModel {
                     fish0.fileName < fish1.fileName
                 }
                 onCompleted(arrayFishes.count)
-                print("Done!")
+                print("Success to get fishes!")
             } catch {
-                print("Error!")
+                print("Error when get fishes...")
             }
         }
     }
@@ -63,9 +63,9 @@ class DashboardVCViewModel {
                     seaCreature0.id < seaCreature1.id
                 }
                 onCompleted(arraySeaCreatures.count)
-                print("Done!")
+                print("Success to get sea creatures!")
             } catch {
-                print("Error!")
+                print("Error when get sea creatures...")
             }
         }
     }
@@ -85,9 +85,9 @@ class DashboardVCViewModel {
                     bug0.id < bug1.id
                 }
                 onCompleted(arrayBugs.count)
-                print("Done!")
+                print("Success to get bugs!")
             } catch {
-                print("Error!")
+                print("Error when get bugs...")
             }
         }
     }

@@ -38,8 +38,9 @@ class WallmountedVCViewModel {
                     wallmounted.internalID < wallmounted2.internalID
                 }
                 self.convertToViewModel(wallmounteds: self.arrayWallmounted)
+                print("Success to get wallmounted!")
             } catch {
-                print("Error when get Wallmounted!")
+                print("Error when get wallmounted...")
             }
         }
     }

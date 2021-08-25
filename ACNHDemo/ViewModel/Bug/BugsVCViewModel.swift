@@ -45,9 +45,9 @@ class BugsVCViewModel: NSObject {
                     bug0.id < bug1.id
                 }
                 self.convertToViewModel(bugs: self.arrayBugs)
-                print("Done!")
+                print("Success to get bugs!")
             } catch {
-                print("Error!")
+                print("Error when get bugs...")
             }
         }
     }

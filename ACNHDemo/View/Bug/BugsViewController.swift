@@ -24,9 +24,9 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: "CommonCell", bundle: nil), forCellReuseIdentifier: "CommonCell")
+        tableView.register(UINib(nibName: String(describing: CommonCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.COMMON_CELL)
         // Avoid issue of cannot select cell(s)
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     func bindViewModel() {
@@ -46,14 +46,14 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell", for: indexPath) as! CommonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
         let listCellViewModel = viewModel.bugCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gotoBugDetail", sender: self)
+        performSegue(withIdentifier: Constant.SegueID.GOTO_BUG_DETAIL, sender: self)
     }
     
     //MARK: UISearchBar Delegate
@@ -73,7 +73,7 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "gotoBugDetail", let destinationVC = segue.destination as? BugDetailViewController {
+        if segue.identifier == Constant.SegueID.GOTO_BUG_DETAIL, let destinationVC = segue.destination as? BugDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 destinationVC.bug = viewModel.bugCellViewModels[row].bug
             }

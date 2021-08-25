@@ -26,8 +26,8 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         bindViewModel()
         viewModel.parseVillagerDetail(villager: villager!)
         
-        tableDetail.register(UINib(nibName: "VillagerDetailAvatarCell", bundle: nil), forCellReuseIdentifier: "AvatarCell")
-        tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
+        tableDetail.register(UINib(nibName: String(describing: VillagerDetailAvatarCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL)
+        tableDetail.register(UINib(nibName: String(describing: VillagerDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
 
         tableDetail.backgroundColor = UIColor(hexString: villager?.bubbleColor ?? "")
     }
@@ -63,12 +63,12 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case VillagerDetailCellType.Avatar.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell", for: indexPath) as! VillagerDetailAvatarCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL, for: indexPath) as! VillagerDetailAvatarCell
             cell.setup(viewModel: viewModel.villagerAvatarCellViewModel)
             return cell
             
         case VillagerDetailCellType.Content.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! VillagerDetailContentCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as! VillagerDetailContentCell
             cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
             return cell
 

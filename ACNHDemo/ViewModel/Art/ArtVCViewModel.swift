@@ -44,9 +44,9 @@ class ArtVCViewModel: NSObject {
                     artValue0.id < artValue1.id
                 }
                 self.convertToViewModel(artValues: self.arrayArtValues)
-                print("Done!")
+                print("Success to get art!")
             } catch {
-                print("Error!")
+                print("Error when get art...")
             }
         }
     }

@@ -45,9 +45,9 @@ class SongsVCViewModel: NSObject {
                     song0.fileName < song1.fileName
                 }
                 self.convertToViewModel(songs: self.arraySongs)
-                print("Done!")
+                print("Success to get songs!")
             } catch {
-                print("Error!")
+                print("Error when get songs...")
             }
         }
     }

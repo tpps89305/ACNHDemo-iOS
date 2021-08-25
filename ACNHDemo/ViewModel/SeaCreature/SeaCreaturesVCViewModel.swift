@@ -45,9 +45,9 @@ class SeaCreaturesVCViewModel: NSObject {
                     seaCreature0.id < seaCreature1.id
                 }
                 self.convertToViewModel(seaCreatures: self.arraySeaCreatures)
-                print("Done!")
+                print("Success to get sea creatures!")
             } catch {
-                print("Error!")
+                print("Error when get sea creatures...")
             }
         }
     }

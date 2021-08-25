@@ -36,7 +36,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
 
     override func awakeFromNib() {
-        collectionMonth.register(UINib(nibName: "AvailableMonthCell", bundle: nil), forCellWithReuseIdentifier: "MonthCell")
+        collectionMonth.register(UINib(nibName: String(describing: AvailableMonthCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL)
         let formatter = DateFormatter()
         formatter.dateFormat = "MM"
         let todayString = formatter.string(from: Date())
@@ -54,7 +54,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //255 243 173
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthCell", for: indexPath) as! AvailableMonthCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as! AvailableMonthCell
         cell.labelMonth.text = arrayMonth[indexPath.row]
         if availableMonth.contains(indexPath.row + 1) {
             cell.viewMonth.backgroundColor = UIColor.init(red: 0.941, green: 0.839, blue: 0.258, alpha: 1) // 240 214 66

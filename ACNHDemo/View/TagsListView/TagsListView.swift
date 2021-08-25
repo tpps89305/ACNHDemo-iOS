@@ -52,7 +52,7 @@ class TagsListView: UIView, NibOwnerLoadable {
             eachView.removeFromSuperview()
         }
         for tag in tags {
-            if let tagView = Bundle(for: TagsListTag.self).loadNibNamed("\(TagsListTag.self)", owner: nil, options: nil)?.first as? TagsListTag {
+            if let tagView = Bundle(for: TagsListTag.self).loadNibNamed(String(describing: TagsListTag.self), owner: nil, options: nil)?.first as? TagsListTag {
                 tagView.labelTag.text = tag
                 stackTags.addArrangedSubview(tagView)
             }

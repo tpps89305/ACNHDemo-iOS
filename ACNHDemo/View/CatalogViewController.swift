@@ -10,15 +10,15 @@ import UIKit
 class CatalogViewController: UITableViewController {
     
     let arrayCatalog = [
-        TitleIconPair(title: "Songs", iconName: "Music"),
-        TitleIconPair(title: "Fishes", iconName: "Fish0"),
-        TitleIconPair(title: "Sea Creatures", iconName: "Akoyagai"),
-        TitleIconPair(title: "Bugs", iconName: "Bug0"),
-        TitleIconPair(title: "Fossils", iconName: "Fossil_NH_Inv_Icon"),
-        TitleIconPair(title: "Art", iconName: "Art"),
-        TitleIconPair(title: "BGM", iconName: "Music"),
-        TitleIconPair(title: "Houseware", iconName: "Housewares"),
-        TitleIconPair(title: "Wallmounted", iconName: "Wallmounted")
+        TitleIconPair(title: "Songs", iconName: Constant.IconName.MUSIC),
+        TitleIconPair(title: "Fishes", iconName: Constant.IconName.FISH),
+        TitleIconPair(title: "Sea Creatures", iconName: Constant.IconName.SEA_CREATURE),
+        TitleIconPair(title: "Bugs", iconName: Constant.IconName.BUG),
+        TitleIconPair(title: "Fossils", iconName: Constant.IconName.FOSSIL),
+        TitleIconPair(title: "Art", iconName: Constant.IconName.ART),
+        TitleIconPair(title: "BGM", iconName: Constant.IconName.MUSIC),
+        TitleIconPair(title: "Houseware", iconName: Constant.IconName.HOUSEWARE),
+        TitleIconPair(title: "Wallmounted", iconName: Constant.IconName.WALLMOUNTED)
     ]
 
     override func viewDidLoad() {
@@ -43,31 +43,31 @@ class CatalogViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            performSegue(withIdentifier: "gotoSongs", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_SONGS, sender: self)
             break
         case 1:
-            performSegue(withIdentifier: "gotoFishes", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_FISHES, sender: self)
             break
         case 2:
-            performSegue(withIdentifier: "gotoSeaCreature", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_SEA_CREATURES, sender: self)
             break
         case 3:
-            performSegue(withIdentifier: "gotoBugs", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_BUGS, sender: self)
             break
         case 4:
-            performSegue(withIdentifier: "gotoFossils", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_FOSSILS, sender: self)
             break
         case 5:
-            performSegue(withIdentifier: "gotoArt", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_FOSSILS, sender: self)
             break
         case 6:
-            performSegue(withIdentifier: "gotoBGM", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_BGM, sender: self)
             break
         case 7:
-            performSegue(withIdentifier: "gotoHousewares", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_HOUSEWARES, sender: self)
             break
         case 8:
-            performSegue(withIdentifier: "gotoWallmounted", sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_WALLMOUNTED, sender: self)
             break
         default:
             break

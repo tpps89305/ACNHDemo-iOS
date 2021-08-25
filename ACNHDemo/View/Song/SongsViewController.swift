@@ -24,9 +24,9 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: "SongsCell", bundle: nil), forCellReuseIdentifier: "SongsCell")
+        tableView.register(UINib(nibName: String(describing: SongsCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.SONGS_CELL)
         // Avoid issue of cannot select cell(s)
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     func bindViewModel() {
@@ -45,14 +45,14 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SongsCell", for: indexPath) as! SongsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.SONGS_CELL, for: indexPath) as! SongsCell
         let listCellViewModel = viewModel.songCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gotoSongDetail", sender: self)
+        performSegue(withIdentifier: Constant.SegueID.GOTO_SONG_DETAIL, sender: self)
     }
     
     //MARK: UISearchBar Delegate
@@ -71,7 +71,7 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "gotoSongDetail", let destinationVC = segue.destination as? SongDetailViewController {
+        if segue.identifier == Constant.SegueID.GOTO_SONG_DETAIL, let destinationVC = segue.destination as? SongDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 destinationVC.song = viewModel.songCellViewModels[row].song
             }

@@ -30,7 +30,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     func initViews() {
         title = houseware!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableDetail.register(UINib(nibName: "VillagerDetailContentCell", bundle: nil), forCellReuseIdentifier: "DetailCell")
+        tableDetail.register(UINib(nibName: String(describing: VillagerDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
     }
 
     private func bindViewModel() {
@@ -44,7 +44,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! VillagerDetailContentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as! VillagerDetailContentCell
         cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell
     }

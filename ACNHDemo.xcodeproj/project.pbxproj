@@ -47,6 +47,12 @@
 		4EF3DD19C89CCD3A8C6655F3 /* Pods_ACNHDemo_ACNHDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E8721AC5E9A58A0465473 /* Pods_ACNHDemo_ACNHDemoUITests.framework */; };
 		522477D226860550B496F74B /* Pods_ACNHDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F277CF0B7BED2599FD732861 /* Pods_ACNHDemo.framework */; };
 		59F3EE95D97457D819E02D9B /* Pods_ACNHDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E455927DA8C3D4248761460 /* Pods_ACNHDemoTests.framework */; };
+		F60039DE26CE309300BE6C80 /* Wallmounted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4AF126BD3CB300F35502 /* Wallmounted.swift */; };
+		F60039E226CE309300BE6C80 /* Wallmounted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4AF126BD3CB300F35502 /* Wallmounted.swift */; };
+		F60039E326CE309A00BE6C80 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
+		F60039E726CE309B00BE6C80 /* ACNHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */; };
+		F60039EB26CE30CE00BE6C80 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661B5F126C2818A0030B15D /* CatalogCell.swift */; };
+		F60039EF26CE30CF00BE6C80 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661B5F126C2818A0030B15D /* CatalogCell.swift */; };
 		F6116D20269FDC62007BFEDE /* SeaCreatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116D1F269FDC62007BFEDE /* SeaCreatures.swift */; };
 		F6116D21269FDC62007BFEDE /* SeaCreatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116D1F269FDC62007BFEDE /* SeaCreatures.swift */; };
 		F6116D22269FDC62007BFEDE /* SeaCreatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6116D1F269FDC62007BFEDE /* SeaCreatures.swift */; };
@@ -223,6 +229,9 @@
 		F69BF47A26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
 		F69BF47B26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
 		F69BF47C26AEA44700D777D2 /* TagsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69BF47926AEA44700D777D2 /* TagsListView.xib */; };
+		F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
+		F6A7B7E826D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
+		F6A7B7E926D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
 		F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
@@ -388,6 +397,7 @@
 		F69BF45D26AE89C800D777D2 /* AvailableMonthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableMonthView.xib; sourceTree = "<group>"; };
 		F69BF46F26AEA43800D777D2 /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
 		F69BF47926AEA44700D777D2 /* TagsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListView.xib; sourceTree = "<group>"; };
+		F6A7B7E626D5EE5900D1FE80 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -783,6 +793,7 @@
 				F67C4AF126BD3CB300F35502 /* Wallmounted.swift */,
 				3EDEB71D1875AFACF168E0F5 /* TitleContentPair.swift */,
 				F661B5F926C289980030B15D /* TitleIconPair.swift */,
+				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1178,6 +1189,7 @@
 				F6EC22F92696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6116D8C26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F654F88226A1800E00188318 /* BGM.swift in Sources */,
+				F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				3EDEBAF96F8EEA0B401F66A8 /* NibOwnerLoadable.swift in Sources */,
 				3EDEBD9950E35EE50F1EA04B /* VillagerDetailVCViewModel.swift in Sources */,
@@ -1203,6 +1215,7 @@
 				F6116D30269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
 				F6116D56269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
 				F6116D7B26A02C35007BFEDE /* Rarity.swift in Sources */,
+				F6A7B7E826D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F6EFA3DE269E892B000A4F42 /* DashboardViewController.swift in Sources */,
 				F6116D21269FDC62007BFEDE /* SeaCreatures.swift in Sources */,
 				F6116D7126A02B09007BFEDE /* Bug.swift in Sources */,
@@ -1210,6 +1223,7 @@
 				F6116D6726A00E36007BFEDE /* SeaCreatureDetailViewController.swift in Sources */,
 				F631DEF0269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */,
 				F631DEE9269D71D200E2CDC4 /* FishesVCViewModel.swift in Sources */,
+				F60039E326CE309A00BE6C80 /* ACNHAPI.swift in Sources */,
 				F631DEC5269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FA2696EA8600C931EC /* SongsViewController.swift in Sources */,
@@ -1220,6 +1234,7 @@
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
 				F631DECC269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDB269D6E0A00E2CDC4 /* Name.swift in Sources */,
+				F60039EB26CE30CE00BE6C80 /* CatalogCell.swift in Sources */,
 				F654F83026A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F6EC23092696F00A00C931EC /* SongsCell.swift in Sources */,
 				F631DEE2269D717500E2CDC4 /* FishesViewController.swift in Sources */,
@@ -1246,6 +1261,7 @@
 				F654F87926A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
+				F60039DE26CE309300BE6C80 /* Wallmounted.swift in Sources */,
 				F6EFA3E8269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
 				F654F82926A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				F654F84D26A1381F00188318 /* Art.swift in Sources */,
@@ -1280,6 +1296,7 @@
 				F6116D31269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
 				F6116D57269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
 				F6116D7C26A02C35007BFEDE /* Rarity.swift in Sources */,
+				F6A7B7E926D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F6EFA3DF269E892B000A4F42 /* DashboardViewController.swift in Sources */,
 				F6116D22269FDC62007BFEDE /* SeaCreatures.swift in Sources */,
 				F6116D7226A02B09007BFEDE /* Bug.swift in Sources */,
@@ -1287,6 +1304,7 @@
 				F6116D6826A00E36007BFEDE /* SeaCreatureDetailViewController.swift in Sources */,
 				F631DEF1269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */,
 				F631DEEA269D71D200E2CDC4 /* FishesVCViewModel.swift in Sources */,
+				F60039E726CE309B00BE6C80 /* ACNHAPI.swift in Sources */,
 				F631DEC6269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,
 				F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FB2696EA8600C931EC /* SongsViewController.swift in Sources */,
@@ -1297,6 +1315,7 @@
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,
 				F631DECD269D38BA00E2CDC4 /* SongCellViewModel.swift in Sources */,
 				F631DEDC269D6E0A00E2CDC4 /* Name.swift in Sources */,
+				F60039EF26CE30CF00BE6C80 /* CatalogCell.swift in Sources */,
 				F654F83126A11F4E00188318 /* FossilCellViewModel.swift in Sources */,
 				F6EC230A2696F00A00C931EC /* SongsCell.swift in Sources */,
 				F631DEE3269D717500E2CDC4 /* FishesViewController.swift in Sources */,
@@ -1323,6 +1342,7 @@
 				F654F87A26A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
+				F60039E226CE309300BE6C80 /* Wallmounted.swift in Sources */,
 				F6EFA3E9269E8B8C000A4F42 /* FishDetailViewController.swift in Sources */,
 				F654F82A26A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				F654F84E26A1381F00188318 /* Art.swift in Sources */,
@@ -1550,7 +1570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KMT2XHYS7;
 				INFOPLIST_FILE = ACNHDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1573,7 +1593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KMT2XHYS7;
 				INFOPLIST_FILE = ACNHDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1595,6 +1615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KMT2XHYS7;
 				INFOPLIST_FILE = ACNHDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1616,6 +1637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KMT2XHYS7;
 				INFOPLIST_FILE = ACNHDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

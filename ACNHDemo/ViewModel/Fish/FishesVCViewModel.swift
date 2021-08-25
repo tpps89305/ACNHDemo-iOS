@@ -45,9 +45,9 @@ class FishesVCViewModel: NSObject {
                     fish0.fileName < fish1.fileName
                 }
                 self.convertToViewModel(fishes: self.arrayFishes)
-                print("Done!")
+                print("Success to get fishes!")
             } catch {
-                print("Error!")
+                print("Error when get fishes...")
             }
         }
     }

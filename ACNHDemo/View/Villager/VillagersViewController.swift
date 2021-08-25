@@ -26,9 +26,9 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: "VillagersCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.register(UINib(nibName: String(describing: VillagersCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGERS_CELL)
         // Avoid issue of cannot select cell(s)
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     func bindViewModel() {
@@ -46,14 +46,14 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! VillagersCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGERS_CELL, for: indexPath) as! VillagersCell
         let listCellViewModel = viewModel.villagerCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gotoVillagerDetail", sender: self)
+        performSegue(withIdentifier: Constant.SegueID.GOTO_VILLAGER_DETAIL, sender: self)
     }
     
     //MARK: UISearchBar Delegate
@@ -71,7 +71,7 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "gotoVillagerDetail", let destinationVC = segue.destination as? VillagerDetailViewController {
+        if segue.identifier == Constant.SegueID.GOTO_VILLAGER_DETAIL, let destinationVC = segue.destination as? VillagerDetailViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 destinationVC.villager = viewModel.villagerCellViewModels[row].villager
             }

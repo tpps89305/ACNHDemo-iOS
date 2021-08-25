@@ -26,7 +26,7 @@ class SeaCreaturesViewController: UITableViewController, UISearchBarDelegate {
         navigationItem.searchController?.searchBar.delegate = self
         tableView.register(UINib(nibName: "CommonCell", bundle: nil), forCellReuseIdentifier: "CommonCell")
         // Avoid issue of cannot select cell(s)
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     func bindViewModel() {
