@@ -564,7 +564,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.23393433897729665" green="0.61763570766256315" blue="0.48370973863197753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="SectionTitle"/>
                                                         <constraints>
                                                             <constraint firstItem="ao1-Ds-mQr" firstAttribute="top" secondItem="DKE-qA-zcP" secondAttribute="top" constant="4" id="B9K-tj-DQv"/>
                                                             <constraint firstAttribute="trailing" secondItem="ao1-Ds-mQr" secondAttribute="trailing" constant="16" id="I1f-x8-PTO"/>
@@ -679,7 +679,10 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96862745098039216" green="0.95686274509803926" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SectionTitle">
+            <color red="0.26666666666666666" green="0.6588235294117647" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SquareColor">
             <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>

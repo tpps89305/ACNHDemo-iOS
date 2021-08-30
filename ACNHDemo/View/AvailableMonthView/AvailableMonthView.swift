@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, NibOwnerLoadable {
     
@@ -56,7 +57,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as! AvailableMonthCell
         cell.labelMonth.text = arrayMonth[indexPath.row]
         if availableMonth.contains(indexPath.row + 1) {
-            cell.viewMonth.backgroundColor = ACNHColor.tagBackground
+            cell.viewMonth.backgroundColor = ACNHColor.tagBackground2?.darkened()
             cell.labelMonth.textColor = ACNHColor.tagTextColor
         }
         if indexPath.row == monthOfToday - 1 {

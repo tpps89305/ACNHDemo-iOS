@@ -10,5 +10,6 @@ import UIKit
 
 class ACNHColor {
     static let tagBackground = UIColor.init(named: Constant.ColorName.TAG_BACKGROUND)
+    static let tagBackground2 = UIColor.init(named: Constant.ColorName.TAG_BACKGROUND_2)
     static let tagTextColor = UIColor.init(named: Constant.ColorName.TAG_TEXT_COLOR)
 }

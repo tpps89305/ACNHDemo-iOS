@@ -49,6 +49,7 @@ class Constant {
     
     class ColorName {
         static let TAG_BACKGROUND = "TagBackground"
+        static let TAG_BACKGROUND_2 = "TagBackground2"
         static let TAG_TEXT_COLOR = "TagTextColor"
     }
 }

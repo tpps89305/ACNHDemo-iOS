@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import DynamicColor
 
 enum VillagerDetailCellType: Int {
     case Avatar = 0, Content
