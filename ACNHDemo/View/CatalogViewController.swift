@@ -58,7 +58,7 @@ class CatalogViewController: UITableViewController {
             performSegue(withIdentifier: Constant.SegueID.GOTO_FOSSILS, sender: self)
             break
         case 5:
-            performSegue(withIdentifier: Constant.SegueID.GOTO_FOSSILS, sender: self)
+            performSegue(withIdentifier: Constant.SegueID.GOTO_ART, sender: self)
             break
         case 6:
             performSegue(withIdentifier: Constant.SegueID.GOTO_BGM, sender: self)
