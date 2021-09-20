@@ -18,10 +18,11 @@ class DailyTaskProgressButton: UIView {
     @IBInspectable var maxValue: Double = 3
     @IBInspectable var currentValue: Double = 0 {
         didSet {
-            progressAnimation()
+            progressAnimation(previousValue: 0)
         }
     }
-    private var previousValue: Double = 0
+    private lazy var centerX = frame.size.width / 2.0
+    private lazy var centerY = frame.size.height / 2.0
     
     @IBInspectable var iconTask: UIImage? = nil {
         didSet {
@@ -41,7 +42,7 @@ class DailyTaskProgressButton: UIView {
         let lineWidth = CGFloat(4.0)
         let radius = min(frame.size.width, frame.size.height) / 2 - lineWidth / 2 - padding
         
-        let circularPath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0), radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
         circleLayer.path = circularPath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
@@ -63,7 +64,7 @@ class DailyTaskProgressButton: UIView {
         
     }
     
-    private func progressAnimation() {
+    private func progressAnimation(previousValue: Double) {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = 1
         animation.fromValue = Float(previousValue / maxValue)
@@ -79,16 +80,16 @@ class DailyTaskProgressButton: UIView {
     
     @objc func progressPlus() {
         if currentValue < maxValue {
-            previousValue = currentValue
+            let previousValue = currentValue
             currentValue += 1
-            progressAnimation()
+            progressAnimation(previousValue: previousValue)
         }
     }
     
     func setIcon(icon: UIImage?) {
         let sideLength = min(frame.size.width, frame.size.height) * 0.66
-        let imageX = frame.size.width / 2.0 - sideLength / 2.0
-        let imageY = frame.size.height / 2.0 - sideLength / 2.0
+        let imageX = centerX - sideLength / 2.0
+        let imageY = centerY - sideLength / 2.0
         
         let imageLayer = CALayer()
         imageLayer.frame = CGRect.init(x: imageX, y: imageY, width: sideLength, height: sideLength)

@@ -14,7 +14,17 @@ class TimeScaleView: UIView {
     var startEndTimeArray: [[Int]] = []
     var currentHour = -1
     var currentMinute = -1
-
+    private let scaleLine1Length: CGFloat = 20
+    private let scaleLine2Length: CGFloat = 17
+    private let scaleLine3Length: CGFloat = 14
+    
+    private let scaleLine2Padding: CGFloat = 3
+    private let scaleLine3Padding: CGFloat = 6
+    private let textPadding: CGFloat = 40
+    private let currentTimeLineLength: CGFloat = 25
+    
+    private let padding: CGFloat = 10
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -28,9 +38,8 @@ class TimeScaleView: UIView {
     override func layoutSubviews() {
         print("layoutSubviews: \(frame)")
 
-        let padding: CGFloat = 10
         let drawOriginX = padding
-        let drawOriginY = frame.height - 10
+        let drawOriginY = frame.height - padding
         let drawTargetLength = frame.width - padding * 2
 
         for eachStartEndTime in startEndTimeArray {
@@ -138,7 +147,7 @@ class TimeScaleView: UIView {
         let scalePath = UIBezierPath()
         for _ in 1...5 {
             scalePath.move(to: CGPoint(x: newX, y: originY))
-            scalePath.addLine(to: CGPoint(x: newX, y: originY - 20))
+            scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine1Length))
             scalePath.close()
             newX = newX + scaleDistance
         }
@@ -157,8 +166,8 @@ class TimeScaleView: UIView {
 
         let scalePath = UIBezierPath()
         for _ in 1...4 {
-            scalePath.move(to: CGPoint(x: newX, y: originY - 3))
-            scalePath.addLine(to: CGPoint(x: newX, y: originY - 17))
+            scalePath.move(to: CGPoint(x: newX, y: originY - scaleLine2Padding))
+            scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine2Length))
             scalePath.close()
             newX = newX + scaleDistance
         }
@@ -180,8 +189,8 @@ class TimeScaleView: UIView {
                 newX = newX + scaleDistance
                 continue
             }
-            scalePath.move(to: CGPoint(x: newX, y: originY - 6))
-            scalePath.addLine(to: CGPoint(x: newX, y: originY - 14))
+            scalePath.move(to: CGPoint(x: newX, y: originY - scaleLine3Padding))
+            scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine3Length))
             scalePath.close()
             newX = newX + scaleDistance
         }
@@ -202,7 +211,7 @@ class TimeScaleView: UIView {
             textLayer.string = String(index * 6)
             textLayer.fontSize = 14
             textLayer.foregroundColor = UIColor.black.cgColor
-            textLayer.frame = CGRect(x: newX - 10, y: originY - 45, width: 20, height: 15)
+            textLayer.frame = CGRect(x: newX - padding, y: originY - textPadding, width: 20, height: 15)
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.alignmentMode = .center
             parent.layer.addSublayer(textLayer)
@@ -217,8 +226,9 @@ class TimeScaleView: UIView {
         let endHourX = scaleDistance * CGFloat(endHour)
 
         let scalePath = UIBezierPath()
-        scalePath.move(to: CGPoint(x: originX + startHourX, y: originY - 10))
-        scalePath.addLine(to: CGPoint(x: originX + endHourX, y: originY - 10))
+        let lineY = originY - padding
+        scalePath.move(to: CGPoint(x: originX + startHourX, y: lineY))
+        scalePath.addLine(to: CGPoint(x: originX + endHourX, y: lineY))
         scalePath.close()
 
         let shapeLayer = CAShapeLayer()
@@ -239,8 +249,9 @@ class TimeScaleView: UIView {
         let currentTimeX = scaleDistance * (CGFloat(currentHour) * 60 + CGFloat(currentMinute))
 
         let scalePath = UIBezierPath()
-        scalePath.move(to: CGPoint(x: originX + currentTimeX, y: originY + 5))
-        scalePath.addLine(to: CGPoint(x: originX + currentTimeX, y: originY - 25))
+        let lineX = originX + currentTimeX
+        scalePath.move(to: CGPoint(x: lineX, y: originY + 5))
+        scalePath.addLine(to: CGPoint(x: lineX, y: originY - currentTimeLineLength))
         scalePath.close()
 
         let shapeLayer = CAShapeLayer()
