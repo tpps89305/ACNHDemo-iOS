@@ -17,6 +17,7 @@ class Constant {
         static let VILLAGER_AVATAR_CELL = "AvatarCell"
         static let VILLAGER_CONTENT_CELL = "DetailCell"
         static let DAILY_ITEM = "DailyItem"
+        static let DAILY_BIRTHDAY = "DailyBirthday"
     }
     
     class SegueID {
@@ -35,6 +36,7 @@ class Constant {
         static let GOTO_BGM = "gotoBGM"
         static let GOTO_HOUSEWARES = "gotoHousewares"
         static let GOTO_WALLMOUNTED = "gotoWallmounted"
+        static let GOTO_BIRTHDAY_VILLAGER = "gotoBirthdayVillager"
     }
     
     class IconName {

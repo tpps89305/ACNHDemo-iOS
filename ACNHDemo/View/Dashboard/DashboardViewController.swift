@@ -15,6 +15,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var labelAvailabelSeaCreature: UILabel!
     @IBOutlet weak var labelAvailabelBugs: UILabel!
     @IBOutlet weak var collectionDaily: UICollectionView!
+    @IBOutlet weak var collectionBirthday: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class DashboardViewController: UIViewController {
         labelAvailableFishes.text = "..."
         labelAvailabelSeaCreature.text = "..."
         labelAvailabelBugs.text = "..."
+        collectionBirthday.register(UINib(nibName: String(describing: DailyBirthdayCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY)
     }
     
     func bindViewModel() {
@@ -44,6 +46,9 @@ class DashboardViewController: UIViewController {
         }
         viewModel.getDailyTasks {
             self.collectionDaily.reloadData()
+        }
+        viewModel.getBirthdayVillager {
+            self.collectionBirthday.reloadData()
         }
     }
     
@@ -62,28 +67,48 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == Constant.SegueID.GOTO_BIRTHDAY_VILLAGER, let destinationVC = segue.destination as? VillagerDetailViewController {
+            if let row = collectionBirthday.indexPathsForSelectedItems?[0].row {
+                destinationVC.villager = viewModel.dailyBirthdayCellViewModels[row].villager
+            }
+        }
     }
-    */
 
 }
 
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.dailyTaskCellViewModels.count
+        if collectionView == collectionDaily {
+            return viewModel.dailyTaskCellViewModels.count
+        } else if collectionView == collectionBirthday {
+            return viewModel.dailyBirthdayCellViewModels.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as! DailyTaskCell
-        cell.setup(viewModel: viewModel.dailyTaskCellViewModels[indexPath.row])
-        return cell
+        if collectionView == collectionDaily {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as! DailyTaskCell
+            cell.setup(viewModel: viewModel.dailyTaskCellViewModels[indexPath.row])
+            return cell
+        } else if collectionView == collectionBirthday {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY, for: indexPath) as! DailyBirthdayCell
+            cell.setup(viewModel: viewModel.dailyBirthdayCellViewModels[indexPath.row])
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionBirthday {
+            performSegue(withIdentifier: Constant.SegueID.GOTO_BIRTHDAY_VILLAGER, sender: self)
+        }
     }
     
 }

@@ -10,6 +10,7 @@ class DashboardVCViewModel {
 
     var arrayWeekday = ["日", "一", "二", "三", "四", "五", "六"]
     var dailyTaskCellViewModels: [DailyTaskCellViewModel] = []
+    var dailyBirthdayCellViewModels: [DailyBirthdayCellViewModel] = []
 
     func getTodayInfo() -> String {
         let today = Date()
@@ -149,6 +150,37 @@ class DashboardVCViewModel {
     func resetDailyTask(onRequestEnd: (() -> Void)?) {
         CoreDataHandler.resetDailyTask()
         onRequestEnd?()
+    }
+    
+    func getBirthdayVillager(onRequestEnd: (() -> Void)?) {
+        var arrayVillagers = Array<Villager>()
+        
+        ACNHProvider.request(.villagers(villagerId: 0)) { result in
+            do {
+                let response = try result.get()
+                let villagers = try ACNHJSONDecoder().decode(Villagers.self, from: response.data)
+                for eachKey in villagers.keys {
+                    arrayVillagers.append(villagers[eachKey]!)
+                }
+                
+                let filtedArray = arrayVillagers.filter { each -> Bool in
+                    return each.birthday == "20/9"
+                }
+                for each in filtedArray {
+                    self.dailyBirthdayCellViewModels.append(DailyBirthdayCellViewModel(villager: each))
+                }
+                
+                // Sort to get same order array every time(s).
+//                arrayVillagers.sort { (villager0, villager1) -> Bool in
+//                    villager0.fileName < villager1.fileName
+//                }
+//                convertToViewModel(villagers: arrayVillagers)
+                onRequestEnd?()
+                print("Success to get villagers!")
+            } catch {
+                print("Error when get villagers...")
+            }
+        }
     }
     
 }
