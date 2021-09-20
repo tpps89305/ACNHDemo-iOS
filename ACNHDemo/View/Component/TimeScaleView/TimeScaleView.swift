@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class TimeScaleView: UIView {
 
-    var startEndTimeArray: [[Int]]?
+    var startEndTimeArray: [[Int]] = []
     var currentHour = -1
     var currentMinute = -1
 
@@ -33,7 +33,7 @@ class TimeScaleView: UIView {
         let drawOriginY = frame.height - 10
         let drawTargetLength = frame.width - padding * 2
 
-        for eachStartEndTime in startEndTimeArray! {
+        for eachStartEndTime in startEndTimeArray {
             layer.addSublayer(
                     drawValueLine(originX: drawOriginX,
                             originY: drawOriginY,
@@ -62,33 +62,33 @@ class TimeScaleView: UIView {
 
         switch time {
         case .empty:
-            startEndTimeArray!.append([0, 24])
+            startEndTimeArray.append([0, 24])
             break
         case .the4Am9Pm:
-            startEndTimeArray!.append([4, 21])
+            startEndTimeArray.append([4, 21])
             break
         case .the4Pm9Am:
-            startEndTimeArray!.append([16, 24])
-            startEndTimeArray!.append([0, 9])
+            startEndTimeArray.append([16, 24])
+            startEndTimeArray.append([0, 9])
             break
         case .the9Am4Pm:
-            startEndTimeArray!.append([9, 16])
+            startEndTimeArray.append([9, 16])
             break
         case .the9Am4Pm9Pm4Am:
-            startEndTimeArray!.append([9, 16])
-            startEndTimeArray!.append([21, 24])
-            startEndTimeArray!.append([0, 4])
+            startEndTimeArray.append([9, 16])
+            startEndTimeArray.append([21, 24])
+            startEndTimeArray.append([0, 4])
             break
         case .the9Pm4Am:
-            startEndTimeArray!.append([21, 24])
-            startEndTimeArray!.append([0, 4])
+            startEndTimeArray.append([21, 24])
+            startEndTimeArray.append([0, 4])
             break
         case .none:
             break
         }
 
         print("drawTimeScale: \(frame)")
-        print("startEndTimeArray: \(startEndTimeArray ?? [])")
+        print("startEndTimeArray: \(startEndTimeArray)")
     }
 
     func drawTimeScale(arrayTime: [Int]) {
@@ -104,18 +104,18 @@ class TimeScaleView: UIView {
             }
             if arrayTime[index] - arrayTime[index - 1] != 1 {
                 end = arrayTime[index - 1] + 1
-                startEndTimeArray!.append([start, end])
+                startEndTimeArray.append([start, end])
                 start = arrayTime[index]
                 continue
             }
             if index == arrayTime.count - 1 {
                 end = arrayTime[index] + 1
-                startEndTimeArray!.append([start, end])
+                startEndTimeArray.append([start, end])
             }
         }
 
         print("drawTimeScale: \(frame)")
-        print("startEndTimeArray: \(startEndTimeArray ?? [])")
+        print("startEndTimeArray: \(startEndTimeArray)")
     }
 
     private func drawBottomLine(originX: CGFloat, originY: CGFloat, targetLength: CGFloat) -> CAShapeLayer {

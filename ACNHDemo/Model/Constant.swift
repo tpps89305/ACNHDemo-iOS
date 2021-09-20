@@ -16,6 +16,7 @@ class Constant {
         static let COMMON_CELL = "CommonCell"
         static let VILLAGER_AVATAR_CELL = "AvatarCell"
         static let VILLAGER_CONTENT_CELL = "DetailCell"
+        static let DAILY_ITEM = "DailyItem"
     }
     
     class SegueID {
@@ -45,11 +46,20 @@ class Constant {
         static let ART = "Art"
         static let HOUSEWARE = "Housewares"
         static let WALLMOUNTED = "Wallmounted"
+        static let OREIRON = "OreIron"
+        static let PIETRO = "Pietro_PC_icon"
+        static let FURNITURE_NH = "Furniture_NH_Inv_Icon"
+        static let BELL = "Bell"
+        static let PLANE_TICKET = "PlaneTicket"
+        static let MESSAGE_BOTTLE = "Message_Bottle"
+        static let RECIPE = "Recipe"
     }
     
     class ColorName {
-        static let TAG_BACKGROUND = "TagBackground"
-        static let TAG_BACKGROUND_2 = "TagBackground2"
-        static let TAG_TEXT_COLOR = "TagTextColor"
+        static let BACKGROUND = "TagBackground"
+        static let BACKGROUND_2 = "TagBackground2"
+        static let TEXT_COLOR = "TagTextColor"
+        static let DAILY_PROGRESS_BACKGROUND = "DailyProgressBackground"
+        static let DAILY_ICON_BACKGROUNG = "DailyIconBackground"
     }
 }
