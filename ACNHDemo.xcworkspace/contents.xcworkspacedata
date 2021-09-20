@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ACNHDemo/Model/DailyTask+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ACNHDemo/Model/DailyTask+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:ACNHDemo.xcodeproj">
    </FileRef>
    <FileRef

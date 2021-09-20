@@ -10,16 +10,6 @@ import UIKit
 class DashboardViewController: UIViewController {
 
     let viewModel = DashboardVCViewModel()
-    let arrayDailyTask = [
-        DailyTask(iconName: Constant.IconName.OREIRON, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.FOSSIL, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.PIETRO, currentValue: 3, maxValue: 5),
-        DailyTask(iconName: Constant.IconName.FURNITURE_NH, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.BELL, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.PLANE_TICKET, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.MESSAGE_BOTTLE, currentValue: 0, maxValue: 3),
-        DailyTask(iconName: Constant.IconName.RECIPE, currentValue: 0, maxValue: 3)
-    ]
 
     @IBOutlet weak var labelAvailableFishes: UILabel!
     @IBOutlet weak var labelAvailabelSeaCreature: UILabel!
@@ -31,7 +21,7 @@ class DashboardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initViews()
-//        bindViewModel()
+        bindViewModel()
     }
     
     func initViews() {
@@ -52,6 +42,9 @@ class DashboardViewController: UIViewController {
         viewModel.getAvailableBugs { (countOfBugs) in
             self.labelAvailabelBugs.text = String(countOfBugs)
         }
+        viewModel.getDailyTasks {
+            self.collectionDaily.reloadData()
+        }
     }
     
     @IBAction func viewFishPress(_ sender: UITapGestureRecognizer) {
@@ -61,6 +54,12 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func viewBugsPress(_ sender: UITapGestureRecognizer) {
+    }
+    
+    @IBAction func resetDailyTaskPress(_ sender: UIButton) {
+        viewModel.resetDailyTask {
+            self.collectionDaily.reloadData()
+        }
     }
     
     /*
@@ -78,14 +77,12 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrayDailyTask.count
+        viewModel.dailyTaskCellViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as! DailyTaskCell
-        cell.dailyButton.iconTask = UIImage.init(named: arrayDailyTask[indexPath.row].iconName)
-        cell.dailyButton.maxValue = arrayDailyTask[indexPath.row].maxValue
-        cell.dailyButton.currentValue = arrayDailyTask[indexPath.row].currentValue
+        cell.setup(viewModel: viewModel.dailyTaskCellViewModels[indexPath.row])
         return cell
     }
     

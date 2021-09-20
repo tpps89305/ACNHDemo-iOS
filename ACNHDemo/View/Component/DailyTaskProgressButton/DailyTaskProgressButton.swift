@@ -29,6 +29,8 @@ class DailyTaskProgressButton: UIView {
             setIcon(icon: iconTask)
         }
     }
+    
+    var onProgressPlus:((_ currentValue: Double) -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -84,6 +86,7 @@ class DailyTaskProgressButton: UIView {
             currentValue += 1
             progressAnimation(previousValue: previousValue)
         }
+        onProgressPlus?(currentValue)
     }
     
     func setIcon(icon: UIImage?) {

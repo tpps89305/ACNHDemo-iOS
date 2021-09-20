@@ -62,4 +62,8 @@ class Constant {
         static let DAILY_PROGRESS_BACKGROUND = "DailyProgressBackground"
         static let DAILY_ICON_BACKGROUNG = "DailyIconBackground"
     }
+    
+    class EntityName {
+        static let DAILY_TASK = "DailyTask"
+    }
 }

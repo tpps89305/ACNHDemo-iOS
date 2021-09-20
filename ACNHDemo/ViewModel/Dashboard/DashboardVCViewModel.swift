@@ -3,10 +3,13 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class DashboardVCViewModel {
 
     var arrayWeekday = ["日", "一", "二", "三", "四", "五", "六"]
+    var dailyTaskCellViewModels: [DailyTaskCellViewModel] = []
 
     func getTodayInfo() -> String {
         let today = Date()
@@ -131,4 +134,21 @@ class DashboardVCViewModel {
         return false
     }
 
+    func getDailyTasks(onRequestEnd: (() -> Void)?) {
+        var arrayDailyTasks = CoreDataHandler.getDailyTask()
+        if arrayDailyTasks.isEmpty {
+            CoreDataHandler.initDailyTask()
+            arrayDailyTasks = CoreDataHandler.getDailyTask()
+        }
+        for each in arrayDailyTasks {
+            dailyTaskCellViewModels.append(DailyTaskCellViewModel(dailyTask: each))
+        }
+        onRequestEnd?()
+    }
+    
+    func resetDailyTask(onRequestEnd: (() -> Void)?) {
+        CoreDataHandler.resetDailyTask()
+        onRequestEnd?()
+    }
+    
 }

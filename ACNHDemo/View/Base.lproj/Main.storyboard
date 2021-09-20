@@ -416,7 +416,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snq-Kn-fRz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="495"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjZ-j8-R8q">
                                                 <rect key="frame" x="8" y="8" width="398" height="177.5"/>
@@ -595,14 +595,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaI-ug-p6e">
-                                                <rect key="frame" x="8" y="193.5" width="398" height="227.5"/>
+                                                <rect key="frame" x="8" y="193.5" width="398" height="277.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-JN-WoB" userLabel="Daily Task Content">
-                                                        <rect key="frame" x="16" y="36.5" width="366" height="175"/>
+                                                        <rect key="frame" x="16" y="36.5" width="366" height="225"/>
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-KM-brE">
-                                                                <rect key="frame" x="0.0" y="16" width="366" height="159"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <rect key="frame" x="0.0" y="16" width="366" height="163"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="quo-cV-kYK">
                                                                     <size key="itemSize" width="128" height="128"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -642,14 +642,25 @@
                                                                     <outlet property="delegate" destination="noL-bS-YCe" id="tWl-p9-Xme"/>
                                                                 </connections>
                                                             </collectionView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-X3-x37">
+                                                                <rect key="frame" x="163.5" y="187" width="39" height="30"/>
+                                                                <state key="normal" title="Reset">
+                                                                    <color key="titleColor" name="SectionTitle"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="resetDailyTaskPress:" destination="noL-bS-YCe" eventType="touchUpInside" id="Gix-h7-mTM"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" name="SquareColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="175" id="E71-tm-sOV"/>
+                                                            <constraint firstItem="ocM-X3-x37" firstAttribute="centerX" secondItem="xmh-JN-WoB" secondAttribute="centerX" id="1e8-d0-3Tg"/>
+                                                            <constraint firstItem="ocM-X3-x37" firstAttribute="top" secondItem="ViL-KM-brE" secondAttribute="bottom" constant="8" id="Azb-5I-qGQ"/>
+                                                            <constraint firstAttribute="height" constant="225" id="E71-tm-sOV"/>
                                                             <constraint firstItem="ViL-KM-brE" firstAttribute="top" secondItem="xmh-JN-WoB" secondAttribute="top" constant="16" id="ZZg-cm-QED"/>
                                                             <constraint firstItem="ViL-KM-brE" firstAttribute="leading" secondItem="xmh-JN-WoB" secondAttribute="leading" id="ieo-6r-SC3"/>
                                                             <constraint firstAttribute="trailing" secondItem="ViL-KM-brE" secondAttribute="trailing" id="lIy-X5-lYj"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ViL-KM-brE" secondAttribute="bottom" id="nSX-CV-C0i"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ocM-X3-x37" secondAttribute="bottom" constant="8" id="wEi-p7-fFF"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -791,9 +802,6 @@
         <namedColor name="SquareColor">
             <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
