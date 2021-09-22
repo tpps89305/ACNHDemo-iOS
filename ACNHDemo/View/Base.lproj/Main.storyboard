@@ -713,11 +713,44 @@
                         <outlet property="collectionBirthday" destination="dCT-4k-pdc" id="Szs-Kh-wA5"/>
                         <outlet property="collectionDaily" destination="ViL-KM-brE" id="HFx-EQ-E54"/>
                         <segue destination="bLB-wD-QeN" kind="show" identifier="gotoBirthdayVillager" id="Us2-1Z-o2d"/>
+                        <segue destination="yk3-ij-S1p" kind="show" identifier="gotoFishes" id="k1O-ef-Pok"/>
+                        <segue destination="hvP-kM-ngC" kind="show" identifier="gotoSeaCreature" id="5Ni-ve-sCy"/>
+                        <segue destination="Ebl-U2-kG8" kind="show" identifier="gotoBugs" id="0xM-xh-K0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3L-0J-Ynt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="32.8125"/>
+        </scene>
+        <!--Fishes-->
+        <scene sceneID="NiO-0b-nnJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Fishes" id="yk3-ij-S1p" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oMh-QE-vFD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ot-hA-m8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-145"/>
+        </scene>
+        <!--SeaCreatures-->
+        <scene sceneID="3RR-xa-FOA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SeaCreatures" id="hvP-kM-ngC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HcT-sg-3SC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osZ-Kr-X01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="32"/>
+        </scene>
+        <!--Bugs-->
+        <scene sceneID="daq-tm-qcj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Bugs" id="Ebl-U2-kG8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uAJ-OI-oqG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dux-4d-hJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="167"/>
         </scene>
         <!--Villagers-->
         <scene sceneID="8Qt-bh-8q6">

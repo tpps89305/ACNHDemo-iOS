@@ -31,13 +31,26 @@ class SeaCreaturesVCViewModel: NSObject {
         }
     }
     
-    func getSeaCreatures() {
+    func getSeaCreatures(availableTime: Bool) {
         ACNHProvider.request(.seaCreatures(seaCreatureId: 0)) { result in
             do {
                 let response = try result.get()
                 let seaCreatures = try ACNHJSONDecoder().decode(SeaCreatures.self, from: response.data)
                 for eachKey in seaCreatures.keys {
                     self.arraySeaCreatures.append(seaCreatures[eachKey]!)
+                }
+                
+                if availableTime {
+                    let currentMonth = DateHandler.getCurrentMonth()
+                    let currentHour = DateHandler.getCurrentHour()
+                    self.arraySeaCreatures = self.arraySeaCreatures.filter { seaCreature -> Bool in
+                        if seaCreature.availability.monthArrayNorthern.contains(currentMonth) || seaCreature.availability.isAllYear {
+                            if seaCreature.availability.timeArray.contains(currentHour) || seaCreature.availability.isAllDay {
+                                return true
+                            }
+                        }
+                        return false
+                    }
                 }
                 
                 // Sort to get same order array every time(s).

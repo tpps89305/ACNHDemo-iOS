@@ -31,13 +31,26 @@ class FishesVCViewModel: NSObject {
         }
     }
     
-    func getFishes() {
+    func getFishes(availableTime: Bool) {
         ACNHProvider.request(.fishes(fishId: 0)) { result in
             do {
                 let response = try result.get()
                 let fishes = try ACNHJSONDecoder().decode(Fishes.self, from: response.data)
                 for eachKey in fishes.keys {
                     self.arrayFishes.append(fishes[eachKey]!)
+                }
+                
+                if availableTime {
+                    let currentMonth = DateHandler.getCurrentMonth()
+                    let currentHour = DateHandler.getCurrentHour()
+                    self.arrayFishes = self.arrayFishes.filter { fish -> Bool in
+                        if fish.availability.monthArrayNorthern.contains(currentMonth) || fish.availability.isAllYear {
+                            if fish.availability.timeArray.contains(currentHour) || fish.availability.isAllDay {
+                                return true
+                            }
+                        }
+                        return false
+                    }
                 }
                 
                 // Sort to get same order array every time(s).

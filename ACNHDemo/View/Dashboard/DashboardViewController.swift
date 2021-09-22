@@ -57,6 +57,15 @@ class DashboardViewController: UIViewController {
             if let row = collectionBirthday.indexPathsForSelectedItems?[0].row {
                 destinationVC.villager = viewModel.dailyBirthdayCellViewModels[row].villager
             }
+        } else if segue.identifier == Constant.SegueID.GOTO_FISHES, let destinationVC  = segue.destination as? FishesViewController {
+            // TODO: Go to FishesViewController
+            destinationVC.availableTime = true
+        } else if segue.identifier == Constant.SegueID.GOTO_SEA_CREATURES, let destinationVC = segue.destination as? SeaCreaturesViewController {
+            // TODO: Go to SeaCreaturesViewController
+            destinationVC.availableTime = true
+        } else if segue.identifier == Constant.SegueID.GOTO_BUGS, let destinationVC = segue.destination as? BugsViewController {
+            // TODO: Go to BugsViewController
+            destinationVC.availableTime = true
         }
     }
 
@@ -95,6 +104,20 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionBirthday {
             performSegue(withIdentifier: Constant.SegueID.GOTO_BIRTHDAY_VILLAGER, sender: self)
+        } else if collectionView == collectionAvailable {
+            switch indexPath.row {
+            case 0:
+                performSegue(withIdentifier: Constant.SegueID.GOTO_FISHES, sender: self)
+                break
+            case 1:
+                performSegue(withIdentifier: Constant.SegueID.GOTO_SEA_CREATURES, sender: self)
+                break
+            case 2:
+                performSegue(withIdentifier: Constant.SegueID.GOTO_BUGS, sender: self)
+                break
+            default:
+                break
+            }
         }
     }
     

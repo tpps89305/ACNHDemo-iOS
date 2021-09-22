@@ -31,13 +31,26 @@ class BugsVCViewModel: NSObject {
         }
     }
     
-    func getBugs() {
+    func getBugs(availableTime: Bool) {
         ACNHProvider.request(.bugs(bugId: 0)) { result in
             do {
                 let response = try result.get()
                 let bugs = try ACNHJSONDecoder().decode(Bugs.self, from: response.data)
                 for eachKey in bugs.keys {
                     self.arrayBugs.append(bugs[eachKey]!)
+                }
+                
+                if availableTime {
+                    let currentMonth = DateHandler.getCurrentMonth()
+                    let currentHour = DateHandler.getCurrentHour()
+                    self.arrayBugs = self.arrayBugs.filter { bug -> Bool in
+                        if bug.availability.monthArrayNorthern.contains(currentMonth) || bug.availability.isAllYear {
+                            if bug.availability.timeArray.contains(currentHour) || bug.availability.isAllDay {
+                                return true
+                            }
+                        }
+                        return false
+                    }
                 }
                 
                 // Sort to get same order array every time(s).

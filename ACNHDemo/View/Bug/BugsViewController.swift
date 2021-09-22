@@ -7,17 +7,18 @@
 
 import UIKit
 
-class BugsViewController: UITableViewController, UISearchBarDelegate {
+class BugsViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let viewModel = BugsVCViewModel()
-
+    var availableTime = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initViews()
         bindViewModel()
-        viewModel.getBugs()
+        viewModel.getBugs(availableTime: availableTime)
     }
     
     func initViews() {
@@ -36,9 +37,27 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
+    
+    // MARK: - Navigation
 
-    // MARK: - Table view data source
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == Constant.SegueID.GOTO_BUG_DETAIL, let destinationVC = segue.destination as? BugDetailViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                destinationVC.bug = viewModel.bugCellViewModels[row].bug
+            }
+        }
+    }
+    
 
+}
+
+// MARK: - Table view data source
+
+extension BugsViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         viewModel.bugCellViewModels.count
@@ -56,8 +75,12 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: Constant.SegueID.GOTO_BUG_DETAIL, sender: self)
     }
     
-    //MARK: UISearchBar Delegate
-    
+}
+
+//MARK: - UISearchBar Delegate
+
+extension BugsViewController: UISearchBarDelegate {
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
     }
@@ -65,20 +88,5 @@ class BugsViewController: UITableViewController, UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = ""
     }
-
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == Constant.SegueID.GOTO_BUG_DETAIL, let destinationVC = segue.destination as? BugDetailViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.bug = viewModel.bugCellViewModels[row].bug
-            }
-        }
-    }
-    
-
 }

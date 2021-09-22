@@ -23,6 +23,7 @@ class Constant {
     
     class SegueID {
         static let GOTO_FISH_DETAIL = "gotoFishDetail"
+        static let GOTO_SEA_CREATURE_DETAIL = "gotoSeaCreatureDetail"
         static let GOTO_VILLAGER_DETAIL = "gotoVillagerDetail"
         static let GOTO_SONG_DETAIL = "gotoSongDetail"
         static let GOTO_BUG_DETAIL = "gotoBugDetail"
