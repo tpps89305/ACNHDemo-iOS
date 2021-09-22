@@ -11,11 +11,9 @@ class DashboardViewController: UIViewController {
 
     let viewModel = DashboardVCViewModel()
 
-    @IBOutlet weak var labelAvailableFishes: UILabel!
-    @IBOutlet weak var labelAvailabelSeaCreature: UILabel!
-    @IBOutlet weak var labelAvailabelBugs: UILabel!
     @IBOutlet weak var collectionDaily: UICollectionView!
     @IBOutlet weak var collectionBirthday: UICollectionView!
+    @IBOutlet weak var collectionAvailable: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,37 +26,20 @@ class DashboardViewController: UIViewController {
     func initViews() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.getTodayInfo()
-        labelAvailableFishes.text = "..."
-        labelAvailabelSeaCreature.text = "..."
-        labelAvailabelBugs.text = "..."
         collectionBirthday.register(UINib(nibName: String(describing: DailyBirthdayCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY)
+        collectionAvailable.register(UINib(nibName: String(describing: AvailableNowCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.AVAILABLE_NOW)
     }
     
     func bindViewModel() {
-        viewModel.getAvailableFish { countOfFishes in
-            self.labelAvailableFishes.text = String(countOfFishes)
-        }
-        viewModel.getAvailableSeaCreatures { (countOfSeaCreatures) in
-            self.labelAvailabelSeaCreature.text = String(countOfSeaCreatures)
-        }
-        viewModel.getAvailableBugs { (countOfBugs) in
-            self.labelAvailabelBugs.text = String(countOfBugs)
-        }
         viewModel.getDailyTasks {
             self.collectionDaily.reloadData()
         }
         viewModel.getBirthdayVillager {
             self.collectionBirthday.reloadData()
         }
-    }
-    
-    @IBAction func viewFishPress(_ sender: UITapGestureRecognizer) {
-    }
-    
-    @IBAction func viewSeaCreaturePress(_ sender: UITapGestureRecognizer) {
-    }
-    
-    @IBAction func viewBugsPress(_ sender: UITapGestureRecognizer) {
+        viewModel.getAvailableNowInfo { indexPaths in
+            self.collectionAvailable.reloadItems(at: indexPaths)
+        }
     }
     
     @IBAction func resetDailyTaskPress(_ sender: UIButton) {
@@ -88,6 +69,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             return viewModel.dailyTaskCellViewModels.count
         } else if collectionView == collectionBirthday {
             return viewModel.dailyBirthdayCellViewModels.count
+        } else if collectionView == collectionAvailable {
+            return viewModel.availableNowCellViewModels.count
         }
         return 0
     }
@@ -100,6 +83,10 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         } else if collectionView == collectionBirthday {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY, for: indexPath) as! DailyBirthdayCell
             cell.setup(viewModel: viewModel.dailyBirthdayCellViewModels[indexPath.row])
+            return cell
+        } else if collectionView == collectionAvailable {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_NOW, for: indexPath) as! AvailableNowCell
+            cell.setup(viewModel: viewModel.availableNowCellViewModels[indexPath.row])
             return cell
         }
         return UICollectionViewCell()

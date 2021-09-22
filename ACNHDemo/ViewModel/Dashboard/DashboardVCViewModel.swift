@@ -11,6 +11,7 @@ class DashboardVCViewModel {
     var arrayWeekday = ["日", "一", "二", "三", "四", "五", "六"]
     var dailyTaskCellViewModels: [DailyTaskCellViewModel] = []
     var dailyBirthdayCellViewModels: [DailyBirthdayCellViewModel] = []
+    var availableNowCellViewModels: [AvailableNowCellViewModel] = []
 
     func getTodayInfo() -> String {
         let today = Date()
@@ -25,16 +26,24 @@ class DashboardVCViewModel {
     }
     
     func getAvailableFish(onCompleted: @escaping (Int) -> Void) {
+        let currentMonth = DateHandler.getCurrentMonth()
+        let currentHour = DateHandler.getCurrentHour()
         var arrayFishes = Array<Fish>()
+        
         ACNHProvider.request(.fishes(fishId: 0)) { result in
             do {
                 let response = try result.get()
                 let fishes = try ACNHJSONDecoder().decode(Fishes.self, from: response.data)
                 for eachKey in fishes.keys {
-                    let eachFish = fishes[eachKey]!
-                    if self.isAvailable(fish: eachFish) {
-                        arrayFishes.append(eachFish)
+                    arrayFishes.append(fishes[eachKey]!)
+                }
+                arrayFishes = arrayFishes.filter { fish -> Bool in
+                    if fish.availability.monthArrayNorthern.contains(currentMonth) || fish.availability.isAllYear {
+                        if fish.availability.timeArray.contains(currentHour) || fish.availability.isAllDay {
+                            return true
+                        }
                     }
+                    return false
                 }
                 
                 // Sort to get same order array every time(s).
@@ -50,16 +59,24 @@ class DashboardVCViewModel {
     }
     
     func getAvailableSeaCreatures(onCompleted: @escaping (Int) -> Void) {
+        let currentMonth = DateHandler.getCurrentMonth()
+        let currentHour = DateHandler.getCurrentHour()
         var arraySeaCreatures = Array<SeaCreature>()
+        
         ACNHProvider.request(.seaCreatures(seaCreatureId: 0)) { result in
             do {
                 let response = try result.get()
                 let seaCreatures = try ACNHJSONDecoder().decode(SeaCreatures.self, from: response.data)
                 for eachKey in seaCreatures.keys {
-                    let eachSeaCreature = seaCreatures[eachKey]!
-                    if self.isAvailable(seaCreature: eachSeaCreature) {
-                        arraySeaCreatures.append(seaCreatures[eachKey]!)
+                    arraySeaCreatures.append(seaCreatures[eachKey]!)
+                }
+                arraySeaCreatures = arraySeaCreatures.filter { seaCreature -> Bool in
+                    if seaCreature.availability.monthArrayNorthern.contains(currentMonth) || seaCreature.availability.isAllYear {
+                        if seaCreature.availability.timeArray.contains(currentHour) || seaCreature.availability.isAllDay {
+                            return true
+                        }
                     }
+                    return false
                 }
                 
                 // Sort to get same order array every time(s).
@@ -75,13 +92,24 @@ class DashboardVCViewModel {
     }
     
     func getAvailableBugs(onCompleted: @escaping (Int) -> Void) {
+        let currentMonth = DateHandler.getCurrentMonth()
+        let currentHour = DateHandler.getCurrentHour()
         var arrayBugs = Array<Bug>()
+        
         ACNHProvider.request(.bugs(bugId: 0)) { result in
             do {
                 let response = try result.get()
                 let bugs = try ACNHJSONDecoder().decode(Bugs.self, from: response.data)
                 for eachKey in bugs.keys {
                     arrayBugs.append(bugs[eachKey]!)
+                }
+                arrayBugs = arrayBugs.filter { bug -> Bool in
+                    if bug.availability.monthArrayNorthern.contains(currentMonth) || bug.availability.isAllYear {
+                        if bug.availability.timeArray.contains(currentHour) || bug.availability.isAllDay {
+                            return true
+                        }
+                    }
+                    return false
                 }
                 
                 // Sort to get same order array every time(s).
@@ -96,43 +124,29 @@ class DashboardVCViewModel {
         }
     }
     
-    private func isAvailable(fish: Fish) -> Bool {
-        let today = Date()
-        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: today)
-        let month = dateComponents.month!
-        let hour = dateComponents.hour
-        if fish.availability.monthArrayNorthern.contains(month) || fish.availability.isAllYear {
-            if fish.availability.timeArray.contains(hour!) || fish.availability.isAllDay {
-                return true
-            }
+    func getAvailableNowInfo(onRequestEnd: ((_ indexPaths: [IndexPath]) -> Void)?) {
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Fish", amount: 0, iconName: Constant.IconName.FISH)))
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Sea Creature", amount: 0, iconName: Constant.IconName.SEA_CREATURE)))
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Bug", amount: 0, iconName: Constant.IconName.BUG)))
+        
+        let indexPath0 = IndexPath(item: 0, section: 0)
+        let indexPath1 = IndexPath(item: 1, section: 0)
+        let indexPath2 = IndexPath(item: 2, section: 0)
+        
+        onRequestEnd?([indexPath0, indexPath1, indexPath2])
+        
+        getAvailableFish { count in
+            self.availableNowCellViewModels[0].availableNowInfo.amount = count
+            onRequestEnd?([indexPath0])
         }
-        return false
-    }
-    
-    private func isAvailable(seaCreature: SeaCreature) -> Bool {
-        let today = Date()
-        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: today)
-        let month = dateComponents.month!
-        let hour = dateComponents.hour
-        if seaCreature.availability.monthArrayNorthern.contains(month) || seaCreature.availability.isAllYear {
-            if seaCreature.availability.timeArray.contains(hour!) || seaCreature.availability.isAllDay {
-                return true
-            }
+        getAvailableSeaCreatures { count in
+            self.availableNowCellViewModels[1].availableNowInfo.amount = count
+            onRequestEnd?([indexPath1])
         }
-        return false
-    }
-    
-    private func isAvailable(bug: Bug) -> Bool {
-        let today = Date()
-        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: today)
-        let month = dateComponents.month!
-        let hour = dateComponents.hour
-        if bug.availability.monthArrayNorthern.contains(month) || bug.availability.isAllYear {
-            if bug.availability.timeArray.contains(hour!) || bug.availability.isAllDay {
-                return true
-            }
+        getAvailableBugs { count in
+            self.availableNowCellViewModels[2].availableNowInfo.amount = count
+            onRequestEnd?([indexPath2])
         }
-        return false
     }
 
     func getDailyTasks(onRequestEnd: (() -> Void)?) {
@@ -153,6 +167,7 @@ class DashboardVCViewModel {
     }
     
     func getBirthdayVillager(onRequestEnd: (() -> Void)?) {
+        let today = DateHandler.getToday()
         var arrayVillagers = Array<Villager>()
         
         ACNHProvider.request(.villagers(villagerId: 0)) { result in
@@ -162,11 +177,10 @@ class DashboardVCViewModel {
                 for eachKey in villagers.keys {
                     arrayVillagers.append(villagers[eachKey]!)
                 }
-                
-                let filtedArray = arrayVillagers.filter { each -> Bool in
-                    return each.birthday == "20/9"
+                arrayVillagers = arrayVillagers.filter { each -> Bool in
+                    return each.birthday == today
                 }
-                for each in filtedArray {
+                for each in arrayVillagers {
                     self.dailyBirthdayCellViewModels.append(DailyBirthdayCellViewModel(villager: each))
                 }
                 

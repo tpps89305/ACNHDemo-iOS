@@ -18,6 +18,7 @@ class Constant {
         static let VILLAGER_CONTENT_CELL = "DetailCell"
         static let DAILY_ITEM = "DailyItem"
         static let DAILY_BIRTHDAY = "DailyBirthday"
+        static let AVAILABLE_NOW = "AvailableNow"
     }
     
     class SegueID {

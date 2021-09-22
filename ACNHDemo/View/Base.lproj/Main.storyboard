@@ -416,138 +416,37 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snq-Kn-fRz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="705.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjZ-j8-R8q">
-                                                <rect key="frame" x="8" y="8" width="398" height="177.5"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="202.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-Qg-wN9">
-                                                        <rect key="frame" x="16" y="36.5" width="366" height="125"/>
+                                                        <rect key="frame" x="16" y="36.5" width="366" height="150"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CUk-OR-f0K">
-                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="125"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-92-Ikp" userLabel="View Fishes">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="125"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish0" translatesAutoresizingMaskIntoConstraints="NO" id="khl-SC-4Ph">
-                                                                                <rect key="frame" x="36" y="8" width="50" height="50"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="50" id="0M3-70-SS6"/>
-                                                                                    <constraint firstAttribute="width" constant="50" id="4yA-6l-4J9"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzo-gz-nD2">
-                                                                                <rect key="frame" x="52.5" y="58" width="17" height="17"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K6-CE-KuC">
-                                                                                <rect key="frame" x="36.5" y="83" width="49" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <gestureRecognizers/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="6K6-CE-KuC" firstAttribute="top" secondItem="Uzo-gz-nD2" secondAttribute="bottom" constant="8" id="2xo-dL-4J9"/>
-                                                                            <constraint firstItem="khl-SC-4Ph" firstAttribute="centerX" secondItem="tw0-92-Ikp" secondAttribute="centerX" id="FrK-Q9-fJl"/>
-                                                                            <constraint firstItem="6K6-CE-KuC" firstAttribute="centerX" secondItem="tw0-92-Ikp" secondAttribute="centerX" id="QS7-0m-pQM"/>
-                                                                            <constraint firstItem="Uzo-gz-nD2" firstAttribute="top" secondItem="khl-SC-4Ph" secondAttribute="bottom" id="T2j-9R-0hG"/>
-                                                                            <constraint firstItem="khl-SC-4Ph" firstAttribute="top" secondItem="tw0-92-Ikp" secondAttribute="top" constant="8" id="w3N-vf-ngX"/>
-                                                                            <constraint firstItem="Uzo-gz-nD2" firstAttribute="centerX" secondItem="tw0-92-Ikp" secondAttribute="centerX" id="wj2-Te-Thn"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <outletCollection property="gestureRecognizers" destination="PxA-S8-2go" appends="YES" id="d3Z-bS-cBu"/>
-                                                                        </connections>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-lx-dtK" userLabel="View Sea Creature">
-                                                                        <rect key="frame" x="122" y="0.0" width="122" height="125"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Akoyagai" translatesAutoresizingMaskIntoConstraints="NO" id="0B3-B7-9uq">
-                                                                                <rect key="frame" x="36" y="8" width="50" height="50"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="50" id="Xgh-JE-QRh"/>
-                                                                                    <constraint firstAttribute="height" constant="50" id="ruj-Je-z4G"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fx-DC-Q9f">
-                                                                                <rect key="frame" x="52.5" y="58" width="17" height="17"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sea Creature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-Vp-eDE">
-                                                                                <rect key="frame" x="11.5" y="83" width="99.5" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <gestureRecognizers/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="6Fx-DC-Q9f" firstAttribute="centerX" secondItem="Xgy-lx-dtK" secondAttribute="centerX" id="Kvj-tH-fQl"/>
-                                                                            <constraint firstItem="0B3-B7-9uq" firstAttribute="top" secondItem="Xgy-lx-dtK" secondAttribute="top" constant="8" id="Rhz-XD-s2X"/>
-                                                                            <constraint firstItem="0B3-B7-9uq" firstAttribute="centerX" secondItem="Xgy-lx-dtK" secondAttribute="centerX" id="Tir-pF-UzX"/>
-                                                                            <constraint firstItem="cnB-Vp-eDE" firstAttribute="centerX" secondItem="Xgy-lx-dtK" secondAttribute="centerX" id="eTk-ul-jKu"/>
-                                                                            <constraint firstItem="6Fx-DC-Q9f" firstAttribute="top" secondItem="0B3-B7-9uq" secondAttribute="bottom" id="efb-W4-3gx"/>
-                                                                            <constraint firstItem="cnB-Vp-eDE" firstAttribute="top" secondItem="6Fx-DC-Q9f" secondAttribute="bottom" constant="8" id="gyK-7F-VNK"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <outletCollection property="gestureRecognizers" destination="LXm-9s-yQf" appends="YES" id="bUA-Eb-AbI"/>
-                                                                        </connections>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qS1-LS-T0L" userLabel="View Bugs">
-                                                                        <rect key="frame" x="244" y="0.0" width="122" height="125"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bug0" translatesAutoresizingMaskIntoConstraints="NO" id="fDs-MG-eR1">
-                                                                                <rect key="frame" x="36" y="8" width="50" height="50"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="50" id="d5f-eD-6IJ"/>
-                                                                                    <constraint firstAttribute="width" constant="50" id="gK1-5z-Rp2"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6S-Q6-U27">
-                                                                                <rect key="frame" x="52.5" y="58" width="17" height="17"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bugs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sms-bG-7yM">
-                                                                                <rect key="frame" x="41.5" y="83" width="39" height="20.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <gestureRecognizers/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="G6S-Q6-U27" firstAttribute="top" secondItem="fDs-MG-eR1" secondAttribute="bottom" id="9Co-a0-7ZA"/>
-                                                                            <constraint firstItem="fDs-MG-eR1" firstAttribute="top" secondItem="qS1-LS-T0L" secondAttribute="top" constant="8" id="HGJ-e0-YfK"/>
-                                                                            <constraint firstItem="fDs-MG-eR1" firstAttribute="centerX" secondItem="qS1-LS-T0L" secondAttribute="centerX" id="K4v-WJ-hyd"/>
-                                                                            <constraint firstItem="sms-bG-7yM" firstAttribute="top" secondItem="G6S-Q6-U27" secondAttribute="bottom" constant="8" id="aFv-uh-RzE"/>
-                                                                            <constraint firstItem="G6S-Q6-U27" firstAttribute="centerX" secondItem="qS1-LS-T0L" secondAttribute="centerX" id="yxH-v4-H93"/>
-                                                                            <constraint firstItem="sms-bG-7yM" firstAttribute="centerX" secondItem="qS1-LS-T0L" secondAttribute="centerX" id="zeQ-up-WIh"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <outletCollection property="gestureRecognizers" destination="kDf-W3-5qC" appends="YES" id="Qb2-Pn-8h9"/>
-                                                                        </connections>
-                                                                    </view>
-                                                                </subviews>
-                                                            </stackView>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-Re-xdu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="150"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQG-Hf-pbf">
+                                                                    <size key="itemSize" width="128" height="128"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells/>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="noL-bS-YCe" id="ikF-Uu-P0q"/>
+                                                                    <outlet property="delegate" destination="noL-bS-YCe" id="RCb-SC-nE8"/>
+                                                                </connections>
+                                                            </collectionView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="SquareColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="CUk-OR-f0K" secondAttribute="trailing" id="ApM-Do-slI"/>
-                                                            <constraint firstAttribute="bottom" secondItem="CUk-OR-f0K" secondAttribute="bottom" id="SUf-Sy-ZWD"/>
-                                                            <constraint firstAttribute="height" constant="125" id="fUK-6a-rxY"/>
-                                                            <constraint firstItem="CUk-OR-f0K" firstAttribute="top" secondItem="X4J-Qg-wN9" secondAttribute="top" id="tr9-pd-ul0"/>
-                                                            <constraint firstItem="CUk-OR-f0K" firstAttribute="leading" secondItem="X4J-Qg-wN9" secondAttribute="leading" id="yCI-P3-eZ0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="B1H-Re-xdu" secondAttribute="trailing" id="1mi-EG-SBF"/>
+                                                            <constraint firstItem="B1H-Re-xdu" firstAttribute="leading" secondItem="X4J-Qg-wN9" secondAttribute="leading" id="RCy-jo-hqx"/>
+                                                            <constraint firstAttribute="height" constant="150" id="fUK-6a-rxY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="B1H-Re-xdu" secondAttribute="bottom" id="nzJ-dE-W3U"/>
+                                                            <constraint firstItem="B1H-Re-xdu" firstAttribute="top" secondItem="X4J-Qg-wN9" secondAttribute="top" id="tbD-Da-pMK"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -595,7 +494,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaI-ug-p6e">
-                                                <rect key="frame" x="8" y="193.5" width="398" height="277.5"/>
+                                                <rect key="frame" x="8" y="218.5" width="398" height="277.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-JN-WoB" userLabel="Daily Task Content">
                                                         <rect key="frame" x="16" y="36.5" width="366" height="225"/>
@@ -703,7 +602,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ob7-49-dFk">
-                                                <rect key="frame" x="8" y="487" width="398" height="177.5"/>
+                                                <rect key="frame" x="8" y="512" width="398" height="177.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy6-AM-flP" userLabel="Daily Birthday Content">
                                                         <rect key="frame" x="16" y="36.5" width="366" height="125"/>
@@ -810,32 +709,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="JF3-TK-czs"/>
                     <connections>
+                        <outlet property="collectionAvailable" destination="B1H-Re-xdu" id="te6-Y0-CUE"/>
                         <outlet property="collectionBirthday" destination="dCT-4k-pdc" id="Szs-Kh-wA5"/>
                         <outlet property="collectionDaily" destination="ViL-KM-brE" id="HFx-EQ-E54"/>
-                        <outlet property="labelAvailabelBugs" destination="G6S-Q6-U27" id="ATV-Xp-yNS"/>
-                        <outlet property="labelAvailabelSeaCreature" destination="6Fx-DC-Q9f" id="QQs-tz-CY7"/>
-                        <outlet property="labelAvailableFishes" destination="Uzo-gz-nD2" id="Q7A-4M-102"/>
                         <segue destination="bLB-wD-QeN" kind="show" identifier="gotoBirthdayVillager" id="Us2-1Z-o2d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3L-0J-Ynt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PxA-S8-2go" userLabel="Tap Fish">
-                    <connections>
-                        <action selector="viewFishPress:" destination="noL-bS-YCe" id="4RA-MW-xTd"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="LXm-9s-yQf" userLabel="Tap Sea Creature">
-                    <connections>
-                        <action selector="viewSeaCreaturePress:" destination="noL-bS-YCe" id="CN1-Ji-eqt"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="kDf-W3-5qC" userLabel="Tap Bug">
-                    <connections>
-                        <action selector="viewBugsPress:" destination="noL-bS-YCe" id="Nyf-p7-rbO"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="U0d-db-n3V"/>
-                <tapGestureRecognizer id="ENu-jQ-YDm"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="32.8125"/>
         </scene>
@@ -862,9 +742,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1,000_Bells_NH_Inv_Icon" width="40" height="40"/>
-        <image name="Akoyagai" width="128" height="128"/>
-        <image name="Bug0" width="128" height="128"/>
-        <image name="Fish0" width="128" height="128"/>
         <image name="Furniture_NH_Inv_Icon" width="40" height="40"/>
         <image name="Pietro_PC_icon" width="40" height="40"/>
         <image name="play" catalog="system" width="120" height="128"/>

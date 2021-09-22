@@ -217,6 +217,11 @@
 		F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
+		F696FC4326F97074008C39E7 /* AvailableNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4126F97074008C39E7 /* AvailableNowCell.swift */; };
+		F696FC4426F97074008C39E7 /* AvailableNowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F696FC4226F97074008C39E7 /* AvailableNowCell.xib */; };
+		F696FC4926F973D3008C39E7 /* AvailableNowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */; };
+		F696FC4E26F973F4008C39E7 /* AvailableNowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */; };
+		F696FC5326F98B73008C39E7 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC5226F98B73008C39E7 /* DateHandler.swift */; };
 		F69BF45726AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
 		F69BF45826AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
 		F69BF45926AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
@@ -403,6 +408,11 @@
 		F67A787E269C3F6C00112F45 /* VillagerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerCellViewModel.swift; sourceTree = "<group>"; };
 		F67C4AF126BD3CB300F35502 /* Wallmounted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallmounted.swift; sourceTree = "<group>"; };
 		F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewController.swift; sourceTree = "<group>"; };
+		F696FC4126F97074008C39E7 /* AvailableNowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowCell.swift; sourceTree = "<group>"; };
+		F696FC4226F97074008C39E7 /* AvailableNowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableNowCell.xib; sourceTree = "<group>"; };
+		F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowCellViewModel.swift; sourceTree = "<group>"; };
+		F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowInfo.swift; sourceTree = "<group>"; };
+		F696FC5226F98B73008C39E7 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableMonthView.swift; sourceTree = "<group>"; };
 		F69BF45D26AE89C800D777D2 /* AvailableMonthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableMonthView.xib; sourceTree = "<group>"; };
 		F69BF46F26AEA43800D777D2 /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
@@ -487,6 +497,7 @@
 				3EDEBA2AF1F231E84C1BC138 /* DashboardVCViewModel.swift */,
 				F6B4DCF026F85A2000619AE4 /* DailyTaskCellViewModel.swift */,
 				F6D7E86826F8C3A700462A16 /* DailyBirthdayCellViewModel.swift */,
+				F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -814,6 +825,8 @@
 				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
 				F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */,
 				F6B4DCEB26F83A6000619AE4 /* CoreDataHandler.swift */,
+				F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */,
+				F696FC5226F98B73008C39E7 /* DateHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -881,6 +894,8 @@
 				F6B4DCDE26F814CA00619AE4 /* DailyTaskCell.swift */,
 				F6D7E85E26F89B0600462A16 /* DailyBirthdayCell.xib */,
 				F6D7E86326F8BF6A00462A16 /* DailyBirthdayCell.swift */,
+				F696FC4126F97074008C39E7 /* AvailableNowCell.swift */,
+				F696FC4226F97074008C39E7 /* AvailableNowCell.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -999,6 +1014,7 @@
 				F66D15C426AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F69BF47A26AEA44700D777D2 /* TagsListView.xib in Resources */,
 				F631DEFA269D72EF00E2CDC4 /* CommonCell.xib in Resources */,
+				F696FC4426F97074008C39E7 /* AvailableNowCell.xib in Resources */,
 				F631DF08269D854C00E2CDC4 /* Songs.storyboard in Resources */,
 				F650FF05265A603E00BF5202 /* LaunchScreen.storyboard in Resources */,
 				F6EFA416269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
@@ -1180,10 +1196,12 @@
 				F69BF45726AE89A700D777D2 /* AvailableMonthView.swift in Sources */,
 				F631DEEF269D71EC00E2CDC4 /* FishCellViewModel.swift in Sources */,
 				F661B5FA26C289980030B15D /* TitleIconPair.swift in Sources */,
+				F696FC4E26F973F4008C39E7 /* AvailableNowInfo.swift in Sources */,
 				F624E32C26C0FAB100542DA0 /* WallmountedViewController.swift in Sources */,
 				F6EC22F22696DB3100C931EC /* CatalogViewController.swift in Sources */,
 				F67687B92697FD8C00CEE8BD /* SongDetailViewController.swift in Sources */,
 				F6E9573026E9A31300049A32 /* DailyTaskProgressButton.swift in Sources */,
+				F696FC5326F98B73008C39E7 /* DateHandler.swift in Sources */,
 				F654F87826A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6116D55269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
 				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
@@ -1203,6 +1221,7 @@
 				F6116DA126A0340D007BFEDE /* BugDetailViewController.swift in Sources */,
 				F69BF47026AEA43800D777D2 /* TagsListView.swift in Sources */,
 				F6116D2F269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
+				F696FC4326F97074008C39E7 /* AvailableNowCell.swift in Sources */,
 				F61A4DB726A5583A00C9699C /* HousewaresViewController.swift in Sources */,
 				F61A4DBF26A558AB00C9699C /* HousewaresVCViewModel.swift in Sources */,
 				F67A787F269C3F6C00112F45 /* VillagerCellViewModel.swift in Sources */,
@@ -1241,6 +1260,7 @@
 				F6A7B7F426D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
+				F696FC4926F973D3008C39E7 /* AvailableNowCellViewModel.swift in Sources */,
 				3EDEBAF96F8EEA0B401F66A8 /* NibOwnerLoadable.swift in Sources */,
 				3EDEBD9950E35EE50F1EA04B /* VillagerDetailVCViewModel.swift in Sources */,
 				3EDEB53A60FFEB6F10CB3598 /* VillagerDetailCellViewModel.swift in Sources */,
