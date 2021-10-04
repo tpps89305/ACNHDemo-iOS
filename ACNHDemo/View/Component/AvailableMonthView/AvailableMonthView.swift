@@ -12,7 +12,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     
     @IBOutlet weak var collectionMonth: UICollectionView!
 
-    var monthOfToday = -1
+    private var monthOfToday = -1
     
     @IBInspectable var availableMonth: [Int] = [] {
         didSet {
@@ -38,11 +38,8 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     override func awakeFromNib() {
         collectionMonth.register(UINib(nibName: String(describing: AvailableMonthCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM"
-        let todayString = formatter.string(from: Date())
-        monthOfToday = Int(todayString) ?? -1
-        print("Month of today is \(todayString)")
+        monthOfToday = DateHandler.getCurrentMonth()
+        print("Month of today is \(monthOfToday)")
     }
 
     private func customInit() {

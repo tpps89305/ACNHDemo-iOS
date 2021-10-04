@@ -578,23 +578,23 @@
 		F631DEBC269D2B9C00E2CDC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F6E9572D26E99CA100049A32 /* Component */,
-				F624E32026C0FA4700542DA0 /* Wallmounted */,
-				F6BBF42926B3DD2900F90CFB /* CommonCell */,
-				F654F87626A17DC500188318 /* BGM */,
-				F6EFA3D6269E859F000A4F42 /* Song */,
-				F6EFA3D7269E85B3000A4F42 /* Fish */,
-				F6116D2D269FDE08007BFEDE /* SeaCreature */,
-				F6116D8026A02CCF007BFEDE /* Bug */,
-				F654F81C26A11D7400188318 /* Fossil */,
-				F654F83526A12ED200188318 /* Art */,
-				F61A4DAB26A5568D00C9699C /* Houseware */,
-				F6EFA3DB269E8905000A4F42 /* Dashboard */,
-				F6EFA3D5269E857C000A4F42 /* Villager */,
-				F650FEFB265A603700BF5202 /* Main.storyboard */,
-				F6EC22F12696DB3100C931EC /* CatalogViewController.swift */,
 				F661B5F126C2818A0030B15D /* CatalogCell.swift */,
+				F6EC22F12696DB3100C931EC /* CatalogViewController.swift */,
 				3EDEB555FD72BB31CAAF663C /* NibOwnerLoadable.swift */,
+				F650FEFB265A603700BF5202 /* Main.storyboard */,
+				F654F83526A12ED200188318 /* Art */,
+				F654F87626A17DC500188318 /* BGM */,
+				F6116D8026A02CCF007BFEDE /* Bug */,
+				F6BBF42926B3DD2900F90CFB /* CommonCell */,
+				F6E9572D26E99CA100049A32 /* Component */,
+				F6EFA3DB269E8905000A4F42 /* Dashboard */,
+				F6EFA3D7269E85B3000A4F42 /* Fish */,
+				F654F81C26A11D7400188318 /* Fossil */,
+				F61A4DAB26A5568D00C9699C /* Houseware */,
+				F6116D2D269FDE08007BFEDE /* SeaCreature */,
+				F6EFA3D6269E859F000A4F42 /* Song */,
+				F6EFA3D5269E857C000A4F42 /* Villager */,
+				F624E32026C0FA4700542DA0 /* Wallmounted */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -756,17 +756,17 @@
 		F67A7873269C3EAD00112F45 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F654F88826A182C200188318 /* BGM */,
-				F654F86D26A1765200188318 /* Song */,
-				F654F86E26A1766000188318 /* Fish */,
-				F654F86F26A1766F00188318 /* SeaCreature */,
-				F654F87026A1767700188318 /* Bug */,
-				F654F87126A1767F00188318 /* Fossil */,
 				F654F87226A1768E00188318 /* Art */,
+				F654F88826A182C200188318 /* BGM */,
+				F654F87026A1767700188318 /* Bug */,
+				3EDEB7D2D6FA79AF6B1F9CBD /* Dashboard */,
+				F654F86E26A1766000188318 /* Fish */,
+				F654F87126A1767F00188318 /* Fossil */,
 				F61A4DBD26A5586F00C9699C /* Houseware */,
+				F654F86F26A1766F00188318 /* SeaCreature */,
+				F654F86D26A1765200188318 /* Song */,
 				F654F86C26A1764500188318 /* Villager */,
 				3EDEB5524BD2E066C19B1F90 /* Wallmounted */,
-				3EDEB7D2D6FA79AF6B1F9CBD /* Dashboard */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -805,30 +805,54 @@
 		F6C9C9CF268D96A6001A1D9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
-				F6C9C9D3268DA25E001A1D9A /* Villager.swift */,
-				F6EC22FF2696EB3700C931EC /* Song.swift */,
 				F6AA45C6268CC2B700528F73 /* Extensions.swift */,
-				F631DED2269D6DA200E2CDC4 /* Fish.swift */,
-				F631DED9269D6E0A00E2CDC4 /* Name.swift */,
-				F6116D1F269FDC62007BFEDE /* SeaCreatures.swift */,
-				F6116D26269FDCCF007BFEDE /* Time.swift */,
-				F6116D6F26A02B09007BFEDE /* Bug.swift */,
-				F6116D7926A02C35007BFEDE /* Rarity.swift */,
-				F654F81526A11D2A00188318 /* Fossil.swift */,
-				F654F84B26A1381F00188318 /* Art.swift */,
-				F654F88126A1800E00188318 /* BGM.swift */,
-				F61A4DA426A5546C00C9699C /* Houseware.swift */,
-				F67C4AF126BD3CB300F35502 /* Wallmounted.swift */,
-				3EDEB71D1875AFACF168E0F5 /* TitleContentPair.swift */,
-				F661B5F926C289980030B15D /* TitleIconPair.swift */,
-				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
-				F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */,
-				F6B4DCEB26F83A6000619AE4 /* CoreDataHandler.swift */,
-				F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */,
-				F696FC5226F98B73008C39E7 /* DateHandler.swift */,
+				F6E9048127044728001D1095 /* Constant */,
+				F6E9047F27044684001D1095 /* DataObject */,
+				F6E90480270446E9001D1095 /* Handler */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F6E9047F27044684001D1095 /* DataObject */ = {
+			isa = PBXGroup;
+			children = (
+				F654F84B26A1381F00188318 /* Art.swift */,
+				F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */,
+				F654F88126A1800E00188318 /* BGM.swift */,
+				F6116D6F26A02B09007BFEDE /* Bug.swift */,
+				F631DED2269D6DA200E2CDC4 /* Fish.swift */,
+				F654F81526A11D2A00188318 /* Fossil.swift */,
+				F61A4DA426A5546C00C9699C /* Houseware.swift */,
+				F631DED9269D6E0A00E2CDC4 /* Name.swift */,
+				F6116D7926A02C35007BFEDE /* Rarity.swift */,
+				F6116D1F269FDC62007BFEDE /* SeaCreatures.swift */,
+				F6EC22FF2696EB3700C931EC /* Song.swift */,
+				F6116D26269FDCCF007BFEDE /* Time.swift */,
+				3EDEB71D1875AFACF168E0F5 /* TitleContentPair.swift */,
+				F661B5F926C289980030B15D /* TitleIconPair.swift */,
+				F6C9C9D3268DA25E001A1D9A /* Villager.swift */,
+				F67C4AF126BD3CB300F35502 /* Wallmounted.swift */,
+			);
+			path = DataObject;
+			sourceTree = "<group>";
+		};
+		F6E90480270446E9001D1095 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				F650FF36265A9B5B00BF5202 /* ACNHAPI.swift */,
+				F6B4DCEB26F83A6000619AE4 /* CoreDataHandler.swift */,
+				F696FC5226F98B73008C39E7 /* DateHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		F6E9048127044728001D1095 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */,
+				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		F6E9572D26E99CA100049A32 /* Component */ = {

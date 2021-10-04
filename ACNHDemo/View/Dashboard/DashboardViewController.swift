@@ -58,13 +58,10 @@ class DashboardViewController: UIViewController {
                 destinationVC.villager = viewModel.dailyBirthdayCellViewModels[row].villager
             }
         } else if segue.identifier == Constant.SegueID.GOTO_FISHES, let destinationVC  = segue.destination as? FishesViewController {
-            // TODO: Go to FishesViewController
             destinationVC.availableTime = true
         } else if segue.identifier == Constant.SegueID.GOTO_SEA_CREATURES, let destinationVC = segue.destination as? SeaCreaturesViewController {
-            // TODO: Go to SeaCreaturesViewController
             destinationVC.availableTime = true
         } else if segue.identifier == Constant.SegueID.GOTO_BUGS, let destinationVC = segue.destination as? BugsViewController {
-            // TODO: Go to BugsViewController
             destinationVC.availableTime = true
         }
     }
