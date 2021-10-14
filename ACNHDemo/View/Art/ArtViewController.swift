@@ -40,18 +40,19 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         viewModel.artCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+            fatalError("Cannot dequeue CommonCell!")
+        }
         let listCellViewModel = viewModel.artCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
     }
     
-    //MARK: UISearchBar Delegate
+    // MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText

@@ -9,7 +9,7 @@ import UIKit
 
 class SongsVCViewModel: NSObject {
     
-    var arraySongs = Array<Song>()
+    var arraySongs = [Song]()
     var songCellViewModels: [SongCellViewModel] = []
     var searchResult = [Song]() {
         didSet {

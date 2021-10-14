@@ -1,29 +1,15 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let villagers = try? newJSONDecoder().decode(Villagers.self, from: jsonData)
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseVillagersValue { response in
-//     if let villagersValue = response.result.value {
-//       ...
-//     }
-//   }
-
 import Foundation
 import Alamofire
 
 // MARK: - Villager
 struct Villager: Codable {
-    let id: Int
+    let villagerId: Int
     let fileName: String
     let name: Name
     let personality: Personality
     let birthdayString, birthday, species: String
     let gender: Gender
-    let subtype: Subtype
+    let subtype: String
     let hobby: Hobby
     let catchPhrase: String
     let iconURI, imageURI: String
@@ -31,7 +17,7 @@ struct Villager: Codable {
     let catchTranslations: CatchTranslations
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case villagerId = "id"
         case fileName = "file-name"
         case name, personality
         case birthdayString = "birthday-string"
@@ -45,15 +31,6 @@ struct Villager: Codable {
         case catchTranslations = "catch-translations"
     }
 }
-
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseCatchTranslations { response in
-//     if let catchTranslations = response.result.value {
-//       ...
-//     }
-//   }
 
 // MARK: - CatchTranslations
 struct CatchTranslations: Codable {
@@ -94,15 +71,6 @@ enum Hobby: String, Codable {
     case play = "Play"
 }
 
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseName { response in
-//     if let name = response.result.value {
-//       ...
-//     }
-//   }
-
 enum Personality: String, Codable {
     case cranky = "Cranky"
     case jock = "Jock"
@@ -112,11 +80,6 @@ enum Personality: String, Codable {
     case smug = "Smug"
     case snooty = "Snooty"
     case uchi = "Uchi"
-}
-
-enum Subtype: String, Codable {
-    case a = "A"
-    case b = "B"
 }
 
 typealias Villagers = [String: Villager]

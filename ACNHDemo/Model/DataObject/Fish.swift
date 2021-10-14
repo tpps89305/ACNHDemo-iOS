@@ -10,7 +10,7 @@ import Alamofire
 
 // MARK: - FishesValue
 struct Fish: Codable {
-    let id: Int
+    let fishId: Int
     let fileName: String
     let name: Name
     let availability: FishAvailability
@@ -21,7 +21,7 @@ struct Fish: Codable {
     let altCatchPhrase: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case fishId = "id"
         case fileName = "file-name"
         case name, availability, shadow, price
         case priceCj = "price-cj"

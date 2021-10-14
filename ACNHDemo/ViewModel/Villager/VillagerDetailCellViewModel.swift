@@ -18,4 +18,5 @@ class VillagerDetailCellViewModel {
     init(titleContentPair: TitleContentPair) {
         self.titleContentPair = titleContentPair
     }
+    
 }

@@ -40,12 +40,13 @@ class HousewaresViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         viewModel.housewareCellViewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+            fatalError("Cannot dequeue CommonCell!")
+        }
         let listCellViewModel = viewModel.housewareCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -55,7 +56,7 @@ class HousewaresViewController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: Constant.SegueID.GOTO_HOUSEWARE_DETAIL, sender: self)
     }
     
-    //MARK: UISearchBar Delegate
+    // MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText

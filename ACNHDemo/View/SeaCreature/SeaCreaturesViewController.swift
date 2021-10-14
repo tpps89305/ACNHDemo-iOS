@@ -51,7 +51,6 @@ class SeaCreaturesViewController: UITableViewController {
         }
     }
     
-
 }
 
 // MARK: - Table view data source
@@ -59,13 +58,13 @@ class SeaCreaturesViewController: UITableViewController {
 extension SeaCreaturesViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         viewModel.seaCreatureCellViewModels.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+            fatalError("Cannot dequeue CommonCell!")
+        }
         let listCellViewModel = viewModel.seaCreatureCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -77,7 +76,7 @@ extension SeaCreaturesViewController {
     
 }
 
-//MARK: - UISearchBar Delegate
+// MARK: - UISearchBar Delegate
 
 extension SeaCreaturesViewController: UISearchBarDelegate {
     

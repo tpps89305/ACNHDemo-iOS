@@ -9,7 +9,7 @@ import UIKit
 
 class FossilsVCViewModel: NSObject {
 
-    var arrayFossils = Array<Fossil>()
+    var arrayFossils = [Fossil]()
     var fossilCellViewModels: [FossilCellViewModel] = []
     var searchResult = [Fossil]() {
         didSet {

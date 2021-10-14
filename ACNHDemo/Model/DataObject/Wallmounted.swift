@@ -5,21 +5,6 @@
 //  Created by 楊朝富 on 2021/8/6.
 //
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let wallmounted = try? newJSONDecoder().decode(Wallmounted.self, from: jsonData)
-
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.wallmountedElementTask(with: url) { wallmountedElement, response, error in
-//     if let wallmountedElement = wallmountedElement {
-//       ...
-//     }
-//   }
-//   task.resume()
-
 import Foundation
 
 // MARK: - WallmountedElement

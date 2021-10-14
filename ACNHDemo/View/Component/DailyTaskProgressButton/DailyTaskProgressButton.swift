@@ -24,7 +24,7 @@ class DailyTaskProgressButton: UIView {
     private lazy var centerX = frame.size.width / 2.0
     private lazy var centerY = frame.size.height / 2.0
     
-    @IBInspectable var iconTask: UIImage? = nil {
+    @IBInspectable var iconTask: UIImage? {
         didSet {
             setIcon(icon: iconTask)
         }

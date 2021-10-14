@@ -23,7 +23,7 @@ class BGMVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayBGMs.sort { (bgm0, bgm1) -> Bool in
-                    bgm0.id < bgm1.id
+                    bgm0.bgmId < bgm1.bgmId
                 }
                 self.onRequestEnd!()
                 print("Success to get BGMs!")

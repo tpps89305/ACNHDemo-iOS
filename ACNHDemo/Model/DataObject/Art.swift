@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - ArtValue
 struct ArtValue: Codable {
-    let id: Int
+    let artId: Int
     let fileName: String
     let name: Name
     let hasFake: Bool
@@ -18,7 +18,7 @@ struct ArtValue: Codable {
     let museumDesc: String
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case artId = "id"
         case fileName = "file-name"
         case name, hasFake
         case buyPrice = "buy-price"

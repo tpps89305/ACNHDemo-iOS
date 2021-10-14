@@ -8,7 +8,6 @@
 import Foundation
 import Moya
 
-
 let ACNHProvider = MoyaProvider<ACNH>()
 
 public enum ACNH {
@@ -91,25 +90,25 @@ extension ACNH : TargetType {
     
     public var sampleData: Data {
         switch self {
-        case .villagers( _):
+        case .villagers:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .songs( _):
+        case .songs:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .fishes(_):
+        case .fishes:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .seaCreatures( _):
+        case .seaCreatures:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .bugs( _):
+        case .bugs:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .fossils( _):
+        case .fossils:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .art( _):
+        case .art:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .backgroundmusic( _):
+        case .backgroundmusic:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .houseware( _):
+        case .houseware:
             return "WTF".data(using: String.Encoding.utf8)!
-        case .wallmounted( _):
+        case .wallmounted:
             return "WTF".data(using: String.Encoding.utf8)!
         }
     }

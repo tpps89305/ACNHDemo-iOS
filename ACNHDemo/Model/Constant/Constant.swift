@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable all
 class Constant {
     
     class CellID {
@@ -19,6 +20,7 @@ class Constant {
         static let DAILY_ITEM = "DailyItem"
         static let DAILY_BIRTHDAY = "DailyBirthday"
         static let AVAILABLE_NOW = "AvailableNow"
+        static let CATALOG_CELL = "CatalogCell"
     }
     
     class SegueID {

@@ -83,15 +83,21 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionDaily {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as! DailyTaskCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as? DailyTaskCell else {
+                fatalError("Cannot dequeue DailyTaskCell!")
+            }
             cell.setup(viewModel: viewModel.dailyTaskCellViewModels[indexPath.row])
             return cell
         } else if collectionView == collectionBirthday {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY, for: indexPath) as! DailyBirthdayCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY, for: indexPath) as? DailyBirthdayCell else {
+                fatalError("Cannot dequeue DailyBirthdayCell!")
+            }
             cell.setup(viewModel: viewModel.dailyBirthdayCellViewModels[indexPath.row])
             return cell
         } else if collectionView == collectionAvailable {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_NOW, for: indexPath) as! AvailableNowCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_NOW, for: indexPath) as? AvailableNowCell else {
+                fatalError("Cannot dequeue AvailableNowCell!")
+            }
             cell.setup(viewModel: viewModel.availableNowCellViewModels[indexPath.row])
             return cell
         }
@@ -105,13 +111,10 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             switch indexPath.row {
             case 0:
                 performSegue(withIdentifier: Constant.SegueID.GOTO_FISHES, sender: self)
-                break
             case 1:
                 performSegue(withIdentifier: Constant.SegueID.GOTO_SEA_CREATURES, sender: self)
-                break
             case 2:
                 performSegue(withIdentifier: Constant.SegueID.GOTO_BUGS, sender: self)
-                break
             default:
                 break
             }

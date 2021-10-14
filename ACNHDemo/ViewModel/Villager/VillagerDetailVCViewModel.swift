@@ -24,7 +24,7 @@ class VillagerDetailVCViewModel {
 
     private func convertToViewModel(arrayDetailItem: [TitleContentPair], textColor: String, bubbleColor: String) {
         for eachPair in arrayDetailItem {
-            let villagerDetailCellViewModel = VillagerDetailCellViewModel(titleContentPair: eachPair, textColor: textColor, bubbleColor:bubbleColor)
+            let villagerDetailCellViewModel = VillagerDetailCellViewModel(titleContentPair: eachPair, textColor: textColor, bubbleColor: bubbleColor)
             villagerDetailCellViewModels.append(villagerDetailCellViewModel)
         }
         onRequestEnd!()

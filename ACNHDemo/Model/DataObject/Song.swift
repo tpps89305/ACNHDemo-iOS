@@ -3,7 +3,7 @@ import Alamofire
 
 // MARK: - Song
 struct Song: Codable {
-    let id: Int
+    let songId: Int
     let fileName: String
     let name: Name
     let buyPrice: Int?
@@ -12,7 +12,7 @@ struct Song: Codable {
     let musicURI, imageURI: String
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case songId = "id"
         case fileName = "file-name"
         case name
         case buyPrice = "buy-price"

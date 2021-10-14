@@ -8,7 +8,7 @@
 import UIKit
 
 enum VillagerDetailCellType: Int {
-    case Avatar = 0, Content
+    case avatar = 0, content
 }
 
 class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -50,9 +50,9 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case VillagerDetailCellType.Avatar.rawValue:
+        case VillagerDetailCellType.avatar.rawValue:
             return 1
-        case VillagerDetailCellType.Content.rawValue:
+        case VillagerDetailCellType.content.rawValue:
             return viewModel.villagerDetailCellViewModels.count
         default:
             return 0
@@ -61,13 +61,17 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case VillagerDetailCellType.Avatar.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL, for: indexPath) as! VillagerDetailAvatarCell
+        case VillagerDetailCellType.avatar.rawValue:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL, for: indexPath) as? VillagerDetailAvatarCell else {
+                fatalError("Cannot dequeue VillagerDetailAvatarCell!")
+            }
             cell.setup(viewModel: viewModel.villagerAvatarCellViewModel)
             return cell
             
-        case VillagerDetailCellType.Content.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as! VillagerDetailContentCell
+        case VillagerDetailCellType.content.rawValue:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? VillagerDetailContentCell else {
+                fatalError("Cannot dequeue VillagerDetailContentCell!")
+            }
             cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
             return cell
 

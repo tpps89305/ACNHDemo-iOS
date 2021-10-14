@@ -10,7 +10,7 @@ import Alamofire
 
 // MARK: - SeaCreaturesValue
 struct SeaCreature: Codable {
-    let id: Int
+    let seaCreatureId: Int
     let fileName: String
     let name: Name
     let availability: SeaCreatureAvailability
@@ -22,7 +22,7 @@ struct SeaCreature: Codable {
     let museumPhrase: String
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case seaCreatureId = "id"
         case fileName = "file-name"
         case name, availability, speed, shadow, price
         case catchPhrase = "catch-phrase"

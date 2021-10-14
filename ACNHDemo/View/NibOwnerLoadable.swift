@@ -32,4 +32,5 @@ extension NibOwnerLoadable where Self: UIView {
         contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
+    
 }

@@ -55,7 +55,7 @@ class BugsVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arrayBugs.sort { (bug0, bug1) -> Bool in
-                    bug0.id < bug1.id
+                    bug0.bugId < bug1.bugId
                 }
                 self.convertToViewModel(bugs: self.arrayBugs)
                 print("Success to get bugs!")

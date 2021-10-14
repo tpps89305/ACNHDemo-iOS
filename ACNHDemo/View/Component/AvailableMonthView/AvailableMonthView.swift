@@ -14,7 +14,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     private var monthOfToday = -1
     
-    @IBInspectable var availableMonth: [Int] = [] {
+    var availableMonth: [Int] = [] {
         didSet {
             collectionMonth.reloadData()
         }
@@ -51,7 +51,9 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as! AvailableMonthCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as? AvailableMonthCell else {
+            fatalError("Cannot dequeue AvailableMonthCell!")
+        }
         cell.labelMonth.text = arrayMonth[indexPath.row]
         if availableMonth.contains(indexPath.row + 1) {
             cell.viewMonth.backgroundColor = ACNHColor.tagBackground2?.darkened()

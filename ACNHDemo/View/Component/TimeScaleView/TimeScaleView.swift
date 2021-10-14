@@ -52,7 +52,10 @@ class TimeScaleView: UIView {
                     ))
         }
 
-        layer.addSublayer(drawBottomLine(originX: drawOriginX - 1, originY: drawOriginY, targetLength: drawTargetLength + 2))
+        layer.addSublayer(
+            drawBottomLine(originX: drawOriginX - 1,
+                           originY: drawOriginY,
+                           targetLength: drawTargetLength + 2))
         layer.addSublayer(drawScaleLine(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
         layer.addSublayer(drawScaleLine2(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
         layer.addSublayer(drawScaleLine3(originX: drawOriginX, originY: drawOriginY, targetLength: drawTargetLength))
@@ -72,26 +75,20 @@ class TimeScaleView: UIView {
         switch time {
         case .empty:
             startEndTimeArray.append([0, 24])
-            break
         case .the4Am9Pm:
             startEndTimeArray.append([4, 21])
-            break
         case .the4Pm9Am:
             startEndTimeArray.append([16, 24])
             startEndTimeArray.append([0, 9])
-            break
         case .the9Am4Pm:
             startEndTimeArray.append([9, 16])
-            break
         case .the9Am4Pm9Pm4Am:
             startEndTimeArray.append([9, 16])
             startEndTimeArray.append([21, 24])
             startEndTimeArray.append([0, 4])
-            break
         case .the9Pm4Am:
             startEndTimeArray.append([21, 24])
             startEndTimeArray.append([0, 4])
-            break
         case .none:
             break
         }
@@ -149,7 +146,7 @@ class TimeScaleView: UIView {
             scalePath.move(to: CGPoint(x: newX, y: originY))
             scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine1Length))
             scalePath.close()
-            newX = newX + scaleDistance
+            newX += scaleDistance
         }
 
         let shapeLayer = CAShapeLayer()
@@ -162,14 +159,14 @@ class TimeScaleView: UIView {
     private func drawScaleLine2(originX: CGFloat, originY: CGFloat, targetLength: CGFloat) -> CAShapeLayer {
         let scaleDistance = CGFloat(targetLength) / 4.0
         var newX = originX
-        newX = newX + scaleDistance / 2
+        newX += scaleDistance / 2
 
         let scalePath = UIBezierPath()
         for _ in 1...4 {
             scalePath.move(to: CGPoint(x: newX, y: originY - scaleLine2Padding))
             scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine2Length))
             scalePath.close()
-            newX = newX + scaleDistance
+            newX += scaleDistance
         }
 
         let shapeLayer = CAShapeLayer()
@@ -185,14 +182,14 @@ class TimeScaleView: UIView {
 
         let scalePath = UIBezierPath()
         for index in 0...23 {
-            if (index % 3 == 0) {
-                newX = newX + scaleDistance
+            if index % 3 == 0 {
+                newX += scaleDistance
                 continue
             }
             scalePath.move(to: CGPoint(x: newX, y: originY - scaleLine3Padding))
             scalePath.addLine(to: CGPoint(x: newX, y: originY - scaleLine3Length))
             scalePath.close()
-            newX = newX + scaleDistance
+            newX += scaleDistance
         }
 
         let shapeLayer = CAShapeLayer()
@@ -215,7 +212,7 @@ class TimeScaleView: UIView {
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.alignmentMode = .center
             parent.layer.addSublayer(textLayer)
-            newX = newX + scaleDistance
+            newX += scaleDistance
         }
     }
 

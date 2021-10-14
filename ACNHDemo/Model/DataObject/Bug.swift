@@ -10,7 +10,7 @@ import Alamofire
 
 // MARK: - Bug
 struct Bug: Codable {
-    let id: Int
+    let bugId: Int
     let fileName: String
     let name: Name
     let availability: BugAvailability
@@ -20,7 +20,7 @@ struct Bug: Codable {
     let altCatchPhrase: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case bugId = "id"
         case fileName = "file-name"
         case name, availability, price
         case priceFlick = "price-flick"

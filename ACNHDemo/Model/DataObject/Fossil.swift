@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - FossilsValue
 struct Fossil: Codable {
     let fileName: String

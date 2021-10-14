@@ -578,13 +578,12 @@
 		F631DEBC269D2B9C00E2CDC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F661B5F126C2818A0030B15D /* CatalogCell.swift */,
-				F6EC22F12696DB3100C931EC /* CatalogViewController.swift */,
 				3EDEB555FD72BB31CAAF663C /* NibOwnerLoadable.swift */,
 				F650FEFB265A603700BF5202 /* Main.storyboard */,
 				F654F83526A12ED200188318 /* Art */,
 				F654F87626A17DC500188318 /* BGM */,
 				F6116D8026A02CCF007BFEDE /* Bug */,
+				F66BB6792717DFC4001E66C5 /* Catalog */,
 				F6BBF42926B3DD2900F90CFB /* CommonCell */,
 				F6E9572D26E99CA100049A32 /* Component */,
 				F6EFA3DB269E8905000A4F42 /* Dashboard */,
@@ -751,6 +750,15 @@
 				F654F88926A182DE00188318 /* BGMVCViewModel.swift */,
 			);
 			path = BGM;
+			sourceTree = "<group>";
+		};
+		F66BB6792717DFC4001E66C5 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				F661B5F126C2818A0030B15D /* CatalogCell.swift */,
+				F6EC22F12696DB3100C931EC /* CatalogViewController.swift */,
+			);
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 		F67A7873269C3EAD00112F45 /* ViewModel */ = {
@@ -936,6 +944,7 @@
 				F650FEEF265A603700BF5202 /* Frameworks */,
 				F650FEF0265A603700BF5202 /* Resources */,
 				A7A1E1FF4F7A57FCFEB9AE2E /* [CP] Embed Pods Frameworks */,
+				F6549CDC271525FA003FAC5F /* Run Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -1201,6 +1210,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ACNHDemo-ACNHDemoUITests/Pods-ACNHDemo-ACNHDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F6549CDC271525FA003FAC5F /* Run Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" \n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

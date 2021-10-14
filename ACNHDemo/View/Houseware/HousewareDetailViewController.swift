@@ -44,7 +44,9 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as! VillagerDetailContentCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? VillagerDetailContentCell else {
+            fatalError("Cannot dequeue VillagerDetailContentCell!")
+        }
         cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell
     }

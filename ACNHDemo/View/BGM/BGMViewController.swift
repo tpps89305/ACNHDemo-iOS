@@ -74,10 +74,8 @@ class BGMViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         switch component {
         case 0:
             selectedHour = arrayHours[row]
-            break
         case 1:
             selectedWeather = arrayWeathers[row].rawValue
-            break
         default:
             break
         }

@@ -46,7 +46,9 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGERS_CELL, for: indexPath) as! VillagersCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGERS_CELL, for: indexPath) as? VillagersCell else {
+            fatalError("Cannot dequeue VillagersCell!")
+        }
         let listCellViewModel = viewModel.villagerCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -56,7 +58,7 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: Constant.SegueID.GOTO_VILLAGER_DETAIL, sender: self)
     }
     
-    //MARK: UISearchBar Delegate
+    // MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText

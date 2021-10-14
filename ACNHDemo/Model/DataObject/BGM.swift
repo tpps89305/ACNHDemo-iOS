@@ -9,14 +9,14 @@ import Foundation
 
 // MARK: - BGMValue
 struct BGM: Codable {
-    let id: Int
+    let bgmId: Int
     let fileName: String
     let hour: Int
     let weather: Weather
     let musicURI: String
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case bgmId = "id"
         case fileName = "file-name"
         case hour, weather
         case musicURI = "music_uri"

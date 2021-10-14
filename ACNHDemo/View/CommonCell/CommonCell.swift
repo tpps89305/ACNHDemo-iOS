@@ -37,7 +37,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: fish.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = fish.name.nameTWzh
         tagsListView.tags = ["Sell: \(fish.price)", "Sell CJ: \(fish.priceCj)"]
         accessoryType = .disclosureIndicator
@@ -48,7 +48,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: seaCreature.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = seaCreature.name.nameTWzh
         tagsListView.tags = ["Sell: \(seaCreature.price)"]
         accessoryType = .disclosureIndicator
@@ -59,7 +59,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: bug.iconURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = bug.name.nameTWzh
         tagsListView.tags = ["Sell: \(bug.price)", "Sell Flick: \(bug.priceFlick)"]
         accessoryType = .disclosureIndicator
@@ -70,7 +70,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: fossil.imageURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = fossil.name.nameTWzh
         tagsListView.tags = ["Sell: \(fossil.price)"]
     }
@@ -96,7 +96,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: artValue.imageURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = artValue.name.nameTWzh
         var salesInfo: [String] = []
         if artValue.hasFake {
@@ -112,7 +112,7 @@ class CommonCell: UITableViewCell {
         imageAvatar.loadUrl(url: wallmounted.imageURI, onLoadingCompleted: {() in
             self.setNeedsLayout()
             self.viewLoading.stopAnimating()
-        } )
+        })
         labelName.text = wallmounted.name.nameTWzh
         var salesInfo: [String] = []
         if wallmounted.buyPrice != nil {

@@ -51,7 +51,6 @@ class FishesViewController: UITableViewController {
         }
     }
     
-
 }
 
 // MARK: - Table view data source
@@ -63,7 +62,9 @@ extension FishesViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+            fatalError("Cannot dequeue CommonCell!")
+        }
         let listCellViewModel = viewModel.fishCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -75,7 +76,7 @@ extension FishesViewController {
     
 }
 
-//MARK: - UISearchBar Delegate
+// MARK: - UISearchBar Delegate
 
 extension FishesViewController: UISearchBarDelegate {
 

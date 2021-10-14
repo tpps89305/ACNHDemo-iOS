@@ -13,10 +13,10 @@ var imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
     
-    func loadUrl(url: String, onLoadingCompleted loadingCompleted: @escaping () -> Void) {
+    func loadUrl(url: String, onLoadingCompleted loadingCompleted: (() -> Void)? = nil) {
         if let image = imageCache.object(forKey: url as NSString) as? UIImage {
             self.image = image
-            loadingCompleted()
+            loadingCompleted?()
             return
         }
         
@@ -25,7 +25,7 @@ extension UIImageView {
                 let image = UIImage(data: data)!
                 imageCache.setObject(image, forKey: url as NSString)
                 self.image = image
-                loadingCompleted()
+                loadingCompleted?()
             } else {
                 print("Data is nil. I don't know what to do :(")
             }

@@ -55,7 +55,7 @@ class SeaCreaturesVCViewModel: NSObject {
                 
                 // Sort to get same order array every time(s).
                 self.arraySeaCreatures.sort { (seaCreature0, seaCreature1) -> Bool in
-                    seaCreature0.id < seaCreature1.id
+                    seaCreature0.seaCreatureId < seaCreature1.seaCreatureId
                 }
                 self.convertToViewModel(seaCreatures: self.arraySeaCreatures)
                 print("Success to get sea creatures!")

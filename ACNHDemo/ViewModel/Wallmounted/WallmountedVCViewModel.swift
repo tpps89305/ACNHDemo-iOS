@@ -6,7 +6,7 @@ import Foundation
 
 class WallmountedVCViewModel {
 
-    var arrayWallmounted = Array<Wallmounted>()
+    var arrayWallmounted = [Wallmounted]()
     var wallmountedCellViewModels: [WallmountedCellViewModel] = []
     var searchResult = [Wallmounted]() {
         didSet {

@@ -51,7 +51,6 @@ class BugsViewController: UITableViewController {
         }
     }
     
-
 }
 
 // MARK: - Table view data source
@@ -59,13 +58,13 @@ class BugsViewController: UITableViewController {
 extension BugsViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         viewModel.bugCellViewModels.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as! CommonCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+            fatalError("Cannot dequeue CommonCell!")
+        }
         let listCellViewModel = viewModel.bugCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -77,7 +76,7 @@ extension BugsViewController {
     
 }
 
-//MARK: - UISearchBar Delegate
+// MARK: - UISearchBar Delegate
 
 extension BugsViewController: UISearchBarDelegate {
 

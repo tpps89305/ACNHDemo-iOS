@@ -9,7 +9,7 @@ import UIKit
 
 class ArtVCViewModel: NSObject {
     
-    var arrayArtValues = Array<ArtValue>()
+    var arrayArtValues = [ArtValue]()
     var artCellViewModels: [ArtCellViewModel] = []
     var searchResult = [ArtValue]() {
         didSet {
@@ -41,7 +41,7 @@ class ArtVCViewModel: NSObject {
                 }
                 
                 self.arrayArtValues.sort { (artValue0, artValue1) -> Bool in
-                    artValue0.id < artValue1.id
+                    artValue0.artId < artValue1.artId
                 }
                 self.convertToViewModel(artValues: self.arrayArtValues)
                 print("Success to get art!")

@@ -10,4 +10,5 @@ class VillagerAvatarCellViewModel {
     init(imageUri: String) {
         self.imageUri = imageUri
     }
+    
 }

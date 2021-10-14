@@ -40,12 +40,13 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
     // MARK: UITableView Delegate and DataSources
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         viewModel.songCellViewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.SONGS_CELL, for: indexPath) as! SongsCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.SONGS_CELL, for: indexPath) as? SongsCell else {
+            fatalError("Cannot dequeue SongsCell!")
+        }
         let listCellViewModel = viewModel.songCellViewModels[indexPath.row]
         cell.setup(viewModel: listCellViewModel)
         return cell
@@ -55,7 +56,7 @@ class SongsViewController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: Constant.SegueID.GOTO_SONG_DETAIL, sender: self)
     }
     
-    //MARK: UISearchBar Delegate
+    // MARK: UISearchBar Delegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText

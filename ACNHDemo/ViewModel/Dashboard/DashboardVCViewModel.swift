@@ -28,7 +28,7 @@ class DashboardVCViewModel {
     func getAvailableFish(onCompleted: @escaping (Int) -> Void) {
         let currentMonth = DateHandler.getCurrentMonth()
         let currentHour = DateHandler.getCurrentHour()
-        var arrayFishes = Array<Fish>()
+        var arrayFishes = [Fish]()
         
         ACNHProvider.request(.fishes(fishId: 0)) { result in
             do {
@@ -61,7 +61,7 @@ class DashboardVCViewModel {
     func getAvailableSeaCreatures(onCompleted: @escaping (Int) -> Void) {
         let currentMonth = DateHandler.getCurrentMonth()
         let currentHour = DateHandler.getCurrentHour()
-        var arraySeaCreatures = Array<SeaCreature>()
+        var arraySeaCreatures = [SeaCreature]()
         
         ACNHProvider.request(.seaCreatures(seaCreatureId: 0)) { result in
             do {
@@ -81,7 +81,7 @@ class DashboardVCViewModel {
                 
                 // Sort to get same order array every time(s).
                 arraySeaCreatures.sort { (seaCreature0, seaCreature1) -> Bool in
-                    seaCreature0.id < seaCreature1.id
+                    seaCreature0.seaCreatureId < seaCreature1.seaCreatureId
                 }
                 onCompleted(arraySeaCreatures.count)
                 print("Success to get sea creatures!")
@@ -94,7 +94,7 @@ class DashboardVCViewModel {
     func getAvailableBugs(onCompleted: @escaping (Int) -> Void) {
         let currentMonth = DateHandler.getCurrentMonth()
         let currentHour = DateHandler.getCurrentHour()
-        var arrayBugs = Array<Bug>()
+        var arrayBugs = [Bug]()
         
         ACNHProvider.request(.bugs(bugId: 0)) { result in
             do {
@@ -114,7 +114,7 @@ class DashboardVCViewModel {
                 
                 // Sort to get same order array every time(s).
                 arrayBugs.sort { (bug0, bug1) -> Bool in
-                    bug0.id < bug1.id
+                    bug0.bugId < bug1.bugId
                 }
                 onCompleted(arrayBugs.count)
                 print("Success to get bugs!")
@@ -168,7 +168,7 @@ class DashboardVCViewModel {
     
     func getBirthdayVillager(onRequestEnd: (() -> Void)?) {
         let today = DateHandler.getToday()
-        var arrayVillagers = Array<Villager>()
+        var arrayVillagers = [Villager]()
         
         ACNHProvider.request(.villagers(villagerId: 0)) { result in
             do {
