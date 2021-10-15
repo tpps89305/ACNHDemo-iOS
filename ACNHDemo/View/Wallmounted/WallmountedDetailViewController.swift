@@ -11,6 +11,7 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var tableDetail: UITableView!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var wallmounted: Wallmounted?
     let viewModel = WallmountedDetailVCViewModel()
@@ -21,9 +22,9 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
         initViews()
         bindViewModel()
 
-        // Do any additional setup after loading the view.
+        viewLoading.startAnimating()
         imageAvatar.loadUrl(url: wallmounted!.imageURI) {
-            // Do nothing
+            self.viewLoading.stopAnimating()
         }
         viewModel.parseWallmountedDetail(wallmounted: wallmounted!)
     }
@@ -31,7 +32,7 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
     private func initViews() {
         title = wallmounted!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableDetail.register(UINib(nibName: String(describing: VillagerDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
+        tableDetail.register(UINib(nibName: String(describing: CommonDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
     }
 
     private func bindViewModel() {
@@ -45,8 +46,8 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? VillagerDetailContentCell else {
-            fatalError("Cannot dequeue VillagerDetailContentCell!")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? CommonDetailContentCell else {
+            fatalError("Cannot dequeue CommonDetailContentCell!")
         }
         cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell

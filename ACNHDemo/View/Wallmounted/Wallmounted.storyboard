@@ -52,6 +52,9 @@
                                                     <constraint firstAttribute="width" constant="160" id="zIk-IJ-e4C"/>
                                                 </constraints>
                                             </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-Pd-2u1">
+                                                <rect key="frame" x="127" y="16" width="160" height="160"/>
+                                            </activityIndicatorView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="No2-vc-PA1">
                                                 <rect key="frame" x="24" y="208" width="366" height="250"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,8 +72,12 @@
                                             <constraint firstItem="No2-vc-PA1" firstAttribute="top" secondItem="rLM-Bz-wBY" secondAttribute="bottom" constant="32" id="E4l-T6-Mih"/>
                                             <constraint firstItem="rLM-Bz-wBY" firstAttribute="top" secondItem="Aj8-vs-i0R" secondAttribute="top" constant="16" id="EOL-eH-eve"/>
                                             <constraint firstItem="rLM-Bz-wBY" firstAttribute="centerX" secondItem="Aj8-vs-i0R" secondAttribute="centerX" id="Gjf-M2-TnS"/>
+                                            <constraint firstItem="rMe-Pd-2u1" firstAttribute="top" secondItem="rLM-Bz-wBY" secondAttribute="top" id="I4M-ji-77p"/>
                                             <constraint firstItem="No2-vc-PA1" firstAttribute="leading" secondItem="Aj8-vs-i0R" secondAttribute="leading" constant="24" id="Oe7-VZ-pX4"/>
+                                            <constraint firstItem="rMe-Pd-2u1" firstAttribute="trailing" secondItem="rLM-Bz-wBY" secondAttribute="trailing" id="joe-Oj-0sw"/>
+                                            <constraint firstItem="rMe-Pd-2u1" firstAttribute="bottom" secondItem="rLM-Bz-wBY" secondAttribute="bottom" id="pG6-Yg-sz9"/>
                                             <constraint firstAttribute="trailing" secondItem="No2-vc-PA1" secondAttribute="trailing" constant="24" id="rmD-sX-1l1"/>
+                                            <constraint firstItem="rMe-Pd-2u1" firstAttribute="leading" secondItem="rLM-Bz-wBY" secondAttribute="leading" id="uWQ-eo-oa1"/>
                                             <constraint firstAttribute="bottom" secondItem="No2-vc-PA1" secondAttribute="bottom" constant="16" id="z0t-Ge-Jly"/>
                                         </constraints>
                                     </view>
@@ -99,6 +106,7 @@
                     <connections>
                         <outlet property="imageAvatar" destination="rLM-Bz-wBY" id="k1V-Bb-em0"/>
                         <outlet property="tableDetail" destination="No2-vc-PA1" id="Cym-uu-RzU"/>
+                        <outlet property="viewLoading" destination="rMe-Pd-2u1" id="s8s-eJ-Q7N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYr-4I-VkF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -108,7 +116,7 @@
     </scenes>
     <resources>
         <namedColor name="BackgroundColor">
-            <color red="0.96799999475479126" green="0.95800000429153442" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96862745098039216" green="0.95686274509803926" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

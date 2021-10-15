@@ -11,6 +11,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var tableDetail: UITableView!
+    @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var houseware: Houseware?
     let viewModel = HousewareDetailVCViewModel()
@@ -20,9 +21,10 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
 
         initViews()
         bindViewModel()
-
+        
+        viewLoading.startAnimating()
         imageAvatar.loadUrl(url: houseware!.imageURI) {
-            // Do nothing
+            self.viewLoading.stopAnimating()
         }
         viewModel.parseHousewaresDetail(houseware: houseware!)
     }
@@ -30,7 +32,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     func initViews() {
         title = houseware!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableDetail.register(UINib(nibName: String(describing: VillagerDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
+        tableDetail.register(UINib(nibName: String(describing: CommonDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
     }
 
     private func bindViewModel() {
@@ -44,8 +46,8 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? VillagerDetailContentCell else {
-            fatalError("Cannot dequeue VillagerDetailContentCell!")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? CommonDetailContentCell else {
+            fatalError("Cannot dequeue CommonDetailContentCell!")
         }
         cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell

@@ -63,6 +63,9 @@
                                                     <constraint firstAttribute="width" secondItem="IvQ-P8-QiA" secondAttribute="height" multiplier="1:1" id="z0c-vI-Rkk"/>
                                                 </constraints>
                                             </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="l9M-bv-kxt">
+                                                <rect key="frame" x="127" y="16" width="160" height="160"/>
+                                            </activityIndicatorView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a0L-Cm-aCL">
                                                 <rect key="frame" x="24" y="192" width="366" height="300"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +85,11 @@
                                             <constraint firstItem="a0L-Cm-aCL" firstAttribute="top" secondItem="IvQ-P8-QiA" secondAttribute="bottom" constant="16" id="JHT-b4-smh"/>
                                             <constraint firstItem="IvQ-P8-QiA" firstAttribute="centerX" secondItem="D3h-fz-9ia" secondAttribute="centerX" id="Jao-Kp-l7a"/>
                                             <constraint firstAttribute="trailing" secondItem="a0L-Cm-aCL" secondAttribute="trailing" constant="24" id="NzK-4N-90A"/>
+                                            <constraint firstItem="l9M-bv-kxt" firstAttribute="trailing" secondItem="IvQ-P8-QiA" secondAttribute="trailing" id="TZK-Z1-UxG"/>
+                                            <constraint firstItem="l9M-bv-kxt" firstAttribute="leading" secondItem="IvQ-P8-QiA" secondAttribute="leading" id="f9G-Zu-CD1"/>
+                                            <constraint firstItem="l9M-bv-kxt" firstAttribute="bottom" secondItem="IvQ-P8-QiA" secondAttribute="bottom" id="nVd-cY-EW3"/>
                                             <constraint firstItem="IvQ-P8-QiA" firstAttribute="top" secondItem="D3h-fz-9ia" secondAttribute="top" constant="16" id="r7F-OJ-6Ke"/>
+                                            <constraint firstItem="l9M-bv-kxt" firstAttribute="top" secondItem="IvQ-P8-QiA" secondAttribute="top" id="x09-vl-FJL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -110,6 +117,7 @@
                     <connections>
                         <outlet property="imageAvatar" destination="IvQ-P8-QiA" id="hO8-oG-YhH"/>
                         <outlet property="tableDetail" destination="a0L-Cm-aCL" id="t3x-7u-REV"/>
+                        <outlet property="viewLoading" destination="l9M-bv-kxt" id="5Iu-9Q-nTj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSB-dl-iCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -259,12 +259,12 @@
 		F6D7E86426F8BF6A00462A16 /* DailyBirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E86326F8BF6A00462A16 /* DailyBirthdayCell.swift */; };
 		F6D7E86926F8C3A700462A16 /* DailyBirthdayCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E86826F8C3A700462A16 /* DailyBirthdayCellViewModel.swift */; };
 		F6E9573026E9A31300049A32 /* DailyTaskProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E9572F26E9A31300049A32 /* DailyTaskProgressButton.swift */; };
-		F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
-		F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
-		F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */; };
-		F6EBFE8B2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
-		F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
-		F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */; };
+		F6EBFE882695A8C80015371F /* CommonDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* CommonDetailContentCell.swift */; };
+		F6EBFE892695A8C80015371F /* CommonDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* CommonDetailContentCell.swift */; };
+		F6EBFE8A2695A8C80015371F /* CommonDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE862695A8C80015371F /* CommonDetailContentCell.swift */; };
+		F6EBFE8B2695A8C80015371F /* CommonDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* CommonDetailContentCell.xib */; };
+		F6EBFE8C2695A8C80015371F /* CommonDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* CommonDetailContentCell.xib */; };
+		F6EBFE8D2695A8C80015371F /* CommonDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EBFE872695A8C80015371F /* CommonDetailContentCell.xib */; };
 		F6EBFE992695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
 		F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
 		F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */; };
@@ -430,8 +430,8 @@
 		F6D7E86326F8BF6A00462A16 /* DailyBirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBirthdayCell.swift; sourceTree = "<group>"; };
 		F6D7E86826F8C3A700462A16 /* DailyBirthdayCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBirthdayCellViewModel.swift; sourceTree = "<group>"; };
 		F6E9572F26E9A31300049A32 /* DailyTaskProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTaskProgressButton.swift; sourceTree = "<group>"; };
-		F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailContentCell.swift; sourceTree = "<group>"; };
-		F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagerDetailContentCell.xib; sourceTree = "<group>"; };
+		F6EBFE862695A8C80015371F /* CommonDetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailContentCell.swift; sourceTree = "<group>"; };
+		F6EBFE872695A8C80015371F /* CommonDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonDetailContentCell.xib; sourceTree = "<group>"; };
 		F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailAvatarCell.swift; sourceTree = "<group>"; };
 		F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagerDetailAvatarCell.xib; sourceTree = "<group>"; };
 		F6EC22F12696DB3100C931EC /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
@@ -889,8 +889,8 @@
 				F6AA45B8268C681100528F73 /* VillagersCell.swift */,
 				F6AA45BF268C695100528F73 /* VillagersCell.xib */,
 				F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */,
-				F6EBFE862695A8C80015371F /* VillagerDetailContentCell.swift */,
-				F6EBFE872695A8C80015371F /* VillagerDetailContentCell.xib */,
+				F6EBFE862695A8C80015371F /* CommonDetailContentCell.swift */,
+				F6EBFE872695A8C80015371F /* CommonDetailContentCell.xib */,
 				F6EBFE972695E86A0015371F /* VillagerDetailAvatarCell.swift */,
 				F6EBFE982695E86A0015371F /* VillagerDetailAvatarCell.xib */,
 			);
@@ -1058,7 +1058,7 @@
 				F624E32226C0FA7400542DA0 /* Wallmounted.storyboard in Resources */,
 				F650FEFD265A603700BF5202 /* Main.storyboard in Resources */,
 				F6116D8226A02CF1007BFEDE /* Bugs.storyboard in Resources */,
-				F6EBFE8B2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6EBFE8B2695A8C80015371F /* CommonDetailContentCell.xib in Resources */,
 				F6AA45C0268C695100528F73 /* VillagersCell.xib in Resources */,
 				3EDEB1F6C58004256E539CC0 /* Assets.xcassets in Resources */,
 			);
@@ -1077,7 +1077,7 @@
 				F66D15C526AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F624E32326C0FA7400542DA0 /* Wallmounted.storyboard in Resources */,
 				F6EC230C2696F00A00C931EC /* SongsCell.xib in Resources */,
-				F6EBFE8C2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6EBFE8C2695A8C80015371F /* CommonDetailContentCell.xib in Resources */,
 				F6EBFE9D2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F6AA45C1268C695100528F73 /* VillagersCell.xib in Resources */,
 				F6EFA417269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
@@ -1099,7 +1099,7 @@
 				F66D15C626AFF4B10035B565 /* TagsListTag.xib in Resources */,
 				F624E32426C0FA7400542DA0 /* Wallmounted.storyboard in Resources */,
 				F6EC230D2696F00A00C931EC /* SongsCell.xib in Resources */,
-				F6EBFE8D2695A8C80015371F /* VillagerDetailContentCell.xib in Resources */,
+				F6EBFE8D2695A8C80015371F /* CommonDetailContentCell.xib in Resources */,
 				F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F6AA45C2268C695100528F73 /* VillagersCell.xib in Resources */,
 				F6EFA418269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
@@ -1255,7 +1255,7 @@
 				F696FC5326F98B73008C39E7 /* DateHandler.swift in Sources */,
 				F654F87826A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6116D55269FE393007BFEDE /* SeaCreaturesVCViewModel.swift in Sources */,
-				F6EBFE882695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
+				F6EBFE882695A8C80015371F /* CommonDetailContentCell.swift in Sources */,
 				F654F84C26A1381F00188318 /* Art.swift in Sources */,
 				F61A4DD726A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
@@ -1349,7 +1349,7 @@
 				F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FA2696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F61A4DA626A5546C00C9699C /* Houseware.swift in Sources */,
-				F6EBFE892695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
+				F6EBFE892695A8C80015371F /* CommonDetailContentCell.swift in Sources */,
 				F61A4DB826A5583A00C9699C /* HousewaresViewController.swift in Sources */,
 				F69BF47126AEA43800D777D2 /* TagsListView.swift in Sources */,
 				F650FF10265A603F00BF5202 /* ACNHDemoTests.swift in Sources */,
@@ -1431,7 +1431,7 @@
 				F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */,
 				F6EC22FB2696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F61A4DA726A5546C00C9699C /* Houseware.swift in Sources */,
-				F6EBFE8A2695A8C80015371F /* VillagerDetailContentCell.swift in Sources */,
+				F6EBFE8A2695A8C80015371F /* CommonDetailContentCell.swift in Sources */,
 				F61A4DB926A5583A00C9699C /* HousewaresViewController.swift in Sources */,
 				F69BF47226AEA43800D777D2 /* TagsListView.swift in Sources */,
 				F650FF1B265A603F00BF5202 /* ACNHDemoUITests.swift in Sources */,

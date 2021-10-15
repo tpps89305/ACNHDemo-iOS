@@ -8,7 +8,7 @@
 import UIKit
 import DynamicColor
 
-class VillagerDetailContentCell: UITableViewCell {
+class CommonDetailContentCell: UITableViewCell {
     
     @IBOutlet weak var labelDetailTitle: UILabel!
     @IBOutlet weak var labelDetailContent: UILabel!
