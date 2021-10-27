@@ -21,6 +21,7 @@ class Constant {
         static let DAILY_BIRTHDAY = "DailyBirthday"
         static let AVAILABLE_NOW = "AvailableNow"
         static let CATALOG_CELL = "CatalogCell"
+        static let dailyTaskDetailCell = "DailyTaskDetailCell"
     }
     
     class SegueID {
@@ -41,6 +42,7 @@ class Constant {
         static let GOTO_HOUSEWARES = "gotoHousewares"
         static let GOTO_WALLMOUNTED = "gotoWallmounted"
         static let GOTO_BIRTHDAY_VILLAGER = "gotoBirthdayVillager"
+        static let gotoDailyTaskDetail = "gotoDailyTaskDetail"
     }
     
     class IconName {

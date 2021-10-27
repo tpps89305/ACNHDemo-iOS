@@ -506,11 +506,11 @@
                                                                     <size key="itemSize" width="128" height="128"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
+                                                                    <inset key="sectionInset" minX="10" minY="16" maxX="10" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DailyItem" id="bjH-UB-LRQ" customClass="DailyTaskCell" customModule="ACNHDemo" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="16" width="75" height="75"/>
+                                                                        <rect key="frame" x="10" y="16" width="75" height="75"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E5t-Bp-qdN">
                                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -541,25 +541,62 @@
                                                                     <outlet property="delegate" destination="noL-bS-YCe" id="tWl-p9-Xme"/>
                                                                 </connections>
                                                             </collectionView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-X3-x37">
-                                                                <rect key="frame" x="163.5" y="187" width="39" height="30"/>
-                                                                <state key="normal" title="Reset">
-                                                                    <color key="titleColor" name="SectionTitle"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="resetDailyTaskPress:" destination="noL-bS-YCe" eventType="touchUpInside" id="Gix-h7-mTM"/>
-                                                                </connections>
-                                                            </button>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-Qe-APJ">
+                                                                <rect key="frame" x="83" y="187" width="200" height="30"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-X3-x37">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                                        <color key="backgroundColor" name="TagBackground2"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="e2x-mt-iM9"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <state key="normal" title="Reset">
+                                                                            <color key="titleColor" name="SectionTitle"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="resetDailyTaskPress:" destination="noL-bS-YCe" eventType="touchUpInside" id="Gix-h7-mTM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFf-vg-Fu3">
+                                                                        <rect key="frame" x="108" y="0.0" width="92" height="30"/>
+                                                                        <color key="backgroundColor" name="TagBackground2"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="Zg1-6v-dko"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <state key="normal" title="Detail">
+                                                                            <color key="titleColor" name="SectionTitle"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="gotoDailyTaskDetail:" destination="noL-bS-YCe" eventType="touchUpInside" id="DaV-JL-kZO"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="200" id="4ef-Pm-kim"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="SquareColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="ocM-X3-x37" firstAttribute="centerX" secondItem="xmh-JN-WoB" secondAttribute="centerX" id="1e8-d0-3Tg"/>
-                                                            <constraint firstItem="ocM-X3-x37" firstAttribute="top" secondItem="ViL-KM-brE" secondAttribute="bottom" constant="8" id="Azb-5I-qGQ"/>
                                                             <constraint firstAttribute="height" constant="225" id="E71-tm-sOV"/>
+                                                            <constraint firstItem="UTr-Qe-APJ" firstAttribute="top" secondItem="ViL-KM-brE" secondAttribute="bottom" constant="8" id="FUQ-Ry-HlN"/>
+                                                            <constraint firstAttribute="bottom" secondItem="UTr-Qe-APJ" secondAttribute="bottom" constant="8" id="Fda-5r-y80"/>
                                                             <constraint firstItem="ViL-KM-brE" firstAttribute="top" secondItem="xmh-JN-WoB" secondAttribute="top" id="ZZg-cm-QED"/>
+                                                            <constraint firstItem="UTr-Qe-APJ" firstAttribute="centerX" secondItem="xmh-JN-WoB" secondAttribute="centerX" id="fqJ-Qb-QGe"/>
                                                             <constraint firstItem="ViL-KM-brE" firstAttribute="leading" secondItem="xmh-JN-WoB" secondAttribute="leading" id="ieo-6r-SC3"/>
                                                             <constraint firstAttribute="trailing" secondItem="ViL-KM-brE" secondAttribute="trailing" id="lIy-X5-lYj"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ocM-X3-x37" secondAttribute="bottom" constant="8" id="wEi-p7-fFF"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -716,6 +753,7 @@
                         <segue destination="yk3-ij-S1p" kind="show" identifier="gotoFishes" id="k1O-ef-Pok"/>
                         <segue destination="hvP-kM-ngC" kind="show" identifier="gotoSeaCreature" id="5Ni-ve-sCy"/>
                         <segue destination="Ebl-U2-kG8" kind="show" identifier="gotoBugs" id="0xM-xh-K0g"/>
+                        <segue destination="Hp4-Wg-ZbP" kind="showDetail" identifier="gotoDailyTaskDetail" id="dKV-ng-EYG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3L-0J-Ynt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -741,6 +779,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osZ-Kr-X01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="32"/>
+        </scene>
+        <!--Daily Task Detail View Controller-->
+        <scene sceneID="Tt3-tb-tTh">
+            <objects>
+                <viewController id="Hp4-Wg-ZbP" customClass="DailyTaskDetailViewController" customModule="ACNHDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iOd-l5-ymz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgG-c0-icY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF9-Zr-NQV">
+                                        <rect key="frame" x="166" y="15" width="82.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="SquareColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NqR-b3-e2i"/>
+                                    <constraint firstItem="vF9-Zr-NQV" firstAttribute="centerX" secondItem="UgG-c0-icY" secondAttribute="centerX" id="RLj-bE-qsl"/>
+                                    <constraint firstItem="vF9-Zr-NQV" firstAttribute="centerY" secondItem="UgG-c0-icY" secondAttribute="centerY" id="Zh9-d3-aGm"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DjS-jW-Xq8">
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DailyTaskDetailCell" rowHeight="64" id="RWE-S5-sWu" customClass="DailyTaskDetailCell" customModule="ACNHDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RWE-S5-sWu" id="itJ-lW-f1V">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VjI-bi-GMW">
+                                                    <rect key="frame" x="8" y="8" width="50" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7on-Da-MQy"/>
+                                                        <constraint firstAttribute="width" constant="50" id="ENy-k5-sIX"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gz-Xl-VDd">
+                                                    <rect key="frame" x="66" y="8" width="301" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y2d-Xh-T5E">
+                                                    <rect key="frame" x="66" y="32.5" width="301" height="20.5"/>
+                                                    <subviews>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="6je-gw-ktf">
+                                                            <rect key="frame" x="0.0" y="8.5" width="263.5" height="4"/>
+                                                            <color key="progressTintColor" name="SectionTitle"/>
+                                                        </progressView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mo-CN-2VQ">
+                                                            <rect key="frame" x="271.5" y="0.0" width="29.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2Mo-CN-2VQ" firstAttribute="width" secondItem="6je-gw-ktf" secondAttribute="width" multiplier="1:9" id="QaT-2y-jwk"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VjI-bi-GMW" firstAttribute="top" secondItem="itJ-lW-f1V" secondAttribute="top" constant="8" id="4Vk-7W-sXb"/>
+                                                <constraint firstItem="VjI-bi-GMW" firstAttribute="leading" secondItem="itJ-lW-f1V" secondAttribute="leading" constant="8" id="Eij-RF-M8O"/>
+                                                <constraint firstItem="6Gz-Xl-VDd" firstAttribute="top" secondItem="itJ-lW-f1V" secondAttribute="top" constant="8" id="Mqk-zJ-Czm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Gz-Xl-VDd" secondAttribute="trailing" constant="8" id="Ph3-br-Vn2"/>
+                                                <constraint firstItem="6Gz-Xl-VDd" firstAttribute="leading" secondItem="VjI-bi-GMW" secondAttribute="trailing" constant="8" id="cVe-Er-IvR"/>
+                                                <constraint firstItem="y2d-Xh-T5E" firstAttribute="top" secondItem="6Gz-Xl-VDd" secondAttribute="bottom" constant="4" id="iFN-z6-NoC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="y2d-Xh-T5E" secondAttribute="trailing" constant="8" id="iQy-od-oUb"/>
+                                                <constraint firstItem="y2d-Xh-T5E" firstAttribute="leading" secondItem="VjI-bi-GMW" secondAttribute="trailing" constant="8" id="m9T-OD-Fkq"/>
+                                                <constraint firstAttribute="bottom" secondItem="VjI-bi-GMW" secondAttribute="bottom" constant="8" id="pCj-83-e5m"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="imageIcon" destination="VjI-bi-GMW" id="YMR-6X-Xhc"/>
+                                            <outlet property="labelProgressMax" destination="2Mo-CN-2VQ" id="eOk-NH-eAs"/>
+                                            <outlet property="labelTitle" destination="6Gz-Xl-VDd" id="IXH-b3-g87"/>
+                                            <outlet property="progressView" destination="6je-gw-ktf" id="ibS-LB-IG0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hp4-Wg-ZbP" id="6eb-3e-UoA"/>
+                                    <outlet property="delegate" destination="Hp4-Wg-ZbP" id="RU8-k0-coi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="emt-KM-Z5C"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="emt-KM-Z5C" firstAttribute="trailing" secondItem="UgG-c0-icY" secondAttribute="trailing" id="D0U-Lj-KMX"/>
+                            <constraint firstItem="DjS-jW-Xq8" firstAttribute="leading" secondItem="emt-KM-Z5C" secondAttribute="leading" id="GqH-FU-PAb"/>
+                            <constraint firstItem="UgG-c0-icY" firstAttribute="leading" secondItem="emt-KM-Z5C" secondAttribute="leading" id="MwR-0I-KXP"/>
+                            <constraint firstItem="DjS-jW-Xq8" firstAttribute="trailing" secondItem="emt-KM-Z5C" secondAttribute="trailing" id="VJr-uo-iH3"/>
+                            <constraint firstItem="DjS-jW-Xq8" firstAttribute="top" secondItem="UgG-c0-icY" secondAttribute="bottom" id="YhQ-2Y-veF"/>
+                            <constraint firstItem="UgG-c0-icY" firstAttribute="top" secondItem="emt-KM-Z5C" secondAttribute="top" id="iWX-Hb-fHF"/>
+                            <constraint firstItem="DjS-jW-Xq8" firstAttribute="bottom" secondItem="emt-KM-Z5C" secondAttribute="bottom" id="u5Y-ZW-CZm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableDailyTask" destination="DjS-jW-Xq8" id="Un4-js-x3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzX-Ig-jIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534.7826086956522" y="109.82142857142857"/>
         </scene>
         <!--Bugs-->
         <scene sceneID="daq-tm-qcj">
@@ -789,6 +942,9 @@
         </namedColor>
         <namedColor name="SquareColor">
             <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TagBackground2">
+            <color red="1" green="0.96470588235294119" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

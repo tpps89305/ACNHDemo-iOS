@@ -33,3 +33,16 @@ extension UIImageView {
     }
     
 }
+
+extension UIView {
+    
+    @IBInspectable open var cornerRadius: CGFloat {
+        get {
+            self.layer.cornerRadius
+        }
+        set {
+            self.layer.cornerRadius = newValue
+        }
+    }
+    
+}

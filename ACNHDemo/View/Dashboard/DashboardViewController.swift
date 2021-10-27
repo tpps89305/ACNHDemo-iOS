@@ -48,6 +48,10 @@ class DashboardViewController: UIViewController {
         }
     }
     
+    @IBAction func gotoDailyTaskDetail(_ sender: UIButton) {
+        performSegue(withIdentifier: Constant.SegueID.gotoDailyTaskDetail, sender: self)
+    }
+    
     // MARK: Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

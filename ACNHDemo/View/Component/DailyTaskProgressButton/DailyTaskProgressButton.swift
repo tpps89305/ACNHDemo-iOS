@@ -57,13 +57,12 @@ class DailyTaskProgressButton: UIView {
         progressLayer.lineCap = .round
         progressLayer.lineWidth = lineWidth
         progressLayer.strokeEnd = 0
-        progressLayer.strokeColor = UIColor.green.cgColor
+        progressLayer.strokeColor = UIColor.systemGreen.cgColor
         
         layer.addSublayer(progressLayer)
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(progressPlus))
         self.addGestureRecognizer(tap)
-        
     }
     
     private func progressAnimation(previousValue: Double) {
@@ -90,7 +89,7 @@ class DailyTaskProgressButton: UIView {
     }
     
     func setIcon(icon: UIImage?) {
-        let sideLength = min(frame.size.width, frame.size.height) * 0.66
+        let sideLength = min(frame.size.width, frame.size.height) * 0.5
         let imageX = centerX - sideLength / 2.0
         let imageY = centerY - sideLength / 2.0
         
