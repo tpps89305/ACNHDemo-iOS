@@ -26,11 +26,14 @@ class DailyTaskProgressButton: UIView {
     
     @IBInspectable var iconTask: UIImage? {
         didSet {
+            createBackground() // Draw background frist
             setIcon(icon: iconTask)
         }
     }
     
     var onProgressPlus:((_ currentValue: Double) -> Void)?
+    let lineWidth = CGFloat(4.0)
+    private lazy var radius = min(frame.size.width, frame.size.height) / 2 - lineWidth / 2 - padding
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,10 +44,12 @@ class DailyTaskProgressButton: UIView {
     }
     
     private func createCircularPath() {
-        let lineWidth = CGFloat(4.0)
-        let radius = min(frame.size.width, frame.size.height) / 2 - lineWidth / 2 - padding
-        
-        let circularPath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
+        let circularPath = UIBezierPath(
+            arcCenter: CGPoint(x: centerX, y: centerY),
+            radius: radius,
+            startAngle: startPoint,
+            endAngle: endPoint,
+            clockwise: true)
         circleLayer.path = circularPath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
@@ -63,6 +68,20 @@ class DailyTaskProgressButton: UIView {
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(progressPlus))
         self.addGestureRecognizer(tap)
+    }
+    
+    private func createBackground() {
+        let backgroundLayer = CALayer()
+        let backgroundX = centerX - radius
+        let backgroundY = centerY - radius
+        backgroundLayer.frame = CGRect.init(x: backgroundX, y: backgroundY, width: radius * 2, height: radius * 2)
+        backgroundLayer.backgroundColor = ACNHColor.dailyIconBackground?.cgColor
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2), cornerRadius: radius).cgPath
+        backgroundLayer.mask = maskLayer
+        
+        layer.addSublayer(backgroundLayer)
     }
     
     private func progressAnimation(previousValue: Double) {
@@ -89,20 +108,14 @@ class DailyTaskProgressButton: UIView {
     }
     
     func setIcon(icon: UIImage?) {
-        let sideLength = min(frame.size.width, frame.size.height) * 0.5
-        let imageX = centerX - sideLength / 2.0
-        let imageY = centerY - sideLength / 2.0
+        let imageLayerSideLength = min(frame.size.width, frame.size.height) * 0.5
+        let imageX = centerX - imageLayerSideLength / 2.0
+        let imageY = centerY - imageLayerSideLength / 2.0
         
         let imageLayer = CALayer()
-        imageLayer.frame = CGRect.init(x: imageX, y: imageY, width: sideLength, height: sideLength)
+        imageLayer.frame = CGRect.init(x: imageX, y: imageY, width: imageLayerSideLength, height: imageLayerSideLength)
         imageLayer.contents = icon?.cgImage
-        imageLayer.backgroundColor = ACNHColor.dailyIconBackground?.cgColor
         
-        let radius = min(frame.size.width, frame.size.height) / 2 - padding
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: radius * 2 - padding / 2, height: radius * 2 - padding / 2), cornerRadius: radius).cgPath
-        
-        imageLayer.mask = maskLayer
         layer.addSublayer(imageLayer)
     }
 
