@@ -125,9 +125,9 @@ class DashboardVCViewModel {
     }
     
     func getAvailableNowInfo(onRequestEnd: ((_ indexPaths: [IndexPath]) -> Void)?) {
-        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Fish", amount: 0, iconName: Constant.IconName.FISH)))
-        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Sea Creature", amount: 0, iconName: Constant.IconName.SEA_CREATURE)))
-        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Bug", amount: 0, iconName: Constant.IconName.BUG)))
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Fish", amount: 0, icon: R.image.fish0())))
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Sea Creature", amount: 0, icon: R.image.akoyagai())))
+        availableNowCellViewModels.append(AvailableNowCellViewModel(availableNowInfo: AvailableNowInfo(name: "Bug", amount: 0, icon: R.image.bug0())))
         
         let indexPath0 = IndexPath(item: 0, section: 0)
         let indexPath1 = IndexPath(item: 1, section: 0)

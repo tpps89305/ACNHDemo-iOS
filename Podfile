@@ -9,6 +9,7 @@ target 'ACNHDemo' do
   pod 'Moya', '~> 14.0'
   pod 'DynamicColor', '~> 5.0.0'
   pod 'SwiftLint'
+  pod 'R.swift'
 
   target 'ACNHDemoTests' do
     inherit! :search_paths

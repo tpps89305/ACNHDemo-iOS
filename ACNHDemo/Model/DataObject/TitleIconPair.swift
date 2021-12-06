@@ -17,4 +17,9 @@ class TitleIconPair {
         self.icon = UIImage(named: iconName)
     }
     
+    init(title: String, icon: UIImage?) {
+        self.title = title
+        self.icon = icon
+    }
+    
 }

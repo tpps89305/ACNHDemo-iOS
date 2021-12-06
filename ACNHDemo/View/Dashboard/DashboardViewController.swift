@@ -26,8 +26,8 @@ class DashboardViewController: UIViewController {
     func initViews() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.getTodayInfo()
-        collectionBirthday.register(UINib(nibName: String(describing: DailyBirthdayCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY)
-        collectionAvailable.register(UINib(nibName: String(describing: AvailableNowCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.AVAILABLE_NOW)
+        collectionBirthday.register(R.nib.dailyBirthdayCell)
+        collectionAvailable.register(R.nib.availableNowCell)
     }
     
     func bindViewModel() {
@@ -49,7 +49,7 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func gotoDailyTaskDetail(_ sender: UIButton) {
-        performSegue(withIdentifier: Constant.SegueID.gotoDailyTaskDetail, sender: self)
+        performSegue(withIdentifier: R.segue.dashboardViewController.gotoDailyTaskDetail, sender: self)
     }
     
     // MARK: Segue
@@ -57,16 +57,15 @@ class DashboardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == Constant.SegueID.GOTO_BIRTHDAY_VILLAGER, let destinationVC = segue.destination as? VillagerDetailViewController {
-            if let row = collectionBirthday.indexPathsForSelectedItems?[0].row {
-                destinationVC.villager = viewModel.dailyBirthdayCellViewModels[row].villager
-            }
-        } else if segue.identifier == Constant.SegueID.GOTO_FISHES, let destinationVC  = segue.destination as? FishesViewController {
-            destinationVC.availableTime = true
-        } else if segue.identifier == Constant.SegueID.GOTO_SEA_CREATURES, let destinationVC = segue.destination as? SeaCreaturesViewController {
-            destinationVC.availableTime = true
-        } else if segue.identifier == Constant.SegueID.GOTO_BUGS, let destinationVC = segue.destination as? BugsViewController {
-            destinationVC.availableTime = true
+        if let typedInfo = R.segue.dashboardViewController.gotoBirthdayVillager(segue: segue),
+            let row = sender as? Int {
+            typedInfo.destination.villager = viewModel.dailyBirthdayCellViewModels[row].villager
+        } else if let typedInfo = R.segue.dashboardViewController.gotoFishes(segue: segue) {
+            typedInfo.destination.availableTime = true
+        } else if let typedInfo = R.segue.dashboardViewController.gotoSeaCreature(segue: segue) {
+            typedInfo.destination.availableTime = true
+        } else if let typedInfo = R.segue.dashboardViewController.gotoBugs(segue: segue) {
+            typedInfo.destination.availableTime = true
         }
     }
 
@@ -87,19 +86,19 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionDaily {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_ITEM, for: indexPath) as? DailyTaskCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.dailyItem, for: indexPath) else {
                 fatalError("Cannot dequeue DailyTaskCell!")
             }
             cell.setup(viewModel: viewModel.dailyTaskCellViewModels[indexPath.row])
             return cell
         } else if collectionView == collectionBirthday {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.DAILY_BIRTHDAY, for: indexPath) as? DailyBirthdayCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.dailyBirthdayCell, for: indexPath) else {
                 fatalError("Cannot dequeue DailyBirthdayCell!")
             }
             cell.setup(viewModel: viewModel.dailyBirthdayCellViewModels[indexPath.row])
             return cell
         } else if collectionView == collectionAvailable {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_NOW, for: indexPath) as? AvailableNowCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.availableNowCell, for: indexPath) else {
                 fatalError("Cannot dequeue AvailableNowCell!")
             }
             cell.setup(viewModel: viewModel.availableNowCellViewModels[indexPath.row])
@@ -110,15 +109,15 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionBirthday {
-            performSegue(withIdentifier: Constant.SegueID.GOTO_BIRTHDAY_VILLAGER, sender: self)
+            performSegue(withIdentifier: R.segue.dashboardViewController.gotoBirthdayVillager, sender: indexPath.row)
         } else if collectionView == collectionAvailable {
             switch indexPath.row {
             case 0:
-                performSegue(withIdentifier: Constant.SegueID.GOTO_FISHES, sender: self)
+                performSegue(withIdentifier: R.segue.dashboardViewController.gotoFishes, sender: nil)
             case 1:
-                performSegue(withIdentifier: Constant.SegueID.GOTO_SEA_CREATURES, sender: self)
+                performSegue(withIdentifier: R.segue.dashboardViewController.gotoSeaCreature, sender: nil)
             case 2:
-                performSegue(withIdentifier: Constant.SegueID.GOTO_BUGS, sender: self)
+                performSegue(withIdentifier: R.segue.dashboardViewController.gotoBugs, sender: nil)
             default:
                 break
             }

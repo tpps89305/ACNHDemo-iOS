@@ -7,27 +7,17 @@
 
 import UIKit
 
-class SeaCreaturesViewController: UITableViewController {
+class SeaCreaturesViewController: BaseTableViewController {
     
-    let searchController = UISearchController(searchResultsController: nil)
     let viewModel = SeaCreaturesVCViewModel()
     var availableTime = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initViews()
         bindViewModel()
         viewModel.getSeaCreatures(availableTime: availableTime)
-    }
-    
-    func initViews() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: String(describing: CommonCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.COMMON_CELL)
-        // Avoid issue of cannot select cell(s)
-        searchController.obscuresBackgroundDuringPresentation = false
+        tableView.register(R.nib.commonCell)
     }
     
     func bindViewModel() {
@@ -44,10 +34,9 @@ class SeaCreaturesViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == Constant.SegueID.GOTO_SEA_CREATURE_DETAIL, let destinationVC = segue.destination as? SeaCreatureDetailViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.seaCreature = viewModel.seaCreatureCellViewModels[row].seaCreature
-            }
+        if let typedInfo = R.segue.seaCreaturesViewController.gotoSeaCreatureDetail(segue: segue),
+           let row = sender as? Int {
+            typedInfo.destination.seaCreature = viewModel.seaCreatureCellViewModels[row].seaCreature
         }
     }
     
@@ -62,7 +51,7 @@ extension SeaCreaturesViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commonCell, for: indexPath) else {
             fatalError("Cannot dequeue CommonCell!")
         }
         let listCellViewModel = viewModel.seaCreatureCellViewModels[indexPath.row]
@@ -71,14 +60,16 @@ extension SeaCreaturesViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constant.SegueID.GOTO_SEA_CREATURE_DETAIL, sender: self)
+        performSegue(
+            withIdentifier: R.segue.seaCreaturesViewController.gotoSeaCreatureDetail,
+            sender: indexPath.row)
     }
     
 }
 
 // MARK: - UISearchBar Delegate
 
-extension SeaCreaturesViewController: UISearchBarDelegate {
+extension SeaCreaturesViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText

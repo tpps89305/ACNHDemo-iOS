@@ -3,3 +3,5 @@ disabled_rules:
   - trailing_whitespace
 excluded:
   - Pods
+  - R.generated.swift
+  - ACNHDemo/R.generated.swift

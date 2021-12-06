@@ -7,26 +7,16 @@
 
 import UIKit
 
-class WallmountedViewController: UITableViewController, UISearchBarDelegate {
+class WallmountedViewController: BaseTableViewController {
 
-    let searchController = UISearchController(searchResultsController: nil)
     let viewModel = WallmountedVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initViews()
         bindViewModel()
         viewModel.getWallmounted()
-    }
-
-    func initViews() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: String(describing: CommonCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.COMMON_CELL)
-        // Avoid issue of cannot select cell(s)
-        searchController.obscuresBackgroundDuringPresentation = false
+        tableView.register(R.nib.commonCell)
     }
 
     func bindViewModel() {
@@ -44,7 +34,7 @@ class WallmountedViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commonCell, for: indexPath) else {
             fatalError("Cannot dequeue CommonCell!")
         }
         let listCellViewModel = viewModel.wallmountedCellViewModels[indexPath.row]
@@ -53,7 +43,7 @@ class WallmountedViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constant.SegueID.GOTO_WALLMOUNTED_DETAIL, sender: self)
+        performSegue(withIdentifier: R.segue.wallmountedViewController.gotoWallmountedDetail, sender: indexPath.row)
     }
 
     // MARK: UISearchBar Delegate
@@ -72,10 +62,9 @@ class WallmountedViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == Constant.SegueID.GOTO_WALLMOUNTED_DETAIL, let destinationVC = segue.destination as? WallmountedDetailViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.wallmounted = viewModel.wallmountedCellViewModels[row].wallmounted
-            }
+        if let typedInfo = R.segue.wallmountedViewController.gotoWallmountedDetail(segue: segue),
+            let row = sender as? Int {
+            typedInfo.destination.wallmounted = viewModel.wallmountedCellViewModels[row].wallmounted
         }
     }
 

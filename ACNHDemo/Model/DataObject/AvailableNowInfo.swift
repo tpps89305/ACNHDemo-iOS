@@ -17,4 +17,11 @@ class AvailableNowInfo {
         self.amount = amount
         self.icon = UIImage.init(named: iconName)
     }
+    
+    init(name: String, amount: Int, icon: UIImage?) {
+        self.name = name
+        self.amount = amount
+        self.icon = icon
+    }
+    
 }

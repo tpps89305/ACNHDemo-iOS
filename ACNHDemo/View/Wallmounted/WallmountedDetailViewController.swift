@@ -32,7 +32,7 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
     private func initViews() {
         title = wallmounted!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableDetail.register(UINib(nibName: String(describing: CommonDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
+        tableDetail.register(R.nib.commonDetailContentCell)
     }
 
     private func bindViewModel() {
@@ -46,21 +46,11 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? CommonDetailContentCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commonDetailContentCell, for: indexPath) else {
             fatalError("Cannot dequeue CommonDetailContentCell!")
         }
         cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

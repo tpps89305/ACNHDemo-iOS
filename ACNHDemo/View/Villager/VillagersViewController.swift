@@ -6,29 +6,17 @@
 //
 
 import UIKit
-import Moya
-import Alamofire
 
-class VillagersViewController: UITableViewController, UISearchBarDelegate {
+class VillagersViewController: BaseTableViewController {
     
-    let searchController = UISearchController(searchResultsController: nil)
     let viewModel = VillagerVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initViews()
         bindViewModel()
         viewModel.getVillagers()
-    }
-    
-    func initViews() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: String(describing: VillagersCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGERS_CELL)
-        // Avoid issue of cannot select cell(s)
-        searchController.obscuresBackgroundDuringPresentation = false
+        tableView.register(R.nib.villagersCell)
     }
     
     func bindViewModel() {
@@ -38,15 +26,30 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
+    
+    // MARK: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let typedInfo = R.segue.villagersViewController.gotoVillagerDetail(segue: segue),
+           let row = sender as? Int {
+            typedInfo.destination.villager = viewModel.villagerCellViewModels[row].villager
+        }
+    }
 
-    // MARK: UITableView Delegate and DataSources
+}
+
+// MARK: UITableView Delegate and DataSources
+
+extension VillagersViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.villagerCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGERS_CELL, for: indexPath) as? VillagersCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.villagersCell, for: indexPath) else {
             fatalError("Cannot dequeue VillagersCell!")
         }
         let listCellViewModel = viewModel.villagerCellViewModels[indexPath.row]
@@ -55,10 +58,16 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constant.SegueID.GOTO_VILLAGER_DETAIL, sender: self)
+        performSegue(
+            withIdentifier: R.segue.villagersViewController.gotoVillagerDetail,
+            sender: indexPath.row)
     }
     
-    // MARK: UISearchBar Delegate
+}
+
+// MARK: UISearchBar Delegate
+
+extension VillagersViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -68,16 +77,4 @@ class VillagersViewController: UITableViewController, UISearchBarDelegate {
         viewModel.searchText = ""
     }
     
-    // MARK: Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == Constant.SegueID.GOTO_VILLAGER_DETAIL, let destinationVC = segue.destination as? VillagerDetailViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                destinationVC.villager = viewModel.villagerCellViewModels[row].villager
-            }
-        }
-    }
-
 }

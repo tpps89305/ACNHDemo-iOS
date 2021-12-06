@@ -1,3 +1,5 @@
 /Pods/
 /.idea/
 /Podfile.lock
+/ACNHDemo/R.generated.swift
+/R.generated.swift

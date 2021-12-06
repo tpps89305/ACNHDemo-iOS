@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum VillagerDetailCellType: Int {
+enum VillagerDetailCellType: Int, CaseIterable {
     case avatar = 0, content
 }
 
-class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VillagerDetailViewController: UIViewController {
 
     @IBOutlet weak var tableDetail: UITableView!
 
@@ -24,10 +24,8 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
         initViews()
         bindViewModel()
         viewModel.parseVillagerDetail(villager: villager!)
-        
-        tableDetail.register(UINib(nibName: String(describing: VillagerDetailAvatarCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL)
-        tableDetail.register(UINib(nibName: String(describing: CommonDetailContentCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL)
-
+        tableDetail.register(R.nib.villagerDetailAvatarCell)
+        tableDetail.register(R.nib.commonDetailContentCell)
         tableDetail.backgroundColor = UIColor(hexString: villager?.bubbleColor ?? "")
     }
 
@@ -43,9 +41,13 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
             tableDetail.reloadData()
         }
     }
+
+}
+
+extension VillagerDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        VillagerDetailCellType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,14 +64,14 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case VillagerDetailCellType.avatar.rawValue:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_AVATAR_CELL, for: indexPath) as? VillagerDetailAvatarCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.villagerDetailAvatarCell, for: indexPath) else {
                 fatalError("Cannot dequeue VillagerDetailAvatarCell!")
             }
             cell.setup(viewModel: viewModel.villagerAvatarCellViewModel)
             return cell
             
         case VillagerDetailCellType.content.rawValue:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.VILLAGER_CONTENT_CELL, for: indexPath) as? CommonDetailContentCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commonDetailContentCell, for: indexPath) else {
                 fatalError("Cannot dequeue VillagerDetailContentCell!")
             }
             cell.setup(viewModel: viewModel.villagerDetailCellViewModels[indexPath.row])
@@ -79,5 +81,5 @@ class VillagerDetailViewController: UIViewController, UITableViewDelegate, UITab
             return UITableViewCell()
         }
     }
-
+    
 }

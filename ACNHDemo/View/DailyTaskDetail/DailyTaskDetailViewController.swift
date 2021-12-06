@@ -26,7 +26,7 @@ class DailyTaskDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.dailyTaskDetailCell, for: indexPath) as? DailyTaskDetailCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.dailyTaskDetailCell, for: indexPath) else {
             fatalError("Cannot dequeue DailyTaskCell!")
         }
         cell.setup(dailyTask: viewModel.dailyTaskCellViewModels[indexPath.row].dailyTask)

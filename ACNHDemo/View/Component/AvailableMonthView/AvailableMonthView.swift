@@ -37,7 +37,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
 
     override func awakeFromNib() {
-        collectionMonth.register(UINib(nibName: String(describing: AvailableMonthCell.self), bundle: nil), forCellWithReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL)
+        collectionMonth.register(R.nib.availableMonthCell)
         monthOfToday = DateHandler.getCurrentMonth()
         print("Month of today is \(monthOfToday)")
     }
@@ -51,13 +51,13 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellID.AVAILABLE_MONTH_CELL, for: indexPath) as? AvailableMonthCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.availableMonthCell, for: indexPath) else {
             fatalError("Cannot dequeue AvailableMonthCell!")
         }
         cell.labelMonth.text = arrayMonth[indexPath.row]
         if availableMonth.contains(indexPath.row + 1) {
-            cell.viewMonth.backgroundColor = ACNHColor.tagBackground2?.darkened()
-            cell.labelMonth.textColor = ACNHColor.tagTextColor
+            cell.viewMonth.backgroundColor = R.color.tagBackground2()?.darkened()
+            cell.labelMonth.textColor = R.color.tagTextColor()
         }
         if indexPath.row == monthOfToday - 1 {
             cell.viewMonthBorder.backgroundColor = UIColor.systemPink

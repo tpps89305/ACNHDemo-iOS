@@ -54,7 +54,7 @@ class DailyTaskProgressButton: UIView {
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
         circleLayer.lineWidth = lineWidth
-        circleLayer.strokeColor = ACNHColor.dailyProgressBackground?.cgColor
+        circleLayer.strokeColor = R.color.dailyProgressBackground()?.cgColor
         layer.addSublayer(circleLayer)
         
         progressLayer.path = circularPath.cgPath
@@ -75,7 +75,7 @@ class DailyTaskProgressButton: UIView {
         let backgroundX = centerX - radius
         let backgroundY = centerY - radius
         backgroundLayer.frame = CGRect.init(x: backgroundX, y: backgroundY, width: radius * 2, height: radius * 2)
-        backgroundLayer.backgroundColor = ACNHColor.dailyIconBackground?.cgColor
+        backgroundLayer.backgroundColor = R.color.dailyIconBackground()?.cgColor
         
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2), cornerRadius: radius).cgPath

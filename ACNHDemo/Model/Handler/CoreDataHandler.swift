@@ -16,10 +16,11 @@ class CoreDataHandler {
             fatalError("Cannot get AppDelegate!")
         }
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<DailyTask>(entityName: Constant.EntityName.DAILY_TASK)
+        let request = NSFetchRequest<DailyTask>(entityName: Constant.EntityName.dailyTask)
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchResultController = NSFetchedResultsController(
+            fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 
         do {
             try fetchResultController.performFetch()
@@ -49,12 +50,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask1(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
 
         dailyTask.name = "Progress 1"
-        dailyTask.iconName = Constant.IconName.OREIRON
+        dailyTask.iconName = R.image.oreIron.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -67,12 +69,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask2(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 2"
-        dailyTask.iconName = Constant.IconName.FOSSIL
+        dailyTask.iconName = R.image.fossil_NH_Inv_Icon.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -85,12 +88,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask3(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 3"
-        dailyTask.iconName = Constant.IconName.PIETRO
+        dailyTask.iconName = R.image.pietro_PC_icon.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -103,12 +107,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask4(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 4"
-        dailyTask.iconName = Constant.IconName.FURNITURE_NH
+        dailyTask.iconName = R.image.furniture_NH_Inv_Icon.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -121,12 +126,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask5(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 5"
-        dailyTask.iconName = Constant.IconName.BELL
+        dailyTask.iconName = R.image.bell.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -139,12 +145,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask6(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 6"
-        dailyTask.iconName = Constant.IconName.PLANE_TICKET
+        dailyTask.iconName = R.image.planeTicket.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -157,12 +164,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask7(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 7"
-        dailyTask.iconName = Constant.IconName.MESSAGE_BOTTLE
+        dailyTask.iconName = R.image.message_Bottle.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         
@@ -175,12 +183,13 @@ class CoreDataHandler {
     }
     
     private static func addDailyTask8(context: NSManagedObjectContext) {
-        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.DAILY_TASK, into: context) as? DailyTask else {
+        guard let dailyTask = NSEntityDescription.insertNewObject(forEntityName: Constant.EntityName.dailyTask, into: context)
+                as? DailyTask else {
             fatalError("Cannot inser new daily task!")
         }
         
         dailyTask.name = "Progress 8"
-        dailyTask.iconName = Constant.IconName.RECIPE
+        dailyTask.iconName = R.image.recipe.name
         dailyTask.currentValue = 0
         dailyTask.maxValue = 3
         

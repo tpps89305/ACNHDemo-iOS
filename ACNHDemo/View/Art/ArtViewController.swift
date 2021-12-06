@@ -7,26 +7,16 @@
 
 import UIKit
 
-class ArtViewController: UITableViewController, UISearchBarDelegate {
+class ArtViewController: BaseTableViewController {
     
-    let searchController = UISearchController(searchResultsController: nil)
     let viewModel = ArtVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initViews()
         bindViewModel()
         viewModel.getArt()
-    }
-    
-    func initViews() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.delegate = self
-        tableView.register(UINib(nibName: String(describing: CommonCell.self), bundle: nil), forCellReuseIdentifier: Constant.CellID.COMMON_CELL)
-        // Avoid issue of cannot select cell(s)
-        searchController.dimsBackgroundDuringPresentation = false
+        tableView.register(R.nib.commonCell)
     }
     
     func bindViewModel() {
@@ -37,14 +27,18 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
         }
     }
 
-    // MARK: - Table view data source
+}
 
+// MARK: - Table view data source
+
+extension ArtViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.artCellViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellID.COMMON_CELL, for: indexPath) as? CommonCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commonCell, for: indexPath) else {
             fatalError("Cannot dequeue CommonCell!")
         }
         let listCellViewModel = viewModel.artCellViewModels[indexPath.row]
@@ -52,7 +46,11 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-    // MARK: UISearchBar Delegate
+}
+
+// MARK: UISearchBar Delegate
+
+extension ArtViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -61,15 +59,5 @@ class ArtViewController: UITableViewController, UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = ""
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

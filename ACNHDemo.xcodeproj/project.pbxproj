@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -113,6 +113,7 @@
 		F61A4DD726A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
 		F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
 		F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */; };
+		F61EA81A275CEBAF004259E7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EA819275CEBAF004259E7 /* R.generated.swift */; };
 		F624E32226C0FA7400542DA0 /* Wallmounted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F624E32126C0FA7300542DA0 /* Wallmounted.storyboard */; };
 		F624E32326C0FA7400542DA0 /* Wallmounted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F624E32126C0FA7300542DA0 /* Wallmounted.storyboard */; };
 		F624E32426C0FA7400542DA0 /* Wallmounted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F624E32126C0FA7300542DA0 /* Wallmounted.storyboard */; };
@@ -225,6 +226,7 @@
 		F696FC4926F973D3008C39E7 /* AvailableNowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */; };
 		F696FC4E26F973F4008C39E7 /* AvailableNowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */; };
 		F696FC5326F98B73008C39E7 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC5226F98B73008C39E7 /* DateHandler.swift */; };
+		F6982BED275DA2D300A82FD9 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BEC275DA2D300A82FD9 /* BaseTableViewController.swift */; };
 		F69BF45726AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
 		F69BF45826AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
 		F69BF45926AE89A700D777D2 /* AvailableMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */; };
@@ -240,9 +242,6 @@
 		F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
 		F6A7B7E826D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
 		F6A7B7E926D5EE5900D1FE80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7E626D5EE5900D1FE80 /* Constant.swift */; };
-		F6A7B7F426D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
-		F6A7B7F526D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
-		F6A7B7F626D63CD300D1FE80 /* ACNHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */; };
 		F6AA45B9268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
 		F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA45B8268C681100528F73 /* VillagersCell.swift */; };
@@ -363,6 +362,7 @@
 		F61A4DBE26A558AB00C9699C /* HousewaresVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewaresVCViewModel.swift; sourceTree = "<group>"; };
 		F61A4DC826A558C000C9699C /* HousewareCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewareCellViewModel.swift; sourceTree = "<group>"; };
 		F61A4DD626A572B400C9699C /* HousewareDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousewareDetailViewController.swift; sourceTree = "<group>"; };
+		F61EA819275CEBAF004259E7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F624E32126C0FA7300542DA0 /* Wallmounted.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallmounted.storyboard; sourceTree = "<group>"; };
 		F624E32B26C0FAB100542DA0 /* WallmountedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallmountedViewController.swift; sourceTree = "<group>"; };
 		F62A8202272943BC00078E60 /* DailyTaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTaskDetailViewModel.swift; sourceTree = "<group>"; };
@@ -419,12 +419,12 @@
 		F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowCellViewModel.swift; sourceTree = "<group>"; };
 		F696FC4D26F973F4008C39E7 /* AvailableNowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowInfo.swift; sourceTree = "<group>"; };
 		F696FC5226F98B73008C39E7 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
+		F6982BEC275DA2D300A82FD9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F69BF45626AE89A700D777D2 /* AvailableMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableMonthView.swift; sourceTree = "<group>"; };
 		F69BF45D26AE89C800D777D2 /* AvailableMonthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableMonthView.xib; sourceTree = "<group>"; };
 		F69BF46F26AEA43800D777D2 /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
 		F69BF47926AEA44700D777D2 /* TagsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsListView.xib; sourceTree = "<group>"; };
 		F6A7B7E626D5EE5900D1FE80 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHColor.swift; sourceTree = "<group>"; };
 		F6AA45B8268C681100528F73 /* VillagersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersCell.swift; sourceTree = "<group>"; };
 		F6AA45BF268C695100528F73 /* VillagersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VillagersCell.xib; sourceTree = "<group>"; };
 		F6AA45C6268CC2B700528F73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -618,6 +618,7 @@
 				F6EFA3D6269E859F000A4F42 /* Song */,
 				F6EFA3D5269E857C000A4F42 /* Villager */,
 				F624E32026C0FA4700542DA0 /* Wallmounted */,
+				F6982BEC275DA2D300A82FD9 /* BaseTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -647,6 +648,7 @@
 		F650FEF4265A603700BF5202 /* ACNHDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F61EA819275CEBAF004259E7 /* R.generated.swift */,
 				3EDEB61DF845A3538C94B585 /* Assets.xcassets */,
 				F6C9C9CF268D96A6001A1D9A /* Model */,
 				F631DEBC269D2B9C00E2CDC4 /* View */,
@@ -882,7 +884,6 @@
 		F6E9048127044728001D1095 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				F6A7B7F326D63CD300D1FE80 /* ACNHColor.swift */,
 				F6A7B7E626D5EE5900D1FE80 /* Constant.swift */,
 			);
 			path = Constant;
@@ -965,6 +966,7 @@
 			buildConfigurationList = F650FF1F265A603F00BF5202 /* Build configuration list for PBXNativeTarget "ACNHDemo" */;
 			buildPhases = (
 				5E1F330ED2BFF42A16F0DB04 /* [CP] Check Pods Manifest.lock */,
+				F61EA816275CD204004259E7 /* Run R Swift */,
 				F650FEEE265A603700BF5202 /* Sources */,
 				F650FEEF265A603700BF5202 /* Frameworks */,
 				F650FEF0265A603700BF5202 /* Resources */,
@@ -1236,6 +1238,27 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ACNHDemo-ACNHDemoUITests/Pods-ACNHDemo-ACNHDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F61EA816275CD204004259E7 /* Run R Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Run R Swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		F6549CDC271525FA003FAC5F /* Run Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1295,7 +1318,9 @@
 				F631DED3269D6DA200E2CDC4 /* Fish.swift in Sources */,
 				F654F86626A1658D00188318 /* ArtCellViewModel.swift in Sources */,
 				F6EFA413269EC6AE000A4F42 /* AvailableMonthCell.swift in Sources */,
+				F6982BED275DA2D300A82FD9 /* BaseTableViewController.swift in Sources */,
 				F6116DA126A0340D007BFEDE /* BugDetailViewController.swift in Sources */,
+				F61EA81A275CEBAF004259E7 /* R.generated.swift in Sources */,
 				F69BF47026AEA43800D777D2 /* TagsListView.swift in Sources */,
 				F6116D2F269FDE3C007BFEDE /* SeaCreaturesViewController.swift in Sources */,
 				F696FC4326F97074008C39E7 /* AvailableNowCell.swift in Sources */,
@@ -1336,7 +1361,6 @@
 				F6EC22F92696EA8600C931EC /* SongsViewController.swift in Sources */,
 				F6116D8C26A02DB4007BFEDE /* BugsViewController.swift in Sources */,
 				F654F88226A1800E00188318 /* BGM.swift in Sources */,
-				F6A7B7F426D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F6A7B7E726D5EE5900D1FE80 /* Constant.swift in Sources */,
 				F654F82826A11F3800188318 /* FossilsVCViewModel.swift in Sources */,
 				F696FC4926F973D3008C39E7 /* AvailableNowCellViewModel.swift in Sources */,
@@ -1407,7 +1431,6 @@
 				F6116D9426A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C8268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD826A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
-				F6A7B7F526D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F654F87926A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9A2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BA268C681100528F73 /* VillagersCell.swift in Sources */,
@@ -1489,7 +1512,6 @@
 				F6116D9526A02E90007BFEDE /* BugsVCViewModel.swift in Sources */,
 				F6AA45C9268CC2B700528F73 /* Extensions.swift in Sources */,
 				F61A4DD926A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
-				F6A7B7F626D63CD300D1FE80 /* ACNHColor.swift in Sources */,
 				F654F87A26A17DDA00188318 /* BGMViewController.swift in Sources */,
 				F6EBFE9B2695E86A0015371F /* VillagerDetailAvatarCell.swift in Sources */,
 				F6AA45BB268C681100528F73 /* VillagersCell.swift in Sources */,
