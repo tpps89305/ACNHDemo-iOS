@@ -196,6 +196,8 @@
 		F654F88A26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
 		F654F88B26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
 		F654F88C26A182DE00188318 /* BGMVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654F88926A182DE00188318 /* BGMVCViewModel.swift */; };
+		F6599AA42771B7AD0066C2B4 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6599AA32771B7AD0066C2B4 /* EditTaskViewController.swift */; };
+		F6599AA72771DE630066C2B4 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6599AA62771DE630066C2B4 /* EditTaskViewModel.swift */; };
 		F661B5F226C2818B0030B15D /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661B5F126C2818A0030B15D /* CatalogCell.swift */; };
 		F661B5FA26C289980030B15D /* TitleIconPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661B5F926C289980030B15D /* TitleIconPair.swift */; };
 		F661B5FB26C289980030B15D /* TitleIconPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661B5F926C289980030B15D /* TitleIconPair.swift */; };
@@ -403,6 +405,8 @@
 		F654F87726A17DDA00188318 /* BGMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMViewController.swift; sourceTree = "<group>"; };
 		F654F88126A1800E00188318 /* BGM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGM.swift; sourceTree = "<group>"; };
 		F654F88926A182DE00188318 /* BGMVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMVCViewModel.swift; sourceTree = "<group>"; };
+		F6599AA32771B7AD0066C2B4 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		F6599AA62771DE630066C2B4 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
 		F661B5F126C2818A0030B15D /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		F661B5F926C289980030B15D /* TitleIconPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleIconPair.swift; sourceTree = "<group>"; };
 		F66D15BC26AFF4850035B565 /* TagsListTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListTag.swift; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 			children = (
 				F6798816271D6AE2007098D9 /* DailyTaskDetailViewController.swift */,
 				F679881B271D7022007098D9 /* DailyTaskDetailCell.swift */,
+				F6599AA32771B7AD0066C2B4 /* EditTaskViewController.swift */,
 			);
 			path = DailyTaskDetail;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				F62A8202272943BC00078E60 /* DailyTaskDetailViewModel.swift */,
+				F6599AA62771DE630066C2B4 /* EditTaskViewModel.swift */,
 			);
 			path = DailyTaskDetail;
 			sourceTree = "<group>";
@@ -1309,9 +1315,11 @@
 				F61A4DD726A572B400C9699C /* HousewareDetailViewController.swift in Sources */,
 				F650FF00265A603700BF5202 /* ACNHDemo.xcdatamodeld in Sources */,
 				F6116D7A26A02C35007BFEDE /* Rarity.swift in Sources */,
+				F6599AA72771DE630066C2B4 /* EditTaskViewModel.swift in Sources */,
 				F6116D6626A00E36007BFEDE /* SeaCreatureDetailViewController.swift in Sources */,
 				F631DEE1269D717500E2CDC4 /* FishesViewController.swift in Sources */,
 				F661B5F226C2818B0030B15D /* CatalogCell.swift in Sources */,
+				F6599AA42771B7AD0066C2B4 /* EditTaskViewController.swift in Sources */,
 				F650FEFA265A603700BF5202 /* VillagersViewController.swift in Sources */,
 				F654F81E26A11E9700188318 /* FossilsViewController.swift in Sources */,
 				F631DEC4269D389300E2CDC4 /* SongsVCViewModel.swift in Sources */,

@@ -150,10 +150,10 @@ class DashboardVCViewModel {
     }
 
     func getDailyTasks(onRequestEnd: (() -> Void)?) {
-        var arrayDailyTasks = CoreDataHandler.getDailyTask()
+        var arrayDailyTasks = CoreDataHandler.getAllDailyTask()
         if arrayDailyTasks.isEmpty {
             CoreDataHandler.initDailyTask()
-            arrayDailyTasks = CoreDataHandler.getDailyTask()
+            arrayDailyTasks = CoreDataHandler.getAllDailyTask()
         }
         for each in arrayDailyTasks {
             dailyTaskCellViewModels.append(DailyTaskCellViewModel(dailyTask: each))

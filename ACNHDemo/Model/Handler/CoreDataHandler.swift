@@ -11,7 +11,7 @@ import CoreData
 
 class CoreDataHandler {
     
-    static func getDailyTask() -> [DailyTask] {
+    static func getAllDailyTask() -> [DailyTask] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Cannot get AppDelegate!")
         }
@@ -208,7 +208,7 @@ class CoreDataHandler {
     }
     
     static func resetDailyTask() {
-        let array = getDailyTask()
+        let array = getAllDailyTask()
         for each in array {
             each.currentValue = 0
             updateDailyTask(dailyTask: each)
