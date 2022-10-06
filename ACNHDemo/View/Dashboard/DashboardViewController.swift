@@ -68,9 +68,7 @@ class DashboardViewController: UIViewController {
             typedInfo.destination.availableTime = true
         } else if let typedInfo = R.segue.dashboardViewController.gotoDailyTaskDetail(segue: segue) {
             typedInfo.destination.delegate = { [weak self] in
-                self?.viewModel.getDailyTasks {
-                    self?.collectionDaily.reloadData()
-                }
+                self?.collectionDaily.reloadData()
             }
         }
     }
