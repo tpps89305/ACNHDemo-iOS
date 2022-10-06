@@ -18,10 +18,10 @@ class DailyTaskCell: UICollectionViewCell {
     func setup(viewModel: DailyTaskCellViewModel) {
         let dailyTask = viewModel.dailyTask
         dailyButton.iconTask = UIImage.init(named: dailyTask.iconName ?? "")
-        dailyButton.maxValue = dailyTask.maxValue
-        dailyButton.currentValue = dailyTask.currentValue
+        dailyButton.maxValue = Double(dailyTask.maxValue)
+        dailyButton.currentValue = Double(dailyTask.currentValue)
         dailyButton.onProgressPlus = { currentValue in
-            dailyTask.currentValue = currentValue
+            dailyTask.currentValue = Int32.init(currentValue)
             CoreDataHandler.updateDailyTask(dailyTask: dailyTask)
         }
     }

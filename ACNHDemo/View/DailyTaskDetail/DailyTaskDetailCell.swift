@@ -28,7 +28,7 @@ class DailyTaskDetailCell: UITableViewCell {
     func setup(dailyTask: DailyTask) {
         imageIcon.image = UIImage(named: dailyTask.iconName ?? "")
         labelTitle.text = dailyTask.name
-        progressView.progress = Float(dailyTask.currentValue / dailyTask.maxValue)
+        progressView.progress = Float(Double(dailyTask.currentValue) / Double(dailyTask.maxValue))
         labelProgressMax.text = String(Int(dailyTask.maxValue))
     }
     

@@ -33,8 +33,8 @@ class EditTaskViewController: UIViewController {
     
     @IBAction func buttonDonePress(_ sender: UIButton) {
         viewModel.dailyTask?.name = fieldTaskName.text
-        viewModel.dailyTask?.currentValue = Double(fieldCurrentValue.text ?? "") ?? 0
-        viewModel.dailyTask?.maxValue = Double(fieldMaxValue.text ?? "") ?? 0
+        viewModel.dailyTask?.currentValue = Int32(fieldCurrentValue.text ?? "") ?? 0
+        viewModel.dailyTask?.maxValue = Int32(fieldMaxValue.text ?? "") ?? 0
         CoreDataHandler.updateDailyTask(dailyTask: viewModel.dailyTask!)
         dismiss(animated: true)
     }

@@ -17,8 +17,8 @@ extension DailyTask {
 
     @NSManaged public var name: String?
     @NSManaged public var iconName: String?
-    @NSManaged public var currentValue: Double
-    @NSManaged public var maxValue: Double
+    @NSManaged public var currentValue: Int32
+    @NSManaged public var maxValue: Int32
     
     init(iconName: String, currentValue: Double, maxValue: Double) {
         self.iconName = iconName
