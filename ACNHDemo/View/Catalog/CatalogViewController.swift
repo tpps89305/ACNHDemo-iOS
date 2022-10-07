@@ -9,7 +9,7 @@ import UIKit
 
 class CatalogViewController: UITableViewController {
     
-    let arrayCatalog = [
+    private let arrayCatalog = [
         TitleIconPair(title: "Songs", icon: R.image.music()),
         TitleIconPair(title: "Fishes", icon: R.image.fish0()),
         TitleIconPair(title: "Sea Creatures", icon: R.image.akoyagai()),

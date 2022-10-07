@@ -8,7 +8,7 @@
 import UIKit
 import DynamicColor
 
-class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, NibOwnerLoadable {
+class AvailableMonthView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var collectionMonth: UICollectionView!
 
@@ -20,7 +20,7 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
         }
     }
 
-    var arrayMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    private var arrayMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +46,12 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
         loadNibContent()
     }
 
+}
+
+// MARK: - CollectionView Delegate & Data Source
+
+extension AvailableMonthView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         arrayMonth.count
     }
@@ -64,5 +70,5 @@ class AvailableMonthView: UIView, UICollectionViewDelegate, UICollectionViewData
         }
         return cell
     }
-
+    
 }

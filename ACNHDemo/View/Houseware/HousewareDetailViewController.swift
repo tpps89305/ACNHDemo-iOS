@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HousewareDetailViewController: UIViewController {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var tableDetail: UITableView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var houseware: Houseware?
-    let viewModel = HousewareDetailVCViewModel()
+    private let viewModel = HousewareDetailVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
         viewModel.parseHousewaresDetail(houseware: houseware!)
     }
 
-    func initViews() {
+    private func initViews() {
         title = houseware!.name.nameTWzh
         navigationController?.navigationBar.prefersLargeTitles = true
         tableDetail.register(R.nib.commonDetailContentCell)
@@ -41,6 +41,12 @@ class HousewareDetailViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
 
+}
+
+// MARK: - Table view Delegate & Data Source
+
+extension HousewareDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.villagerDetailCellViewModels.count
     }

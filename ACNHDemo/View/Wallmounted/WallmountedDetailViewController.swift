@@ -7,14 +7,14 @@
 
 import UIKit
 
-class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WallmountedDetailViewController: UIViewController {
 
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var tableDetail: UITableView!
     @IBOutlet weak var viewLoading: UIActivityIndicatorView!
     
     var wallmounted: Wallmounted?
-    let viewModel = WallmountedDetailVCViewModel()
+    private let viewModel = WallmountedDetailVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,10 @@ class WallmountedDetailViewController: UIViewController, UITableViewDelegate, UI
         }
     }
 
+}
+
+extension WallmountedDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.villagerDetailCellViewModels.count
     }

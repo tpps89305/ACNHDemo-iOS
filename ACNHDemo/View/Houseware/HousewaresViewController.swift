@@ -9,7 +9,7 @@ import UIKit
 
 class HousewaresViewController: BaseTableViewController {
     
-    let viewModel = HousewaresVCViewModel()
+    private let viewModel = HousewaresVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +19,31 @@ class HousewaresViewController: BaseTableViewController {
         tableView.register(R.nib.commonCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
     }
-    
-    // MARK: - Table view data source
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let typedInfo = R.segue.housewaresViewController.gotoHousewareDetail(segue: segue),
+            let row = sender as? Int {
+            typedInfo.destination.houseware = viewModel.housewareCellViewModels[row].houseware
+        }
+    }
+
+}
+
+// MARK: - Table view Delegate & Data Source
+
+extension HousewaresViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.housewareCellViewModels.count
@@ -46,7 +62,11 @@ class HousewaresViewController: BaseTableViewController {
         performSegue(withIdentifier: R.segue.housewaresViewController.gotoHousewareDetail, sender: indexPath.row)
     }
     
-    // MARK: UISearchBar Delegate
+}
+
+// MARK: UISearchBar Delegate
+
+extension HousewaresViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -55,17 +75,5 @@ class HousewaresViewController: BaseTableViewController {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = ""
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if let typedInfo = R.segue.housewaresViewController.gotoHousewareDetail(segue: segue),
-            let row = sender as? Int {
-            typedInfo.destination.houseware = viewModel.housewareCellViewModels[row].houseware
-        }
-    }
-
+    
 }

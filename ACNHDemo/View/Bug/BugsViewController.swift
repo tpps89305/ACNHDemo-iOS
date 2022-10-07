@@ -20,7 +20,7 @@ class BugsViewController: BaseTableViewController {
         tableView.register(R.nib.commonCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -42,7 +42,7 @@ class BugsViewController: BaseTableViewController {
     
 }
 
-// MARK: - Table view data source
+// MARK: - Table view Delegate & Data Source
 
 extension BugsViewController {
     

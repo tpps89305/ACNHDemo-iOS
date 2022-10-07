@@ -9,7 +9,7 @@ import UIKit
 
 class VillagersViewController: BaseTableViewController {
     
-    let viewModel = VillagerVCViewModel()
+    private let viewModel = VillagerVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class VillagersViewController: BaseTableViewController {
         tableView.register(R.nib.villagersCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()

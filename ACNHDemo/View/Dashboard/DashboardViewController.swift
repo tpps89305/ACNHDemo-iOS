@@ -9,7 +9,7 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
-    let viewModel = DashboardVCViewModel()
+    private let viewModel = DashboardVCViewModel()
 
     @IBOutlet weak var collectionDaily: UICollectionView!
     @IBOutlet weak var collectionBirthday: UICollectionView!
@@ -23,14 +23,14 @@ class DashboardViewController: UIViewController {
         bindViewModel()
     }
     
-    func initViews() {
+    private func initViews() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.getTodayInfo()
         collectionBirthday.register(R.nib.dailyBirthdayCell)
         collectionAvailable.register(R.nib.availableNowCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.getDailyTasks {
             self.collectionDaily.reloadData()
         }
@@ -67,13 +67,15 @@ class DashboardViewController: UIViewController {
         } else if let typedInfo = R.segue.dashboardViewController.gotoBugs(segue: segue) {
             typedInfo.destination.availableTime = true
         } else if let typedInfo = R.segue.dashboardViewController.gotoDailyTaskDetail(segue: segue) {
-            typedInfo.destination.delegate = { [weak self] in
+            typedInfo.destination.notifyDismissDelegate = { [weak self] in
                 self?.collectionDaily.reloadData()
             }
         }
     }
 
 }
+
+// MARK: - CollectionView Delegate & Data Source
 
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     

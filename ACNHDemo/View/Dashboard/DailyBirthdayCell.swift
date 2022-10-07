@@ -15,7 +15,7 @@ class DailyBirthdayCell: UICollectionViewCell {
     func setup(viewModel: DailyBirthdayCellViewModel) {
         let villager = viewModel.villager
         imageVillager.loadUrl(url: villager.iconURI) {
-            
+            // Do nothing
         }
         labelName.text = villager.name.nameTWzh
     }

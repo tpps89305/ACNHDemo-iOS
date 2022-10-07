@@ -9,7 +9,7 @@ import UIKit
 
 class WallmountedViewController: BaseTableViewController {
 
-    let viewModel = WallmountedVCViewModel()
+    private let viewModel = WallmountedVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class WallmountedViewController: BaseTableViewController {
         tableView.register(R.nib.commonCell)
     }
 
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -27,8 +27,24 @@ class WallmountedViewController: BaseTableViewController {
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let typedInfo = R.segue.wallmountedViewController.gotoWallmountedDetail(segue: segue),
+            let row = sender as? Int {
+            typedInfo.destination.wallmounted = viewModel.wallmountedCellViewModels[row].wallmounted
+        }
+    }
+
+}
+
+// MARK: - UITableView Delegate and DataSources
+
+extension WallmountedViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.wallmountedCellViewModels.count
     }
@@ -46,7 +62,11 @@ class WallmountedViewController: BaseTableViewController {
         performSegue(withIdentifier: R.segue.wallmountedViewController.gotoWallmountedDetail, sender: indexPath.row)
     }
 
-    // MARK: UISearchBar Delegate
+}
+
+// MARK: UISearchBar Delegate
+
+extension WallmountedViewController {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -55,17 +75,5 @@ class WallmountedViewController: BaseTableViewController {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = ""
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if let typedInfo = R.segue.wallmountedViewController.gotoWallmountedDetail(segue: segue),
-            let row = sender as? Int {
-            typedInfo.destination.wallmounted = viewModel.wallmountedCellViewModels[row].wallmounted
-        }
-    }
-
+    
 }

@@ -12,7 +12,7 @@ class DailyTaskCell: UICollectionViewCell {
     @IBOutlet weak var dailyButton: DailyTaskProgressButton!
     
     override func awakeFromNib() {
-        
+        // Do nothing
     }
     
     func setup(viewModel: DailyTaskCellViewModel) {

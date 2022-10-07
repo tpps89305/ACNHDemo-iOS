@@ -9,27 +9,30 @@ import UIKit
 
 class FossilsViewController: BaseTableViewController {
     
-    let viewModel = FossilsVCViewModel()
+    private let viewModel = FossilsVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         bindViewModel()
         viewModel.getFossils()
         tableView.register(R.nib.commonCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
     }
-    
-    // MARK: - Table view data source
 
+}
+
+// MARK: - Table view Delegate & Data Source
+
+extension FossilsViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.fossilCellViewModels.count
     }
@@ -43,7 +46,11 @@ class FossilsViewController: BaseTableViewController {
         return cell
     }
     
-    // MARK: UISearchBar Delegate
+}
+
+// MARK: UISearchBar Delegate
+
+extension FossilsViewController {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -52,5 +59,5 @@ class FossilsViewController: BaseTableViewController {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = ""
     }
-
+    
 }

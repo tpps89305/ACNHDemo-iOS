@@ -32,7 +32,7 @@ class DailyTaskProgressButton: UIView {
     }
     
     var onProgressPlus:((_ currentValue: Double) -> Void)?
-    let lineWidth = CGFloat(4.0)
+    private let lineWidth = CGFloat(4.0)
     private lazy var radius = min(frame.size.width, frame.size.height) / 2 - lineWidth / 2 - padding
 
     override func awakeFromNib() {
@@ -107,7 +107,7 @@ class DailyTaskProgressButton: UIView {
         onProgressPlus?(currentValue)
     }
     
-    func setIcon(icon: UIImage?) {
+    private func setIcon(icon: UIImage?) {
         let imageLayerSideLength = min(frame.size.width, frame.size.height) * 0.5
         let imageX = centerX - imageLayerSideLength / 2.0
         let imageY = centerY - imageLayerSideLength / 2.0

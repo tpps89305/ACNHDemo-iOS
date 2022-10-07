@@ -46,7 +46,7 @@ class TagsListView: UIView, NibOwnerLoadable {
         tags.removeAll()
     }
     
-    func update() {
+    private func update() {
         for eachView in stackTags.arrangedSubviews {
             stackTags.removeArrangedSubview(eachView)
             eachView.removeFromSuperview()

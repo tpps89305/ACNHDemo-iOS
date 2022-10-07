@@ -16,7 +16,7 @@ class VillagerDetailViewController: UIViewController {
     @IBOutlet weak var tableDetail: UITableView!
 
     var villager: Villager?
-    let viewModel = VillagerDetailVCViewModel()
+    private let viewModel = VillagerDetailVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +29,14 @@ class VillagerDetailViewController: UIViewController {
         tableDetail.backgroundColor = UIColor(hexString: villager?.bubbleColor ?? "")
     }
 
-    func initViews() {
+    private func initViews() {
         navigationController?.navigationBar.prefersLargeTitles = true
         let name = villager?.name.nameTWzh
         title = name
         print("VillagerDetail: villager's name = " + name!)
     }
 
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [self] in
             tableDetail.reloadData()
         }

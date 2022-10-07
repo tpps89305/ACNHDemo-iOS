@@ -13,13 +13,13 @@ class BGMViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var pickerTimeWeather: UIPickerView!
     @IBOutlet weak var btnPlay: UIButton!
     
-    let arrayHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
-    let arrayWeathers = [Weather.rainy, Weather.snowy, Weather.sunny]
-    let viewModel = BGMVCViewModel()
+    private let arrayHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+    private let arrayWeathers = [Weather.rainy, Weather.snowy, Weather.sunny]
+    private let viewModel = BGMVCViewModel()
     
-    var selectedHour = "0"
-    var selectedWeather = Weather.rainy.rawValue
-    var player = AVPlayer.init()
+    private var selectedHour = "0"
+    private var selectedWeather = Weather.rainy.rawValue
+    private var player = AVPlayer.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()

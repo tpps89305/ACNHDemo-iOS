@@ -15,7 +15,7 @@ class EditTaskViewController: UIViewController {
     @IBOutlet weak var fieldMaxValue: UITextField!
     
     let viewModel = EditTaskViewModel()
-    var delegate:(() -> Void)?
+    var notifySavedDelegate:(() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,12 @@ class EditTaskViewController: UIViewController {
         fieldMaxValue.text = String(viewModel.dailyTask?.maxValue ?? 0)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        delegate!()
-    }
-    
     @IBAction func buttonDonePress(_ sender: UIButton) {
         viewModel.dailyTask?.name = fieldTaskName.text
         viewModel.dailyTask?.currentValue = Int32(fieldCurrentValue.text ?? "") ?? 0
         viewModel.dailyTask?.maxValue = Int32(fieldMaxValue.text ?? "") ?? 0
         CoreDataHandler.updateDailyTask(dailyTask: viewModel.dailyTask!)
+        notifySavedDelegate!()
         dismiss(animated: true)
     }
     

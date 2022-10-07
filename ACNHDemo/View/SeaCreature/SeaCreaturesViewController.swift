@@ -9,7 +9,7 @@ import UIKit
 
 class SeaCreaturesViewController: BaseTableViewController {
     
-    let viewModel = SeaCreaturesVCViewModel()
+    private let viewModel = SeaCreaturesVCViewModel()
     var availableTime = false
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class SeaCreaturesViewController: BaseTableViewController {
         tableView.register(R.nib.commonCell)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.onRequestEnd = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
