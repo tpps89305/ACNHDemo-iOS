@@ -11,7 +11,6 @@ class AvailableNowCell: UICollectionViewCell {
 
     @IBOutlet weak var imageIcon: UIImageView!
     @IBOutlet weak var labelAmount: UILabel!
-    @IBOutlet weak var labelName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +19,6 @@ class AvailableNowCell: UICollectionViewCell {
     
     func setup(viewModel: AvailableNowCellViewModel) {
         imageIcon.image = viewModel.availableNowInfo.icon
-        labelName.text = viewModel.availableNowInfo.name
         labelAmount.text = String(viewModel.availableNowInfo.amount)
     }
 
