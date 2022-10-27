@@ -223,6 +223,10 @@
 		F684E02E269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E02F269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
 		F684E030269545EA00B32F98 /* VillagerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */; };
+		F68FBBC9290A27B2008D78BE /* DailyTaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68FBBC8290A27B2008D78BE /* DailyTaskDetail.storyboard */; };
+		F68FBBCA290A27B2008D78BE /* DailyTaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68FBBC8290A27B2008D78BE /* DailyTaskDetail.storyboard */; };
+		F68FBBCC290A28A5008D78BE /* Villager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68FBBCB290A28A5008D78BE /* Villager.storyboard */; };
+		F68FBBCD290A28A5008D78BE /* Villager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68FBBCB290A28A5008D78BE /* Villager.storyboard */; };
 		F696FC4326F97074008C39E7 /* AvailableNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4126F97074008C39E7 /* AvailableNowCell.swift */; };
 		F696FC4426F97074008C39E7 /* AvailableNowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F696FC4226F97074008C39E7 /* AvailableNowCell.xib */; };
 		F696FC4926F973D3008C39E7 /* AvailableNowCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */; };
@@ -421,6 +425,8 @@
 		F67A787E269C3F6C00112F45 /* VillagerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerCellViewModel.swift; sourceTree = "<group>"; };
 		F67C4AF126BD3CB300F35502 /* Wallmounted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallmounted.swift; sourceTree = "<group>"; };
 		F684E02D269545EA00B32F98 /* VillagerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewController.swift; sourceTree = "<group>"; };
+		F68FBBC8290A27B2008D78BE /* DailyTaskDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyTaskDetail.storyboard; sourceTree = "<group>"; };
+		F68FBBCB290A28A5008D78BE /* Villager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Villager.storyboard; sourceTree = "<group>"; };
 		F696FC4126F97074008C39E7 /* AvailableNowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowCell.swift; sourceTree = "<group>"; };
 		F696FC4226F97074008C39E7 /* AvailableNowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableNowCell.xib; sourceTree = "<group>"; };
 		F696FC4826F973D3008C39E7 /* AvailableNowCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNowCellViewModel.swift; sourceTree = "<group>"; };
@@ -592,6 +598,7 @@
 		F62A82002729436700078E60 /* DailyTaskDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F68FBBC8290A27B2008D78BE /* DailyTaskDetail.storyboard */,
 				F6798816271D6AE2007098D9 /* DailyTaskDetailViewController.swift */,
 				F679881B271D7022007098D9 /* DailyTaskDetailCell.swift */,
 				F6599AA32771B7AD0066C2B4 /* EditTaskViewController.swift */,
@@ -922,6 +929,7 @@
 		F6EFA3D5269E857C000A4F42 /* Villager */ = {
 			isa = PBXGroup;
 			children = (
+				F68FBBCB290A28A5008D78BE /* Villager.storyboard */,
 				F650FEF9265A603700BF5202 /* VillagersViewController.swift */,
 				F6AA45B8268C681100528F73 /* VillagersCell.swift */,
 				F6AA45BF268C695100528F73 /* VillagersCell.xib */,
@@ -1093,9 +1101,11 @@
 				F61A4DAD26A556B200C9699C /* Housewares.storyboard in Resources */,
 				F69BF45E26AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
 				F6116D4E269FDEB0007BFEDE /* SeaCreatures.storyboard in Resources */,
+				F68FBBCC290A28A5008D78BE /* Villager.storyboard in Resources */,
 				F624E32226C0FA7400542DA0 /* Wallmounted.storyboard in Resources */,
 				F650FEFD265A603700BF5202 /* Main.storyboard in Resources */,
 				F6116D8226A02CF1007BFEDE /* Bugs.storyboard in Resources */,
+				F68FBBC9290A27B2008D78BE /* DailyTaskDetail.storyboard in Resources */,
 				F6EBFE8B2695A8C80015371F /* CommonDetailContentCell.xib in Resources */,
 				F6AA45C0268C695100528F73 /* VillagersCell.xib in Resources */,
 				3EDEB1F6C58004256E539CC0 /* Assets.xcassets in Resources */,
@@ -1135,11 +1145,13 @@
 				F6116D8426A02CF1007BFEDE /* Bugs.storyboard in Resources */,
 				F69BF46026AE89C800D777D2 /* AvailableMonthView.xib in Resources */,
 				F66D15C626AFF4B10035B565 /* TagsListTag.xib in Resources */,
+				F68FBBCA290A27B2008D78BE /* DailyTaskDetail.storyboard in Resources */,
 				F624E32426C0FA7400542DA0 /* Wallmounted.storyboard in Resources */,
 				F6EC230D2696F00A00C931EC /* SongsCell.xib in Resources */,
 				F6EBFE8D2695A8C80015371F /* CommonDetailContentCell.xib in Resources */,
 				F6EBFE9E2695E86A0015371F /* VillagerDetailAvatarCell.xib in Resources */,
 				F6AA45C2268C695100528F73 /* VillagersCell.xib in Resources */,
+				F68FBBCD290A28A5008D78BE /* Villager.storyboard in Resources */,
 				F6EFA418269EC6AE000A4F42 /* AvailableMonthCell.xib in Resources */,
 				F631DEFC269D72EF00E2CDC4 /* CommonCell.xib in Resources */,
 				F69BF47C26AEA44700D777D2 /* TagsListView.xib in Resources */,
