@@ -6,7 +6,7 @@ target 'ACNHDemo' do
   use_frameworks!
 
   # Pods for ACNHDemo
-  pod 'Moya', '~> 14.0'
+  pod 'Moya', '~> 15.0'
   pod 'DynamicColor', '~> 5.0.0'
   pod 'SwiftLint'
   pod 'R.swift'
