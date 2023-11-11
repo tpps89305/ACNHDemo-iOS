@@ -1,3 +1,6 @@
+# Project Closed
+This project was closed due to https://acnhapi.com/v1/ is unavailable.
+
 # ACNHDemo for iOS
 ![Splash](readme/splash2.png)
 
